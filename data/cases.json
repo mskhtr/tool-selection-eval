@@ -1,0 +1,3493 @@
+{
+  "labeling": {
+    "labeler_count": 1,
+    "independent_adjudication": false,
+    "note": "実装者1名が、モデル出力を見る前に付与した。複数人の独立ラベルと不一致解消は行っていない。",
+    "frozen_before_model_runs": true
+  },
+  "cases": [
+    {
+      "id": "001",
+      "primary": "ambiguous",
+      "categories": [
+        "ambiguous"
+      ],
+      "group": "solder_sim",
+      "text": "はんだのシミュレーションをしたい",
+      "acceptable": [
+        "solder_crack_propagation",
+        "solder_life_prediction"
+      ],
+      "required": [
+        "solder_crack_propagation",
+        "solder_life_prediction"
+      ],
+      "multiple": true,
+      "clarify": true,
+      "applicable": "yes",
+      "needed": [
+        "亀裂進展か寿命予測か"
+      ],
+      "severity": "medium",
+      "reason": "はんだという対象だけでは目的が決まらない。",
+      "stability": true
+    },
+    {
+      "id": "002",
+      "primary": "ambiguous",
+      "categories": [
+        "ambiguous"
+      ],
+      "group": "solder_sim",
+      "text": "はんだ周りをシミュレーションで見たい",
+      "acceptable": [
+        "solder_crack_propagation",
+        "solder_life_prediction"
+      ],
+      "required": [
+        "solder_crack_propagation",
+        "solder_life_prediction"
+      ],
+      "multiple": true,
+      "clarify": true,
+      "applicable": "yes",
+      "needed": [
+        "亀裂進展か寿命予測か"
+      ],
+      "severity": "medium",
+      "reason": "シミュレーションとだけあり、進み方と寿命回数のどちらでもない。",
+      "stability": false
+    },
+    {
+      "id": "003",
+      "primary": "ambiguous",
+      "categories": [
+        "ambiguous",
+        "colloquial"
+      ],
+      "group": "solder_sim",
+      "text": "ソルダの解析をお願いします",
+      "acceptable": [
+        "solder_crack_propagation",
+        "solder_life_prediction"
+      ],
+      "required": [
+        "solder_crack_propagation",
+        "solder_life_prediction"
+      ],
+      "multiple": true,
+      "clarify": true,
+      "applicable": "yes",
+      "needed": [
+        "亀裂進展か寿命予測か"
+      ],
+      "severity": "medium",
+      "reason": "俗称ソルダだけではんだ解析の目的が決まらない。",
+      "stability": false
+    },
+    {
+      "id": "004",
+      "primary": "ambiguous",
+      "categories": [
+        "ambiguous"
+      ],
+      "group": "solder_sim",
+      "text": "はんだ接合部をCAEでやりたい",
+      "acceptable": [
+        "solder_crack_propagation",
+        "solder_life_prediction"
+      ],
+      "required": [
+        "solder_crack_propagation",
+        "solder_life_prediction"
+      ],
+      "multiple": true,
+      "clarify": true,
+      "applicable": "yes",
+      "needed": [
+        "亀裂進展か寿命予測か"
+      ],
+      "severity": "medium",
+      "reason": "対象ははんだ接合だが、知りたい量が書かれていない。",
+      "stability": false
+    },
+    {
+      "id": "005",
+      "primary": "ambiguous",
+      "categories": [
+        "ambiguous"
+      ],
+      "group": "vibration",
+      "text": "振動を解析したい",
+      "acceptable": [
+        "eigenvalue",
+        "frequency_response",
+        "random_vibration"
+      ],
+      "required": [
+        "eigenvalue",
+        "frequency_response",
+        "random_vibration"
+      ],
+      "multiple": true,
+      "clarify": true,
+      "applicable": "yes",
+      "needed": [
+        "固有値か、周波数応答か、ランダム振動か"
+      ],
+      "severity": "medium",
+      "reason": "振動だけでは手法が決まらない。",
+      "stability": true
+    },
+    {
+      "id": "006",
+      "primary": "ambiguous",
+      "categories": [
+        "ambiguous"
+      ],
+      "group": "vibration",
+      "text": "この部品の振動を見たい",
+      "acceptable": [
+        "eigenvalue",
+        "frequency_response",
+        "random_vibration"
+      ],
+      "required": [
+        "eigenvalue",
+        "frequency_response",
+        "random_vibration"
+      ],
+      "multiple": true,
+      "clarify": true,
+      "applicable": "yes",
+      "needed": [
+        "固有値か、周波数応答か、ランダム振動か"
+      ],
+      "severity": "medium",
+      "reason": "部品の振動とあるだけで、加振の種類が無い。",
+      "stability": false
+    },
+    {
+      "id": "007",
+      "primary": "ambiguous",
+      "categories": [
+        "ambiguous"
+      ],
+      "group": "vibration",
+      "text": "振動の計算をしてほしい",
+      "acceptable": [
+        "eigenvalue",
+        "frequency_response",
+        "random_vibration"
+      ],
+      "required": [
+        "eigenvalue",
+        "frequency_response",
+        "random_vibration"
+      ],
+      "multiple": true,
+      "clarify": true,
+      "applicable": "yes",
+      "needed": [
+        "固有値か、周波数応答か、ランダム振動か"
+      ],
+      "severity": "medium",
+      "reason": "計算対象が振動全体で、手法の指定が無い。",
+      "stability": false
+    },
+    {
+      "id": "008",
+      "primary": "ambiguous",
+      "categories": [
+        "ambiguous",
+        "colloquial"
+      ],
+      "group": "vibration",
+      "text": "揺れの解析をお願い",
+      "acceptable": [
+        "eigenvalue",
+        "frequency_response",
+        "random_vibration"
+      ],
+      "required": [
+        "eigenvalue",
+        "frequency_response",
+        "random_vibration"
+      ],
+      "multiple": true,
+      "clarify": true,
+      "applicable": "yes",
+      "needed": [
+        "固有値か、周波数応答か、ランダム振動か"
+      ],
+      "severity": "medium",
+      "reason": "揺れは振動の口語で、手法は書かれていない。",
+      "stability": false
+    },
+    {
+      "id": "009",
+      "primary": "ambiguous",
+      "categories": [
+        "ambiguous"
+      ],
+      "group": "break",
+      "text": "この部品が壊れないか見たい",
+      "acceptable": [
+        "static_strength",
+        "fatigue_life",
+        "fracture_mechanics"
+      ],
+      "required": [
+        "static_strength",
+        "fatigue_life",
+        "fracture_mechanics"
+      ],
+      "multiple": true,
+      "clarify": true,
+      "applicable": "yes",
+      "needed": [
+        "静荷重か、繰り返し疲労か、既存き裂か"
+      ],
+      "severity": "high",
+      "reason": "壊れないかは強度・疲労・破壊のどれでもあり得る。",
+      "stability": true
+    },
+    {
+      "id": "010",
+      "primary": "ambiguous",
+      "categories": [
+        "ambiguous"
+      ],
+      "group": "break",
+      "text": "壊れないか確認したい",
+      "acceptable": [
+        "static_strength",
+        "fatigue_life",
+        "fracture_mechanics"
+      ],
+      "required": [
+        "static_strength",
+        "fatigue_life",
+        "fracture_mechanics"
+      ],
+      "multiple": true,
+      "clarify": true,
+      "applicable": "yes",
+      "needed": [
+        "静荷重か、繰り返し疲労か、既存き裂か"
+      ],
+      "severity": "high",
+      "reason": "確認対象の壊れ方が指定されていない。",
+      "stability": false
+    },
+    {
+      "id": "011",
+      "primary": "ambiguous",
+      "categories": [
+        "ambiguous",
+        "colloquial"
+      ],
+      "group": "break",
+      "text": "このブラケット、破損しない？",
+      "acceptable": [
+        "static_strength",
+        "fatigue_life",
+        "fracture_mechanics"
+      ],
+      "required": [
+        "static_strength",
+        "fatigue_life",
+        "fracture_mechanics"
+      ],
+      "multiple": true,
+      "clarify": true,
+      "applicable": "yes",
+      "needed": [
+        "静荷重か、繰り返し疲労か、既存き裂か"
+      ],
+      "severity": "high",
+      "reason": "破損しないかという聞き方だけでは評価法が決まらない。",
+      "stability": false
+    },
+    {
+      "id": "012",
+      "primary": "ambiguous",
+      "categories": [
+        "ambiguous",
+        "colloquial"
+      ],
+      "group": "break",
+      "text": "強度的に持つか見てほしい",
+      "acceptable": [
+        "static_strength",
+        "fatigue_life",
+        "fracture_mechanics"
+      ],
+      "required": [
+        "static_strength",
+        "fatigue_life",
+        "fracture_mechanics"
+      ],
+      "multiple": true,
+      "clarify": true,
+      "applicable": "yes",
+      "needed": [
+        "静荷重か、繰り返し疲労か、既存き裂か"
+      ],
+      "severity": "high",
+      "reason": "持つかは耐久の口語で、静強度だけとは限らない。",
+      "stability": false
+    },
+    {
+      "id": "013",
+      "primary": "insufficient",
+      "categories": [
+        "insufficient"
+      ],
+      "group": "vague",
+      "text": "いつものやつを実行して",
+      "acceptable": [],
+      "required": [],
+      "multiple": false,
+      "clarify": true,
+      "applicable": "unknown",
+      "needed": [
+        "どの解析か"
+      ],
+      "severity": "medium",
+      "reason": "過去の会話が無く、いつもの解析を特定できない。",
+      "stability": true
+    },
+    {
+      "id": "014",
+      "primary": "insufficient",
+      "categories": [
+        "insufficient"
+      ],
+      "group": "vague",
+      "text": "前回と同じ解析を回して",
+      "acceptable": [],
+      "required": [],
+      "multiple": false,
+      "clarify": true,
+      "applicable": "unknown",
+      "needed": [
+        "前回の解析内容"
+      ],
+      "severity": "medium",
+      "reason": "前回の内容がこの入力に無い。",
+      "stability": false
+    },
+    {
+      "id": "015",
+      "primary": "insufficient",
+      "categories": [
+        "insufficient",
+        "colloquial"
+      ],
+      "group": "vague",
+      "text": "いつものをお願い",
+      "acceptable": [],
+      "required": [],
+      "multiple": false,
+      "clarify": true,
+      "applicable": "unknown",
+      "needed": [
+        "どの解析か"
+      ],
+      "severity": "medium",
+      "reason": "いつもの対象が書かれていない。",
+      "stability": false
+    },
+    {
+      "id": "016",
+      "primary": "insufficient",
+      "categories": [
+        "insufficient",
+        "colloquial"
+      ],
+      "group": "vague",
+      "text": "例のやつやっといて",
+      "acceptable": [],
+      "required": [],
+      "multiple": false,
+      "clarify": true,
+      "applicable": "unknown",
+      "needed": [
+        "どの解析か"
+      ],
+      "severity": "medium",
+      "reason": "例のやつが指示の中に無い。",
+      "stability": false
+    },
+    {
+      "id": "017",
+      "primary": "clear",
+      "categories": [
+        "clear"
+      ],
+      "group": "fatigue_clear",
+      "text": "鋼製アームに繰り返し曲げがかかるので、S-N曲線で疲労寿命を計算したい",
+      "acceptable": [
+        "fatigue_life"
+      ],
+      "required": [
+        "fatigue_life"
+      ],
+      "multiple": false,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "high",
+      "reason": "材料、負荷の繰り返し、S-N、寿命が明示されている。",
+      "stability": true
+    },
+    {
+      "id": "018",
+      "primary": "clear",
+      "categories": [
+        "clear"
+      ],
+      "group": "fatigue_clear",
+      "text": "金属部品の高サイクル疲労寿命をS-Nで出したい",
+      "acceptable": [
+        "fatigue_life"
+      ],
+      "required": [
+        "fatigue_life"
+      ],
+      "multiple": false,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "high",
+      "reason": "高サイクル疲労とS-Nが疲労寿命予測を指す。",
+      "stability": false
+    },
+    {
+      "id": "019",
+      "primary": "clear",
+      "categories": [
+        "clear"
+      ],
+      "group": "fatigue_clear",
+      "text": "繰り返し荷重の疲労寿命を予測して",
+      "acceptable": [
+        "fatigue_life"
+      ],
+      "required": [
+        "fatigue_life"
+      ],
+      "multiple": false,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "high",
+      "reason": "繰り返し荷重の疲労寿命と書かれている。",
+      "stability": false
+    },
+    {
+      "id": "020",
+      "primary": "clear",
+      "categories": [
+        "clear"
+      ],
+      "group": "fatigue_clear",
+      "text": "鋼の曲げ疲労をS-N曲線で評価したい",
+      "acceptable": [
+        "fatigue_life"
+      ],
+      "required": [
+        "fatigue_life"
+      ],
+      "multiple": false,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "high",
+      "reason": "曲げ疲労をS-Nで評価すると明示されている。",
+      "stability": false
+    },
+    {
+      "id": "021",
+      "primary": "clear",
+      "categories": [
+        "clear"
+      ],
+      "group": "eigen_clear",
+      "text": "ブラケットの1次の固有振動数とモード形状を計算したい",
+      "acceptable": [
+        "eigenvalue"
+      ],
+      "required": [
+        "eigenvalue"
+      ],
+      "multiple": false,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "medium",
+      "reason": "固有振動数とモード形状は固有値解析の出力である。",
+      "stability": false
+    },
+    {
+      "id": "022",
+      "primary": "clear",
+      "categories": [
+        "clear"
+      ],
+      "group": "eigen_clear",
+      "text": "筐体の共振周波数を固有値解析で出したい",
+      "acceptable": [
+        "eigenvalue"
+      ],
+      "required": [
+        "eigenvalue"
+      ],
+      "multiple": false,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "medium",
+      "reason": "手法名と、求める共振周波数が両方ある。",
+      "stability": false
+    },
+    {
+      "id": "023",
+      "primary": "clear",
+      "categories": [
+        "clear"
+      ],
+      "group": "frf_clear",
+      "text": "正弦波掃引でブラケットの周波数応答を計算したい",
+      "acceptable": [
+        "frequency_response"
+      ],
+      "required": [
+        "frequency_response"
+      ],
+      "multiple": false,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "medium",
+      "reason": "正弦波掃引と周波数応答が明示されている。",
+      "stability": false
+    },
+    {
+      "id": "024",
+      "primary": "clear",
+      "categories": [
+        "clear"
+      ],
+      "group": "frf_clear",
+      "text": "ハーモニック加振に対する周波数応答関数を出したい",
+      "acceptable": [
+        "frequency_response"
+      ],
+      "required": [
+        "frequency_response"
+      ],
+      "multiple": false,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "medium",
+      "reason": "ハーモニック加振の周波数応答を求めている。",
+      "stability": false
+    },
+    {
+      "id": "025",
+      "primary": "clear",
+      "categories": [
+        "clear"
+      ],
+      "group": "random_clear",
+      "text": "路面相当のPSDを入力にして車載ECUのランダム振動応答を計算したい",
+      "acceptable": [
+        "random_vibration"
+      ],
+      "required": [
+        "random_vibration"
+      ],
+      "multiple": false,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "medium",
+      "reason": "PSD入力とランダム振動応答が明示されている。",
+      "stability": false
+    },
+    {
+      "id": "026",
+      "primary": "clear",
+      "categories": [
+        "clear"
+      ],
+      "group": "random_clear",
+      "text": "不規則振動としてPSD加振の応答を求めたい",
+      "acceptable": [
+        "random_vibration"
+      ],
+      "required": [
+        "random_vibration"
+      ],
+      "multiple": false,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "medium",
+      "reason": "不規則振動とPSD加振がランダム振動解析を指す。",
+      "stability": false
+    },
+    {
+      "id": "027",
+      "primary": "clear",
+      "categories": [
+        "clear"
+      ],
+      "group": "static_clear",
+      "text": "ボルト締結ブラケットに静的な引張荷重をかけ、ミーゼス応力が許容を超えるか計算したい",
+      "acceptable": [
+        "static_strength"
+      ],
+      "required": [
+        "static_strength"
+      ],
+      "multiple": false,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "high",
+      "reason": "静的引張と許容応力の判定が明示されている。",
+      "stability": false
+    },
+    {
+      "id": "028",
+      "primary": "clear",
+      "categories": [
+        "clear"
+      ],
+      "group": "static_clear",
+      "text": "静荷重での変形と応力が強度基準内か評価したい",
+      "acceptable": [
+        "static_strength"
+      ],
+      "required": [
+        "static_strength"
+      ],
+      "multiple": false,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "high",
+      "reason": "静荷重での応力と変形の許容判定である。",
+      "stability": false
+    },
+    {
+      "id": "029",
+      "primary": "clear",
+      "categories": [
+        "clear"
+      ],
+      "group": "fracture_clear",
+      "text": "アルミ板にある既存き裂の応力拡大係数を評価したい",
+      "acceptable": [
+        "fracture_mechanics"
+      ],
+      "required": [
+        "fracture_mechanics"
+      ],
+      "multiple": false,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "high",
+      "reason": "既存き裂の応力拡大係数は破壊力学の量である。",
+      "stability": false
+    },
+    {
+      "id": "030",
+      "primary": "clear",
+      "categories": [
+        "clear"
+      ],
+      "group": "fracture_clear",
+      "text": "破壊力学で金属母材のき裂進展リスクを計算したい",
+      "acceptable": [
+        "fracture_mechanics"
+      ],
+      "required": [
+        "fracture_mechanics"
+      ],
+      "multiple": false,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "high",
+      "reason": "金属母材と破壊力学が明示され、はんだではない。",
+      "stability": false
+    },
+    {
+      "id": "031",
+      "primary": "clear",
+      "categories": [
+        "clear"
+      ],
+      "group": "thermal_clear",
+      "text": "筐体が均一に80度まで上がったときの熱応力と熱変形を計算したい",
+      "acceptable": [
+        "thermal_stress"
+      ],
+      "required": [
+        "thermal_stress"
+      ],
+      "multiple": false,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "medium",
+      "reason": "一様な温度上昇での熱応力と熱変形を求めている。",
+      "stability": false
+    },
+    {
+      "id": "032",
+      "primary": "clear",
+      "categories": [
+        "clear"
+      ],
+      "group": "thermal_clear",
+      "text": "線膨張差による熱変形を計算したい",
+      "acceptable": [
+        "thermal_stress"
+      ],
+      "required": [
+        "thermal_stress"
+      ],
+      "multiple": false,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "medium",
+      "reason": "線膨張差による熱変形が目的である。",
+      "stability": false
+    },
+    {
+      "id": "033",
+      "primary": "clear",
+      "categories": [
+        "clear"
+      ],
+      "group": "buckling_clear",
+      "text": "薄板ブラケットが圧縮で座屈する荷重を求めたい",
+      "acceptable": [
+        "buckling"
+      ],
+      "required": [
+        "buckling"
+      ],
+      "multiple": false,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "high",
+      "reason": "圧縮での座屈荷重が目的である。",
+      "stability": false
+    },
+    {
+      "id": "034",
+      "primary": "clear",
+      "categories": [
+        "clear"
+      ],
+      "group": "buckling_clear",
+      "text": "座屈荷重を線形座屈解析で出したい",
+      "acceptable": [
+        "buckling"
+      ],
+      "required": [
+        "buckling"
+      ],
+      "multiple": false,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "high",
+      "reason": "座屈荷重と座屈解析が明示されている。",
+      "stability": false
+    },
+    {
+      "id": "035",
+      "primary": "clear",
+      "categories": [
+        "clear"
+      ],
+      "group": "impact_clear",
+      "text": "機器を1mの高さからコンクリートへ落とした衝撃応答を陽解法で見たい",
+      "acceptable": [
+        "explicit_impact"
+      ],
+      "required": [
+        "explicit_impact"
+      ],
+      "multiple": false,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "high",
+      "reason": "落下高さと陽解法の衝撃応答が明示されている。",
+      "stability": false
+    },
+    {
+      "id": "036",
+      "primary": "clear",
+      "categories": [
+        "clear"
+      ],
+      "group": "impact_clear",
+      "text": "衝突時の短時間応答を陽解法で計算したい",
+      "acceptable": [
+        "explicit_impact"
+      ],
+      "required": [
+        "explicit_impact"
+      ],
+      "multiple": false,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "high",
+      "reason": "短時間の衝突応答を陽解法で計算すると書かれている。",
+      "stability": false
+    },
+    {
+      "id": "037",
+      "primary": "clear",
+      "categories": [
+        "clear"
+      ],
+      "group": "cfd_clear",
+      "text": "ケース内の冷却風の流れ場と圧力損失をCFDで計算したい",
+      "acceptable": [
+        "cfd_flow"
+      ],
+      "required": [
+        "cfd_flow"
+      ],
+      "multiple": false,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "medium",
+      "reason": "冷却風の流れ場と圧力損失をCFDで求めている。",
+      "stability": false
+    },
+    {
+      "id": "038",
+      "primary": "clear",
+      "categories": [
+        "clear"
+      ],
+      "group": "cfd_clear",
+      "text": "吸気ダクトの流量と圧力損失を流体解析したい",
+      "acceptable": [
+        "cfd_flow"
+      ],
+      "required": [
+        "cfd_flow"
+      ],
+      "multiple": false,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "medium",
+      "reason": "流量と圧力損失の流体解析である。",
+      "stability": false
+    },
+    {
+      "id": "039",
+      "primary": "clear",
+      "categories": [
+        "clear"
+      ],
+      "group": "solder_life_clear",
+      "text": "BGAはんだが温度サイクル何回で寿命に達するか予測したい",
+      "acceptable": [
+        "solder_life_prediction"
+      ],
+      "required": [
+        "solder_life_prediction"
+      ],
+      "multiple": false,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "medium",
+      "reason": "はんだが何回で寿命に達するかが明示されている。",
+      "stability": false
+    },
+    {
+      "id": "040",
+      "primary": "clear",
+      "categories": [
+        "clear"
+      ],
+      "group": "solder_life_clear",
+      "text": "はんだ接合の熱疲労寿命を計算したい",
+      "acceptable": [
+        "solder_life_prediction"
+      ],
+      "required": [
+        "solder_life_prediction"
+      ],
+      "multiple": false,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "medium",
+      "reason": "はんだ接合の熱疲労寿命は寿命予測を指す。",
+      "stability": false
+    },
+    {
+      "id": "041",
+      "primary": "clear",
+      "categories": [
+        "clear"
+      ],
+      "group": "solder_crack_clear",
+      "text": "はんだフィレットの亀裂が温度サイクルでどこまで進むかシミュレーションしたい",
+      "acceptable": [
+        "solder_crack_propagation"
+      ],
+      "required": [
+        "solder_crack_propagation"
+      ],
+      "multiple": false,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "medium",
+      "reason": "はんだの亀裂がどこまで進むかが進展シミュレーションの目的である。",
+      "stability": false
+    },
+    {
+      "id": "042",
+      "primary": "clear",
+      "categories": [
+        "clear"
+      ],
+      "group": "solder_crack_clear",
+      "text": "はんだクラックの進展量をサイクルごとに計算したい",
+      "acceptable": [
+        "solder_crack_propagation"
+      ],
+      "required": [
+        "solder_crack_propagation"
+      ],
+      "multiple": false,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "medium",
+      "reason": "はんだクラックの進展量を求めている。",
+      "stability": false
+    },
+    {
+      "id": "043",
+      "primary": "ambiguous",
+      "categories": [
+        "ambiguous"
+      ],
+      "group": "life_word",
+      "text": "寿命を見たい",
+      "acceptable": [
+        "solder_life_prediction",
+        "fatigue_life"
+      ],
+      "required": [
+        "solder_life_prediction",
+        "fatigue_life"
+      ],
+      "multiple": true,
+      "clarify": true,
+      "applicable": "yes",
+      "needed": [
+        "はんだの寿命か、金属の疲労寿命か"
+      ],
+      "severity": "medium",
+      "reason": "寿命だけではんだ寿命と金属疲労の両方があり得る。",
+      "stability": false
+    },
+    {
+      "id": "044",
+      "primary": "ambiguous",
+      "categories": [
+        "ambiguous"
+      ],
+      "group": "life_word",
+      "text": "この部品の寿命が知りたい",
+      "acceptable": [
+        "solder_life_prediction",
+        "fatigue_life"
+      ],
+      "required": [
+        "solder_life_prediction",
+        "fatigue_life"
+      ],
+      "multiple": true,
+      "clarify": true,
+      "applicable": "yes",
+      "needed": [
+        "はんだの寿命か、金属の疲労寿命か"
+      ],
+      "severity": "medium",
+      "reason": "部品の寿命とだけあり、材料と負荷が無い。",
+      "stability": false
+    },
+    {
+      "id": "045",
+      "primary": "ambiguous",
+      "categories": [
+        "ambiguous"
+      ],
+      "group": "crack_word",
+      "text": "亀裂が心配なので見たい",
+      "acceptable": [
+        "solder_crack_propagation",
+        "fracture_mechanics"
+      ],
+      "required": [
+        "solder_crack_propagation",
+        "fracture_mechanics"
+      ],
+      "multiple": true,
+      "clarify": true,
+      "applicable": "yes",
+      "needed": [
+        "はんだの亀裂か、金属母材のき裂か"
+      ],
+      "severity": "high",
+      "reason": "亀裂の対象がはんだか母材か書かれていない。",
+      "stability": false
+    },
+    {
+      "id": "046",
+      "primary": "ambiguous",
+      "categories": [
+        "ambiguous"
+      ],
+      "group": "crack_word",
+      "text": "き裂が大丈夫か見たい",
+      "acceptable": [
+        "solder_crack_propagation",
+        "fracture_mechanics"
+      ],
+      "required": [
+        "solder_crack_propagation",
+        "fracture_mechanics"
+      ],
+      "multiple": true,
+      "clarify": true,
+      "applicable": "yes",
+      "needed": [
+        "はんだの亀裂か、金属母材のき裂か"
+      ],
+      "severity": "high",
+      "reason": "き裂の評価対象が特定できない。",
+      "stability": false
+    },
+    {
+      "id": "047",
+      "primary": "ambiguous",
+      "categories": [
+        "ambiguous",
+        "insufficient"
+      ],
+      "group": "thermal_vague",
+      "text": "熱の影響を計算したい",
+      "acceptable": [
+        "thermal_stress"
+      ],
+      "required": [
+        "thermal_stress"
+      ],
+      "multiple": false,
+      "clarify": true,
+      "applicable": "yes",
+      "needed": [
+        "変形や応力か、寿命か",
+        "温度条件"
+      ],
+      "severity": "medium",
+      "reason": "熱の影響は熱応力が第一候補だが、寿命との区別と温度条件が足りない。",
+      "stability": false
+    },
+    {
+      "id": "048",
+      "primary": "ambiguous",
+      "categories": [
+        "ambiguous"
+      ],
+      "group": "freq_word",
+      "text": "周波数を見たい",
+      "acceptable": [
+        "eigenvalue",
+        "frequency_response"
+      ],
+      "required": [
+        "eigenvalue",
+        "frequency_response"
+      ],
+      "multiple": true,
+      "clarify": true,
+      "applicable": "yes",
+      "needed": [
+        "固有振動数か、加振に対する応答か"
+      ],
+      "severity": "medium",
+      "reason": "周波数だけでは固有値と周波数応答が分かれる。ランダム振動の指定は無い。",
+      "stability": false
+    },
+    {
+      "id": "049",
+      "primary": "ambiguous",
+      "categories": [
+        "ambiguous",
+        "implicit"
+      ],
+      "group": "resonance",
+      "text": "共振まわりを解析したい",
+      "acceptable": [
+        "eigenvalue",
+        "frequency_response"
+      ],
+      "required": [
+        "eigenvalue",
+        "frequency_response"
+      ],
+      "multiple": true,
+      "clarify": true,
+      "applicable": "yes",
+      "needed": [
+        "振動数そのものか、共振時の応答振幅か"
+      ],
+      "severity": "medium",
+      "reason": "共振だけではモード計算と応答計算の両方があり得る。",
+      "stability": false
+    },
+    {
+      "id": "050",
+      "primary": "ambiguous",
+      "categories": [
+        "ambiguous"
+      ],
+      "group": "which_physics",
+      "text": "衝撃と振動のどちらで見るべきかも含めて、この部品を評価したい",
+      "acceptable": [
+        "explicit_impact",
+        "eigenvalue",
+        "frequency_response",
+        "random_vibration"
+      ],
+      "required": [
+        "explicit_impact",
+        "eigenvalue",
+        "frequency_response",
+        "random_vibration"
+      ],
+      "multiple": true,
+      "clarify": true,
+      "applicable": "yes",
+      "needed": [
+        "衝撃か振動か",
+        "振動ならどの手法か"
+      ],
+      "severity": "high",
+      "reason": "ユーザーが手法の選択自体を依頼しており、一つに決められない。",
+      "stability": false
+    },
+    {
+      "id": "051",
+      "primary": "ambiguous",
+      "categories": [
+        "ambiguous"
+      ],
+      "group": "stress_word",
+      "text": "応力を見たい",
+      "acceptable": [
+        "static_strength",
+        "thermal_stress",
+        "fatigue_life"
+      ],
+      "required": [
+        "static_strength",
+        "thermal_stress",
+        "fatigue_life"
+      ],
+      "multiple": true,
+      "clarify": true,
+      "applicable": "yes",
+      "needed": [
+        "静荷重か、温度か、繰り返しの応力か"
+      ],
+      "severity": "medium",
+      "reason": "応力は静強度、熱応力、疲労のどれでも出る。",
+      "stability": true
+    },
+    {
+      "id": "052",
+      "primary": "ambiguous",
+      "categories": [
+        "ambiguous"
+      ],
+      "group": "deform_word",
+      "text": "変形が大きいか計算して",
+      "acceptable": [
+        "static_strength",
+        "thermal_stress"
+      ],
+      "required": [
+        "static_strength",
+        "thermal_stress"
+      ],
+      "multiple": true,
+      "clarify": true,
+      "applicable": "yes",
+      "needed": [
+        "機械荷重か温度変化か"
+      ],
+      "severity": "medium",
+      "reason": "変形の原因が静荷重か熱か書かれていない。",
+      "stability": false
+    },
+    {
+      "id": "053",
+      "primary": "implicit",
+      "categories": [
+        "implicit",
+        "ambiguous"
+      ],
+      "group": "solder_worry",
+      "text": "はんだが割れそうなので見たい",
+      "acceptable": [
+        "solder_crack_propagation",
+        "solder_life_prediction"
+      ],
+      "required": [
+        "solder_crack_propagation",
+        "solder_life_prediction"
+      ],
+      "multiple": true,
+      "clarify": true,
+      "applicable": "yes",
+      "needed": [
+        "進展経路か、寿命回数か"
+      ],
+      "severity": "medium",
+      "reason": "割れそうからはんだの不具合は読み取れるが、進展と寿命のどちらを出すかは書かれていない。",
+      "stability": false
+    },
+    {
+      "id": "054",
+      "primary": "implicit",
+      "categories": [
+        "implicit",
+        "ambiguous"
+      ],
+      "group": "solder_heat",
+      "text": "温度が上がるからはんだが不安なので見たい",
+      "acceptable": [
+        "solder_crack_propagation",
+        "solder_life_prediction",
+        "thermal_stress"
+      ],
+      "required": [
+        "solder_crack_propagation",
+        "solder_life_prediction",
+        "thermal_stress"
+      ],
+      "multiple": true,
+      "clarify": true,
+      "applicable": "yes",
+      "needed": [
+        "接合の寿命か、亀裂進展か、熱変形か"
+      ],
+      "severity": "medium",
+      "reason": "温度とはんだの不安だけでは、熱応力まで含めて目的が開いている。",
+      "stability": false
+    },
+    {
+      "id": "055",
+      "primary": "colloquial",
+      "categories": [
+        "colloquial",
+        "clear"
+      ],
+      "group": "crack_colloquial",
+      "text": "はんだのクラックが進むやつ回して",
+      "acceptable": [
+        "solder_crack_propagation"
+      ],
+      "required": [
+        "solder_crack_propagation"
+      ],
+      "multiple": false,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "medium",
+      "reason": "クラックが進むは進展シミュレーションの口語である。",
+      "stability": false
+    },
+    {
+      "id": "056",
+      "primary": "colloquial",
+      "categories": [
+        "colloquial",
+        "clear"
+      ],
+      "group": "eigen_colloquial",
+      "text": "モーダルやって",
+      "acceptable": [
+        "eigenvalue"
+      ],
+      "required": [
+        "eigenvalue"
+      ],
+      "multiple": false,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "medium",
+      "reason": "モーダルは固有値解析の現場呼称である。",
+      "stability": false
+    },
+    {
+      "id": "057",
+      "primary": "colloquial",
+      "categories": [
+        "colloquial",
+        "clear"
+      ],
+      "group": "random_colloquial",
+      "text": "ランダム振動のPSDのやつお願い",
+      "acceptable": [
+        "random_vibration"
+      ],
+      "required": [
+        "random_vibration"
+      ],
+      "multiple": false,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "medium",
+      "reason": "ランダム振動とPSDが揃っている。",
+      "stability": false
+    },
+    {
+      "id": "058",
+      "primary": "colloquial",
+      "categories": [
+        "colloquial",
+        "clear"
+      ],
+      "group": "impact_colloquial",
+      "text": "落ちたときのクラッシュ解析やっといて",
+      "acceptable": [
+        "explicit_impact"
+      ],
+      "required": [
+        "explicit_impact"
+      ],
+      "multiple": false,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "high",
+      "reason": "落下とクラッシュ解析が衝撃解析を指す。",
+      "stability": false
+    },
+    {
+      "id": "059",
+      "primary": "colloquial",
+      "categories": [
+        "colloquial",
+        "clear"
+      ],
+      "group": "buckling_colloquial",
+      "text": "バックリング見て",
+      "acceptable": [
+        "buckling"
+      ],
+      "required": [
+        "buckling"
+      ],
+      "multiple": false,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "high",
+      "reason": "バックリングは座屈の俗称である。",
+      "stability": false
+    },
+    {
+      "id": "060",
+      "primary": "colloquial",
+      "categories": [
+        "colloquial",
+        "clear"
+      ],
+      "group": "static_colloquial",
+      "text": "静解析で応力出して",
+      "acceptable": [
+        "static_strength"
+      ],
+      "required": [
+        "static_strength"
+      ],
+      "multiple": false,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "high",
+      "reason": "静解析で応力を出すと指定されている。",
+      "stability": false
+    },
+    {
+      "id": "061",
+      "primary": "colloquial",
+      "categories": [
+        "colloquial",
+        "clear"
+      ],
+      "group": "frf_colloquial",
+      "text": "FRF取って",
+      "acceptable": [
+        "frequency_response"
+      ],
+      "required": [
+        "frequency_response"
+      ],
+      "multiple": false,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "medium",
+      "reason": "FRFは周波数応答の略称である。",
+      "stability": false
+    },
+    {
+      "id": "062",
+      "primary": "colloquial",
+      "categories": [
+        "colloquial",
+        "clear"
+      ],
+      "group": "eigen_colloquial",
+      "text": "固有値出して",
+      "acceptable": [
+        "eigenvalue"
+      ],
+      "required": [
+        "eigenvalue"
+      ],
+      "multiple": false,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "medium",
+      "reason": "固有値を出すは固有値解析を指す。",
+      "stability": false
+    },
+    {
+      "id": "063",
+      "primary": "colloquial",
+      "categories": [
+        "colloquial",
+        "clear"
+      ],
+      "group": "life_colloquial",
+      "text": "はんだの寿命のやつ計算して",
+      "acceptable": [
+        "solder_life_prediction"
+      ],
+      "required": [
+        "solder_life_prediction"
+      ],
+      "multiple": false,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "medium",
+      "reason": "はんだの寿命計算と指定されている。",
+      "stability": false
+    },
+    {
+      "id": "064",
+      "primary": "colloquial",
+      "categories": [
+        "colloquial",
+        "clear"
+      ],
+      "group": "cfd_colloquial",
+      "text": "流体で圧損見て",
+      "acceptable": [
+        "cfd_flow"
+      ],
+      "required": [
+        "cfd_flow"
+      ],
+      "multiple": false,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "medium",
+      "reason": "流体の圧損は流体解析の出力である。",
+      "stability": false
+    },
+    {
+      "id": "065",
+      "primary": "colloquial",
+      "categories": [
+        "colloquial",
+        "clear"
+      ],
+      "group": "thermal_colloquial",
+      "text": "熱応力やっといて",
+      "acceptable": [
+        "thermal_stress"
+      ],
+      "required": [
+        "thermal_stress"
+      ],
+      "multiple": false,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "medium",
+      "reason": "熱応力の計算を依頼している。",
+      "stability": false
+    },
+    {
+      "id": "066",
+      "primary": "colloquial",
+      "categories": [
+        "colloquial",
+        "clear"
+      ],
+      "group": "fatigue_colloquial",
+      "text": "疲労回して。S-Nで",
+      "acceptable": [
+        "fatigue_life"
+      ],
+      "required": [
+        "fatigue_life"
+      ],
+      "multiple": false,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "high",
+      "reason": "疲労をS-Nで回すは疲労寿命予測である。",
+      "stability": false
+    },
+    {
+      "id": "067",
+      "primary": "colloquial",
+      "categories": [
+        "colloquial",
+        "clear"
+      ],
+      "group": "fracture_colloquial",
+      "text": "き裂のK値出して",
+      "acceptable": [
+        "fracture_mechanics"
+      ],
+      "required": [
+        "fracture_mechanics"
+      ],
+      "multiple": false,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "high",
+      "reason": "K値は応力拡大係数の俗称である。",
+      "stability": false
+    },
+    {
+      "id": "068",
+      "primary": "colloquial",
+      "categories": [
+        "colloquial",
+        "clear"
+      ],
+      "group": "frf_colloquial",
+      "text": "正弦波スイープの応答お願い",
+      "acceptable": [
+        "frequency_response"
+      ],
+      "required": [
+        "frequency_response"
+      ],
+      "multiple": false,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "medium",
+      "reason": "正弦波スイープの応答は周波数応答解析である。",
+      "stability": false
+    },
+    {
+      "id": "069",
+      "primary": "colloquial",
+      "categories": [
+        "colloquial",
+        "clear"
+      ],
+      "group": "crack_colloquial",
+      "text": "ソルダのクラックグロース見たい",
+      "acceptable": [
+        "solder_crack_propagation"
+      ],
+      "required": [
+        "solder_crack_propagation"
+      ],
+      "multiple": false,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "medium",
+      "reason": "ソルダのクラックグロースははんだ亀裂進展の俗称である。",
+      "stability": false
+    },
+    {
+      "id": "070",
+      "primary": "colloquial",
+      "categories": [
+        "colloquial",
+        "clear"
+      ],
+      "group": "random_colloquial",
+      "text": "不規則振動で応答出して",
+      "acceptable": [
+        "random_vibration"
+      ],
+      "required": [
+        "random_vibration"
+      ],
+      "multiple": false,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "medium",
+      "reason": "不規則振動の応答を求めている。",
+      "stability": false
+    },
+    {
+      "id": "071",
+      "primary": "colloquial",
+      "categories": [
+        "colloquial",
+        "clear"
+      ],
+      "group": "impact_colloquial",
+      "text": "落としの衝撃を陽解法で見て",
+      "acceptable": [
+        "explicit_impact"
+      ],
+      "required": [
+        "explicit_impact"
+      ],
+      "multiple": false,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "high",
+      "reason": "落下衝撃を陽解法で見ると書かれている。",
+      "stability": false
+    },
+    {
+      "id": "072",
+      "primary": "colloquial",
+      "categories": [
+        "colloquial",
+        "clear"
+      ],
+      "group": "buckling_colloquial",
+      "text": "座屈荷重ちょうだい",
+      "acceptable": [
+        "buckling"
+      ],
+      "required": [
+        "buckling"
+      ],
+      "multiple": false,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "high",
+      "reason": "座屈荷重の算出を依頼している。",
+      "stability": false
+    },
+    {
+      "id": "073",
+      "primary": "colloquial",
+      "categories": [
+        "colloquial",
+        "clear"
+      ],
+      "group": "eigen_colloquial",
+      "text": "モード形状が見たいんだけど",
+      "acceptable": [
+        "eigenvalue"
+      ],
+      "required": [
+        "eigenvalue"
+      ],
+      "multiple": false,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "medium",
+      "reason": "モード形状は固有値解析の出力である。",
+      "stability": false
+    },
+    {
+      "id": "074",
+      "primary": "colloquial",
+      "categories": [
+        "colloquial",
+        "clear"
+      ],
+      "group": "cfd_colloquial",
+      "text": "冷却風の流れ場をCFDで見たい",
+      "acceptable": [
+        "cfd_flow"
+      ],
+      "required": [
+        "cfd_flow"
+      ],
+      "multiple": false,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "medium",
+      "reason": "冷却風の流れ場をCFDで見ると指定されている。",
+      "stability": false
+    },
+    {
+      "id": "075",
+      "primary": "multi",
+      "categories": [
+        "multi",
+        "clear"
+      ],
+      "group": "pair_vib",
+      "text": "固有値解析と周波数応答解析の両方をやりたい",
+      "acceptable": [
+        "eigenvalue",
+        "frequency_response"
+      ],
+      "required": [
+        "eigenvalue",
+        "frequency_response"
+      ],
+      "multiple": true,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "medium",
+      "reason": "二つの手法を両方やるよう明示されている。",
+      "stability": false
+    },
+    {
+      "id": "076",
+      "primary": "multi",
+      "categories": [
+        "multi",
+        "clear"
+      ],
+      "group": "pair_vib",
+      "text": "モードとFRFを続けて計算して",
+      "acceptable": [
+        "eigenvalue",
+        "frequency_response"
+      ],
+      "required": [
+        "eigenvalue",
+        "frequency_response"
+      ],
+      "multiple": true,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "medium",
+      "reason": "モードとFRFを続けて計算すると書かれている。",
+      "stability": false
+    },
+    {
+      "id": "077",
+      "primary": "multi",
+      "categories": [
+        "multi",
+        "clear"
+      ],
+      "group": "pair_strength",
+      "text": "静強度と疲労寿命の両方を評価したい",
+      "acceptable": [
+        "static_strength",
+        "fatigue_life"
+      ],
+      "required": [
+        "static_strength",
+        "fatigue_life"
+      ],
+      "multiple": true,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "high",
+      "reason": "静強度と疲労寿命の両方を評価すると明示されている。",
+      "stability": false
+    },
+    {
+      "id": "078",
+      "primary": "multi",
+      "categories": [
+        "multi",
+        "clear"
+      ],
+      "group": "pair_strength",
+      "text": "繰り返し前に、静的な応力とS-N寿命を両方出して",
+      "acceptable": [
+        "static_strength",
+        "fatigue_life"
+      ],
+      "required": [
+        "static_strength",
+        "fatigue_life"
+      ],
+      "multiple": true,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "high",
+      "reason": "静的応力とS-N寿命の両方を求めている。",
+      "stability": false
+    },
+    {
+      "id": "079",
+      "primary": "multi",
+      "categories": [
+        "multi",
+        "clear"
+      ],
+      "group": "pair_solder",
+      "text": "はんだの寿命予測と亀裂進展シミュレーションを両方やって",
+      "acceptable": [
+        "solder_crack_propagation",
+        "solder_life_prediction"
+      ],
+      "required": [
+        "solder_crack_propagation",
+        "solder_life_prediction"
+      ],
+      "multiple": true,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "medium",
+      "reason": "寿命予測と亀裂進展の両方を指定している。",
+      "stability": false
+    },
+    {
+      "id": "080",
+      "primary": "multi",
+      "categories": [
+        "multi",
+        "clear"
+      ],
+      "group": "pair_solder",
+      "text": "温度サイクルの寿命と、亀裂がどう伸びるかの両方をはんだで見たい",
+      "acceptable": [
+        "solder_crack_propagation",
+        "solder_life_prediction"
+      ],
+      "required": [
+        "solder_crack_propagation",
+        "solder_life_prediction"
+      ],
+      "multiple": true,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "medium",
+      "reason": "はんだについて寿命と亀裂の伸びの両方を見たいと書かれている。",
+      "stability": false
+    },
+    {
+      "id": "081",
+      "primary": "multi",
+      "categories": [
+        "multi",
+        "clear"
+      ],
+      "group": "triple_vib",
+      "text": "固有値、周波数応答、ランダム振動の3つを比較したい",
+      "acceptable": [
+        "eigenvalue",
+        "frequency_response",
+        "random_vibration"
+      ],
+      "required": [
+        "eigenvalue",
+        "frequency_response",
+        "random_vibration"
+      ],
+      "multiple": true,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "medium",
+      "reason": "三つの振動解析を比較すると明示されている。",
+      "stability": false
+    },
+    {
+      "id": "082",
+      "primary": "multi",
+      "categories": [
+        "multi",
+        "clear"
+      ],
+      "group": "pair_impact",
+      "text": "落下衝撃と静強度の両方を見たい",
+      "acceptable": [
+        "explicit_impact",
+        "static_strength"
+      ],
+      "required": [
+        "explicit_impact",
+        "static_strength"
+      ],
+      "multiple": true,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "high",
+      "reason": "落下衝撃と静強度の両方を指定している。",
+      "stability": false
+    },
+    {
+      "id": "083",
+      "primary": "multi",
+      "categories": [
+        "multi",
+        "clear"
+      ],
+      "group": "pair_thermal_buckling",
+      "text": "熱応力と座屈を両方計算したい",
+      "acceptable": [
+        "thermal_stress",
+        "buckling"
+      ],
+      "required": [
+        "thermal_stress",
+        "buckling"
+      ],
+      "multiple": true,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "medium",
+      "reason": "熱応力と座屈の両方を計算すると書かれている。",
+      "stability": false
+    },
+    {
+      "id": "084",
+      "primary": "multi",
+      "categories": [
+        "multi",
+        "clear"
+      ],
+      "group": "pair_cfd_thermal",
+      "text": "冷却の流体解析と、そのあと筐体の熱応力を両方やりたい",
+      "acceptable": [
+        "cfd_flow",
+        "thermal_stress"
+      ],
+      "required": [
+        "cfd_flow",
+        "thermal_stress"
+      ],
+      "multiple": true,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "medium",
+      "reason": "流体解析と熱応力を両方やるよう指定している。",
+      "stability": false
+    },
+    {
+      "id": "085",
+      "primary": "multi",
+      "categories": [
+        "multi",
+        "clear"
+      ],
+      "group": "pair_fatigue_fracture",
+      "text": "金属の疲労寿命と、既存き裂の破壊力学評価を両方やって",
+      "acceptable": [
+        "fatigue_life",
+        "fracture_mechanics"
+      ],
+      "required": [
+        "fatigue_life",
+        "fracture_mechanics"
+      ],
+      "multiple": true,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "high",
+      "reason": "疲労寿命と破壊力学を両方指定している。",
+      "stability": false
+    },
+    {
+      "id": "086",
+      "primary": "multi",
+      "categories": [
+        "multi",
+        "clear"
+      ],
+      "group": "pair_eigen_random",
+      "text": "共振周波数の確認と、PSDランダム振動応答を両方出して",
+      "acceptable": [
+        "eigenvalue",
+        "random_vibration"
+      ],
+      "required": [
+        "eigenvalue",
+        "random_vibration"
+      ],
+      "multiple": true,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "medium",
+      "reason": "共振周波数とPSD応答の両方を求めている。",
+      "stability": false
+    },
+    {
+      "id": "087",
+      "primary": "multi",
+      "categories": [
+        "multi",
+        "clear"
+      ],
+      "group": "pair_static_buckling",
+      "text": "静解析と線形座屈を両方やって",
+      "acceptable": [
+        "static_strength",
+        "buckling"
+      ],
+      "required": [
+        "static_strength",
+        "buckling"
+      ],
+      "multiple": true,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "high",
+      "reason": "静解析と座屈の両方を指定している。",
+      "stability": false
+    },
+    {
+      "id": "088",
+      "primary": "multi",
+      "categories": [
+        "multi",
+        "clear"
+      ],
+      "group": "pair_impact_static",
+      "text": "衝突の陽解法と、その後の静強度を両方見たい",
+      "acceptable": [
+        "explicit_impact",
+        "static_strength"
+      ],
+      "required": [
+        "explicit_impact",
+        "static_strength"
+      ],
+      "multiple": true,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "high",
+      "reason": "陽解法と静強度の両方を見ると書かれている。",
+      "stability": false
+    },
+    {
+      "id": "089",
+      "primary": "multi",
+      "categories": [
+        "multi",
+        "clear"
+      ],
+      "group": "pair_solder_thermal",
+      "text": "はんだ熱疲労寿命と、基板の熱変形を両方計算したい",
+      "acceptable": [
+        "solder_life_prediction",
+        "thermal_stress"
+      ],
+      "required": [
+        "solder_life_prediction",
+        "thermal_stress"
+      ],
+      "multiple": true,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "medium",
+      "reason": "はんだの熱疲労寿命と熱変形の両方を指定している。",
+      "stability": false
+    },
+    {
+      "id": "090",
+      "primary": "insufficient",
+      "categories": [
+        "insufficient"
+      ],
+      "group": "too_little",
+      "text": "解析お願い",
+      "acceptable": [],
+      "required": [],
+      "multiple": false,
+      "clarify": true,
+      "applicable": "unknown",
+      "needed": [
+        "対象",
+        "知りたいこと"
+      ],
+      "severity": "low",
+      "reason": "解析という言葉だけで内容が無い。",
+      "stability": false
+    },
+    {
+      "id": "091",
+      "primary": "insufficient",
+      "categories": [
+        "insufficient"
+      ],
+      "group": "too_little",
+      "text": "これ計算して",
+      "acceptable": [],
+      "required": [],
+      "multiple": false,
+      "clarify": true,
+      "applicable": "unknown",
+      "needed": [
+        "これの対象",
+        "計算の目的"
+      ],
+      "severity": "low",
+      "reason": "指示代名詞だけで解析が特定できない。",
+      "stability": false
+    },
+    {
+      "id": "092",
+      "primary": "insufficient",
+      "categories": [
+        "insufficient",
+        "colloquial"
+      ],
+      "group": "too_little",
+      "text": "いい感じに見て",
+      "acceptable": [],
+      "required": [],
+      "multiple": false,
+      "clarify": true,
+      "applicable": "unknown",
+      "needed": [
+        "見たい現象"
+      ],
+      "severity": "low",
+      "reason": "いい感じには評価目的が無い。",
+      "stability": false
+    },
+    {
+      "id": "093",
+      "primary": "insufficient",
+      "categories": [
+        "insufficient",
+        "colloquial"
+      ],
+      "group": "too_little",
+      "text": "テストしといて",
+      "acceptable": [],
+      "required": [],
+      "multiple": false,
+      "clarify": true,
+      "applicable": "unknown",
+      "needed": [
+        "どの試験か"
+      ],
+      "severity": "low",
+      "reason": "テストの種類が書かれていない。",
+      "stability": false
+    },
+    {
+      "id": "094",
+      "primary": "insufficient",
+      "categories": [
+        "insufficient",
+        "ambiguous"
+      ],
+      "group": "stress_usual",
+      "text": "いつもの条件で応力を見て",
+      "acceptable": [
+        "static_strength",
+        "thermal_stress",
+        "fatigue_life"
+      ],
+      "required": [],
+      "multiple": true,
+      "clarify": true,
+      "applicable": "yes",
+      "needed": [
+        "いつもの条件の中身",
+        "静荷重か熱か繰り返し化"
+      ],
+      "severity": "medium",
+      "reason": "応力は候補を絞るが、いつもの条件が会話に無いので一つに決められない。",
+      "stability": false
+    },
+    {
+      "id": "095",
+      "primary": "insufficient",
+      "categories": [
+        "insufficient"
+      ],
+      "group": "too_little",
+      "text": "なんかシミュレーションして",
+      "acceptable": [],
+      "required": [],
+      "multiple": false,
+      "clarify": true,
+      "applicable": "unknown",
+      "needed": [
+        "現象",
+        "知りたい量"
+      ],
+      "severity": "low",
+      "reason": "なんか、では現象が指定されていない。",
+      "stability": false
+    },
+    {
+      "id": "096",
+      "primary": "insufficient",
+      "categories": [
+        "insufficient"
+      ],
+      "group": "too_little",
+      "text": "部品について調べて",
+      "acceptable": [],
+      "required": [],
+      "multiple": false,
+      "clarify": true,
+      "applicable": "unknown",
+      "needed": [
+        "調べる現象"
+      ],
+      "severity": "low",
+      "reason": "調査の目的が解析手法に落ちていない。",
+      "stability": false
+    },
+    {
+      "id": "097",
+      "primary": "insufficient",
+      "categories": [
+        "insufficient",
+        "ambiguous"
+      ],
+      "group": "break_thin",
+      "text": "問題ないか見て",
+      "acceptable": [
+        "static_strength",
+        "fatigue_life",
+        "fracture_mechanics"
+      ],
+      "required": [
+        "static_strength",
+        "fatigue_life",
+        "fracture_mechanics"
+      ],
+      "multiple": true,
+      "clarify": true,
+      "applicable": "yes",
+      "needed": [
+        "静荷重か疲労かき裂か",
+        "荷重条件"
+      ],
+      "severity": "high",
+      "reason": "問題ないかは壊れないかに近いが、条件が無い。",
+      "stability": false
+    },
+    {
+      "id": "098",
+      "primary": "insufficient",
+      "categories": [
+        "insufficient"
+      ],
+      "group": "too_little",
+      "text": "計算できる？",
+      "acceptable": [],
+      "required": [],
+      "multiple": false,
+      "clarify": true,
+      "applicable": "unknown",
+      "needed": [
+        "何を計算するか"
+      ],
+      "severity": "low",
+      "reason": "計算の可否を聞いており、実行する解析が無い。",
+      "stability": false
+    },
+    {
+      "id": "099",
+      "primary": "insufficient",
+      "categories": [
+        "insufficient"
+      ],
+      "group": "too_little",
+      "text": "データを渡すので解析して",
+      "acceptable": [],
+      "required": [],
+      "multiple": false,
+      "clarify": true,
+      "applicable": "unknown",
+      "needed": [
+        "データの種類",
+        "知りたいこと"
+      ],
+      "severity": "low",
+      "reason": "データを渡すとあるだけで、解析目的が無い。",
+      "stability": false
+    },
+    {
+      "id": "100",
+      "primary": "insufficient",
+      "categories": [
+        "insufficient"
+      ],
+      "group": "vague",
+      "text": "前回のモデルで回して",
+      "acceptable": [],
+      "required": [],
+      "multiple": false,
+      "clarify": true,
+      "applicable": "unknown",
+      "needed": [
+        "前回のモデルで何を見たか"
+      ],
+      "severity": "medium",
+      "reason": "前回のモデルの解析種別が入力に無い。",
+      "stability": false
+    },
+    {
+      "id": "101",
+      "primary": "insufficient",
+      "categories": [
+        "insufficient",
+        "colloquial"
+      ],
+      "group": "vague",
+      "text": "標準のやつで",
+      "acceptable": [],
+      "required": [],
+      "multiple": false,
+      "clarify": true,
+      "applicable": "unknown",
+      "needed": [
+        "標準がどの解析か"
+      ],
+      "severity": "medium",
+      "reason": "標準の解析が定義されていない。",
+      "stability": false
+    },
+    {
+      "id": "102",
+      "primary": "insufficient",
+      "categories": [
+        "insufficient"
+      ],
+      "group": "too_little",
+      "text": "とりあえずCAEして",
+      "acceptable": [],
+      "required": [],
+      "multiple": false,
+      "clarify": true,
+      "applicable": "unknown",
+      "needed": [
+        "CAEで見る現象"
+      ],
+      "severity": "low",
+      "reason": "CAEとだけあり、現象が無い。",
+      "stability": false
+    },
+    {
+      "id": "103",
+      "primary": "insufficient",
+      "categories": [
+        "insufficient"
+      ],
+      "group": "too_little",
+      "text": "このCADで何かやって",
+      "acceptable": [],
+      "required": [],
+      "multiple": false,
+      "clarify": true,
+      "applicable": "unknown",
+      "needed": [
+        "何を評価するか"
+      ],
+      "severity": "low",
+      "reason": "CADがあるだけで評価目的が無い。",
+      "stability": false
+    },
+    {
+      "id": "104",
+      "primary": "insufficient",
+      "categories": [
+        "insufficient"
+      ],
+      "group": "too_little",
+      "text": "結果を出して",
+      "acceptable": [],
+      "required": [],
+      "multiple": false,
+      "clarify": true,
+      "applicable": "unknown",
+      "needed": [
+        "どの結果か"
+      ],
+      "severity": "low",
+      "reason": "結果の種類が書かれていない。",
+      "stability": false
+    },
+    {
+      "id": "105",
+      "primary": "out_of_scope",
+      "categories": [
+        "out_of_scope"
+      ],
+      "group": "electronics",
+      "text": "基板の配線をSPICEで過渡解析したい",
+      "acceptable": [],
+      "required": [],
+      "multiple": false,
+      "clarify": true,
+      "applicable": "no",
+      "needed": [],
+      "severity": "low",
+      "reason": "回路の過渡解析は登録ツールに無い。",
+      "stability": false
+    },
+    {
+      "id": "106",
+      "primary": "out_of_scope",
+      "categories": [
+        "out_of_scope"
+      ],
+      "group": "process",
+      "text": "金型の中の樹脂流動を見たい",
+      "acceptable": [],
+      "required": [],
+      "multiple": false,
+      "clarify": true,
+      "applicable": "no",
+      "needed": [],
+      "severity": "low",
+      "reason": "樹脂流動のツールは登録されていない。",
+      "stability": false
+    },
+    {
+      "id": "107",
+      "primary": "out_of_scope",
+      "categories": [
+        "out_of_scope"
+      ],
+      "group": "electromagnetic",
+      "text": "磁石の周りの磁場を解析したい",
+      "acceptable": [],
+      "required": [],
+      "multiple": false,
+      "clarify": true,
+      "applicable": "no",
+      "needed": [],
+      "severity": "low",
+      "reason": "磁場解析は登録されていない。",
+      "stability": false
+    },
+    {
+      "id": "108",
+      "primary": "out_of_scope",
+      "categories": [
+        "out_of_scope"
+      ],
+      "group": "admin",
+      "text": "来週の解析スケジュールを作って",
+      "acceptable": [],
+      "required": [],
+      "multiple": false,
+      "clarify": true,
+      "applicable": "no",
+      "needed": [],
+      "severity": "low",
+      "reason": "日程作成であり、解析ツールの実行ではない。",
+      "stability": false
+    },
+    {
+      "id": "109",
+      "primary": "out_of_scope",
+      "categories": [
+        "out_of_scope",
+        "keyword_trap"
+      ],
+      "group": "definition",
+      "text": "固有値という言葉の意味を教えて",
+      "acceptable": [],
+      "required": [],
+      "multiple": false,
+      "clarify": true,
+      "applicable": "no",
+      "needed": [],
+      "severity": "low",
+      "reason": "用語の説明依頼で、固有値解析の実行ではない。",
+      "stability": false
+    },
+    {
+      "id": "110",
+      "primary": "out_of_scope",
+      "categories": [
+        "out_of_scope",
+        "keyword_trap"
+      ],
+      "group": "literature",
+      "text": "疲労破壊の参考文献を探して",
+      "acceptable": [],
+      "required": [],
+      "multiple": false,
+      "clarify": true,
+      "applicable": "no",
+      "needed": [],
+      "severity": "low",
+      "reason": "文献調査であり、疲労寿命予測の実行ではない。",
+      "stability": false
+    },
+    {
+      "id": "111",
+      "primary": "out_of_scope",
+      "categories": [
+        "out_of_scope",
+        "keyword_trap"
+      ],
+      "group": "chemistry",
+      "text": "はんだの成分を化学分析したい",
+      "acceptable": [],
+      "required": [],
+      "multiple": false,
+      "clarify": true,
+      "applicable": "no",
+      "needed": [],
+      "severity": "low",
+      "reason": "化学分析であり、はんだの力学シミュレーションではない。",
+      "stability": false
+    },
+    {
+      "id": "112",
+      "primary": "out_of_scope",
+      "categories": [
+        "out_of_scope"
+      ],
+      "group": "acoustic",
+      "text": "騒音のデシベルを実験で測定したい",
+      "acceptable": [],
+      "required": [],
+      "multiple": false,
+      "clarify": true,
+      "applicable": "no",
+      "needed": [],
+      "severity": "low",
+      "reason": "騒音測定のツールは登録されていない。",
+      "stability": false
+    },
+    {
+      "id": "113",
+      "primary": "out_of_scope",
+      "categories": [
+        "out_of_scope"
+      ],
+      "group": "gibberish",
+      "text": "あああ",
+      "acceptable": [],
+      "required": [],
+      "multiple": false,
+      "clarify": true,
+      "applicable": "no",
+      "needed": [],
+      "severity": "low",
+      "reason": "意味を特定できない。",
+      "stability": false
+    },
+    {
+      "id": "114",
+      "primary": "out_of_scope",
+      "categories": [
+        "out_of_scope"
+      ],
+      "group": "admin",
+      "text": "今日の天気を教えて",
+      "acceptable": [],
+      "required": [],
+      "multiple": false,
+      "clarify": true,
+      "applicable": "no",
+      "needed": [],
+      "severity": "low",
+      "reason": "天気の質問で、解析依頼ではない。",
+      "stability": false
+    },
+    {
+      "id": "115",
+      "primary": "out_of_scope",
+      "categories": [
+        "out_of_scope"
+      ],
+      "group": "electromagnetic",
+      "text": "電磁界シミュレーションでアンテナを見たい",
+      "acceptable": [],
+      "required": [],
+      "multiple": false,
+      "clarify": true,
+      "applicable": "no",
+      "needed": [],
+      "severity": "low",
+      "reason": "電磁界シミュレーションは登録されていない。",
+      "stability": false
+    },
+    {
+      "id": "116",
+      "primary": "out_of_scope",
+      "categories": [
+        "out_of_scope"
+      ],
+      "group": "electronics",
+      "text": "回路のインピーダンスを計算したい",
+      "acceptable": [],
+      "required": [],
+      "multiple": false,
+      "clarify": true,
+      "applicable": "no",
+      "needed": [],
+      "severity": "low",
+      "reason": "回路計算は登録されていない。",
+      "stability": false
+    },
+    {
+      "id": "117",
+      "primary": "out_of_scope",
+      "categories": [
+        "out_of_scope"
+      ],
+      "group": "material_test",
+      "text": "金相組織を観察したい",
+      "acceptable": [],
+      "required": [],
+      "multiple": false,
+      "clarify": true,
+      "applicable": "no",
+      "needed": [],
+      "severity": "low",
+      "reason": "組織観察は登録された解析ツールではない。",
+      "stability": false
+    },
+    {
+      "id": "118",
+      "primary": "out_of_scope",
+      "categories": [
+        "out_of_scope",
+        "keyword_trap"
+      ],
+      "group": "procedure",
+      "text": "実験モーダルのハンマリング試験の手順を書いて",
+      "acceptable": [],
+      "required": [],
+      "multiple": false,
+      "clarify": true,
+      "applicable": "no",
+      "needed": [],
+      "severity": "low",
+      "reason": "実験手順の作成であり、固有値解析の実行ではない。",
+      "stability": false
+    },
+    {
+      "id": "119",
+      "primary": "out_of_scope",
+      "categories": [
+        "out_of_scope"
+      ],
+      "group": "process",
+      "text": "樹脂の射出成形を解析したい",
+      "acceptable": [],
+      "required": [],
+      "multiple": false,
+      "clarify": true,
+      "applicable": "no",
+      "needed": [],
+      "severity": "low",
+      "reason": "射出成形解析は登録されていない。",
+      "stability": false
+    },
+    {
+      "id": "120",
+      "primary": "out_of_scope",
+      "categories": [
+        "out_of_scope"
+      ],
+      "group": "admin",
+      "text": "プロジェクトの工数を見積もって",
+      "acceptable": [],
+      "required": [],
+      "multiple": false,
+      "clarify": true,
+      "applicable": "no",
+      "needed": [],
+      "severity": "low",
+      "reason": "工数見積であり、解析ではない。",
+      "stability": false
+    },
+    {
+      "id": "121",
+      "primary": "out_of_scope",
+      "categories": [
+        "out_of_scope",
+        "keyword_trap"
+      ],
+      "group": "procedure",
+      "text": "はんだ付けの作業手順書を作って",
+      "acceptable": [],
+      "required": [],
+      "multiple": false,
+      "clarify": true,
+      "applicable": "no",
+      "needed": [],
+      "severity": "low",
+      "reason": "作業手順書の作成であり、はんだのシミュレーションではない。",
+      "stability": false
+    },
+    {
+      "id": "122",
+      "primary": "out_of_scope",
+      "categories": [
+        "out_of_scope",
+        "keyword_trap"
+      ],
+      "group": "admin",
+      "text": "振動試験機の予約を取って",
+      "acceptable": [],
+      "required": [],
+      "multiple": false,
+      "clarify": true,
+      "applicable": "no",
+      "needed": [],
+      "severity": "low",
+      "reason": "試験機の予約であり、振動解析の実行ではない。",
+      "stability": false
+    },
+    {
+      "id": "123",
+      "primary": "out_of_scope",
+      "categories": [
+        "out_of_scope"
+      ],
+      "group": "admin",
+      "text": "スペクトルアナライザの使い方を教えて",
+      "acceptable": [],
+      "required": [],
+      "multiple": false,
+      "clarify": true,
+      "applicable": "no",
+      "needed": [],
+      "severity": "low",
+      "reason": "計測器の使い方の質問である。",
+      "stability": false
+    },
+    {
+      "id": "124",
+      "primary": "out_of_scope",
+      "categories": [
+        "out_of_scope",
+        "keyword_trap"
+      ],
+      "group": "admin",
+      "text": "CFDソフトのライセンス更新日を教えて",
+      "acceptable": [],
+      "required": [],
+      "multiple": false,
+      "clarify": true,
+      "applicable": "no",
+      "needed": [],
+      "severity": "low",
+      "reason": "ライセンス期限の質問であり、流体解析の実行ではない。",
+      "stability": false
+    },
+    {
+      "id": "125",
+      "primary": "implicit",
+      "categories": [
+        "implicit",
+        "ambiguous"
+      ],
+      "group": "vib_ok",
+      "text": "このブラケット、振動で大丈夫か見たい",
+      "acceptable": [
+        "eigenvalue",
+        "frequency_response",
+        "random_vibration",
+        "fatigue_life"
+      ],
+      "required": [
+        "eigenvalue",
+        "frequency_response",
+        "random_vibration",
+        "fatigue_life"
+      ],
+      "multiple": true,
+      "clarify": true,
+      "applicable": "yes",
+      "needed": [
+        "共振か、応答か、ランダム入力か、疲労か"
+      ],
+      "severity": "high",
+      "reason": "大丈夫かは耐久を連想させるが、振動の見方が書かれていない。",
+      "stability": true
+    },
+    {
+      "id": "126",
+      "primary": "implicit",
+      "categories": [
+        "implicit",
+        "ambiguous"
+      ],
+      "group": "solder_summer",
+      "text": "夏場の車内ではんだがもたないので見たい",
+      "acceptable": [
+        "solder_crack_propagation",
+        "solder_life_prediction"
+      ],
+      "required": [
+        "solder_crack_propagation",
+        "solder_life_prediction"
+      ],
+      "multiple": true,
+      "clarify": true,
+      "applicable": "yes",
+      "needed": [
+        "寿命回数か、亀裂進展か"
+      ],
+      "severity": "medium",
+      "reason": "もたないからは寿命を補完しやすいが、進展を見る可能性も残る。",
+      "stability": true
+    },
+    {
+      "id": "127",
+      "primary": "implicit",
+      "categories": [
+        "implicit",
+        "ambiguous"
+      ],
+      "group": "drop_or_hold",
+      "text": "持ってて落ちないか見たい",
+      "acceptable": [
+        "static_strength",
+        "explicit_impact"
+      ],
+      "required": [
+        "static_strength",
+        "explicit_impact"
+      ],
+      "multiple": true,
+      "clarify": true,
+      "applicable": "yes",
+      "needed": [
+        "保持の静強度か、落下衝撃か"
+      ],
+      "severity": "high",
+      "reason": "落ちないかを落下試験と決めつけられない。保持強度の可能性もある。",
+      "stability": false
+    },
+    {
+      "id": "128",
+      "primary": "implicit",
+      "categories": [
+        "implicit",
+        "ambiguous"
+      ],
+      "group": "driving",
+      "text": "走行中にこの部品が壊れないか見たい",
+      "acceptable": [
+        "static_strength",
+        "fatigue_life",
+        "random_vibration"
+      ],
+      "required": [
+        "static_strength",
+        "fatigue_life",
+        "random_vibration"
+      ],
+      "multiple": true,
+      "clarify": true,
+      "applicable": "yes",
+      "needed": [
+        "静荷重か、繰り返し疲労か、路面のランダム振動か"
+      ],
+      "severity": "high",
+      "reason": "走行中の壊れは負荷の種類を補完しないと一つにならない。",
+      "stability": false
+    },
+    {
+      "id": "129",
+      "primary": "implicit",
+      "categories": [
+        "implicit",
+        "insufficient"
+      ],
+      "group": "heat_worry",
+      "text": "熱がかかるから心配なので見たい",
+      "acceptable": [
+        "thermal_stress"
+      ],
+      "required": [
+        "thermal_stress"
+      ],
+      "multiple": false,
+      "clarify": true,
+      "applicable": "yes",
+      "needed": [
+        "心配なのは変形か、破損か",
+        "温度条件"
+      ],
+      "severity": "medium",
+      "reason": "熱がかかるだけでは熱応力が候補だが、条件と破損モードが足りない。",
+      "stability": false
+    },
+    {
+      "id": "130",
+      "primary": "implicit",
+      "categories": [
+        "implicit",
+        "ambiguous"
+      ],
+      "group": "resonance_anxiety",
+      "text": "共振してそうで不安なので解析したい",
+      "acceptable": [
+        "eigenvalue",
+        "frequency_response"
+      ],
+      "required": [
+        "eigenvalue",
+        "frequency_response"
+      ],
+      "multiple": true,
+      "clarify": true,
+      "applicable": "yes",
+      "needed": [
+        "固有振動数の確認か、応答振幅か"
+      ],
+      "severity": "medium",
+      "reason": "不安から疲労を補完しやすいが、書かれているのは共振である。",
+      "stability": false
+    },
+    {
+      "id": "131",
+      "primary": "implicit",
+      "categories": [
+        "implicit",
+        "ambiguous"
+      ],
+      "group": "crush",
+      "text": "この薄板、押し込むと潰れそうなので計算したい",
+      "acceptable": [
+        "buckling",
+        "static_strength"
+      ],
+      "required": [
+        "buckling",
+        "static_strength"
+      ],
+      "multiple": true,
+      "clarify": true,
+      "applicable": "yes",
+      "needed": [
+        "座屈か、静的な降伏か"
+      ],
+      "severity": "high",
+      "reason": "潰れそうを座屈とだけ決められない。",
+      "stability": false
+    },
+    {
+      "id": "132",
+      "primary": "implicit",
+      "categories": [
+        "implicit",
+        "ambiguous"
+      ],
+      "group": "hold_load",
+      "text": "長いあいだ力をかけっぱなしの部品を評価したい",
+      "acceptable": [
+        "static_strength",
+        "fatigue_life"
+      ],
+      "required": [
+        "static_strength",
+        "fatigue_life"
+      ],
+      "multiple": true,
+      "clarify": true,
+      "applicable": "yes",
+      "needed": [
+        "持続荷重の応力か、繰り返しと誤解していないか",
+        "クリープはカタログに無い"
+      ],
+      "severity": "medium",
+      "reason": "かけっぱなしは静荷重に見えるが、クリープ用ツールは無く、疲労と混同しやすい。",
+      "stability": false
+    },
+    {
+      "id": "133",
+      "primary": "implicit",
+      "categories": [
+        "implicit",
+        "ambiguous"
+      ],
+      "group": "noise",
+      "text": "音がうるさい。振動のせいだと思うので解析したい",
+      "acceptable": [
+        "eigenvalue",
+        "frequency_response",
+        "random_vibration"
+      ],
+      "required": [
+        "eigenvalue",
+        "frequency_response",
+        "random_vibration"
+      ],
+      "multiple": true,
+      "clarify": true,
+      "applicable": "yes",
+      "needed": [
+        "音響解析はカタログに無い",
+        "振動のどの手法か"
+      ],
+      "severity": "medium",
+      "reason": "騒音そのもののツールは無く、振動が原因という発言からは振動の三手法が候補になる。",
+      "stability": false
+    },
+    {
+      "id": "134",
+      "primary": "implicit",
+      "categories": [
+        "implicit",
+        "ambiguous"
+      ],
+      "group": "solder_enough",
+      "text": "はんだを見れば十分でしょ、割れの話だから解析して",
+      "acceptable": [
+        "solder_crack_propagation",
+        "solder_life_prediction"
+      ],
+      "required": [
+        "solder_crack_propagation"
+      ],
+      "multiple": true,
+      "clarify": true,
+      "applicable": "yes",
+      "needed": [
+        "進展経路でよいか、寿命も要るか"
+      ],
+      "severity": "medium",
+      "reason": "割れは進展を指しやすいが、寿命を見ないでよいかは確認した方がよい。",
+      "stability": false
+    },
+    {
+      "id": "135",
+      "primary": "colloquial",
+      "categories": [
+        "colloquial",
+        "clear"
+      ],
+      "group": "impact_again",
+      "text": "いつも落下で見てるけど今回もそれで",
+      "acceptable": [
+        "explicit_impact"
+      ],
+      "required": [
+        "explicit_impact"
+      ],
+      "multiple": false,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "high",
+      "reason": "今回も落下で見ると入力に書かれている。",
+      "stability": false
+    },
+    {
+      "id": "136",
+      "primary": "ambiguous",
+      "categories": [
+        "ambiguous"
+      ],
+      "group": "maybe_static",
+      "text": "たぶん静解析でいいと思うんだけど",
+      "acceptable": [
+        "static_strength"
+      ],
+      "required": [
+        "static_strength"
+      ],
+      "multiple": false,
+      "clarify": true,
+      "applicable": "yes",
+      "needed": [
+        "静解析でよいかの確認"
+      ],
+      "severity": "medium",
+      "reason": "ユーザー自身がたぶんと留保しているので、静解析を候補にしつつ確認する。",
+      "stability": false
+    },
+    {
+      "id": "137",
+      "primary": "implicit",
+      "categories": [
+        "implicit",
+        "ambiguous"
+      ],
+      "group": "vib_durability",
+      "text": "振動耐久を一気にやって",
+      "acceptable": [
+        "random_vibration",
+        "fatigue_life"
+      ],
+      "required": [
+        "random_vibration",
+        "fatigue_life"
+      ],
+      "multiple": true,
+      "clarify": true,
+      "applicable": "yes",
+      "needed": [
+        "ランダム応答か、疲労寿命か、両方の結果のどれが必要か"
+      ],
+      "severity": "high",
+      "reason": "振動耐久はランダム振動と疲労のどちらも含み得る。",
+      "stability": false
+    },
+    {
+      "id": "138",
+      "primary": "clear",
+      "categories": [
+        "clear"
+      ],
+      "group": "solder_because",
+      "text": "温度サイクルだからはんだ寿命で",
+      "acceptable": [
+        "solder_life_prediction"
+      ],
+      "required": [
+        "solder_life_prediction"
+      ],
+      "multiple": false,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "medium",
+      "reason": "はんだ寿命で見るとユーザーが指定している。",
+      "stability": false
+    },
+    {
+      "id": "139",
+      "primary": "implicit",
+      "categories": [
+        "implicit",
+        "ambiguous"
+      ],
+      "group": "how_break",
+      "text": "壊れ方まで見たい",
+      "acceptable": [
+        "static_strength",
+        "fatigue_life",
+        "fracture_mechanics"
+      ],
+      "required": [
+        "static_strength",
+        "fatigue_life",
+        "fracture_mechanics"
+      ],
+      "multiple": true,
+      "clarify": true,
+      "applicable": "yes",
+      "needed": [
+        "応力か、寿命か、き裂の力学量か"
+      ],
+      "severity": "high",
+      "reason": "壊れ方は三つの強度系ツールに開いており、衝撃とは書かれていない。",
+      "stability": false
+    },
+    {
+      "id": "140",
+      "primary": "implicit",
+      "categories": [
+        "implicit",
+        "ambiguous"
+      ],
+      "group": "field_crack",
+      "text": "この基板、現場だとすぐ割れるらしいので評価したい",
+      "acceptable": [
+        "solder_crack_propagation",
+        "fracture_mechanics"
+      ],
+      "required": [
+        "solder_crack_propagation",
+        "fracture_mechanics"
+      ],
+      "multiple": true,
+      "clarify": true,
+      "applicable": "yes",
+      "needed": [
+        "はんだが割れるのか、基板母材が割れるのか"
+      ],
+      "severity": "high",
+      "reason": "割れる場所がはんだか母材か書かれていない。",
+      "stability": false
+    },
+    {
+      "id": "141",
+      "primary": "implicit",
+      "categories": [
+        "implicit",
+        "ambiguous"
+      ],
+      "group": "thermal_cycle_solder",
+      "text": "冷熱を繰り返すとはんだが持たない気がするので見たい",
+      "acceptable": [
+        "solder_crack_propagation",
+        "solder_life_prediction"
+      ],
+      "required": [
+        "solder_crack_propagation",
+        "solder_life_prediction"
+      ],
+      "multiple": true,
+      "clarify": true,
+      "applicable": "yes",
+      "needed": [
+        "寿命回数か、亀裂進展か"
+      ],
+      "severity": "medium",
+      "reason": "持たないから寿命と決めやすいが、亀裂の進み方も候補に残る。",
+      "stability": false
+    },
+    {
+      "id": "142",
+      "primary": "clear",
+      "categories": [
+        "clear"
+      ],
+      "group": "eigen_assert",
+      "text": "固有値だけ見れば共振は分かるでしょ",
+      "acceptable": [
+        "eigenvalue"
+      ],
+      "required": [
+        "eigenvalue"
+      ],
+      "multiple": false,
+      "clarify": false,
+      "applicable": "yes",
+      "needed": [],
+      "severity": "medium",
+      "reason": "ユーザーが固有値だけを指定している。周波数応答を追加する必要はない。",
+      "stability": false
+    },
+    {
+      "id": "143",
+      "primary": "implicit",
+      "categories": [
+        "implicit",
+        "ambiguous"
+      ],
+      "group": "random_place",
+      "text": "ランダムに揺れそうな場所で使うので解析したい",
+      "acceptable": [
+        "random_vibration",
+        "fatigue_life"
+      ],
+      "required": [
+        "random_vibration"
+      ],
+      "multiple": true,
+      "clarify": true,
+      "applicable": "yes",
+      "needed": [
+        "PSD応答が欲しいのか、その先の寿命も欲しいのか"
+      ],
+      "severity": "medium",
+      "reason": "ランダムに揺れるはランダム振動を含むが、寿命まで必要かは書かれていない。",
+      "stability": false
+    },
+    {
+      "id": "144",
+      "primary": "implicit",
+      "categories": [
+        "implicit",
+        "ambiguous"
+      ],
+      "group": "crash_safety",
+      "text": "衝突安全の確認をしたい",
+      "acceptable": [
+        "explicit_impact",
+        "static_strength"
+      ],
+      "required": [
+        "explicit_impact",
+        "static_strength"
+      ],
+      "multiple": true,
+      "clarify": true,
+      "applicable": "yes",
+      "needed": [
+        "衝撃応答か、静的な強度も見るか"
+      ],
+      "severity": "high",
+      "reason": "衝突安全は衝撃だけとは限らず、静強度を含むことがある。入力は分けていない。",
+      "stability": false
+    },
+    {
+      "id": "145",
+      "primary": "keyword_trap",
+      "categories": [
+        "keyword_trap",
+        "out_of_scope"
+      ],
+      "group": "doc",
+      "text": "ランダムに選んだ振動の話題で報告書の目次を作りたい",
+      "acceptable": [],
+      "required": [],
+      "multiple": false,
+      "clarify": true,
+      "applicable": "no",
+      "needed": [],
+      "severity": "low",
+      "reason": "報告書の目次作成であり、ランダム振動解析ではない。",
+      "stability": true
+    },
+    {
+      "id": "146",
+      "primary": "keyword_trap",
+      "categories": [
+        "keyword_trap",
+        "out_of_scope"
+      ],
+      "group": "schedule",
+      "text": "寿命の短い開発日程を引き直したい",
+      "acceptable": [],
+      "required": [],
+      "multiple": false,
+      "clarify": true,
+      "applicable": "no",
+      "needed": [],
+      "severity": "low",
+      "reason": "開発日程の話で、寿命解析ではない。",
+      "stability": false
+    },
+    {
+      "id": "147",
+      "primary": "keyword_trap",
+      "categories": [
+        "keyword_trap",
+        "out_of_scope"
+      ],
+      "group": "files",
+      "text": "はんだ亀裂の写真をフォルダに整理したい",
+      "acceptable": [],
+      "required": [],
+      "multiple": false,
+      "clarify": true,
+      "applicable": "no",
+      "needed": [],
+      "severity": "low",
+      "reason": "写真整理であり、亀裂進展シミュレーションではない。",
+      "stability": false
+    },
+    {
+      "id": "148",
+      "primary": "keyword_trap",
+      "categories": [
+        "keyword_trap",
+        "out_of_scope"
+      ],
+      "group": "meeting",
+      "text": "周波数の高い打ち合わせを設定したい",
+      "acceptable": [],
+      "required": [],
+      "multiple": false,
+      "clarify": true,
+      "applicable": "no",
+      "needed": [],
+      "severity": "low",
+      "reason": "打ち合わせ設定であり、周波数応答ではない。",
+      "stability": false
+    },
+    {
+      "id": "149",
+      "primary": "keyword_trap",
+      "categories": [
+        "keyword_trap",
+        "out_of_scope"
+      ],
+      "group": "mail",
+      "text": "応力という単語を含む過去メールを探したい",
+      "acceptable": [],
+      "required": [],
+      "multiple": false,
+      "clarify": true,
+      "applicable": "no",
+      "needed": [],
+      "severity": "low",
+      "reason": "メール検索であり、応力解析ではない。",
+      "stability": false
+    },
+    {
+      "id": "150",
+      "primary": "keyword_trap",
+      "categories": [
+        "keyword_trap",
+        "out_of_scope"
+      ],
+      "group": "meeting",
+      "text": "衝突しそうな会議の時間を調整したい",
+      "acceptable": [],
+      "required": [],
+      "multiple": false,
+      "clarify": true,
+      "applicable": "no",
+      "needed": [],
+      "severity": "low",
+      "reason": "会議調整であり、衝突解析ではない。",
+      "stability": false
+    }
+  ]
+}

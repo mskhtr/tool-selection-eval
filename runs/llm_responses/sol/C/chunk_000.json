@@ -1,0 +1,531 @@
+{
+  "model_id": "gpt-5.6-sol-medium",
+  "method": "C",
+  "responses": [
+    {
+      "case_id": "001",
+      "body": {
+        "missing_information": true,
+        "missing_items": ["解析目的（亀裂進展、寿命、熱応力など）"],
+        "scores": [
+          {"tool_id": "solder_crack_propagation", "score": 45, "reason": "はんだ対象だが亀裂進展の指定がない"},
+          {"tool_id": "solder_life_prediction", "score": 45, "reason": "はんだ対象だが寿命回数の指定がない"},
+          {"tool_id": "eigenvalue", "score": 2, "reason": "固有振動数の目的がない"},
+          {"tool_id": "frequency_response", "score": 2, "reason": "加振応答の目的がない"},
+          {"tool_id": "random_vibration", "score": 2, "reason": "PSD入力の指定がない"},
+          {"tool_id": "static_strength", "score": 8, "reason": "静的強度評価の指定がない"},
+          {"tool_id": "fatigue_life", "score": 8, "reason": "金属部材の疲労寿命とは書かれていない"},
+          {"tool_id": "fracture_mechanics", "score": 5, "reason": "金属母材の既存き裂評価ではない"},
+          {"tool_id": "thermal_stress", "score": 15, "reason": "はんだに関連し得るが温度起因の指定がない"},
+          {"tool_id": "buckling", "score": 1, "reason": "座屈の記載がない"},
+          {"tool_id": "explicit_impact", "score": 1, "reason": "衝撃の記載がない"},
+          {"tool_id": "cfd_flow", "score": 1, "reason": "流れの記載がない"}
+        ]
+      }
+    },
+    {
+      "case_id": "002",
+      "body": {
+        "missing_information": true,
+        "missing_items": ["解析対象の詳細と解析目的"],
+        "scores": [
+          {"tool_id": "solder_crack_propagation", "score": 42, "reason": "はんだ周辺だが亀裂進展とは未指定"},
+          {"tool_id": "solder_life_prediction", "score": 42, "reason": "はんだ周辺だが寿命予測とは未指定"},
+          {"tool_id": "eigenvalue", "score": 2, "reason": "固有振動の指定がない"},
+          {"tool_id": "frequency_response", "score": 2, "reason": "周波数応答の指定がない"},
+          {"tool_id": "random_vibration", "score": 2, "reason": "不規則振動の指定がない"},
+          {"tool_id": "static_strength", "score": 10, "reason": "周辺構造の可能性はあるが静荷重指定がない"},
+          {"tool_id": "fatigue_life", "score": 7, "reason": "金属疲労寿命の目的がない"},
+          {"tool_id": "fracture_mechanics", "score": 5, "reason": "金属母材き裂の目的がない"},
+          {"tool_id": "thermal_stress", "score": 15, "reason": "関連し得るが熱応力の指定がない"},
+          {"tool_id": "buckling", "score": 1, "reason": "座屈の記載がない"},
+          {"tool_id": "explicit_impact", "score": 1, "reason": "衝撃の記載がない"},
+          {"tool_id": "cfd_flow", "score": 2, "reason": "流れの目的がない"}
+        ]
+      }
+    },
+    {
+      "case_id": "003",
+      "body": {
+        "missing_information": true,
+        "missing_items": ["ソルダに対する具体的な解析目的"],
+        "scores": [
+          {"tool_id": "solder_crack_propagation", "score": 45, "reason": "ソルダ対象だが亀裂進展の指定がない"},
+          {"tool_id": "solder_life_prediction", "score": 45, "reason": "ソルダ対象だが寿命予測の指定がない"},
+          {"tool_id": "eigenvalue", "score": 2, "reason": "固有値の目的がない"},
+          {"tool_id": "frequency_response", "score": 2, "reason": "周波数応答の目的がない"},
+          {"tool_id": "random_vibration", "score": 2, "reason": "ランダム振動の目的がない"},
+          {"tool_id": "static_strength", "score": 8, "reason": "静的強度の目的がない"},
+          {"tool_id": "fatigue_life", "score": 8, "reason": "一般金属の疲労評価とは未指定"},
+          {"tool_id": "fracture_mechanics", "score": 5, "reason": "金属母材き裂の評価ではない"},
+          {"tool_id": "thermal_stress", "score": 15, "reason": "関連し得るが温度変化の指定がない"},
+          {"tool_id": "buckling", "score": 1, "reason": "座屈の記載がない"},
+          {"tool_id": "explicit_impact", "score": 1, "reason": "衝撃の記載がない"},
+          {"tool_id": "cfd_flow", "score": 1, "reason": "流体の記載がない"}
+        ]
+      }
+    },
+    {
+      "case_id": "004",
+      "body": {
+        "missing_information": true,
+        "missing_items": ["はんだ接合部で求めたい結果"],
+        "scores": [
+          {"tool_id": "solder_crack_propagation", "score": 48, "reason": "対象は一致するが亀裂進展の指定がない"},
+          {"tool_id": "solder_life_prediction", "score": 48, "reason": "対象は一致するが寿命回数の指定がない"},
+          {"tool_id": "eigenvalue", "score": 2, "reason": "固有振動の目的がない"},
+          {"tool_id": "frequency_response", "score": 2, "reason": "周波数応答の目的がない"},
+          {"tool_id": "random_vibration", "score": 2, "reason": "PSD応答の目的がない"},
+          {"tool_id": "static_strength", "score": 10, "reason": "静荷重による許容判定とは未指定"},
+          {"tool_id": "fatigue_life", "score": 6, "reason": "はんだ専用でない疲労評価は適合しにくい"},
+          {"tool_id": "fracture_mechanics", "score": 4, "reason": "金属母材のき裂評価ではない"},
+          {"tool_id": "thermal_stress", "score": 18, "reason": "接合部に関連し得るが熱応力とは未指定"},
+          {"tool_id": "buckling", "score": 1, "reason": "圧縮座屈の記載がない"},
+          {"tool_id": "explicit_impact", "score": 1, "reason": "衝撃の記載がない"},
+          {"tool_id": "cfd_flow", "score": 1, "reason": "流れの記載がない"}
+        ]
+      }
+    },
+    {
+      "case_id": "005",
+      "body": {
+        "missing_information": true,
+        "missing_items": ["振動の種類と求めたい結果"],
+        "scores": [
+          {"tool_id": "solder_crack_propagation", "score": 1, "reason": "はんだ亀裂の記載がない"},
+          {"tool_id": "solder_life_prediction", "score": 1, "reason": "はんだ寿命の記載がない"},
+          {"tool_id": "eigenvalue", "score": 42, "reason": "振動解析の候補だが固有値目的とは未指定"},
+          {"tool_id": "frequency_response", "score": 42, "reason": "振動解析の候補だが確定加振とは未指定"},
+          {"tool_id": "random_vibration", "score": 42, "reason": "振動解析の候補だがPSD入力とは未指定"},
+          {"tool_id": "static_strength", "score": 3, "reason": "静的荷重の目的がない"},
+          {"tool_id": "fatigue_life", "score": 6, "reason": "振動疲労寿命とは書かれていない"},
+          {"tool_id": "fracture_mechanics", "score": 1, "reason": "既存き裂の記載がない"},
+          {"tool_id": "thermal_stress", "score": 1, "reason": "温度変化の記載がない"},
+          {"tool_id": "buckling", "score": 1, "reason": "座屈の記載がない"},
+          {"tool_id": "explicit_impact", "score": 5, "reason": "動的現象だが短時間衝撃とは未指定"},
+          {"tool_id": "cfd_flow", "score": 1, "reason": "流体の記載がない"}
+        ]
+      }
+    },
+    {
+      "case_id": "006",
+      "body": {
+        "missing_information": true,
+        "missing_items": ["振動入力と評価量"],
+        "scores": [
+          {"tool_id": "solder_crack_propagation", "score": 1, "reason": "はんだ亀裂の目的がない"},
+          {"tool_id": "solder_life_prediction", "score": 1, "reason": "はんだ寿命の目的がない"},
+          {"tool_id": "eigenvalue", "score": 42, "reason": "部品振動の候補だがモード指定がない"},
+          {"tool_id": "frequency_response", "score": 42, "reason": "部品振動の候補だが加振条件がない"},
+          {"tool_id": "random_vibration", "score": 42, "reason": "部品振動の候補だがPSD指定がない"},
+          {"tool_id": "static_strength", "score": 3, "reason": "静的強度の目的がない"},
+          {"tool_id": "fatigue_life", "score": 6, "reason": "疲労寿命の目的がない"},
+          {"tool_id": "fracture_mechanics", "score": 1, "reason": "き裂評価の目的がない"},
+          {"tool_id": "thermal_stress", "score": 1, "reason": "熱応力の目的がない"},
+          {"tool_id": "buckling", "score": 1, "reason": "座屈の目的がない"},
+          {"tool_id": "explicit_impact", "score": 5, "reason": "短時間衝撃とは書かれていない"},
+          {"tool_id": "cfd_flow", "score": 1, "reason": "流体の目的がない"}
+        ]
+      }
+    },
+    {
+      "case_id": "007",
+      "body": {
+        "missing_information": true,
+        "missing_items": ["振動解析の種類と入力条件"],
+        "scores": [
+          {"tool_id": "solder_crack_propagation", "score": 1, "reason": "はんだ亀裂と無関係"},
+          {"tool_id": "solder_life_prediction", "score": 1, "reason": "はんだ寿命と無関係"},
+          {"tool_id": "eigenvalue", "score": 42, "reason": "振動計算の候補だが目的が不明"},
+          {"tool_id": "frequency_response", "score": 42, "reason": "振動計算の候補だが加振が不明"},
+          {"tool_id": "random_vibration", "score": 42, "reason": "振動計算の候補だがPSDが不明"},
+          {"tool_id": "static_strength", "score": 3, "reason": "静荷重の記載がない"},
+          {"tool_id": "fatigue_life", "score": 6, "reason": "疲労寿命とは未指定"},
+          {"tool_id": "fracture_mechanics", "score": 1, "reason": "き裂の記載がない"},
+          {"tool_id": "thermal_stress", "score": 1, "reason": "温度の記載がない"},
+          {"tool_id": "buckling", "score": 1, "reason": "座屈の記載がない"},
+          {"tool_id": "explicit_impact", "score": 5, "reason": "衝撃の記載がない"},
+          {"tool_id": "cfd_flow", "score": 1, "reason": "流れの記載がない"}
+        ]
+      }
+    },
+    {
+      "case_id": "008",
+      "body": {
+        "missing_information": true,
+        "missing_items": ["揺れの原因と求めたい応答"],
+        "scores": [
+          {"tool_id": "solder_crack_propagation", "score": 1, "reason": "はんだ亀裂の記載がない"},
+          {"tool_id": "solder_life_prediction", "score": 1, "reason": "はんだ寿命の記載がない"},
+          {"tool_id": "eigenvalue", "score": 40, "reason": "揺れに関連するが固有値目的は不明"},
+          {"tool_id": "frequency_response", "score": 40, "reason": "揺れに関連するが正弦波加振は不明"},
+          {"tool_id": "random_vibration", "score": 40, "reason": "揺れに関連するが不規則入力は不明"},
+          {"tool_id": "static_strength", "score": 2, "reason": "静的評価ではない可能性が高い"},
+          {"tool_id": "fatigue_life", "score": 5, "reason": "繰り返し寿命の目的がない"},
+          {"tool_id": "fracture_mechanics", "score": 1, "reason": "き裂評価の目的がない"},
+          {"tool_id": "thermal_stress", "score": 1, "reason": "温度起因ではない"},
+          {"tool_id": "buckling", "score": 1, "reason": "座屈の記載がない"},
+          {"tool_id": "explicit_impact", "score": 7, "reason": "動的候補だが衝撃とは未指定"},
+          {"tool_id": "cfd_flow", "score": 1, "reason": "流れの記載がない"}
+        ]
+      }
+    },
+    {
+      "case_id": "009",
+      "body": {
+        "missing_information": true,
+        "missing_items": ["荷重種類、破損モード、評価対象"],
+        "scores": [
+          {"tool_id": "solder_crack_propagation", "score": 5, "reason": "はんだ接合とは書かれていない"},
+          {"tool_id": "solder_life_prediction", "score": 5, "reason": "はんだ寿命とは書かれていない"},
+          {"tool_id": "eigenvalue", "score": 3, "reason": "振動特性の目的がない"},
+          {"tool_id": "frequency_response", "score": 3, "reason": "加振応答の目的がない"},
+          {"tool_id": "random_vibration", "score": 3, "reason": "PSD応答の目的がない"},
+          {"tool_id": "static_strength", "score": 40, "reason": "破損確認の候補だが静荷重か不明"},
+          {"tool_id": "fatigue_life", "score": 35, "reason": "破損確認の候補だが繰り返し荷重が不明"},
+          {"tool_id": "fracture_mechanics", "score": 25, "reason": "破損に関連するが既存き裂が不明"},
+          {"tool_id": "thermal_stress", "score": 20, "reason": "破損要因候補だが温度変化が不明"},
+          {"tool_id": "buckling", "score": 25, "reason": "破損モード候補だが圧縮が不明"},
+          {"tool_id": "explicit_impact", "score": 20, "reason": "破損要因候補だが衝撃が不明"},
+          {"tool_id": "cfd_flow", "score": 2, "reason": "流れの評価目的がない"}
+        ]
+      }
+    },
+    {
+      "case_id": "010",
+      "body": {
+        "missing_information": true,
+        "missing_items": ["対象、荷重条件、想定する破損モード"],
+        "scores": [
+          {"tool_id": "solder_crack_propagation", "score": 5, "reason": "はんだ亀裂とは未指定"},
+          {"tool_id": "solder_life_prediction", "score": 5, "reason": "はんだ寿命とは未指定"},
+          {"tool_id": "eigenvalue", "score": 3, "reason": "固有振動の目的がない"},
+          {"tool_id": "frequency_response", "score": 3, "reason": "周波数応答の目的がない"},
+          {"tool_id": "random_vibration", "score": 3, "reason": "ランダム振動の目的がない"},
+          {"tool_id": "static_strength", "score": 40, "reason": "強度確認候補だが静荷重か不明"},
+          {"tool_id": "fatigue_life", "score": 35, "reason": "寿命確認候補だが繰り返し条件がない"},
+          {"tool_id": "fracture_mechanics", "score": 25, "reason": "破壊候補だが既存き裂がない"},
+          {"tool_id": "thermal_stress", "score": 20, "reason": "熱破損候補だが温度条件がない"},
+          {"tool_id": "buckling", "score": 25, "reason": "破損候補だが圧縮条件がない"},
+          {"tool_id": "explicit_impact", "score": 20, "reason": "破損候補だが衝撃条件がない"},
+          {"tool_id": "cfd_flow", "score": 2, "reason": "流体目的がない"}
+        ]
+      }
+    },
+    {
+      "case_id": "011",
+      "body": {
+        "missing_information": true,
+        "missing_items": ["ブラケットの荷重条件と破損モード"],
+        "scores": [
+          {"tool_id": "solder_crack_propagation", "score": 1, "reason": "ブラケットははんだ接合ではない"},
+          {"tool_id": "solder_life_prediction", "score": 1, "reason": "ブラケットははんだ接合ではない"},
+          {"tool_id": "eigenvalue", "score": 4, "reason": "振動特性の指定がない"},
+          {"tool_id": "frequency_response", "score": 4, "reason": "加振条件の指定がない"},
+          {"tool_id": "random_vibration", "score": 4, "reason": "PSD入力の指定がない"},
+          {"tool_id": "static_strength", "score": 42, "reason": "ブラケット破損確認に適し得るが荷重不明"},
+          {"tool_id": "fatigue_life", "score": 38, "reason": "疲労破損候補だが繰り返し条件がない"},
+          {"tool_id": "fracture_mechanics", "score": 25, "reason": "破損評価候補だが既存き裂が不明"},
+          {"tool_id": "thermal_stress", "score": 18, "reason": "熱破損候補だが温度条件がない"},
+          {"tool_id": "buckling", "score": 28, "reason": "座屈破損候補だが圧縮条件がない"},
+          {"tool_id": "explicit_impact", "score": 22, "reason": "衝撃破損候補だが衝突条件がない"},
+          {"tool_id": "cfd_flow", "score": 1, "reason": "流体評価ではない"}
+        ]
+      }
+    },
+    {
+      "case_id": "012",
+      "body": {
+        "missing_information": true,
+        "missing_items": ["荷重種類と強度評価基準"],
+        "scores": [
+          {"tool_id": "solder_crack_propagation", "score": 3, "reason": "はんだ亀裂とは未指定"},
+          {"tool_id": "solder_life_prediction", "score": 3, "reason": "はんだ寿命とは未指定"},
+          {"tool_id": "eigenvalue", "score": 3, "reason": "固有振動の目的がない"},
+          {"tool_id": "frequency_response", "score": 3, "reason": "加振応答の目的がない"},
+          {"tool_id": "random_vibration", "score": 3, "reason": "不規則振動の目的がない"},
+          {"tool_id": "static_strength", "score": 48, "reason": "強度判定に近いが静荷重とは未指定"},
+          {"tool_id": "fatigue_life", "score": 36, "reason": "強度評価候補だが繰り返し荷重が不明"},
+          {"tool_id": "fracture_mechanics", "score": 24, "reason": "破壊評価候補だが既存き裂が不明"},
+          {"tool_id": "thermal_stress", "score": 20, "reason": "熱強度候補だが温度条件が不明"},
+          {"tool_id": "buckling", "score": 28, "reason": "強度上の候補だが圧縮座屈が不明"},
+          {"tool_id": "explicit_impact", "score": 20, "reason": "衝撃強度候補だが衝撃条件が不明"},
+          {"tool_id": "cfd_flow", "score": 1, "reason": "流体評価ではない"}
+        ]
+      }
+    },
+    {
+      "case_id": "013",
+      "body": {
+        "missing_information": true,
+        "missing_items": ["実行する解析の対象、目的、条件"],
+        "scores": [
+          {"tool_id": "solder_crack_propagation", "score": 1, "reason": "解析内容を特定できない"},
+          {"tool_id": "solder_life_prediction", "score": 1, "reason": "解析内容を特定できない"},
+          {"tool_id": "eigenvalue", "score": 1, "reason": "解析内容を特定できない"},
+          {"tool_id": "frequency_response", "score": 1, "reason": "解析内容を特定できない"},
+          {"tool_id": "random_vibration", "score": 1, "reason": "解析内容を特定できない"},
+          {"tool_id": "static_strength", "score": 1, "reason": "解析内容を特定できない"},
+          {"tool_id": "fatigue_life", "score": 1, "reason": "解析内容を特定できない"},
+          {"tool_id": "fracture_mechanics", "score": 1, "reason": "解析内容を特定できない"},
+          {"tool_id": "thermal_stress", "score": 1, "reason": "解析内容を特定できない"},
+          {"tool_id": "buckling", "score": 1, "reason": "解析内容を特定できない"},
+          {"tool_id": "explicit_impact", "score": 1, "reason": "解析内容を特定できない"},
+          {"tool_id": "cfd_flow", "score": 1, "reason": "解析内容を特定できない"}
+        ]
+      }
+    },
+    {
+      "case_id": "014",
+      "body": {
+        "missing_information": true,
+        "missing_items": ["前回の解析内容または参照情報"],
+        "scores": [
+          {"tool_id": "solder_crack_propagation", "score": 1, "reason": "前回内容がなく特定不能"},
+          {"tool_id": "solder_life_prediction", "score": 1, "reason": "前回内容がなく特定不能"},
+          {"tool_id": "eigenvalue", "score": 1, "reason": "前回内容がなく特定不能"},
+          {"tool_id": "frequency_response", "score": 1, "reason": "前回内容がなく特定不能"},
+          {"tool_id": "random_vibration", "score": 1, "reason": "前回内容がなく特定不能"},
+          {"tool_id": "static_strength", "score": 1, "reason": "前回内容がなく特定不能"},
+          {"tool_id": "fatigue_life", "score": 1, "reason": "前回内容がなく特定不能"},
+          {"tool_id": "fracture_mechanics", "score": 1, "reason": "前回内容がなく特定不能"},
+          {"tool_id": "thermal_stress", "score": 1, "reason": "前回内容がなく特定不能"},
+          {"tool_id": "buckling", "score": 1, "reason": "前回内容がなく特定不能"},
+          {"tool_id": "explicit_impact", "score": 1, "reason": "前回内容がなく特定不能"},
+          {"tool_id": "cfd_flow", "score": 1, "reason": "前回内容がなく特定不能"}
+        ]
+      }
+    },
+    {
+      "case_id": "015",
+      "body": {
+        "missing_information": true,
+        "missing_items": ["「いつもの」が指す解析内容"],
+        "scores": [
+          {"tool_id": "solder_crack_propagation", "score": 1, "reason": "指示だけでは特定不能"},
+          {"tool_id": "solder_life_prediction", "score": 1, "reason": "指示だけでは特定不能"},
+          {"tool_id": "eigenvalue", "score": 1, "reason": "指示だけでは特定不能"},
+          {"tool_id": "frequency_response", "score": 1, "reason": "指示だけでは特定不能"},
+          {"tool_id": "random_vibration", "score": 1, "reason": "指示だけでは特定不能"},
+          {"tool_id": "static_strength", "score": 1, "reason": "指示だけでは特定不能"},
+          {"tool_id": "fatigue_life", "score": 1, "reason": "指示だけでは特定不能"},
+          {"tool_id": "fracture_mechanics", "score": 1, "reason": "指示だけでは特定不能"},
+          {"tool_id": "thermal_stress", "score": 1, "reason": "指示だけでは特定不能"},
+          {"tool_id": "buckling", "score": 1, "reason": "指示だけでは特定不能"},
+          {"tool_id": "explicit_impact", "score": 1, "reason": "指示だけでは特定不能"},
+          {"tool_id": "cfd_flow", "score": 1, "reason": "指示だけでは特定不能"}
+        ]
+      }
+    },
+    {
+      "case_id": "016",
+      "body": {
+        "missing_information": true,
+        "missing_items": ["「例のやつ」が指す解析内容"],
+        "scores": [
+          {"tool_id": "solder_crack_propagation", "score": 1, "reason": "解析目的が全く不明"},
+          {"tool_id": "solder_life_prediction", "score": 1, "reason": "解析目的が全く不明"},
+          {"tool_id": "eigenvalue", "score": 1, "reason": "解析目的が全く不明"},
+          {"tool_id": "frequency_response", "score": 1, "reason": "解析目的が全く不明"},
+          {"tool_id": "random_vibration", "score": 1, "reason": "解析目的が全く不明"},
+          {"tool_id": "static_strength", "score": 1, "reason": "解析目的が全く不明"},
+          {"tool_id": "fatigue_life", "score": 1, "reason": "解析目的が全く不明"},
+          {"tool_id": "fracture_mechanics", "score": 1, "reason": "解析目的が全く不明"},
+          {"tool_id": "thermal_stress", "score": 1, "reason": "解析目的が全く不明"},
+          {"tool_id": "buckling", "score": 1, "reason": "解析目的が全く不明"},
+          {"tool_id": "explicit_impact", "score": 1, "reason": "解析目的が全く不明"},
+          {"tool_id": "cfd_flow", "score": 1, "reason": "解析目的が全く不明"}
+        ]
+      }
+    },
+    {
+      "case_id": "017",
+      "body": {
+        "missing_information": false,
+        "missing_items": [],
+        "scores": [
+          {"tool_id": "solder_crack_propagation", "score": 1, "reason": "鋼製アームでありはんだ亀裂ではない"},
+          {"tool_id": "solder_life_prediction", "score": 1, "reason": "鋼製アームでありはんだ寿命ではない"},
+          {"tool_id": "eigenvalue", "score": 3, "reason": "固有振動数を求める目的ではない"},
+          {"tool_id": "frequency_response", "score": 3, "reason": "周波数応答を求める目的ではない"},
+          {"tool_id": "random_vibration", "score": 3, "reason": "PSD応答を求める目的ではない"},
+          {"tool_id": "static_strength", "score": 12, "reason": "繰り返し荷重なので静強度が主目的でない"},
+          {"tool_id": "fatigue_life", "score": 100, "reason": "金属の繰り返し曲げをS-N曲線で寿命評価する"},
+          {"tool_id": "fracture_mechanics", "score": 8, "reason": "既存き裂の力学量が目的ではない"},
+          {"tool_id": "thermal_stress", "score": 1, "reason": "温度変化の記載がない"},
+          {"tool_id": "buckling", "score": 4, "reason": "圧縮座屈の目的がない"},
+          {"tool_id": "explicit_impact", "score": 2, "reason": "短時間衝撃ではない"},
+          {"tool_id": "cfd_flow", "score": 1, "reason": "流体解析ではない"}
+        ]
+      }
+    },
+    {
+      "case_id": "018",
+      "body": {
+        "missing_information": false,
+        "missing_items": [],
+        "scores": [
+          {"tool_id": "solder_crack_propagation", "score": 1, "reason": "金属部品でありはんだ接合ではない"},
+          {"tool_id": "solder_life_prediction", "score": 1, "reason": "はんだ専用寿命則ではない"},
+          {"tool_id": "eigenvalue", "score": 2, "reason": "固有振動の目的がない"},
+          {"tool_id": "frequency_response", "score": 2, "reason": "周波数応答の目的がない"},
+          {"tool_id": "random_vibration", "score": 2, "reason": "ランダム振動の目的がない"},
+          {"tool_id": "static_strength", "score": 10, "reason": "一回の静荷重評価ではない"},
+          {"tool_id": "fatigue_life", "score": 100, "reason": "金属の高サイクル疲労寿命をS-Nで求める"},
+          {"tool_id": "fracture_mechanics", "score": 7, "reason": "既存き裂評価ではない"},
+          {"tool_id": "thermal_stress", "score": 1, "reason": "熱応力の指定がない"},
+          {"tool_id": "buckling", "score": 2, "reason": "座屈の目的がない"},
+          {"tool_id": "explicit_impact", "score": 1, "reason": "衝撃現象ではない"},
+          {"tool_id": "cfd_flow", "score": 1, "reason": "流体解析ではない"}
+        ]
+      }
+    },
+    {
+      "case_id": "019",
+      "body": {
+        "missing_information": false,
+        "missing_items": [],
+        "scores": [
+          {"tool_id": "solder_crack_propagation", "score": 3, "reason": "はんだ亀裂進展とは書かれていない"},
+          {"tool_id": "solder_life_prediction", "score": 8, "reason": "はんだ対象や温度サイクルの指定がない"},
+          {"tool_id": "eigenvalue", "score": 2, "reason": "固有振動の目的がない"},
+          {"tool_id": "frequency_response", "score": 2, "reason": "周波数応答の目的がない"},
+          {"tool_id": "random_vibration", "score": 3, "reason": "PSD入力の記載がない"},
+          {"tool_id": "static_strength", "score": 10, "reason": "繰り返し寿命なので静強度ではない"},
+          {"tool_id": "fatigue_life", "score": 96, "reason": "繰り返し荷重に対する疲労寿命が明示されている"},
+          {"tool_id": "fracture_mechanics", "score": 8, "reason": "既存き裂の評価ではない"},
+          {"tool_id": "thermal_stress", "score": 2, "reason": "温度変化の指定がない"},
+          {"tool_id": "buckling", "score": 3, "reason": "圧縮座屈の指定がない"},
+          {"tool_id": "explicit_impact", "score": 1, "reason": "短時間衝撃ではない"},
+          {"tool_id": "cfd_flow", "score": 1, "reason": "流体解析ではない"}
+        ]
+      }
+    },
+    {
+      "case_id": "020",
+      "body": {
+        "missing_information": false,
+        "missing_items": [],
+        "scores": [
+          {"tool_id": "solder_crack_propagation", "score": 1, "reason": "鋼でありはんだ接合ではない"},
+          {"tool_id": "solder_life_prediction", "score": 1, "reason": "鋼でありはんだ寿命ではない"},
+          {"tool_id": "eigenvalue", "score": 2, "reason": "固有振動の目的がない"},
+          {"tool_id": "frequency_response", "score": 2, "reason": "周波数応答の目的がない"},
+          {"tool_id": "random_vibration", "score": 2, "reason": "PSD応答の目的がない"},
+          {"tool_id": "static_strength", "score": 10, "reason": "静的曲げ強度ではなく疲労評価"},
+          {"tool_id": "fatigue_life", "score": 100, "reason": "鋼の曲げ疲労をS-N曲線で評価する"},
+          {"tool_id": "fracture_mechanics", "score": 7, "reason": "既存き裂の破壊力学評価ではない"},
+          {"tool_id": "thermal_stress", "score": 1, "reason": "温度条件がない"},
+          {"tool_id": "buckling", "score": 2, "reason": "座屈評価ではない"},
+          {"tool_id": "explicit_impact", "score": 1, "reason": "衝撃現象ではない"},
+          {"tool_id": "cfd_flow", "score": 1, "reason": "流体解析ではない"}
+        ]
+      }
+    },
+    {
+      "case_id": "021",
+      "body": {
+        "missing_information": false,
+        "missing_items": [],
+        "scores": [
+          {"tool_id": "solder_crack_propagation", "score": 1, "reason": "はんだ亀裂の目的がない"},
+          {"tool_id": "solder_life_prediction", "score": 1, "reason": "はんだ寿命の目的がない"},
+          {"tool_id": "eigenvalue", "score": 100, "reason": "固有振動数とモード形状が明示されている"},
+          {"tool_id": "frequency_response", "score": 12, "reason": "加振に対する応答振幅は求めていない"},
+          {"tool_id": "random_vibration", "score": 5, "reason": "PSD入力や統計応答ではない"},
+          {"tool_id": "static_strength", "score": 2, "reason": "静的強度評価ではない"},
+          {"tool_id": "fatigue_life", "score": 2, "reason": "疲労寿命の目的がない"},
+          {"tool_id": "fracture_mechanics", "score": 1, "reason": "既存き裂の評価ではない"},
+          {"tool_id": "thermal_stress", "score": 1, "reason": "温度変化の記載がない"},
+          {"tool_id": "buckling", "score": 4, "reason": "モードという語はあるが座屈目的ではない"},
+          {"tool_id": "explicit_impact", "score": 1, "reason": "衝撃応答ではない"},
+          {"tool_id": "cfd_flow", "score": 1, "reason": "流体解析ではない"}
+        ]
+      }
+    },
+    {
+      "case_id": "022",
+      "body": {
+        "missing_information": false,
+        "missing_items": [],
+        "scores": [
+          {"tool_id": "solder_crack_propagation", "score": 1, "reason": "はんだ亀裂とは無関係"},
+          {"tool_id": "solder_life_prediction", "score": 1, "reason": "はんだ寿命とは無関係"},
+          {"tool_id": "eigenvalue", "score": 100, "reason": "共振周波数を固有値解析で求めると明示"},
+          {"tool_id": "frequency_response", "score": 15, "reason": "共振に関連するが応答振幅は求めていない"},
+          {"tool_id": "random_vibration", "score": 5, "reason": "PSD入力の統計応答ではない"},
+          {"tool_id": "static_strength", "score": 2, "reason": "静的強度評価ではない"},
+          {"tool_id": "fatigue_life", "score": 2, "reason": "疲労寿命評価ではない"},
+          {"tool_id": "fracture_mechanics", "score": 1, "reason": "き裂評価ではない"},
+          {"tool_id": "thermal_stress", "score": 1, "reason": "熱応力評価ではない"},
+          {"tool_id": "buckling", "score": 3, "reason": "座屈固有値の目的ではない"},
+          {"tool_id": "explicit_impact", "score": 1, "reason": "衝撃応答ではない"},
+          {"tool_id": "cfd_flow", "score": 1, "reason": "流れ場評価ではない"}
+        ]
+      }
+    },
+    {
+      "case_id": "023",
+      "body": {
+        "missing_information": false,
+        "missing_items": [],
+        "scores": [
+          {"tool_id": "solder_crack_propagation", "score": 1, "reason": "はんだ亀裂の目的がない"},
+          {"tool_id": "solder_life_prediction", "score": 1, "reason": "はんだ寿命の目的がない"},
+          {"tool_id": "eigenvalue", "score": 18, "reason": "関連するモードは使い得るが目的は加振応答"},
+          {"tool_id": "frequency_response", "score": 100, "reason": "正弦波掃引の周波数応答が明示されている"},
+          {"tool_id": "random_vibration", "score": 5, "reason": "確定的な正弦波でありPSD入力ではない"},
+          {"tool_id": "static_strength", "score": 2, "reason": "静的荷重評価ではない"},
+          {"tool_id": "fatigue_life", "score": 3, "reason": "疲労寿命の目的がない"},
+          {"tool_id": "fracture_mechanics", "score": 1, "reason": "き裂評価ではない"},
+          {"tool_id": "thermal_stress", "score": 1, "reason": "温度変化の記載がない"},
+          {"tool_id": "buckling", "score": 1, "reason": "座屈評価ではない"},
+          {"tool_id": "explicit_impact", "score": 3, "reason": "短時間衝撃ではない"},
+          {"tool_id": "cfd_flow", "score": 1, "reason": "流体解析ではない"}
+        ]
+      }
+    },
+    {
+      "case_id": "024",
+      "body": {
+        "missing_information": false,
+        "missing_items": [],
+        "scores": [
+          {"tool_id": "solder_crack_propagation", "score": 1, "reason": "はんだ亀裂とは無関係"},
+          {"tool_id": "solder_life_prediction", "score": 1, "reason": "はんだ寿命とは無関係"},
+          {"tool_id": "eigenvalue", "score": 18, "reason": "関連するモード解析だが応答関数が主目的"},
+          {"tool_id": "frequency_response", "score": 100, "reason": "ハーモニック加振の周波数応答関数が目的"},
+          {"tool_id": "random_vibration", "score": 5, "reason": "不規則なPSD入力ではない"},
+          {"tool_id": "static_strength", "score": 2, "reason": "静的荷重ではない"},
+          {"tool_id": "fatigue_life", "score": 3, "reason": "疲労寿命を求めていない"},
+          {"tool_id": "fracture_mechanics", "score": 1, "reason": "既存き裂の評価ではない"},
+          {"tool_id": "thermal_stress", "score": 1, "reason": "熱応力の目的がない"},
+          {"tool_id": "buckling", "score": 1, "reason": "座屈の目的がない"},
+          {"tool_id": "explicit_impact", "score": 3, "reason": "短時間衝撃ではない"},
+          {"tool_id": "cfd_flow", "score": 1, "reason": "流体解析ではない"}
+        ]
+      }
+    },
+    {
+      "case_id": "025",
+      "body": {
+        "missing_information": false,
+        "missing_items": [],
+        "scores": [
+          {"tool_id": "solder_crack_propagation", "score": 2, "reason": "ECUでもはんだ亀裂進展は目的でない"},
+          {"tool_id": "solder_life_prediction", "score": 2, "reason": "はんだ寿命回数は求めていない"},
+          {"tool_id": "eigenvalue", "score": 15, "reason": "モードは関連し得るが目的はPSD応答"},
+          {"tool_id": "frequency_response", "score": 12, "reason": "周波数領域だが確定的正弦波入力ではない"},
+          {"tool_id": "random_vibration", "score": 100, "reason": "路面相当PSDによるランダム振動応答が明示"},
+          {"tool_id": "static_strength", "score": 2, "reason": "静的荷重評価ではない"},
+          {"tool_id": "fatigue_life", "score": 6, "reason": "振動疲労寿命ではなく応答計算が目的"},
+          {"tool_id": "fracture_mechanics", "score": 1, "reason": "既存き裂評価ではない"},
+          {"tool_id": "thermal_stress", "score": 1, "reason": "温度変化の記載がない"},
+          {"tool_id": "buckling", "score": 1, "reason": "座屈の目的がない"},
+          {"tool_id": "explicit_impact", "score": 4, "reason": "路面振動であり短時間衝撃ではない"},
+          {"tool_id": "cfd_flow", "score": 1, "reason": "流体解析ではない"}
+        ]
+      }
+    }
+  ]
+}

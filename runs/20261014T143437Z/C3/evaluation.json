@@ -1,0 +1,4888 @@
+{
+  "summary": {
+    "n": 75,
+    "precision": 0.7066666666666667,
+    "recall": 0.7022222222222222,
+    "f1": 0.704,
+    "exact_rate": 0.6933333333333334,
+    "required_inclusion_rate": 0.676056338028169,
+    "single_accuracy": 0.9787234042553191,
+    "multi_appropriate_rate": 0.08333333333333333,
+    "clarify_appropriate_rate": 1.0,
+    "unnecessary_question_rate": 0.0425531914893617,
+    "forced_one_rate": 0.0,
+    "abstain_appropriate_rate": 1.0,
+    "error_rate": 0.0,
+    "by_category": {
+      "ambiguous": {
+        "n": 24,
+        "precision": 0.08333333333333333,
+        "recall": 0.06944444444444443,
+        "f1": 0.075,
+        "exact_rate": 0.041666666666666664,
+        "required_inclusion_rate": 0.041666666666666664,
+        "single_accuracy": 0.0,
+        "multi_appropriate_rate": 0.043478260869565216,
+        "clarify_appropriate_rate": 1.0,
+        "unnecessary_question_rate": null,
+        "forced_one_rate": 0.0,
+        "abstain_appropriate_rate": null,
+        "error_rate": 0.0
+      },
+      "clear": {
+        "n": 47,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact_rate": 1.0,
+        "required_inclusion_rate": 1.0,
+        "single_accuracy": 1.0,
+        "multi_appropriate_rate": 1.0,
+        "clarify_appropriate_rate": null,
+        "unnecessary_question_rate": 0.0425531914893617,
+        "forced_one_rate": null,
+        "abstain_appropriate_rate": null,
+        "error_rate": 0.0
+      },
+      "colloquial": {
+        "n": 26,
+        "precision": 0.8461538461538461,
+        "recall": 0.8461538461538461,
+        "f1": 0.8461538461538461,
+        "exact_rate": 0.8461538461538461,
+        "required_inclusion_rate": 0.8333333333333334,
+        "single_accuracy": 1.0,
+        "multi_appropriate_rate": 0.0,
+        "clarify_appropriate_rate": 1.0,
+        "unnecessary_question_rate": 0.0,
+        "forced_one_rate": 0.0,
+        "abstain_appropriate_rate": 1.0,
+        "error_rate": 0.0
+      },
+      "implicit": {
+        "n": 3,
+        "precision": 0.6666666666666666,
+        "recall": 0.5555555555555555,
+        "f1": 0.6,
+        "exact_rate": 0.3333333333333333,
+        "required_inclusion_rate": 0.3333333333333333,
+        "single_accuracy": null,
+        "multi_appropriate_rate": 0.3333333333333333,
+        "clarify_appropriate_rate": 1.0,
+        "unnecessary_question_rate": null,
+        "forced_one_rate": 0.0,
+        "abstain_appropriate_rate": null,
+        "error_rate": 0.0
+      },
+      "insufficient": {
+        "n": 5,
+        "precision": 0.8,
+        "recall": 0.8,
+        "f1": 0.8,
+        "exact_rate": 0.8,
+        "required_inclusion_rate": 0.0,
+        "single_accuracy": 0.0,
+        "multi_appropriate_rate": null,
+        "clarify_appropriate_rate": 1.0,
+        "unnecessary_question_rate": null,
+        "forced_one_rate": null,
+        "abstain_appropriate_rate": 1.0,
+        "error_rate": 0.0
+      },
+      "multi": {
+        "n": 1,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact_rate": 1.0,
+        "required_inclusion_rate": 1.0,
+        "single_accuracy": null,
+        "multi_appropriate_rate": 1.0,
+        "clarify_appropriate_rate": null,
+        "unnecessary_question_rate": 1.0,
+        "forced_one_rate": null,
+        "abstain_appropriate_rate": null,
+        "error_rate": 0.0
+      }
+    },
+    "error_tags": {
+      "過剰な意図補完": 0,
+      "表層キーワード誤選択": 0,
+      "候補漏れ": 23,
+      "過剰選択": 0,
+      "不適切な追加質問": 2,
+      "質問不足": 0,
+      "カタログ照合ミス": 0,
+      "その他": 0
+    },
+    "classifier": "rules_v1_automatic"
+  },
+  "details": [
+    {
+      "case_id": "001",
+      "tags": [
+        "候補漏れ"
+      ],
+      "score": {
+        "case_id": "001",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "exact": false,
+        "required_hit": false,
+        "single_hit": null,
+        "multi_appropriate": false,
+        "clarify_appropriate": true,
+        "unnecessary_question": null,
+        "forced_one": false,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "001",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [],
+        "ranks": {},
+        "scores": {
+          "solder_crack_propagation": 35.0,
+          "solder_life_prediction": 35.0,
+          "thermal_stress": 10.0,
+          "eigenvalue": 5.0,
+          "fatigue_life": 5.0,
+          "fracture_mechanics": 5.0,
+          "frequency_response": 5.0,
+          "random_vibration": 5.0,
+          "static_strength": 5.0,
+          "buckling": 2.0,
+          "cfd_flow": 2.0,
+          "explicit_impact": 2.0
+        },
+        "needs_clarification": true,
+        "clarification_questions": [
+          "適合度がどれも低いです。解析の対象と、何を知りたいかを教えてください。"
+        ],
+        "abstained": true,
+        "reasons": [
+          "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve",
+          "below_minimum"
+        ]
+      }
+    },
+    {
+      "case_id": "002",
+      "tags": [
+        "候補漏れ"
+      ],
+      "score": {
+        "case_id": "002",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "exact": false,
+        "required_hit": false,
+        "single_hit": null,
+        "multi_appropriate": false,
+        "clarify_appropriate": true,
+        "unnecessary_question": null,
+        "forced_one": false,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "002",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [],
+        "ranks": {},
+        "scores": {
+          "solder_crack_propagation": 35.0,
+          "solder_life_prediction": 35.0,
+          "thermal_stress": 10.0,
+          "eigenvalue": 5.0,
+          "fatigue_life": 5.0,
+          "fracture_mechanics": 5.0,
+          "frequency_response": 5.0,
+          "random_vibration": 5.0,
+          "static_strength": 5.0,
+          "buckling": 2.0,
+          "cfd_flow": 2.0,
+          "explicit_impact": 2.0
+        },
+        "needs_clarification": true,
+        "clarification_questions": [
+          "適合度がどれも低いです。解析の対象と、何を知りたいかを教えてください。"
+        ],
+        "abstained": true,
+        "reasons": [
+          "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve",
+          "below_minimum"
+        ]
+      }
+    },
+    {
+      "case_id": "003",
+      "tags": [
+        "候補漏れ"
+      ],
+      "score": {
+        "case_id": "003",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "exact": false,
+        "required_hit": false,
+        "single_hit": null,
+        "multi_appropriate": false,
+        "clarify_appropriate": true,
+        "unnecessary_question": null,
+        "forced_one": false,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "003",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [],
+        "ranks": {},
+        "scores": {
+          "solder_crack_propagation": 35.0,
+          "solder_life_prediction": 35.0,
+          "thermal_stress": 10.0,
+          "eigenvalue": 5.0,
+          "fatigue_life": 5.0,
+          "fracture_mechanics": 5.0,
+          "frequency_response": 5.0,
+          "random_vibration": 5.0,
+          "static_strength": 5.0,
+          "buckling": 2.0,
+          "cfd_flow": 2.0,
+          "explicit_impact": 2.0
+        },
+        "needs_clarification": true,
+        "clarification_questions": [
+          "適合度がどれも低いです。解析の対象と、何を知りたいかを教えてください。"
+        ],
+        "abstained": true,
+        "reasons": [
+          "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve",
+          "below_minimum"
+        ]
+      }
+    },
+    {
+      "case_id": "004",
+      "tags": [
+        "候補漏れ"
+      ],
+      "score": {
+        "case_id": "004",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "exact": false,
+        "required_hit": false,
+        "single_hit": null,
+        "multi_appropriate": false,
+        "clarify_appropriate": true,
+        "unnecessary_question": null,
+        "forced_one": false,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "004",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [],
+        "ranks": {},
+        "scores": {
+          "solder_crack_propagation": 40.0,
+          "solder_life_prediction": 40.0,
+          "thermal_stress": 10.0,
+          "eigenvalue": 5.0,
+          "fatigue_life": 5.0,
+          "fracture_mechanics": 5.0,
+          "frequency_response": 5.0,
+          "random_vibration": 5.0,
+          "static_strength": 5.0,
+          "buckling": 2.0,
+          "cfd_flow": 2.0,
+          "explicit_impact": 2.0
+        },
+        "needs_clarification": true,
+        "clarification_questions": [
+          "適合度がどれも低いです。解析の対象と、何を知りたいかを教えてください。"
+        ],
+        "abstained": true,
+        "reasons": [
+          "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve",
+          "below_minimum"
+        ]
+      }
+    },
+    {
+      "case_id": "005",
+      "tags": [
+        "候補漏れ"
+      ],
+      "score": {
+        "case_id": "005",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "exact": false,
+        "required_hit": false,
+        "single_hit": null,
+        "multi_appropriate": false,
+        "clarify_appropriate": true,
+        "unnecessary_question": null,
+        "forced_one": false,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "005",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [],
+        "ranks": {},
+        "scores": {
+          "eigenvalue": 35.0,
+          "frequency_response": 35.0,
+          "random_vibration": 35.0,
+          "explicit_impact": 10.0,
+          "fatigue_life": 10.0,
+          "static_strength": 5.0,
+          "buckling": 2.0,
+          "cfd_flow": 2.0,
+          "fracture_mechanics": 2.0,
+          "solder_crack_propagation": 2.0,
+          "solder_life_prediction": 2.0,
+          "thermal_stress": 2.0
+        },
+        "needs_clarification": true,
+        "clarification_questions": [
+          "適合度がどれも低いです。解析の対象と、何を知りたいかを教えてください。"
+        ],
+        "abstained": true,
+        "reasons": [
+          "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve",
+          "below_minimum"
+        ]
+      }
+    },
+    {
+      "case_id": "006",
+      "tags": [
+        "候補漏れ"
+      ],
+      "score": {
+        "case_id": "006",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "exact": false,
+        "required_hit": false,
+        "single_hit": null,
+        "multi_appropriate": false,
+        "clarify_appropriate": true,
+        "unnecessary_question": null,
+        "forced_one": false,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "006",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [],
+        "ranks": {},
+        "scores": {
+          "eigenvalue": 35.0,
+          "frequency_response": 35.0,
+          "random_vibration": 35.0,
+          "explicit_impact": 10.0,
+          "fatigue_life": 10.0,
+          "static_strength": 5.0,
+          "buckling": 2.0,
+          "cfd_flow": 2.0,
+          "fracture_mechanics": 2.0,
+          "solder_crack_propagation": 2.0,
+          "solder_life_prediction": 2.0,
+          "thermal_stress": 2.0
+        },
+        "needs_clarification": true,
+        "clarification_questions": [
+          "適合度がどれも低いです。解析の対象と、何を知りたいかを教えてください。"
+        ],
+        "abstained": true,
+        "reasons": [
+          "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve",
+          "below_minimum"
+        ]
+      }
+    },
+    {
+      "case_id": "007",
+      "tags": [
+        "候補漏れ"
+      ],
+      "score": {
+        "case_id": "007",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "exact": false,
+        "required_hit": false,
+        "single_hit": null,
+        "multi_appropriate": false,
+        "clarify_appropriate": true,
+        "unnecessary_question": null,
+        "forced_one": false,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "007",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [],
+        "ranks": {},
+        "scores": {
+          "eigenvalue": 35.0,
+          "frequency_response": 35.0,
+          "random_vibration": 35.0,
+          "explicit_impact": 10.0,
+          "fatigue_life": 10.0,
+          "static_strength": 5.0,
+          "buckling": 2.0,
+          "cfd_flow": 2.0,
+          "fracture_mechanics": 2.0,
+          "solder_crack_propagation": 2.0,
+          "solder_life_prediction": 2.0,
+          "thermal_stress": 2.0
+        },
+        "needs_clarification": true,
+        "clarification_questions": [
+          "適合度がどれも低いです。解析の対象と、何を知りたいかを教えてください。"
+        ],
+        "abstained": true,
+        "reasons": [
+          "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve",
+          "below_minimum"
+        ]
+      }
+    },
+    {
+      "case_id": "008",
+      "tags": [
+        "候補漏れ"
+      ],
+      "score": {
+        "case_id": "008",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "exact": false,
+        "required_hit": false,
+        "single_hit": null,
+        "multi_appropriate": false,
+        "clarify_appropriate": true,
+        "unnecessary_question": null,
+        "forced_one": false,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "008",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [],
+        "ranks": {},
+        "scores": {
+          "eigenvalue": 35.0,
+          "frequency_response": 35.0,
+          "random_vibration": 35.0,
+          "explicit_impact": 10.0,
+          "fatigue_life": 10.0,
+          "static_strength": 5.0,
+          "buckling": 2.0,
+          "cfd_flow": 2.0,
+          "fracture_mechanics": 2.0,
+          "solder_crack_propagation": 2.0,
+          "solder_life_prediction": 2.0,
+          "thermal_stress": 2.0
+        },
+        "needs_clarification": true,
+        "clarification_questions": [
+          "適合度がどれも低いです。解析の対象と、何を知りたいかを教えてください。"
+        ],
+        "abstained": true,
+        "reasons": [
+          "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve",
+          "below_minimum"
+        ]
+      }
+    },
+    {
+      "case_id": "009",
+      "tags": [
+        "候補漏れ"
+      ],
+      "score": {
+        "case_id": "009",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "exact": false,
+        "required_hit": false,
+        "single_hit": null,
+        "multi_appropriate": false,
+        "clarify_appropriate": true,
+        "unnecessary_question": null,
+        "forced_one": false,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "009",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [],
+        "ranks": {},
+        "scores": {
+          "static_strength": 35.0,
+          "fatigue_life": 25.0,
+          "fracture_mechanics": 20.0,
+          "buckling": 15.0,
+          "explicit_impact": 10.0,
+          "thermal_stress": 10.0,
+          "eigenvalue": 5.0,
+          "frequency_response": 5.0,
+          "random_vibration": 5.0,
+          "cfd_flow": 2.0,
+          "solder_crack_propagation": 2.0,
+          "solder_life_prediction": 2.0
+        },
+        "needs_clarification": true,
+        "clarification_questions": [
+          "適合度がどれも低いです。解析の対象と、何を知りたいかを教えてください。"
+        ],
+        "abstained": true,
+        "reasons": [
+          "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve",
+          "below_minimum"
+        ]
+      }
+    },
+    {
+      "case_id": "010",
+      "tags": [
+        "候補漏れ"
+      ],
+      "score": {
+        "case_id": "010",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "exact": false,
+        "required_hit": false,
+        "single_hit": null,
+        "multi_appropriate": false,
+        "clarify_appropriate": true,
+        "unnecessary_question": null,
+        "forced_one": false,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "010",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [],
+        "ranks": {},
+        "scores": {
+          "static_strength": 35.0,
+          "fatigue_life": 25.0,
+          "fracture_mechanics": 20.0,
+          "buckling": 15.0,
+          "explicit_impact": 10.0,
+          "thermal_stress": 10.0,
+          "eigenvalue": 5.0,
+          "frequency_response": 5.0,
+          "random_vibration": 5.0,
+          "cfd_flow": 2.0,
+          "solder_crack_propagation": 2.0,
+          "solder_life_prediction": 2.0
+        },
+        "needs_clarification": true,
+        "clarification_questions": [
+          "適合度がどれも低いです。解析の対象と、何を知りたいかを教えてください。"
+        ],
+        "abstained": true,
+        "reasons": [
+          "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve",
+          "below_minimum"
+        ]
+      }
+    },
+    {
+      "case_id": "011",
+      "tags": [
+        "候補漏れ"
+      ],
+      "score": {
+        "case_id": "011",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "exact": false,
+        "required_hit": false,
+        "single_hit": null,
+        "multi_appropriate": false,
+        "clarify_appropriate": true,
+        "unnecessary_question": null,
+        "forced_one": false,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "011",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [],
+        "ranks": {},
+        "scores": {
+          "static_strength": 35.0,
+          "fatigue_life": 25.0,
+          "fracture_mechanics": 20.0,
+          "buckling": 15.0,
+          "explicit_impact": 10.0,
+          "thermal_stress": 10.0,
+          "eigenvalue": 5.0,
+          "frequency_response": 5.0,
+          "random_vibration": 5.0,
+          "cfd_flow": 2.0,
+          "solder_crack_propagation": 2.0,
+          "solder_life_prediction": 2.0
+        },
+        "needs_clarification": true,
+        "clarification_questions": [
+          "適合度がどれも低いです。解析の対象と、何を知りたいかを教えてください。"
+        ],
+        "abstained": true,
+        "reasons": [
+          "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve",
+          "below_minimum"
+        ]
+      }
+    },
+    {
+      "case_id": "012",
+      "tags": [
+        "候補漏れ"
+      ],
+      "score": {
+        "case_id": "012",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "exact": false,
+        "required_hit": false,
+        "single_hit": null,
+        "multi_appropriate": false,
+        "clarify_appropriate": true,
+        "unnecessary_question": null,
+        "forced_one": false,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "012",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [],
+        "ranks": {},
+        "scores": {
+          "static_strength": 35.0,
+          "fatigue_life": 25.0,
+          "fracture_mechanics": 20.0,
+          "buckling": 15.0,
+          "explicit_impact": 10.0,
+          "thermal_stress": 10.0,
+          "eigenvalue": 5.0,
+          "frequency_response": 5.0,
+          "random_vibration": 5.0,
+          "cfd_flow": 2.0,
+          "solder_crack_propagation": 2.0,
+          "solder_life_prediction": 2.0
+        },
+        "needs_clarification": true,
+        "clarification_questions": [
+          "適合度がどれも低いです。解析の対象と、何を知りたいかを教えてください。"
+        ],
+        "abstained": true,
+        "reasons": [
+          "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve",
+          "below_minimum"
+        ]
+      }
+    },
+    {
+      "case_id": "013",
+      "tags": [],
+      "score": {
+        "case_id": "013",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": null,
+        "single_hit": null,
+        "multi_appropriate": null,
+        "clarify_appropriate": true,
+        "unnecessary_question": null,
+        "forced_one": null,
+        "abstain_appropriate": true,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "013",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [],
+        "ranks": {},
+        "scores": {
+          "buckling": 5.0,
+          "cfd_flow": 5.0,
+          "eigenvalue": 5.0,
+          "explicit_impact": 5.0,
+          "fatigue_life": 5.0,
+          "fracture_mechanics": 5.0,
+          "frequency_response": 5.0,
+          "random_vibration": 5.0,
+          "solder_crack_propagation": 5.0,
+          "solder_life_prediction": 5.0,
+          "static_strength": 5.0,
+          "thermal_stress": 5.0
+        },
+        "needs_clarification": true,
+        "clarification_questions": [
+          "適合度がどれも低いです。解析の対象と、何を知りたいかを教えてください。"
+        ],
+        "abstained": true,
+        "reasons": [
+          "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve",
+          "below_minimum"
+        ]
+      }
+    },
+    {
+      "case_id": "014",
+      "tags": [],
+      "score": {
+        "case_id": "014",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": null,
+        "single_hit": null,
+        "multi_appropriate": null,
+        "clarify_appropriate": true,
+        "unnecessary_question": null,
+        "forced_one": null,
+        "abstain_appropriate": true,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "014",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [],
+        "ranks": {},
+        "scores": {
+          "buckling": 5.0,
+          "cfd_flow": 5.0,
+          "eigenvalue": 5.0,
+          "explicit_impact": 5.0,
+          "fatigue_life": 5.0,
+          "fracture_mechanics": 5.0,
+          "frequency_response": 5.0,
+          "random_vibration": 5.0,
+          "solder_crack_propagation": 5.0,
+          "solder_life_prediction": 5.0,
+          "static_strength": 5.0,
+          "thermal_stress": 5.0
+        },
+        "needs_clarification": true,
+        "clarification_questions": [
+          "適合度がどれも低いです。解析の対象と、何を知りたいかを教えてください。"
+        ],
+        "abstained": true,
+        "reasons": [
+          "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve",
+          "below_minimum"
+        ]
+      }
+    },
+    {
+      "case_id": "015",
+      "tags": [],
+      "score": {
+        "case_id": "015",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": null,
+        "single_hit": null,
+        "multi_appropriate": null,
+        "clarify_appropriate": true,
+        "unnecessary_question": null,
+        "forced_one": null,
+        "abstain_appropriate": true,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "015",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [],
+        "ranks": {},
+        "scores": {
+          "buckling": 5.0,
+          "cfd_flow": 5.0,
+          "eigenvalue": 5.0,
+          "explicit_impact": 5.0,
+          "fatigue_life": 5.0,
+          "fracture_mechanics": 5.0,
+          "frequency_response": 5.0,
+          "random_vibration": 5.0,
+          "solder_crack_propagation": 5.0,
+          "solder_life_prediction": 5.0,
+          "static_strength": 5.0,
+          "thermal_stress": 5.0
+        },
+        "needs_clarification": true,
+        "clarification_questions": [
+          "適合度がどれも低いです。解析の対象と、何を知りたいかを教えてください。"
+        ],
+        "abstained": true,
+        "reasons": [
+          "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve",
+          "below_minimum"
+        ]
+      }
+    },
+    {
+      "case_id": "016",
+      "tags": [],
+      "score": {
+        "case_id": "016",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": null,
+        "single_hit": null,
+        "multi_appropriate": null,
+        "clarify_appropriate": true,
+        "unnecessary_question": null,
+        "forced_one": null,
+        "abstain_appropriate": true,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "016",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [],
+        "ranks": {},
+        "scores": {
+          "buckling": 5.0,
+          "cfd_flow": 5.0,
+          "eigenvalue": 5.0,
+          "explicit_impact": 5.0,
+          "fatigue_life": 5.0,
+          "fracture_mechanics": 5.0,
+          "frequency_response": 5.0,
+          "random_vibration": 5.0,
+          "solder_crack_propagation": 5.0,
+          "solder_life_prediction": 5.0,
+          "static_strength": 5.0,
+          "thermal_stress": 5.0
+        },
+        "needs_clarification": true,
+        "clarification_questions": [
+          "適合度がどれも低いです。解析の対象と、何を知りたいかを教えてください。"
+        ],
+        "abstained": true,
+        "reasons": [
+          "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve",
+          "below_minimum"
+        ]
+      }
+    },
+    {
+      "case_id": "017",
+      "tags": [],
+      "score": {
+        "case_id": "017",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "017",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "fatigue_life"
+        ],
+        "ranks": {
+          "fatigue_life": 1
+        },
+        "scores": {
+          "fatigue_life": 100.0,
+          "static_strength": 15.0,
+          "buckling": 5.0,
+          "eigenvalue": 5.0,
+          "fracture_mechanics": 5.0,
+          "frequency_response": 5.0,
+          "random_vibration": 5.0,
+          "cfd_flow": 2.0,
+          "explicit_impact": 2.0,
+          "solder_crack_propagation": 2.0,
+          "solder_life_prediction": 2.0,
+          "thermal_stress": 2.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "018",
+      "tags": [],
+      "score": {
+        "case_id": "018",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "018",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "fatigue_life"
+        ],
+        "ranks": {
+          "fatigue_life": 1
+        },
+        "scores": {
+          "fatigue_life": 100.0,
+          "static_strength": 15.0,
+          "buckling": 5.0,
+          "eigenvalue": 5.0,
+          "fracture_mechanics": 5.0,
+          "frequency_response": 5.0,
+          "random_vibration": 5.0,
+          "cfd_flow": 2.0,
+          "explicit_impact": 2.0,
+          "solder_crack_propagation": 2.0,
+          "solder_life_prediction": 2.0,
+          "thermal_stress": 2.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "019",
+      "tags": [
+        "不適切な追加質問"
+      ],
+      "score": {
+        "case_id": "019",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": true,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "019",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "fatigue_life"
+        ],
+        "ranks": {
+          "fatigue_life": 1
+        },
+        "scores": {
+          "fatigue_life": 65.0,
+          "static_strength": 15.0,
+          "buckling": 5.0,
+          "eigenvalue": 5.0,
+          "fracture_mechanics": 5.0,
+          "frequency_response": 5.0,
+          "random_vibration": 5.0,
+          "cfd_flow": 2.0,
+          "explicit_impact": 2.0,
+          "solder_crack_propagation": 2.0,
+          "solder_life_prediction": 2.0,
+          "thermal_stress": 2.0
+        },
+        "needs_clarification": true,
+        "clarification_questions": [
+          "次を教えてください。対象材料と疲労評価法"
+        ],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。",
+          "採点側が情報不足を示した。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "020",
+      "tags": [],
+      "score": {
+        "case_id": "020",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "020",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "fatigue_life"
+        ],
+        "ranks": {
+          "fatigue_life": 1
+        },
+        "scores": {
+          "fatigue_life": 100.0,
+          "static_strength": 15.0,
+          "buckling": 5.0,
+          "eigenvalue": 5.0,
+          "fracture_mechanics": 5.0,
+          "frequency_response": 5.0,
+          "random_vibration": 5.0,
+          "cfd_flow": 2.0,
+          "explicit_impact": 2.0,
+          "solder_crack_propagation": 2.0,
+          "solder_life_prediction": 2.0,
+          "thermal_stress": 2.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "021",
+      "tags": [],
+      "score": {
+        "case_id": "021",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "021",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "eigenvalue"
+        ],
+        "ranks": {
+          "eigenvalue": 1
+        },
+        "scores": {
+          "eigenvalue": 100.0,
+          "buckling": 10.0,
+          "frequency_response": 10.0,
+          "random_vibration": 5.0,
+          "static_strength": 5.0,
+          "cfd_flow": 2.0,
+          "explicit_impact": 2.0,
+          "fatigue_life": 2.0,
+          "fracture_mechanics": 2.0,
+          "solder_crack_propagation": 2.0,
+          "solder_life_prediction": 2.0,
+          "thermal_stress": 2.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "022",
+      "tags": [],
+      "score": {
+        "case_id": "022",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "022",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "eigenvalue"
+        ],
+        "ranks": {
+          "eigenvalue": 1
+        },
+        "scores": {
+          "eigenvalue": 100.0,
+          "buckling": 10.0,
+          "frequency_response": 10.0,
+          "random_vibration": 5.0,
+          "static_strength": 5.0,
+          "cfd_flow": 2.0,
+          "explicit_impact": 2.0,
+          "fatigue_life": 2.0,
+          "fracture_mechanics": 2.0,
+          "solder_crack_propagation": 2.0,
+          "solder_life_prediction": 2.0,
+          "thermal_stress": 2.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "023",
+      "tags": [],
+      "score": {
+        "case_id": "023",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "023",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "frequency_response"
+        ],
+        "ranks": {
+          "frequency_response": 1
+        },
+        "scores": {
+          "frequency_response": 100.0,
+          "eigenvalue": 25.0,
+          "random_vibration": 5.0,
+          "static_strength": 5.0,
+          "buckling": 2.0,
+          "cfd_flow": 2.0,
+          "explicit_impact": 2.0,
+          "fatigue_life": 2.0,
+          "fracture_mechanics": 2.0,
+          "solder_crack_propagation": 2.0,
+          "solder_life_prediction": 2.0,
+          "thermal_stress": 2.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "024",
+      "tags": [],
+      "score": {
+        "case_id": "024",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "024",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "frequency_response"
+        ],
+        "ranks": {
+          "frequency_response": 1
+        },
+        "scores": {
+          "frequency_response": 100.0,
+          "eigenvalue": 25.0,
+          "random_vibration": 5.0,
+          "static_strength": 5.0,
+          "buckling": 2.0,
+          "cfd_flow": 2.0,
+          "explicit_impact": 2.0,
+          "fatigue_life": 2.0,
+          "fracture_mechanics": 2.0,
+          "solder_crack_propagation": 2.0,
+          "solder_life_prediction": 2.0,
+          "thermal_stress": 2.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "025",
+      "tags": [],
+      "score": {
+        "case_id": "025",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "025",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "random_vibration"
+        ],
+        "ranks": {
+          "random_vibration": 1
+        },
+        "scores": {
+          "random_vibration": 100.0,
+          "eigenvalue": 25.0,
+          "frequency_response": 20.0,
+          "fatigue_life": 10.0,
+          "static_strength": 5.0,
+          "buckling": 2.0,
+          "cfd_flow": 2.0,
+          "explicit_impact": 2.0,
+          "fracture_mechanics": 2.0,
+          "solder_crack_propagation": 2.0,
+          "solder_life_prediction": 2.0,
+          "thermal_stress": 2.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "026",
+      "tags": [],
+      "score": {
+        "case_id": "026",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "026",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "random_vibration"
+        ],
+        "ranks": {
+          "random_vibration": 1
+        },
+        "scores": {
+          "random_vibration": 100.0,
+          "frequency_response": 25.0,
+          "eigenvalue": 20.0,
+          "explicit_impact": 5.0,
+          "fatigue_life": 5.0,
+          "buckling": 1.0,
+          "cfd_flow": 1.0,
+          "fracture_mechanics": 1.0,
+          "solder_crack_propagation": 1.0,
+          "solder_life_prediction": 1.0,
+          "static_strength": 1.0,
+          "thermal_stress": 1.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "027",
+      "tags": [],
+      "score": {
+        "case_id": "027",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "027",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "static_strength"
+        ],
+        "ranks": {
+          "static_strength": 1
+        },
+        "scores": {
+          "static_strength": 100.0,
+          "buckling": 10.0,
+          "fatigue_life": 10.0,
+          "fracture_mechanics": 5.0,
+          "cfd_flow": 1.0,
+          "eigenvalue": 1.0,
+          "explicit_impact": 1.0,
+          "frequency_response": 1.0,
+          "random_vibration": 1.0,
+          "solder_crack_propagation": 1.0,
+          "solder_life_prediction": 1.0,
+          "thermal_stress": 1.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "028",
+      "tags": [],
+      "score": {
+        "case_id": "028",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "028",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "static_strength"
+        ],
+        "ranks": {
+          "static_strength": 1
+        },
+        "scores": {
+          "static_strength": 98.0,
+          "buckling": 20.0,
+          "fatigue_life": 15.0,
+          "thermal_stress": 10.0,
+          "fracture_mechanics": 5.0,
+          "cfd_flow": 1.0,
+          "eigenvalue": 1.0,
+          "explicit_impact": 1.0,
+          "frequency_response": 1.0,
+          "random_vibration": 1.0,
+          "solder_crack_propagation": 1.0,
+          "solder_life_prediction": 1.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "029",
+      "tags": [],
+      "score": {
+        "case_id": "029",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "029",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "fracture_mechanics"
+        ],
+        "ranks": {
+          "fracture_mechanics": 1
+        },
+        "scores": {
+          "fracture_mechanics": 100.0,
+          "fatigue_life": 15.0,
+          "static_strength": 15.0,
+          "buckling": 1.0,
+          "cfd_flow": 1.0,
+          "eigenvalue": 1.0,
+          "explicit_impact": 1.0,
+          "frequency_response": 1.0,
+          "random_vibration": 1.0,
+          "solder_crack_propagation": 1.0,
+          "solder_life_prediction": 1.0,
+          "thermal_stress": 1.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "030",
+      "tags": [],
+      "score": {
+        "case_id": "030",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "030",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "fracture_mechanics"
+        ],
+        "ranks": {
+          "fracture_mechanics": 1
+        },
+        "scores": {
+          "fracture_mechanics": 100.0,
+          "fatigue_life": 25.0,
+          "static_strength": 10.0,
+          "solder_crack_propagation": 2.0,
+          "buckling": 1.0,
+          "cfd_flow": 1.0,
+          "eigenvalue": 1.0,
+          "explicit_impact": 1.0,
+          "frequency_response": 1.0,
+          "random_vibration": 1.0,
+          "solder_life_prediction": 1.0,
+          "thermal_stress": 1.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "031",
+      "tags": [],
+      "score": {
+        "case_id": "031",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "031",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "thermal_stress"
+        ],
+        "ranks": {
+          "thermal_stress": 1
+        },
+        "scores": {
+          "thermal_stress": 100.0,
+          "static_strength": 15.0,
+          "cfd_flow": 10.0,
+          "buckling": 1.0,
+          "eigenvalue": 1.0,
+          "explicit_impact": 1.0,
+          "fatigue_life": 1.0,
+          "fracture_mechanics": 1.0,
+          "frequency_response": 1.0,
+          "random_vibration": 1.0,
+          "solder_crack_propagation": 1.0,
+          "solder_life_prediction": 1.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "032",
+      "tags": [],
+      "score": {
+        "case_id": "032",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "032",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "thermal_stress"
+        ],
+        "ranks": {
+          "thermal_stress": 1
+        },
+        "scores": {
+          "thermal_stress": 98.0,
+          "static_strength": 10.0,
+          "cfd_flow": 5.0,
+          "buckling": 1.0,
+          "eigenvalue": 1.0,
+          "explicit_impact": 1.0,
+          "fatigue_life": 1.0,
+          "fracture_mechanics": 1.0,
+          "frequency_response": 1.0,
+          "random_vibration": 1.0,
+          "solder_crack_propagation": 1.0,
+          "solder_life_prediction": 1.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "033",
+      "tags": [],
+      "score": {
+        "case_id": "033",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "033",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "buckling"
+        ],
+        "ranks": {
+          "buckling": 1
+        },
+        "scores": {
+          "buckling": 100.0,
+          "static_strength": 25.0,
+          "eigenvalue": 15.0,
+          "cfd_flow": 1.0,
+          "explicit_impact": 1.0,
+          "fatigue_life": 1.0,
+          "fracture_mechanics": 1.0,
+          "frequency_response": 1.0,
+          "random_vibration": 1.0,
+          "solder_crack_propagation": 1.0,
+          "solder_life_prediction": 1.0,
+          "thermal_stress": 1.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "034",
+      "tags": [],
+      "score": {
+        "case_id": "034",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "034",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "buckling"
+        ],
+        "ranks": {
+          "buckling": 1
+        },
+        "scores": {
+          "buckling": 100.0,
+          "eigenvalue": 20.0,
+          "static_strength": 20.0,
+          "cfd_flow": 1.0,
+          "explicit_impact": 1.0,
+          "fatigue_life": 1.0,
+          "fracture_mechanics": 1.0,
+          "frequency_response": 1.0,
+          "random_vibration": 1.0,
+          "solder_crack_propagation": 1.0,
+          "solder_life_prediction": 1.0,
+          "thermal_stress": 1.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "035",
+      "tags": [],
+      "score": {
+        "case_id": "035",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "035",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "explicit_impact"
+        ],
+        "ranks": {
+          "explicit_impact": 1
+        },
+        "scores": {
+          "explicit_impact": 100.0,
+          "static_strength": 10.0,
+          "buckling": 1.0,
+          "cfd_flow": 1.0,
+          "eigenvalue": 1.0,
+          "fatigue_life": 1.0,
+          "fracture_mechanics": 1.0,
+          "frequency_response": 1.0,
+          "random_vibration": 1.0,
+          "solder_crack_propagation": 1.0,
+          "solder_life_prediction": 1.0,
+          "thermal_stress": 1.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "036",
+      "tags": [],
+      "score": {
+        "case_id": "036",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "036",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "explicit_impact"
+        ],
+        "ranks": {
+          "explicit_impact": 1
+        },
+        "scores": {
+          "explicit_impact": 100.0,
+          "static_strength": 5.0,
+          "buckling": 1.0,
+          "cfd_flow": 1.0,
+          "eigenvalue": 1.0,
+          "fatigue_life": 1.0,
+          "fracture_mechanics": 1.0,
+          "frequency_response": 1.0,
+          "random_vibration": 1.0,
+          "solder_crack_propagation": 1.0,
+          "solder_life_prediction": 1.0,
+          "thermal_stress": 1.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "037",
+      "tags": [],
+      "score": {
+        "case_id": "037",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "037",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "cfd_flow"
+        ],
+        "ranks": {
+          "cfd_flow": 1
+        },
+        "scores": {
+          "cfd_flow": 100.0,
+          "thermal_stress": 15.0,
+          "buckling": 1.0,
+          "eigenvalue": 1.0,
+          "explicit_impact": 1.0,
+          "fatigue_life": 1.0,
+          "fracture_mechanics": 1.0,
+          "frequency_response": 1.0,
+          "random_vibration": 1.0,
+          "solder_crack_propagation": 1.0,
+          "solder_life_prediction": 1.0,
+          "static_strength": 1.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "038",
+      "tags": [],
+      "score": {
+        "case_id": "038",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "038",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "cfd_flow"
+        ],
+        "ranks": {
+          "cfd_flow": 1
+        },
+        "scores": {
+          "cfd_flow": 100.0,
+          "thermal_stress": 10.0,
+          "buckling": 1.0,
+          "eigenvalue": 1.0,
+          "explicit_impact": 1.0,
+          "fatigue_life": 1.0,
+          "fracture_mechanics": 1.0,
+          "frequency_response": 1.0,
+          "random_vibration": 1.0,
+          "solder_crack_propagation": 1.0,
+          "solder_life_prediction": 1.0,
+          "static_strength": 1.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "039",
+      "tags": [],
+      "score": {
+        "case_id": "039",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "039",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "solder_life_prediction"
+        ],
+        "ranks": {
+          "solder_life_prediction": 1
+        },
+        "scores": {
+          "solder_life_prediction": 100.0,
+          "fatigue_life": 20.0,
+          "thermal_stress": 20.0,
+          "solder_crack_propagation": 10.0,
+          "buckling": 1.0,
+          "cfd_flow": 1.0,
+          "eigenvalue": 1.0,
+          "explicit_impact": 1.0,
+          "fracture_mechanics": 1.0,
+          "frequency_response": 1.0,
+          "random_vibration": 1.0,
+          "static_strength": 1.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "040",
+      "tags": [],
+      "score": {
+        "case_id": "040",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "040",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "solder_life_prediction"
+        ],
+        "ranks": {
+          "solder_life_prediction": 1
+        },
+        "scores": {
+          "solder_life_prediction": 100.0,
+          "fatigue_life": 25.0,
+          "thermal_stress": 20.0,
+          "solder_crack_propagation": 15.0,
+          "buckling": 1.0,
+          "cfd_flow": 1.0,
+          "eigenvalue": 1.0,
+          "explicit_impact": 1.0,
+          "fracture_mechanics": 1.0,
+          "frequency_response": 1.0,
+          "random_vibration": 1.0,
+          "static_strength": 1.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "041",
+      "tags": [],
+      "score": {
+        "case_id": "041",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "041",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "solder_crack_propagation"
+        ],
+        "ranks": {
+          "solder_crack_propagation": 1
+        },
+        "scores": {
+          "solder_crack_propagation": 100.0,
+          "thermal_stress": 25.0,
+          "fatigue_life": 20.0,
+          "fracture_mechanics": 20.0,
+          "solder_life_prediction": 20.0,
+          "buckling": 1.0,
+          "cfd_flow": 1.0,
+          "eigenvalue": 1.0,
+          "explicit_impact": 1.0,
+          "frequency_response": 1.0,
+          "random_vibration": 1.0,
+          "static_strength": 1.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "042",
+      "tags": [],
+      "score": {
+        "case_id": "042",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "042",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "solder_crack_propagation"
+        ],
+        "ranks": {
+          "solder_crack_propagation": 1
+        },
+        "scores": {
+          "solder_crack_propagation": 100.0,
+          "fracture_mechanics": 25.0,
+          "fatigue_life": 20.0,
+          "solder_life_prediction": 20.0,
+          "thermal_stress": 15.0,
+          "buckling": 1.0,
+          "cfd_flow": 1.0,
+          "eigenvalue": 1.0,
+          "explicit_impact": 1.0,
+          "frequency_response": 1.0,
+          "random_vibration": 1.0,
+          "static_strength": 1.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "043",
+      "tags": [
+        "候補漏れ"
+      ],
+      "score": {
+        "case_id": "043",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "exact": false,
+        "required_hit": false,
+        "single_hit": null,
+        "multi_appropriate": false,
+        "clarify_appropriate": true,
+        "unnecessary_question": null,
+        "forced_one": false,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "043",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [],
+        "ranks": {},
+        "scores": {
+          "fatigue_life": 35.0,
+          "solder_life_prediction": 35.0,
+          "solder_crack_propagation": 15.0,
+          "buckling": 10.0,
+          "fracture_mechanics": 10.0,
+          "static_strength": 10.0,
+          "thermal_stress": 10.0,
+          "cfd_flow": 5.0,
+          "eigenvalue": 5.0,
+          "explicit_impact": 5.0,
+          "frequency_response": 5.0,
+          "random_vibration": 5.0
+        },
+        "needs_clarification": true,
+        "clarification_questions": [
+          "適合度がどれも低いです。解析の対象と、何を知りたいかを教えてください。"
+        ],
+        "abstained": true,
+        "reasons": [
+          "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve",
+          "below_minimum"
+        ]
+      }
+    },
+    {
+      "case_id": "044",
+      "tags": [
+        "候補漏れ"
+      ],
+      "score": {
+        "case_id": "044",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "exact": false,
+        "required_hit": false,
+        "single_hit": null,
+        "multi_appropriate": false,
+        "clarify_appropriate": true,
+        "unnecessary_question": null,
+        "forced_one": false,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "044",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [],
+        "ranks": {},
+        "scores": {
+          "fatigue_life": 25.0,
+          "solder_life_prediction": 20.0,
+          "solder_crack_propagation": 15.0,
+          "static_strength": 15.0,
+          "thermal_stress": 15.0,
+          "buckling": 10.0,
+          "eigenvalue": 10.0,
+          "explicit_impact": 10.0,
+          "fracture_mechanics": 10.0,
+          "frequency_response": 10.0,
+          "random_vibration": 10.0,
+          "cfd_flow": 5.0
+        },
+        "needs_clarification": true,
+        "clarification_questions": [
+          "適合度がどれも低いです。解析の対象と、何を知りたいかを教えてください。"
+        ],
+        "abstained": true,
+        "reasons": [
+          "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve",
+          "below_minimum"
+        ]
+      }
+    },
+    {
+      "case_id": "045",
+      "tags": [
+        "候補漏れ"
+      ],
+      "score": {
+        "case_id": "045",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "exact": false,
+        "required_hit": false,
+        "single_hit": null,
+        "multi_appropriate": false,
+        "clarify_appropriate": true,
+        "unnecessary_question": null,
+        "forced_one": false,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "045",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [],
+        "ranks": {},
+        "scores": {
+          "fracture_mechanics": 35.0,
+          "solder_crack_propagation": 25.0,
+          "fatigue_life": 20.0,
+          "static_strength": 20.0,
+          "solder_life_prediction": 10.0,
+          "thermal_stress": 10.0,
+          "buckling": 5.0,
+          "eigenvalue": 5.0,
+          "explicit_impact": 5.0,
+          "frequency_response": 5.0,
+          "random_vibration": 5.0,
+          "cfd_flow": 1.0
+        },
+        "needs_clarification": true,
+        "clarification_questions": [
+          "適合度がどれも低いです。解析の対象と、何を知りたいかを教えてください。"
+        ],
+        "abstained": true,
+        "reasons": [
+          "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve",
+          "below_minimum"
+        ]
+      }
+    },
+    {
+      "case_id": "046",
+      "tags": [
+        "候補漏れ"
+      ],
+      "score": {
+        "case_id": "046",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "exact": false,
+        "required_hit": false,
+        "single_hit": null,
+        "multi_appropriate": false,
+        "clarify_appropriate": true,
+        "unnecessary_question": null,
+        "forced_one": false,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "046",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [],
+        "ranks": {},
+        "scores": {
+          "fracture_mechanics": 40.0,
+          "fatigue_life": 20.0,
+          "solder_crack_propagation": 20.0,
+          "static_strength": 20.0,
+          "thermal_stress": 10.0,
+          "buckling": 5.0,
+          "eigenvalue": 5.0,
+          "explicit_impact": 5.0,
+          "frequency_response": 5.0,
+          "random_vibration": 5.0,
+          "solder_life_prediction": 5.0,
+          "cfd_flow": 1.0
+        },
+        "needs_clarification": true,
+        "clarification_questions": [
+          "適合度がどれも低いです。解析の対象と、何を知りたいかを教えてください。"
+        ],
+        "abstained": true,
+        "reasons": [
+          "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve",
+          "below_minimum"
+        ]
+      }
+    },
+    {
+      "case_id": "047",
+      "tags": [
+        "候補漏れ"
+      ],
+      "score": {
+        "case_id": "047",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "exact": false,
+        "required_hit": false,
+        "single_hit": false,
+        "multi_appropriate": null,
+        "clarify_appropriate": true,
+        "unnecessary_question": null,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "047",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [],
+        "ranks": {},
+        "scores": {
+          "thermal_stress": 40.0,
+          "cfd_flow": 25.0,
+          "static_strength": 20.0,
+          "fatigue_life": 15.0,
+          "solder_life_prediction": 15.0,
+          "solder_crack_propagation": 10.0,
+          "buckling": 5.0,
+          "eigenvalue": 5.0,
+          "fracture_mechanics": 5.0,
+          "frequency_response": 5.0,
+          "random_vibration": 5.0,
+          "explicit_impact": 1.0
+        },
+        "needs_clarification": true,
+        "clarification_questions": [
+          "適合度がどれも低いです。解析の対象と、何を知りたいかを教えてください。"
+        ],
+        "abstained": true,
+        "reasons": [
+          "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve",
+          "below_minimum"
+        ]
+      }
+    },
+    {
+      "case_id": "048",
+      "tags": [
+        "候補漏れ"
+      ],
+      "score": {
+        "case_id": "048",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "exact": false,
+        "required_hit": false,
+        "single_hit": null,
+        "multi_appropriate": false,
+        "clarify_appropriate": true,
+        "unnecessary_question": null,
+        "forced_one": false,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "048",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [],
+        "ranks": {},
+        "scores": {
+          "eigenvalue": 40.0,
+          "frequency_response": 40.0,
+          "random_vibration": 25.0,
+          "buckling": 5.0,
+          "fatigue_life": 5.0,
+          "cfd_flow": 1.0,
+          "explicit_impact": 1.0,
+          "fracture_mechanics": 1.0,
+          "solder_crack_propagation": 1.0,
+          "solder_life_prediction": 1.0,
+          "static_strength": 1.0,
+          "thermal_stress": 1.0
+        },
+        "needs_clarification": true,
+        "clarification_questions": [
+          "適合度がどれも低いです。解析の対象と、何を知りたいかを教えてください。"
+        ],
+        "abstained": true,
+        "reasons": [
+          "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve",
+          "below_minimum"
+        ]
+      }
+    },
+    {
+      "case_id": "049",
+      "tags": [
+        "候補漏れ"
+      ],
+      "score": {
+        "case_id": "049",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "exact": false,
+        "required_hit": false,
+        "single_hit": null,
+        "multi_appropriate": false,
+        "clarify_appropriate": true,
+        "unnecessary_question": null,
+        "forced_one": false,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "049",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [],
+        "ranks": {},
+        "scores": {
+          "eigenvalue": 45.0,
+          "frequency_response": 45.0,
+          "random_vibration": 20.0,
+          "fatigue_life": 10.0,
+          "buckling": 5.0,
+          "cfd_flow": 1.0,
+          "explicit_impact": 1.0,
+          "fracture_mechanics": 1.0,
+          "solder_crack_propagation": 1.0,
+          "solder_life_prediction": 1.0,
+          "static_strength": 1.0,
+          "thermal_stress": 1.0
+        },
+        "needs_clarification": true,
+        "clarification_questions": [
+          "適合度がどれも低いです。解析の対象と、何を知りたいかを教えてください。"
+        ],
+        "abstained": true,
+        "reasons": [
+          "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve",
+          "below_minimum"
+        ]
+      }
+    },
+    {
+      "case_id": "050",
+      "tags": [
+        "候補漏れ"
+      ],
+      "score": {
+        "case_id": "050",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "exact": false,
+        "required_hit": false,
+        "single_hit": null,
+        "multi_appropriate": false,
+        "clarify_appropriate": true,
+        "unnecessary_question": null,
+        "forced_one": false,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "050",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [],
+        "ranks": {},
+        "scores": {
+          "explicit_impact": 35.0,
+          "eigenvalue": 30.0,
+          "frequency_response": 30.0,
+          "random_vibration": 30.0,
+          "fatigue_life": 15.0,
+          "static_strength": 15.0,
+          "solder_crack_propagation": 10.0,
+          "solder_life_prediction": 10.0,
+          "buckling": 5.0,
+          "fracture_mechanics": 5.0,
+          "cfd_flow": 1.0,
+          "thermal_stress": 1.0
+        },
+        "needs_clarification": true,
+        "clarification_questions": [
+          "適合度がどれも低いです。解析の対象と、何を知りたいかを教えてください。"
+        ],
+        "abstained": true,
+        "reasons": [
+          "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve",
+          "below_minimum"
+        ]
+      }
+    },
+    {
+      "case_id": "051",
+      "tags": [
+        "候補漏れ"
+      ],
+      "score": {
+        "case_id": "051",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "exact": false,
+        "required_hit": false,
+        "single_hit": null,
+        "multi_appropriate": false,
+        "clarify_appropriate": true,
+        "unnecessary_question": null,
+        "forced_one": false,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "051",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [],
+        "ranks": {},
+        "scores": {
+          "static_strength": 45.0,
+          "thermal_stress": 25.0,
+          "fatigue_life": 20.0,
+          "buckling": 10.0,
+          "fracture_mechanics": 10.0,
+          "cfd_flow": 0.0,
+          "eigenvalue": 0.0,
+          "explicit_impact": 0.0,
+          "frequency_response": 0.0,
+          "random_vibration": 0.0,
+          "solder_crack_propagation": 0.0,
+          "solder_life_prediction": 0.0
+        },
+        "needs_clarification": true,
+        "clarification_questions": [
+          "適合度がどれも低いです。解析の対象と、何を知りたいかを教えてください。"
+        ],
+        "abstained": true,
+        "reasons": [
+          "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve",
+          "below_minimum"
+        ]
+      }
+    },
+    {
+      "case_id": "052",
+      "tags": [
+        "候補漏れ"
+      ],
+      "score": {
+        "case_id": "052",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "exact": false,
+        "required_hit": false,
+        "single_hit": null,
+        "multi_appropriate": false,
+        "clarify_appropriate": true,
+        "unnecessary_question": null,
+        "forced_one": false,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "052",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [],
+        "ranks": {},
+        "scores": {
+          "static_strength": 40.0,
+          "thermal_stress": 30.0,
+          "buckling": 15.0,
+          "explicit_impact": 10.0,
+          "fatigue_life": 10.0,
+          "frequency_response": 10.0,
+          "eigenvalue": 5.0,
+          "fracture_mechanics": 5.0,
+          "random_vibration": 5.0,
+          "cfd_flow": 0.0,
+          "solder_crack_propagation": 0.0,
+          "solder_life_prediction": 0.0
+        },
+        "needs_clarification": true,
+        "clarification_questions": [
+          "適合度がどれも低いです。解析の対象と、何を知りたいかを教えてください。"
+        ],
+        "abstained": true,
+        "reasons": [
+          "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve",
+          "below_minimum"
+        ]
+      }
+    },
+    {
+      "case_id": "053",
+      "tags": [],
+      "score": {
+        "case_id": "053",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": null,
+        "multi_appropriate": true,
+        "clarify_appropriate": true,
+        "unnecessary_question": null,
+        "forced_one": false,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "053",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "solder_crack_propagation",
+          "solder_life_prediction"
+        ],
+        "ranks": {
+          "solder_crack_propagation": 1,
+          "solder_life_prediction": 2
+        },
+        "scores": {
+          "solder_crack_propagation": 55.0,
+          "solder_life_prediction": 50.0,
+          "thermal_stress": 25.0,
+          "fatigue_life": 20.0,
+          "fracture_mechanics": 20.0,
+          "static_strength": 10.0,
+          "explicit_impact": 5.0,
+          "buckling": 0.0,
+          "cfd_flow": 0.0,
+          "eigenvalue": 0.0,
+          "frequency_response": 0.0,
+          "random_vibration": 0.0
+        },
+        "needs_clarification": true,
+        "clarification_questions": [
+          "次を教えてください。はんだ接合か、亀裂進展か寿命か"
+        ],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。",
+          "採点側が情報不足を示した。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "054",
+      "tags": [
+        "候補漏れ"
+      ],
+      "score": {
+        "case_id": "054",
+        "precision": 1.0,
+        "recall": 0.6666666666666666,
+        "f1": 0.8,
+        "exact": false,
+        "required_hit": false,
+        "single_hit": null,
+        "multi_appropriate": false,
+        "clarify_appropriate": true,
+        "unnecessary_question": null,
+        "forced_one": false,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "054",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "solder_life_prediction",
+          "thermal_stress"
+        ],
+        "ranks": {
+          "solder_life_prediction": 1,
+          "thermal_stress": 2
+        },
+        "scores": {
+          "solder_life_prediction": 55.0,
+          "thermal_stress": 55.0,
+          "solder_crack_propagation": 30.0,
+          "fatigue_life": 15.0,
+          "fracture_mechanics": 10.0,
+          "cfd_flow": 5.0,
+          "static_strength": 5.0,
+          "buckling": 0.0,
+          "eigenvalue": 0.0,
+          "explicit_impact": 0.0,
+          "frequency_response": 0.0,
+          "random_vibration": 0.0
+        },
+        "needs_clarification": true,
+        "clarification_questions": [
+          "次を教えてください。温度サイクルか定常温度か、寿命か熱応力か"
+        ],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。",
+          "採点側が情報不足を示した。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "055",
+      "tags": [],
+      "score": {
+        "case_id": "055",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "055",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "solder_crack_propagation"
+        ],
+        "ranks": {
+          "solder_crack_propagation": 1
+        },
+        "scores": {
+          "solder_crack_propagation": 100.0,
+          "fracture_mechanics": 20.0,
+          "solder_life_prediction": 15.0,
+          "fatigue_life": 10.0,
+          "thermal_stress": 10.0,
+          "buckling": 0.0,
+          "cfd_flow": 0.0,
+          "eigenvalue": 0.0,
+          "explicit_impact": 0.0,
+          "frequency_response": 0.0,
+          "random_vibration": 0.0,
+          "static_strength": 0.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "056",
+      "tags": [],
+      "score": {
+        "case_id": "056",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "056",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "eigenvalue"
+        ],
+        "ranks": {
+          "eigenvalue": 1
+        },
+        "scores": {
+          "eigenvalue": 100.0,
+          "frequency_response": 15.0,
+          "buckling": 10.0,
+          "random_vibration": 10.0,
+          "cfd_flow": 0.0,
+          "explicit_impact": 0.0,
+          "fatigue_life": 0.0,
+          "fracture_mechanics": 0.0,
+          "solder_crack_propagation": 0.0,
+          "solder_life_prediction": 0.0,
+          "static_strength": 0.0,
+          "thermal_stress": 0.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "057",
+      "tags": [],
+      "score": {
+        "case_id": "057",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "057",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "random_vibration"
+        ],
+        "ranks": {
+          "random_vibration": 1
+        },
+        "scores": {
+          "random_vibration": 100.0,
+          "frequency_response": 25.0,
+          "eigenvalue": 20.0,
+          "fatigue_life": 10.0,
+          "buckling": 0.0,
+          "cfd_flow": 0.0,
+          "explicit_impact": 0.0,
+          "fracture_mechanics": 0.0,
+          "solder_crack_propagation": 0.0,
+          "solder_life_prediction": 0.0,
+          "static_strength": 0.0,
+          "thermal_stress": 0.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "058",
+      "tags": [],
+      "score": {
+        "case_id": "058",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "058",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "explicit_impact"
+        ],
+        "ranks": {
+          "explicit_impact": 1
+        },
+        "scores": {
+          "explicit_impact": 100.0,
+          "static_strength": 10.0,
+          "fracture_mechanics": 5.0,
+          "buckling": 0.0,
+          "cfd_flow": 0.0,
+          "eigenvalue": 0.0,
+          "fatigue_life": 0.0,
+          "frequency_response": 0.0,
+          "random_vibration": 0.0,
+          "solder_crack_propagation": 0.0,
+          "solder_life_prediction": 0.0,
+          "thermal_stress": 0.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "059",
+      "tags": [],
+      "score": {
+        "case_id": "059",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "059",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "buckling"
+        ],
+        "ranks": {
+          "buckling": 1
+        },
+        "scores": {
+          "buckling": 100.0,
+          "static_strength": 20.0,
+          "eigenvalue": 5.0,
+          "cfd_flow": 0.0,
+          "explicit_impact": 0.0,
+          "fatigue_life": 0.0,
+          "fracture_mechanics": 0.0,
+          "frequency_response": 0.0,
+          "random_vibration": 0.0,
+          "solder_crack_propagation": 0.0,
+          "solder_life_prediction": 0.0,
+          "thermal_stress": 0.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "060",
+      "tags": [],
+      "score": {
+        "case_id": "060",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "060",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "static_strength"
+        ],
+        "ranks": {
+          "static_strength": 1
+        },
+        "scores": {
+          "static_strength": 100.0,
+          "buckling": 15.0,
+          "thermal_stress": 15.0,
+          "fatigue_life": 10.0,
+          "fracture_mechanics": 5.0,
+          "cfd_flow": 0.0,
+          "eigenvalue": 0.0,
+          "explicit_impact": 0.0,
+          "frequency_response": 0.0,
+          "random_vibration": 0.0,
+          "solder_crack_propagation": 0.0,
+          "solder_life_prediction": 0.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "061",
+      "tags": [],
+      "score": {
+        "case_id": "061",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "061",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "frequency_response"
+        ],
+        "ranks": {
+          "frequency_response": 1
+        },
+        "scores": {
+          "frequency_response": 100.0,
+          "eigenvalue": 25.0,
+          "random_vibration": 15.0,
+          "buckling": 0.0,
+          "cfd_flow": 0.0,
+          "explicit_impact": 0.0,
+          "fatigue_life": 0.0,
+          "fracture_mechanics": 0.0,
+          "solder_crack_propagation": 0.0,
+          "solder_life_prediction": 0.0,
+          "static_strength": 0.0,
+          "thermal_stress": 0.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "062",
+      "tags": [],
+      "score": {
+        "case_id": "062",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "062",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "eigenvalue"
+        ],
+        "ranks": {
+          "eigenvalue": 1
+        },
+        "scores": {
+          "eigenvalue": 100.0,
+          "frequency_response": 15.0,
+          "buckling": 10.0,
+          "random_vibration": 10.0,
+          "cfd_flow": 0.0,
+          "explicit_impact": 0.0,
+          "fatigue_life": 0.0,
+          "fracture_mechanics": 0.0,
+          "solder_crack_propagation": 0.0,
+          "solder_life_prediction": 0.0,
+          "static_strength": 0.0,
+          "thermal_stress": 0.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "063",
+      "tags": [],
+      "score": {
+        "case_id": "063",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "063",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "solder_life_prediction"
+        ],
+        "ranks": {
+          "solder_life_prediction": 1
+        },
+        "scores": {
+          "solder_life_prediction": 100.0,
+          "fatigue_life": 25.0,
+          "thermal_stress": 25.0,
+          "solder_crack_propagation": 20.0,
+          "fracture_mechanics": 5.0,
+          "buckling": 0.0,
+          "cfd_flow": 0.0,
+          "eigenvalue": 0.0,
+          "explicit_impact": 0.0,
+          "frequency_response": 0.0,
+          "random_vibration": 0.0,
+          "static_strength": 0.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "064",
+      "tags": [],
+      "score": {
+        "case_id": "064",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "064",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "cfd_flow"
+        ],
+        "ranks": {
+          "cfd_flow": 1
+        },
+        "scores": {
+          "cfd_flow": 100.0,
+          "thermal_stress": 5.0,
+          "buckling": 0.0,
+          "eigenvalue": 0.0,
+          "explicit_impact": 0.0,
+          "fatigue_life": 0.0,
+          "fracture_mechanics": 0.0,
+          "frequency_response": 0.0,
+          "random_vibration": 0.0,
+          "solder_crack_propagation": 0.0,
+          "solder_life_prediction": 0.0,
+          "static_strength": 0.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "065",
+      "tags": [],
+      "score": {
+        "case_id": "065",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "065",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "thermal_stress"
+        ],
+        "ranks": {
+          "thermal_stress": 1
+        },
+        "scores": {
+          "thermal_stress": 100.0,
+          "static_strength": 15.0,
+          "cfd_flow": 10.0,
+          "solder_life_prediction": 10.0,
+          "fatigue_life": 5.0,
+          "buckling": 0.0,
+          "eigenvalue": 0.0,
+          "explicit_impact": 0.0,
+          "fracture_mechanics": 0.0,
+          "frequency_response": 0.0,
+          "random_vibration": 0.0,
+          "solder_crack_propagation": 0.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "066",
+      "tags": [],
+      "score": {
+        "case_id": "066",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "066",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "fatigue_life"
+        ],
+        "ranks": {
+          "fatigue_life": 1
+        },
+        "scores": {
+          "fatigue_life": 100.0,
+          "fracture_mechanics": 15.0,
+          "thermal_stress": 10.0,
+          "solder_life_prediction": 5.0,
+          "static_strength": 5.0,
+          "buckling": 0.0,
+          "cfd_flow": 0.0,
+          "eigenvalue": 0.0,
+          "explicit_impact": 0.0,
+          "frequency_response": 0.0,
+          "random_vibration": 0.0,
+          "solder_crack_propagation": 0.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "067",
+      "tags": [],
+      "score": {
+        "case_id": "067",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "067",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "fracture_mechanics"
+        ],
+        "ranks": {
+          "fracture_mechanics": 1
+        },
+        "scores": {
+          "fracture_mechanics": 100.0,
+          "fatigue_life": 15.0,
+          "solder_crack_propagation": 10.0,
+          "static_strength": 10.0,
+          "buckling": 0.0,
+          "cfd_flow": 0.0,
+          "eigenvalue": 0.0,
+          "explicit_impact": 0.0,
+          "frequency_response": 0.0,
+          "random_vibration": 0.0,
+          "solder_life_prediction": 0.0,
+          "thermal_stress": 0.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "068",
+      "tags": [],
+      "score": {
+        "case_id": "068",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "068",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "frequency_response"
+        ],
+        "ranks": {
+          "frequency_response": 1
+        },
+        "scores": {
+          "frequency_response": 100.0,
+          "eigenvalue": 20.0,
+          "random_vibration": 5.0,
+          "buckling": 0.0,
+          "cfd_flow": 0.0,
+          "explicit_impact": 0.0,
+          "fatigue_life": 0.0,
+          "fracture_mechanics": 0.0,
+          "solder_crack_propagation": 0.0,
+          "solder_life_prediction": 0.0,
+          "static_strength": 0.0,
+          "thermal_stress": 0.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "069",
+      "tags": [],
+      "score": {
+        "case_id": "069",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "069",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "solder_crack_propagation"
+        ],
+        "ranks": {
+          "solder_crack_propagation": 1
+        },
+        "scores": {
+          "solder_crack_propagation": 100.0,
+          "fracture_mechanics": 20.0,
+          "solder_life_prediction": 15.0,
+          "fatigue_life": 10.0,
+          "thermal_stress": 10.0,
+          "buckling": 0.0,
+          "cfd_flow": 0.0,
+          "eigenvalue": 0.0,
+          "explicit_impact": 0.0,
+          "frequency_response": 0.0,
+          "random_vibration": 0.0,
+          "static_strength": 0.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "070",
+      "tags": [],
+      "score": {
+        "case_id": "070",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "070",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "random_vibration"
+        ],
+        "ranks": {
+          "random_vibration": 1
+        },
+        "scores": {
+          "random_vibration": 100.0,
+          "frequency_response": 20.0,
+          "eigenvalue": 15.0,
+          "fatigue_life": 10.0,
+          "explicit_impact": 5.0,
+          "buckling": 0.0,
+          "cfd_flow": 0.0,
+          "fracture_mechanics": 0.0,
+          "solder_crack_propagation": 0.0,
+          "solder_life_prediction": 0.0,
+          "static_strength": 0.0,
+          "thermal_stress": 0.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "071",
+      "tags": [],
+      "score": {
+        "case_id": "071",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "071",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "explicit_impact"
+        ],
+        "ranks": {
+          "explicit_impact": 1
+        },
+        "scores": {
+          "explicit_impact": 100.0,
+          "fracture_mechanics": 5.0,
+          "static_strength": 5.0,
+          "buckling": 0.0,
+          "cfd_flow": 0.0,
+          "eigenvalue": 0.0,
+          "fatigue_life": 0.0,
+          "frequency_response": 0.0,
+          "random_vibration": 0.0,
+          "solder_crack_propagation": 0.0,
+          "solder_life_prediction": 0.0,
+          "thermal_stress": 0.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "072",
+      "tags": [],
+      "score": {
+        "case_id": "072",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "072",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "buckling"
+        ],
+        "ranks": {
+          "buckling": 1
+        },
+        "scores": {
+          "buckling": 100.0,
+          "static_strength": 20.0,
+          "eigenvalue": 5.0,
+          "cfd_flow": 0.0,
+          "explicit_impact": 0.0,
+          "fatigue_life": 0.0,
+          "fracture_mechanics": 0.0,
+          "frequency_response": 0.0,
+          "random_vibration": 0.0,
+          "solder_crack_propagation": 0.0,
+          "solder_life_prediction": 0.0,
+          "thermal_stress": 0.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "073",
+      "tags": [],
+      "score": {
+        "case_id": "073",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "073",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "eigenvalue"
+        ],
+        "ranks": {
+          "eigenvalue": 1
+        },
+        "scores": {
+          "eigenvalue": 100.0,
+          "buckling": 15.0,
+          "frequency_response": 15.0,
+          "random_vibration": 10.0,
+          "cfd_flow": 0.0,
+          "explicit_impact": 0.0,
+          "fatigue_life": 0.0,
+          "fracture_mechanics": 0.0,
+          "solder_crack_propagation": 0.0,
+          "solder_life_prediction": 0.0,
+          "static_strength": 0.0,
+          "thermal_stress": 0.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "074",
+      "tags": [],
+      "score": {
+        "case_id": "074",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "074",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "cfd_flow"
+        ],
+        "ranks": {
+          "cfd_flow": 1
+        },
+        "scores": {
+          "cfd_flow": 100.0,
+          "thermal_stress": 10.0,
+          "buckling": 0.0,
+          "eigenvalue": 0.0,
+          "explicit_impact": 0.0,
+          "fatigue_life": 0.0,
+          "fracture_mechanics": 0.0,
+          "frequency_response": 0.0,
+          "random_vibration": 0.0,
+          "solder_crack_propagation": 0.0,
+          "solder_life_prediction": 0.0,
+          "static_strength": 0.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "075",
+      "tags": [
+        "不適切な追加質問"
+      ],
+      "score": {
+        "case_id": "075",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": null,
+        "multi_appropriate": true,
+        "clarify_appropriate": null,
+        "unnecessary_question": true,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "075",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "eigenvalue",
+          "frequency_response"
+        ],
+        "ranks": {
+          "eigenvalue": 1,
+          "frequency_response": 2
+        },
+        "scores": {
+          "eigenvalue": 100.0,
+          "frequency_response": 100.0,
+          "random_vibration": 10.0,
+          "buckling": 5.0,
+          "cfd_flow": 0.0,
+          "explicit_impact": 0.0,
+          "fatigue_life": 0.0,
+          "fracture_mechanics": 0.0,
+          "solder_crack_propagation": 0.0,
+          "solder_life_prediction": 0.0,
+          "static_strength": 0.0,
+          "thermal_stress": 0.0
+        },
+        "needs_clarification": true,
+        "clarification_questions": [
+          "上位候補が接近しています。目的に近いものを指定してください。候補: eigenvalue、frequency_response"
+        ],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    }
+  ]
+}

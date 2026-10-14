@@ -1,0 +1,136 @@
+{
+  "created_at": "2026-10-14T14:23:21.385494+00:00",
+  "hashes": {
+    "catalog": "989ca1465ee8d7e12cd5d008e3d5804303a12d171dda569e304605378afcdfd7",
+    "cases": "2e927f2203682177122044171f1f8ecf1efe4e48ae132e9167ef385de66ff84a",
+    "method_b": "0c7469ca39128f3f60837bbebb2df34c4dd0b845811c065df6faf0a155352f39",
+    "method_c": "1ff1d6ce830d56ee123413af8cffe1075a6ef794dee6ee79db141e42ba2d8eae",
+    "prompt_a": "547d10e85cb7f3d2b4cfd6aa50822565c2758ff1bb518446eed6b9f66f7c543f",
+    "prompt_c": "5723396ec78f959038fed8d28552ada1d53a365d81d74f2b503b8ea4052f040c",
+    "gold_module": "a5c174f3be5f83cdbfe03f57e6c66833b5ef1392df2c74253924f607e083b84e"
+  },
+  "models": {
+    "version": "models-1",
+    "replaced_from_brief": [
+      {
+        "brief_name": "Astra",
+        "reason": "ユーザー指示が GPT-5.6 の Sol / Terra / Luna を指定したため未実行"
+      }
+    ],
+    "models": {
+      "sol": {
+        "display_name": "Sol",
+        "api_model_id": "gpt-5.6-sol-medium",
+        "provider": "cursor-subagent",
+        "inference_setting": "medium",
+        "temperature": null,
+        "price_note": "未取得"
+      },
+      "terra": {
+        "display_name": "Terra",
+        "api_model_id": "gpt-5.6-terra-medium",
+        "provider": "cursor-subagent",
+        "inference_setting": "medium",
+        "temperature": null,
+        "price_note": "未取得"
+      },
+      "luna": {
+        "display_name": "Luna",
+        "api_model_id": "gpt-5.6-luna-medium",
+        "provider": "cursor-subagent",
+        "inference_setting": "medium",
+        "temperature": null,
+        "price_note": "未取得"
+      }
+    },
+    "conditions": [
+      {
+        "id": "A1",
+        "method": "A",
+        "model": "sol"
+      },
+      {
+        "id": "A2",
+        "method": "A",
+        "model": "terra"
+      },
+      {
+        "id": "A3",
+        "method": "A",
+        "model": "luna"
+      },
+      {
+        "id": "B1",
+        "method": "B",
+        "model": null
+      },
+      {
+        "id": "C1",
+        "method": "C",
+        "model": "sol"
+      },
+      {
+        "id": "C2",
+        "method": "C",
+        "model": "terra"
+      },
+      {
+        "id": "C3",
+        "method": "C",
+        "model": "luna"
+      }
+    ]
+  },
+  "catalog_views": {
+    "llm_fields": [
+      "id",
+      "name",
+      "domain",
+      "target",
+      "purpose",
+      "method",
+      "aliases",
+      "inputs",
+      "input_conditions",
+      "constraints",
+      "outputs",
+      "differences",
+      "purpose_signals"
+    ],
+    "rule_only_fields": [
+      "rule_keywords"
+    ],
+    "rule_only_config": [
+      "config/method_b.yaml の family triggers, request_substrings, hard_meta_substrings, combination_substrings"
+    ]
+  },
+  "note": "B方式はLLMを使わない。AとCの実測は、応答ファイルがある条件だけ実行済みとする。",
+  "n_cases": 150,
+  "primary_counts": {
+    "ambiguous": 23,
+    "insufficient": 19,
+    "clear": 28,
+    "implicit": 18,
+    "colloquial": 21,
+    "multi": 15,
+    "out_of_scope": 20,
+    "keyword_trap": 6
+  },
+  "labeling": {
+    "labeler_count": 1,
+    "independent_adjudication": false,
+    "note": "実装者1名が、モデル出力を見る前に付与した。複数人の独立ラベルと不一致解消は行っていない。",
+    "frozen_before_model_runs": true
+  },
+  "timing": {
+    "B1_latency_s": null,
+    "note": "B方式はローカル規則で、API遅延は無い。ケース単位の計測は未取得。"
+  },
+  "limitations": [
+    "AとCは、Sol / Terra / Luna の応答ファイルを入れるまで未実行。",
+    "正解ラベルは実装者1名。複数人の独立ラベルではない。",
+    "誤り分類は規則であり、人手の再判定ではない。",
+    "料金とトークン数は未取得。"
+  ],
+  "stability": null
+}

@@ -1,0 +1,198 @@
+[
+  {
+    "id": "A1",
+    "method": "A",
+    "model": "sol",
+    "status": "未実行",
+    "summary": null
+  },
+  {
+    "id": "A2",
+    "method": "A",
+    "model": "terra",
+    "status": "未実行",
+    "summary": null
+  },
+  {
+    "id": "A3",
+    "method": "A",
+    "model": "luna",
+    "status": "未実行",
+    "summary": null
+  },
+  {
+    "id": "B1",
+    "method": "B",
+    "model": null,
+    "status": "実行済み",
+    "summary": {
+      "n": 150,
+      "precision": 0.92,
+      "recall": 0.9177777777777777,
+      "f1": 0.9121587301587302,
+      "exact_rate": 0.8533333333333334,
+      "required_inclusion_rate": 0.8490566037735849,
+      "single_accuracy": 0.8846153846153846,
+      "multi_appropriate_rate": 0.7090909090909091,
+      "clarify_appropriate_rate": 0.9767441860465116,
+      "unnecessary_question_rate": 0.109375,
+      "forced_one_rate": 0.025,
+      "abstain_appropriate_rate": 1.0,
+      "error_rate": 0.0,
+      "by_category": {
+        "ambiguous": {
+          "n": 42,
+          "precision": 0.8174603174603176,
+          "recall": 0.7658730158730158,
+          "f1": 0.778344671201814,
+          "exact_rate": 0.6666666666666666,
+          "required_inclusion_rate": 0.6829268292682927,
+          "single_accuracy": 1.0,
+          "multi_appropriate_rate": 0.65,
+          "clarify_appropriate_rate": 0.9523809523809523,
+          "unnecessary_question_rate": null,
+          "forced_one_rate": 0.025,
+          "abstain_appropriate_rate": null,
+          "error_rate": 0.0
+        },
+        "clear": {
+          "n": 64,
+          "precision": 0.9322916666666666,
+          "recall": 0.9609375,
+          "f1": 0.9395833333333333,
+          "exact_rate": 0.875,
+          "required_inclusion_rate": 0.953125,
+          "single_accuracy": 0.8775510204081632,
+          "multi_appropriate_rate": 0.8666666666666667,
+          "clarify_appropriate_rate": null,
+          "unnecessary_question_rate": 0.109375,
+          "forced_one_rate": null,
+          "abstain_appropriate_rate": null,
+          "error_rate": 0.0
+        },
+        "colloquial": {
+          "n": 30,
+          "precision": 0.95,
+          "recall": 0.9444444444444444,
+          "f1": 0.9388888888888889,
+          "exact_rate": 0.9,
+          "required_inclusion_rate": 0.92,
+          "single_accuracy": 0.9523809523809523,
+          "multi_appropriate_rate": 0.5,
+          "clarify_appropriate_rate": 1.0,
+          "unnecessary_question_rate": 0.047619047619047616,
+          "forced_one_rate": 0.0,
+          "abstain_appropriate_rate": 1.0,
+          "error_rate": 0.0
+        },
+        "implicit": {
+          "n": 19,
+          "precision": 0.7017543859649124,
+          "recall": 0.662280701754386,
+          "f1": 0.6731829573934838,
+          "exact_rate": 0.47368421052631576,
+          "required_inclusion_rate": 0.5263157894736842,
+          "single_accuracy": 1.0,
+          "multi_appropriate_rate": 0.4444444444444444,
+          "clarify_appropriate_rate": 1.0,
+          "unnecessary_question_rate": null,
+          "forced_one_rate": 0.0,
+          "abstain_appropriate_rate": null,
+          "error_rate": 0.0
+        },
+        "insufficient": {
+          "n": 21,
+          "precision": 0.9523809523809523,
+          "recall": 0.9523809523809523,
+          "f1": 0.9523809523809523,
+          "exact_rate": 0.9523809523809523,
+          "required_inclusion_rate": 0.6666666666666666,
+          "single_accuracy": 1.0,
+          "multi_appropriate_rate": 0.5,
+          "clarify_appropriate_rate": 1.0,
+          "unnecessary_question_rate": null,
+          "forced_one_rate": 0.0,
+          "abstain_appropriate_rate": 1.0,
+          "error_rate": 0.0
+        },
+        "keyword_trap": {
+          "n": 13,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "exact_rate": 1.0,
+          "required_inclusion_rate": null,
+          "single_accuracy": null,
+          "multi_appropriate_rate": null,
+          "clarify_appropriate_rate": 1.0,
+          "unnecessary_question_rate": null,
+          "forced_one_rate": null,
+          "abstain_appropriate_rate": 1.0,
+          "error_rate": 0.0
+        },
+        "multi": {
+          "n": 15,
+          "precision": 0.9777777777777777,
+          "recall": 0.9666666666666667,
+          "f1": 0.9644444444444444,
+          "exact_rate": 0.8666666666666667,
+          "required_inclusion_rate": 0.9333333333333333,
+          "single_accuracy": null,
+          "multi_appropriate_rate": 0.8666666666666667,
+          "clarify_appropriate_rate": null,
+          "unnecessary_question_rate": 0.06666666666666667,
+          "forced_one_rate": null,
+          "abstain_appropriate_rate": null,
+          "error_rate": 0.0
+        },
+        "out_of_scope": {
+          "n": 26,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "exact_rate": 1.0,
+          "required_inclusion_rate": null,
+          "single_accuracy": null,
+          "multi_appropriate_rate": null,
+          "clarify_appropriate_rate": 1.0,
+          "unnecessary_question_rate": null,
+          "forced_one_rate": null,
+          "abstain_appropriate_rate": 1.0,
+          "error_rate": 0.0
+        }
+      },
+      "error_tags": {
+        "過剰な意図補完": 1,
+        "表層キーワード誤選択": 0,
+        "候補漏れ": 16,
+        "過剰選択": 2,
+        "不適切な追加質問": 7,
+        "質問不足": 2,
+        "カタログ照合ミス": 0,
+        "その他": 1
+      },
+      "classifier": "rules_v1_automatic"
+    }
+  },
+  {
+    "id": "C1",
+    "method": "C",
+    "model": "sol",
+    "status": "未実行",
+    "summary": null
+  },
+  {
+    "id": "C2",
+    "method": "C",
+    "model": "terra",
+    "status": "未実行",
+    "summary": null
+  },
+  {
+    "id": "C3",
+    "method": "C",
+    "model": "luna",
+    "status": "未実行",
+    "summary": null
+  }
+]

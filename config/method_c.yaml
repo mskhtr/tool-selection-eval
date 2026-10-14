@@ -1,0 +1,7 @@
+# C方式の決定規則。LLMスコアは校正済み確率ではない。
+version: c-decision-1
+min_include_score: 50
+high_confidence: 75
+near_tie_window: 15
+max_candidates: 5
+excess_candidate_count: 5

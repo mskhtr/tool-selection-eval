@@ -1,0 +1,816 @@
+{
+  "created_at": "2026-10-14T14:54:41.348367+00:00",
+  "hashes": {
+    "catalog": "989ca1465ee8d7e12cd5d008e3d5804303a12d171dda569e304605378afcdfd7",
+    "cases": "2e927f2203682177122044171f1f8ecf1efe4e48ae132e9167ef385de66ff84a",
+    "method_b": "0c7469ca39128f3f60837bbebb2df34c4dd0b845811c065df6faf0a155352f39",
+    "method_c": "1ff1d6ce830d56ee123413af8cffe1075a6ef794dee6ee79db141e42ba2d8eae",
+    "prompt_a": "547d10e85cb7f3d2b4cfd6aa50822565c2758ff1bb518446eed6b9f66f7c543f",
+    "prompt_c": "5723396ec78f959038fed8d28552ada1d53a365d81d74f2b503b8ea4052f040c",
+    "gold_module": "a5c174f3be5f83cdbfe03f57e6c66833b5ef1392df2c74253924f607e083b84e"
+  },
+  "models": {
+    "version": "models-1",
+    "replaced_from_brief": [
+      {
+        "brief_name": "Astra",
+        "reason": "ユーザー指示が GPT-5.6 の Sol / Terra / Luna を指定したため未実行"
+      }
+    ],
+    "models": {
+      "sol": {
+        "display_name": "Sol",
+        "api_model_id": "gpt-5.6-sol-medium",
+        "provider": "cursor-subagent",
+        "inference_setting": "medium",
+        "temperature": null,
+        "price_note": "未取得"
+      },
+      "terra": {
+        "display_name": "Terra",
+        "api_model_id": "gpt-5.6-terra-medium",
+        "provider": "cursor-subagent",
+        "inference_setting": "medium",
+        "temperature": null,
+        "price_note": "未取得"
+      },
+      "luna": {
+        "display_name": "Luna",
+        "api_model_id": "gpt-5.6-luna-medium",
+        "provider": "cursor-subagent",
+        "inference_setting": "medium",
+        "temperature": null,
+        "price_note": "未取得"
+      }
+    },
+    "conditions": [
+      {
+        "id": "A1",
+        "method": "A",
+        "model": "sol"
+      },
+      {
+        "id": "A2",
+        "method": "A",
+        "model": "terra"
+      },
+      {
+        "id": "A3",
+        "method": "A",
+        "model": "luna"
+      },
+      {
+        "id": "B1",
+        "method": "B",
+        "model": null
+      },
+      {
+        "id": "C1",
+        "method": "C",
+        "model": "sol"
+      },
+      {
+        "id": "C2",
+        "method": "C",
+        "model": "terra"
+      },
+      {
+        "id": "C3",
+        "method": "C",
+        "model": "luna"
+      }
+    ]
+  },
+  "catalog_views": {
+    "llm_fields": [
+      "id",
+      "name",
+      "domain",
+      "target",
+      "purpose",
+      "method",
+      "aliases",
+      "inputs",
+      "input_conditions",
+      "constraints",
+      "outputs",
+      "differences",
+      "purpose_signals"
+    ],
+    "rule_only_fields": [
+      "rule_keywords"
+    ],
+    "rule_only_config": [
+      "config/method_b.yaml の family triggers, request_substrings, hard_meta_substrings, combination_substrings"
+    ]
+  },
+  "note": "B方式はLLMを使わない。AとCの実測は、応答ファイルがある条件だけ実行済みとする。",
+  "n_cases": 150,
+  "primary_counts": {
+    "ambiguous": 23,
+    "insufficient": 19,
+    "clear": 28,
+    "implicit": 18,
+    "colloquial": 21,
+    "multi": 15,
+    "out_of_scope": 20,
+    "keyword_trap": 6
+  },
+  "labeling": {
+    "labeler_count": 1,
+    "independent_adjudication": false,
+    "note": "実装者1名が、モデル出力を見る前に付与した。複数人の独立ラベルと不一致解消は行っていない。",
+    "frozen_before_model_runs": true
+  },
+  "timing": {
+    "per_case_latency_s": null,
+    "token_usage": null,
+    "api_cost": null,
+    "note": "サブエージェント経由のため、トークン数・料金・モデル単体の遅延は未取得。"
+  },
+  "limitations": [
+    "LLMの実行経路は Cursor サブエージェント（gpt-5.6-sol-medium / gpt-5.6-terra-medium / gpt-5.6-luna-medium）。素の Chat Completions ではない。",
+    "温度は指定できない。推論設定はモデルIDに含まれる medium のみ。",
+    "料金とトークン数は未取得。",
+    "Astra は実行していない。",
+    "正解ラベルは実装者1名で、複数人の独立ラベルではない。",
+    "誤り分類は規則による自動分類で、人手の再判定ではない。",
+    "サブエージェントはファイルを読めるため、指示で正解ファイルを開かないよう制約した。開いていないことの証明はない。",
+    "ユーザー確認後の選択は方式の精度に含めていない。",
+    "一度中断したチャンクは、不足分の再実行指示のあとで実行した。",
+    "Luna の C方式 chunk_075 は、ツールIDをケースIDにしていた初回出力を捨て、再実行の結果を使った。",
+    "Terra の A方式 chunk_125 はオブジェクト区切りの余分な閉じ括弧を除いて読んだ。本文の選択内容は変えていない。",
+    "同一入力の繰り返し実行は未実施。"
+  ],
+  "stability": null,
+  "examples": {
+    "A1": {
+      "過剰な意図補完": [
+        {
+          "case_id": "141",
+          "text": "冷熱を繰り返すとはんだが持たない気がするので見たい",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [
+            "solder_life_prediction"
+          ],
+          "clarification": false,
+          "assumptions": [],
+          "reasons": [
+            "はんだ接合の冷熱繰り返しに対する寿命評価が目的"
+          ]
+        },
+        {
+          "case_id": "143",
+          "text": "ランダムに揺れそうな場所で使うので解析したい",
+          "acceptable": [
+            "random_vibration",
+            "fatigue_life"
+          ],
+          "predicted": [
+            "random_vibration"
+          ],
+          "clarification": false,
+          "assumptions": [],
+          "reasons": [
+            "不規則な振動環境での解析目的が明示されている"
+          ]
+        },
+        {
+          "case_id": "144",
+          "text": "衝突安全の確認をしたい",
+          "acceptable": [
+            "explicit_impact",
+            "static_strength"
+          ],
+          "predicted": [
+            "explicit_impact"
+          ],
+          "clarification": false,
+          "assumptions": [],
+          "reasons": [
+            "衝突時の安全確認は短時間の衝撃応答解析に該当する"
+          ]
+        }
+      ],
+      "表層キーワード誤選択": [],
+      "候補漏れ": [
+        {
+          "case_id": "009",
+          "text": "この部品が壊れないか見たい",
+          "acceptable": [
+            "static_strength",
+            "fatigue_life",
+            "fracture_mechanics"
+          ],
+          "predicted": [],
+          "clarification": true,
+          "assumptions": [],
+          "reasons": [
+            "荷重条件と破損形態がなくツールを特定できない"
+          ]
+        },
+        {
+          "case_id": "010",
+          "text": "壊れないか確認したい",
+          "acceptable": [
+            "static_strength",
+            "fatigue_life",
+            "fracture_mechanics"
+          ],
+          "predicted": [],
+          "clarification": true,
+          "assumptions": [],
+          "reasons": [
+            "解析対象、荷重条件、目的が不明"
+          ]
+        },
+        {
+          "case_id": "011",
+          "text": "このブラケット、破損しない？",
+          "acceptable": [
+            "static_strength",
+            "fatigue_life",
+            "fracture_mechanics"
+          ],
+          "predicted": [],
+          "clarification": true,
+          "assumptions": [],
+          "reasons": [
+            "ブラケットの荷重条件と破損形態が不明"
+          ]
+        }
+      ]
+    },
+    "A2": {
+      "過剰な意図補完": [
+        {
+          "case_id": "130",
+          "text": "共振してそうで不安なので解析したい",
+          "acceptable": [
+            "eigenvalue",
+            "frequency_response"
+          ],
+          "predicted": [
+            "eigenvalue"
+          ],
+          "clarification": false,
+          "assumptions": [],
+          "reasons": [
+            "共振に関係する固有振動数とモード形状を求める目的に適合する。"
+          ]
+        },
+        {
+          "case_id": "131",
+          "text": "この薄板、押し込むと潰れそうなので計算したい",
+          "acceptable": [
+            "buckling",
+            "static_strength"
+          ],
+          "predicted": [
+            "buckling"
+          ],
+          "clarification": false,
+          "assumptions": [],
+          "reasons": [
+            "薄板を押し込んだ際の潰れは圧縮による座屈が関心事である。"
+          ]
+        },
+        {
+          "case_id": "141",
+          "text": "冷熱を繰り返すとはんだが持たない気がするので見たい",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [
+            "solder_life_prediction"
+          ],
+          "clarification": false,
+          "assumptions": [],
+          "reasons": [
+            "冷熱の繰り返しによるはんだ接合の寿命を確認する目的に適合する。"
+          ]
+        }
+      ],
+      "表層キーワード誤選択": [],
+      "候補漏れ": [
+        {
+          "case_id": "009",
+          "text": "この部品が壊れないか見たい",
+          "acceptable": [
+            "static_strength",
+            "fatigue_life",
+            "fracture_mechanics"
+          ],
+          "predicted": [],
+          "clarification": true,
+          "assumptions": [],
+          "reasons": [
+            "破損を避けたい目的だけでは、対象となる現象や荷重条件を特定できません。"
+          ]
+        },
+        {
+          "case_id": "010",
+          "text": "壊れないか確認したい",
+          "acceptable": [
+            "static_strength",
+            "fatigue_life",
+            "fracture_mechanics"
+          ],
+          "predicted": [],
+          "clarification": true,
+          "assumptions": [],
+          "reasons": [
+            "破損の評価目的だけでは、解析対象の現象と荷重条件を特定できません。"
+          ]
+        },
+        {
+          "case_id": "011",
+          "text": "このブラケット、破損しない？",
+          "acceptable": [
+            "static_strength",
+            "fatigue_life",
+            "fracture_mechanics"
+          ],
+          "predicted": [],
+          "clarification": true,
+          "assumptions": [],
+          "reasons": [
+            "ブラケットの破損を確認したいが、荷重条件と確認したい破損現象が不明です。"
+          ]
+        }
+      ]
+    },
+    "A3": {
+      "過剰な意図補完": [
+        {
+          "case_id": "019",
+          "text": "繰り返し荷重の疲労寿命を予測して",
+          "acceptable": [
+            "fatigue_life"
+          ],
+          "predicted": [
+            "fatigue_life"
+          ],
+          "clarification": false,
+          "assumptions": [
+            "対象は金属部材である"
+          ],
+          "reasons": [
+            "繰り返し荷重に対する疲労寿命予測が目的です。"
+          ]
+        },
+        {
+          "case_id": "126",
+          "text": "夏場の車内ではんだがもたないので見たい",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [
+            "solder_life_prediction"
+          ],
+          "clarification": false,
+          "assumptions": [],
+          "reasons": [
+            "はんだがもたないという寿命評価が目的と読める"
+          ]
+        },
+        {
+          "case_id": "131",
+          "text": "この薄板、押し込むと潰れそうなので計算したい",
+          "acceptable": [
+            "buckling",
+            "static_strength"
+          ],
+          "predicted": [
+            "buckling"
+          ],
+          "clarification": false,
+          "assumptions": [],
+          "reasons": [
+            "薄板を押し込んだ際の潰れは圧縮による座屈評価に該当する"
+          ]
+        }
+      ],
+      "表層キーワード誤選択": [],
+      "候補漏れ": [
+        {
+          "case_id": "043",
+          "text": "寿命を見たい",
+          "acceptable": [
+            "solder_life_prediction",
+            "fatigue_life"
+          ],
+          "predicted": [],
+          "clarification": true,
+          "assumptions": [],
+          "reasons": [
+            "対象と寿命の評価目的が不明でツールを特定できないため"
+          ]
+        },
+        {
+          "case_id": "044",
+          "text": "この部品の寿命が知りたい",
+          "acceptable": [
+            "solder_life_prediction",
+            "fatigue_life"
+          ],
+          "predicted": [],
+          "clarification": true,
+          "assumptions": [],
+          "reasons": [
+            "対象と寿命評価の条件が不明なため"
+          ]
+        },
+        {
+          "case_id": "045",
+          "text": "亀裂が心配なので見たい",
+          "acceptable": [
+            "solder_crack_propagation",
+            "fracture_mechanics"
+          ],
+          "predicted": [],
+          "clarification": true,
+          "assumptions": [],
+          "reasons": [
+            "対象と亀裂評価の目的が不明なため"
+          ]
+        }
+      ]
+    },
+    "B1": {
+      "過剰な意図補完": [
+        {
+          "case_id": "050",
+          "text": "衝撃と振動のどちらで見るべきかも含めて、この部品を評価したい",
+          "acceptable": [
+            "explicit_impact",
+            "eigenvalue",
+            "frequency_response",
+            "random_vibration"
+          ],
+          "predicted": [
+            "explicit_impact"
+          ],
+          "clarification": false,
+          "assumptions": [],
+          "reasons": [
+            "名称・別名または目的の手がかりが一致したツールを候補にした。"
+          ]
+        }
+      ],
+      "表層キーワード誤選択": [],
+      "候補漏れ": [
+        {
+          "case_id": "011",
+          "text": "このブラケット、破損しない？",
+          "acceptable": [
+            "static_strength",
+            "fatigue_life",
+            "fracture_mechanics"
+          ],
+          "predicted": [],
+          "clarification": true,
+          "assumptions": [],
+          "reasons": [
+            "解析の実行を頼む表現が無いため保留した。"
+          ]
+        },
+        {
+          "case_id": "012",
+          "text": "強度的に持つか見てほしい",
+          "acceptable": [
+            "static_strength",
+            "fatigue_life",
+            "fracture_mechanics"
+          ],
+          "predicted": [
+            "static_strength"
+          ],
+          "clarification": true,
+          "assumptions": [],
+          "reasons": [
+            "弱いキーワードだけが一致したため、一つには決めず確認する。"
+          ]
+        },
+        {
+          "case_id": "050",
+          "text": "衝撃と振動のどちらで見るべきかも含めて、この部品を評価したい",
+          "acceptable": [
+            "explicit_impact",
+            "eigenvalue",
+            "frequency_response",
+            "random_vibration"
+          ],
+          "predicted": [
+            "explicit_impact"
+          ],
+          "clarification": false,
+          "assumptions": [],
+          "reasons": [
+            "名称・別名または目的の手がかりが一致したツールを候補にした。"
+          ]
+        }
+      ]
+    },
+    "C1": {
+      "過剰な意図補完": [
+        {
+          "case_id": "131",
+          "text": "この薄板、押し込むと潰れそうなので計算したい",
+          "acceptable": [
+            "buckling",
+            "static_strength"
+          ],
+          "predicted": [
+            "buckling"
+          ],
+          "clarification": false,
+          "assumptions": [],
+          "reasons": [
+            "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。",
+            "採点側が情報不足を示した。"
+          ]
+        },
+        {
+          "case_id": "134",
+          "text": "はんだを見れば十分でしょ、割れの話だから解析して",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [
+            "solder_crack_propagation"
+          ],
+          "clarification": false,
+          "assumptions": [],
+          "reasons": [
+            "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。",
+            "採点側が情報不足を示した。"
+          ]
+        },
+        {
+          "case_id": "141",
+          "text": "冷熱を繰り返すとはんだが持たない気がするので見たい",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [
+            "solder_life_prediction"
+          ],
+          "clarification": false,
+          "assumptions": [],
+          "reasons": [
+            "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+          ]
+        }
+      ],
+      "表層キーワード誤選択": [],
+      "候補漏れ": [
+        {
+          "case_id": "001",
+          "text": "はんだのシミュレーションをしたい",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [],
+          "clarification": true,
+          "assumptions": [],
+          "reasons": [
+            "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+          ]
+        },
+        {
+          "case_id": "002",
+          "text": "はんだ周りをシミュレーションで見たい",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [],
+          "clarification": true,
+          "assumptions": [],
+          "reasons": [
+            "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+          ]
+        },
+        {
+          "case_id": "003",
+          "text": "ソルダの解析をお願いします",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [],
+          "clarification": true,
+          "assumptions": [],
+          "reasons": [
+            "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+          ]
+        }
+      ]
+    },
+    "C2": {
+      "過剰な意図補完": [
+        {
+          "case_id": "130",
+          "text": "共振してそうで不安なので解析したい",
+          "acceptable": [
+            "eigenvalue",
+            "frequency_response"
+          ],
+          "predicted": [
+            "eigenvalue"
+          ],
+          "clarification": false,
+          "assumptions": [],
+          "reasons": [
+            "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+          ]
+        },
+        {
+          "case_id": "131",
+          "text": "この薄板、押し込むと潰れそうなので計算したい",
+          "acceptable": [
+            "buckling",
+            "static_strength"
+          ],
+          "predicted": [
+            "buckling"
+          ],
+          "clarification": false,
+          "assumptions": [],
+          "reasons": [
+            "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+          ]
+        },
+        {
+          "case_id": "134",
+          "text": "はんだを見れば十分でしょ、割れの話だから解析して",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [
+            "solder_crack_propagation"
+          ],
+          "clarification": false,
+          "assumptions": [],
+          "reasons": [
+            "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。",
+            "採点側が情報不足を示した。"
+          ]
+        }
+      ],
+      "表層キーワード誤選択": [],
+      "候補漏れ": [
+        {
+          "case_id": "001",
+          "text": "はんだのシミュレーションをしたい",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [],
+          "clarification": true,
+          "assumptions": [],
+          "reasons": [
+            "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+          ]
+        },
+        {
+          "case_id": "002",
+          "text": "はんだ周りをシミュレーションで見たい",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [],
+          "clarification": true,
+          "assumptions": [],
+          "reasons": [
+            "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+          ]
+        },
+        {
+          "case_id": "003",
+          "text": "ソルダの解析をお願いします",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [],
+          "clarification": true,
+          "assumptions": [],
+          "reasons": [
+            "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+          ]
+        }
+      ]
+    },
+    "C3": {
+      "過剰な意図補完": [
+        {
+          "case_id": "126",
+          "text": "夏場の車内ではんだがもたないので見たい",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [
+            "solder_life_prediction"
+          ],
+          "clarification": false,
+          "assumptions": [],
+          "reasons": [
+            "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。",
+            "採点側が情報不足を示した。"
+          ]
+        },
+        {
+          "case_id": "131",
+          "text": "この薄板、押し込むと潰れそうなので計算したい",
+          "acceptable": [
+            "buckling",
+            "static_strength"
+          ],
+          "predicted": [
+            "buckling"
+          ],
+          "clarification": false,
+          "assumptions": [],
+          "reasons": [
+            "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+          ]
+        },
+        {
+          "case_id": "134",
+          "text": "はんだを見れば十分でしょ、割れの話だから解析して",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [
+            "solder_crack_propagation"
+          ],
+          "clarification": false,
+          "assumptions": [],
+          "reasons": [
+            "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+          ]
+        }
+      ],
+      "表層キーワード誤選択": [],
+      "候補漏れ": [
+        {
+          "case_id": "001",
+          "text": "はんだのシミュレーションをしたい",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [],
+          "clarification": true,
+          "assumptions": [],
+          "reasons": [
+            "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+          ]
+        },
+        {
+          "case_id": "002",
+          "text": "はんだ周りをシミュレーションで見たい",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [],
+          "clarification": true,
+          "assumptions": [],
+          "reasons": [
+            "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+          ]
+        },
+        {
+          "case_id": "003",
+          "text": "ソルダの解析をお願いします",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [],
+          "clarification": true,
+          "assumptions": [],
+          "reasons": [
+            "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,71 @@
+# B方式のルール。テスト文の全文一致は使わない。
+# 適合度スコアは出さない。内部の一致フラグは rule_trace に残す。
+version: b-rules-1
+request_substrings:
+  - 解析
+  - シミュレーション
+  - 計算
+  - 予測
+  - 評価
+  - 見たい
+  - 見て
+  - 知りたい
+  - 調べ
+  - 実行
+  - 回して
+  - 回し
+  - 出して
+  - 出し
+  - 求め
+  - やって
+  - やっと
+  - お願い
+  - ちょうだい
+  - したい
+  - やりたい
+  - 確認
+  - 比較
+  - 取って
+combination_substrings:
+  - 両方
+  - いずれも
+  - それぞれ
+  - 続けて
+  - 比較
+  - そのあと
+  - ついで
+# これらが含まれる入力は、解析実行ではなく説明・事務・検索とみなして保留する。
+hard_meta_substrings:
+  - 意味
+  - 文献
+  - 参考資料
+  - 日程
+  - スケジュール
+  - 会議
+  - 打ち合わせ
+  - メール
+  - フォルダ
+  - 写真
+  - 目次
+  - 報告書
+  - 天気
+  - 手順
+  - 予約
+  - ライセンス
+  - 探して
+  - 整理して
+  - 化学分析
+  - 工数
+  - 見積
+  - 使い方
+  - 更新日
+families:
+  solder:
+    triggers: [はんだ, ソルダ, bga]
+    tools: [solder_crack_propagation, solder_life_prediction]
+  vibration:
+    triggers: [振動, 揺れ]
+    tools: [eigenvalue, frequency_response, random_vibration]
+  structural_failure:
+    triggers: [壊れ, 破損]
+    tools: [static_strength, fatigue_life, fracture_mechanics]
