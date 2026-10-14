@@ -105,11 +105,69 @@ def _cell(text: str) -> str:
     return text.replace("|", "｜").replace("\n", " ")
 
 
+def _format_score(value: float) -> str:
+    if value == int(value):
+        return str(int(value))
+    return f"{value:g}"
+
+
+def _score_cell(prediction: dict, names: dict[str, str]) -> str:
+    """擬似jevが付けた適合度。20未満は最高点だけ残し、0は省く。"""
+    scores = prediction.get("scores")
+    if not isinstance(scores, dict) or not scores:
+        return "—"
+    ranked = sorted(
+        ((float(score), tool_id) for tool_id, score in scores.items()),
+        key=lambda item: (-item[0], item[1]),
+    )
+    top = ranked[0][0]
+    if top <= 0:
+        return "すべて 0"
+    shown = [(score, tool_id) for score, tool_id in ranked if score >= 20]
+    if not shown:
+        leaders = [(score, tool_id) for score, tool_id in ranked if score == top]
+        if len(leaders) > 3:
+            return f"最高 {_format_score(top)}"
+        shown = leaders
+    return "、".join(f"{names.get(tool_id, tool_id)} {_format_score(score)}" for score, tool_id in shown)
+
+
 def _judgment(case: dict, prediction: dict) -> str:
     tags = classify_errors(case, prediction)
     if not tags:
         return "許容と一致"
     return "、".join(tags)
+
+
+def _comparison_block(case: dict, by_condition: dict[str, dict[str, dict]], names: dict[str, str]) -> list[str]:
+    lines = [
+        f"### {case['id']}　{case['text']}",
+        "",
+        f"許容: {_names(case['acceptable'], names)}。質問の正解: {_yes_no(case['clarify'])}。",
+        "",
+        "| 条件 | 出した候補 | 適合度 | 質問 | 判断 |",
+        "|---|---|---|---|---|",
+    ]
+    for condition_id in CONDITION_ORDER:
+        prediction = (by_condition.get(condition_id) or {}).get(case["id"])
+        if prediction is None:
+            lines.append(f"| {CONDITION_LABEL[condition_id]} | 未実行 |  |  |  |")
+            continue
+        asked = "なし"
+        questions = prediction.get("clarification_questions") or []
+        if prediction.get("needs_clarification"):
+            asked = "あり。" + " ".join(str(item) for item in questions) if questions else "あり"
+        lines.append(
+            "| {label} | {predicted} | {scores} | {asked} | {judgment} |".format(
+                label=CONDITION_LABEL[condition_id],
+                predicted=_cell(_names(prediction.get("candidate_ids") or [], names)),
+                scores=_cell(_score_cell(prediction, names)),
+                asked=_cell(asked),
+                judgment=_cell(_judgment(case, prediction)),
+            )
+        )
+    lines.append("")
+    return lines
 
 
 def render_case_comparison(
@@ -124,34 +182,74 @@ def render_case_comparison(
         "",
         "上の事例に出た依頼について、7条件が何を候補にし、質問したかを並べた。判断は、許容するツールと質問の有無を正解と比べた自動分類である。",
         "",
+        "適合度は擬似jevが各ツールに付けた得点である。直接選択と辞書・規則は得点を付けない。20以上を高い順に書き、どれも20未満のときは最高点だけを書いた。同点が4件以上なら最高点の数値だけにした。0は省いた。候補に入れる下限は50、一位との差が15以内を接近とみなす。情報不足でも、一位が75以上ならその理由だけでは質問しない。",
+        "",
     ]
     for case_id in case_ids:
-        case = by_id[case_id]
-        lines.append(f"### {case_id}　{case['text']}")
-        lines.append("")
-        lines.append(f"許容: {_names(case['acceptable'], names)}。質問の正解: {_yes_no(case['clarify'])}。")
-        lines.append("")
-        lines.append("| 条件 | 出した候補 | 質問 | 判断 |")
-        lines.append("|---|---|---|---|")
-        for condition_id in CONDITION_ORDER:
-            prediction = (by_condition.get(condition_id) or {}).get(case_id)
-            if prediction is None:
-                lines.append(f"| {CONDITION_LABEL[condition_id]} | 未実行 |  |  |")
-                continue
-            asked = "なし"
-            questions = prediction.get("clarification_questions") or []
-            if prediction.get("needs_clarification"):
-                asked = "あり。" + " ".join(str(item) for item in questions) if questions else "あり"
-            lines.append(
-                "| {label} | {predicted} | {asked} | {judgment} |".format(
-                    label=CONDITION_LABEL[condition_id],
-                    predicted=_cell(_names(prediction.get("candidate_ids") or [], names)),
-                    asked=_cell(asked),
-                    judgment=_cell(_judgment(case, prediction)),
-                )
-            )
-        lines.append("")
+        lines.extend(_comparison_block(by_id[case_id], by_condition, names))
     return "\n".join(lines)
+
+
+def load_run_predictions(run_dir: Path) -> dict[str, dict[str, dict]]:
+    import json
+
+    by_condition: dict[str, dict[str, dict]] = {}
+    for condition_id in CONDITION_ORDER:
+        path = run_dir / condition_id / "predictions.jsonl"
+        rows: dict[str, dict] = {}
+        if path.exists():
+            for line in path.read_text(encoding="utf-8").splitlines():
+                if not line.strip():
+                    continue
+                row = json.loads(line)
+                rows[str(row["case_id"])] = row
+        by_condition[condition_id] = rows
+    return by_condition
+
+
+def render_results(run_dir: Path) -> str:
+    names = {tool.id: tool.name for tool in load_catalog().tools}
+    cases = load_cases()
+    by_condition = load_run_predictions(run_dir)
+    lines = [
+        "# テスト結果",
+        "",
+        f"150件それぞれについて、7条件が出した候補と質問を並べた。元データは `{run_dir.relative_to(ROOT).as_posix()}` の `predictions.jsonl` である。",
+        "",
+        "判断は、許容するツールと質問の有無を正解と比べた自動分類である。人が読み直した分類ではない。",
+        "",
+        "適合度は擬似jev（C1〜C3）が各ツールに付けた得点である。直接選択と辞書・規則は得点を付けない。20以上を高い順に書き、どれも20未満のときは最高点だけを書いた。同点が4件以上なら最高点の数値だけにした。0は省いた。候補に入れる下限は50、一位との差が15以内を接近とみなす。情報不足でも、一位が75以上ならその理由だけでは質問しない。",
+        "",
+    ]
+    by_primary: dict[str, list[dict]] = {}
+    for case in cases:
+        by_primary.setdefault(case["primary"], []).append(case)
+    for primary in PRIMARY_ORDER:
+        group = by_primary.get(primary) or []
+        if not group:
+            continue
+        lines.append(f"## {PRIMARY_LABEL.get(primary, primary)}（{len(group)}件）")
+        lines.append("")
+        for case in group:
+            lines.extend(_comparison_block(case, by_condition, names))
+    return "\n".join(lines).rstrip() + "\n"
+
+
+def write_results(run_dir: Path | None = None, path: Path | None = None) -> Path:
+    runs = ROOT / "runs"
+    if run_dir is None:
+        candidates = [
+            item
+            for item in runs.iterdir()
+            if item.is_dir() and (item / "A1" / "predictions.jsonl").exists() and (item / "C3" / "predictions.jsonl").exists()
+        ]
+        if not candidates:
+            raise FileNotFoundError("7条件そろった実行結果が runs に無い")
+        run_dir = max(candidates, key=lambda item: item.name)
+    target = path or (DOCS / "テスト結果.md")
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text(render_results(run_dir), encoding="utf-8")
+    return target
 
 
 def write_testset(path: Path | None = None) -> Path:

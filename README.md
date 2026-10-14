@@ -45,7 +45,7 @@ $env:PYTHONPATH = "src"
 
 - ツール定義: `catalog/tools.yaml`
 - 正解ラベル: `src/toolselect/gold.py` と、そこから書き出す `data/cases.json`
-- 人が読むレポートとテストセット: `docs/レポート.md`、`docs/テストセット.md`
+- 人が読むレポート、テストセット、テスト結果: `docs/レポート.md`、`docs/テストセット.md`、`docs/テスト結果.md`
 - ラベルは 1 名がモデル実行前に付けた。複数人の独立ラベルではない
 - B 方式の規則: `config/method_b.yaml`
 - C 方式のしきい値: `config/method_c.yaml`
