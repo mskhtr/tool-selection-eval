@@ -1,0 +1,2140 @@
+{
+  "summary": {
+    "n": 36,
+    "precision": 0.8055555555555556,
+    "recall": 0.8055555555555556,
+    "f1": 0.8055555555555556,
+    "exact_rate": 0.8055555555555556,
+    "required_inclusion_rate": 0.7407407407407407,
+    "single_accuracy": 1.0,
+    "multi_appropriate_rate": 0.4166666666666667,
+    "clarify_appropriate_rate": 1.0,
+    "unnecessary_question_rate": 0.16666666666666666,
+    "forced_one_rate": 0.0,
+    "abstain_appropriate_rate": 1.0,
+    "error_rate": 0.0,
+    "by_category": {
+      "ambiguous": {
+        "n": 9,
+        "precision": 0.2222222222222222,
+        "recall": 0.2222222222222222,
+        "f1": 0.2222222222222222,
+        "exact_rate": 0.2222222222222222,
+        "required_inclusion_rate": 0.2222222222222222,
+        "single_accuracy": null,
+        "multi_appropriate_rate": 0.2222222222222222,
+        "clarify_appropriate_rate": 1.0,
+        "unnecessary_question_rate": null,
+        "forced_one_rate": 0.0,
+        "abstain_appropriate_rate": null,
+        "error_rate": 0.0
+      },
+      "clear": {
+        "n": 18,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact_rate": 1.0,
+        "required_inclusion_rate": 1.0,
+        "single_accuracy": 1.0,
+        "multi_appropriate_rate": 1.0,
+        "clarify_appropriate_rate": null,
+        "unnecessary_question_rate": 0.16666666666666666,
+        "forced_one_rate": null,
+        "abstain_appropriate_rate": null,
+        "error_rate": 0.0
+      },
+      "colloquial": {
+        "n": 4,
+        "precision": 0.75,
+        "recall": 0.75,
+        "f1": 0.75,
+        "exact_rate": 0.75,
+        "required_inclusion_rate": 0.75,
+        "single_accuracy": 1.0,
+        "multi_appropriate_rate": 0.0,
+        "clarify_appropriate_rate": 1.0,
+        "unnecessary_question_rate": 0.0,
+        "forced_one_rate": 0.0,
+        "abstain_appropriate_rate": null,
+        "error_rate": 0.0
+      },
+      "implicit": {
+        "n": 3,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact_rate": 1.0,
+        "required_inclusion_rate": 1.0,
+        "single_accuracy": 1.0,
+        "multi_appropriate_rate": 1.0,
+        "clarify_appropriate_rate": 1.0,
+        "unnecessary_question_rate": 0.0,
+        "forced_one_rate": 0.0,
+        "abstain_appropriate_rate": null,
+        "error_rate": 0.0
+      },
+      "insufficient": {
+        "n": 3,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact_rate": 1.0,
+        "required_inclusion_rate": null,
+        "single_accuracy": null,
+        "multi_appropriate_rate": null,
+        "clarify_appropriate_rate": 1.0,
+        "unnecessary_question_rate": null,
+        "forced_one_rate": null,
+        "abstain_appropriate_rate": 1.0,
+        "error_rate": 0.0
+      },
+      "keyword_trap": {
+        "n": 4,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact_rate": 1.0,
+        "required_inclusion_rate": null,
+        "single_accuracy": null,
+        "multi_appropriate_rate": null,
+        "clarify_appropriate_rate": 1.0,
+        "unnecessary_question_rate": null,
+        "forced_one_rate": null,
+        "abstain_appropriate_rate": 1.0,
+        "error_rate": 0.0
+      },
+      "multi": {
+        "n": 3,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact_rate": 1.0,
+        "required_inclusion_rate": 1.0,
+        "single_accuracy": null,
+        "multi_appropriate_rate": 1.0,
+        "clarify_appropriate_rate": null,
+        "unnecessary_question_rate": 1.0,
+        "forced_one_rate": null,
+        "abstain_appropriate_rate": null,
+        "error_rate": 0.0
+      },
+      "orthography": {
+        "n": 7,
+        "precision": 0.7142857142857143,
+        "recall": 0.7142857142857143,
+        "f1": 0.7142857142857143,
+        "exact_rate": 0.7142857142857143,
+        "required_inclusion_rate": 0.7142857142857143,
+        "single_accuracy": 1.0,
+        "multi_appropriate_rate": 0.0,
+        "clarify_appropriate_rate": 1.0,
+        "unnecessary_question_rate": 0.0,
+        "forced_one_rate": 0.0,
+        "abstain_appropriate_rate": null,
+        "error_rate": 0.0
+      },
+      "out_of_scope": {
+        "n": 6,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact_rate": 1.0,
+        "required_inclusion_rate": null,
+        "single_accuracy": null,
+        "multi_appropriate_rate": null,
+        "clarify_appropriate_rate": 1.0,
+        "unnecessary_question_rate": null,
+        "forced_one_rate": null,
+        "abstain_appropriate_rate": 1.0,
+        "error_rate": 0.0
+      }
+    },
+    "error_tags": {
+      "過剰な意図補完": 0,
+      "表層キーワード誤選択": 0,
+      "候補漏れ": 7,
+      "過剰選択": 0,
+      "不適切な追加質問": 3,
+      "質問不足": 0,
+      "カタログ照合ミス": 0,
+      "その他": 0
+    },
+    "classifier": "rules_v1_automatic"
+  },
+  "details": [
+    {
+      "case_id": "001",
+      "tags": [],
+      "score": {
+        "case_id": "001",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "001",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "solder_crack_propagation"
+        ],
+        "ranks": {
+          "solder_crack_propagation": 1
+        },
+        "scores": {
+          "solder_crack_propagation": 98.0,
+          "solder_life_prediction": 35.0,
+          "fatigue_life": 5.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "002",
+      "tags": [],
+      "score": {
+        "case_id": "002",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "002",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "solder_crack_propagation"
+        ],
+        "ranks": {
+          "solder_crack_propagation": 1
+        },
+        "scores": {
+          "solder_crack_propagation": 98.0,
+          "solder_life_prediction": 30.0,
+          "fatigue_life": 5.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "003",
+      "tags": [],
+      "score": {
+        "case_id": "003",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "003",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "solder_life_prediction"
+        ],
+        "ranks": {
+          "solder_life_prediction": 1
+        },
+        "scores": {
+          "solder_life_prediction": 95.0,
+          "solder_crack_propagation": 15.0,
+          "fatigue_life": 10.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "004",
+      "tags": [],
+      "score": {
+        "case_id": "004",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "004",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "solder_life_prediction"
+        ],
+        "ranks": {
+          "solder_life_prediction": 1
+        },
+        "scores": {
+          "solder_life_prediction": 98.0,
+          "solder_crack_propagation": 20.0,
+          "fatigue_life": 5.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "005",
+      "tags": [],
+      "score": {
+        "case_id": "005",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "005",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "fatigue_life"
+        ],
+        "ranks": {
+          "fatigue_life": 1
+        },
+        "scores": {
+          "fatigue_life": 98.0,
+          "solder_crack_propagation": 5.0,
+          "solder_life_prediction": 5.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "006",
+      "tags": [],
+      "score": {
+        "case_id": "006",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "006",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "fatigue_life"
+        ],
+        "ranks": {
+          "fatigue_life": 1
+        },
+        "scores": {
+          "fatigue_life": 98.0,
+          "solder_crack_propagation": 5.0,
+          "solder_life_prediction": 5.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "007",
+      "tags": [
+        "候補漏れ"
+      ],
+      "score": {
+        "case_id": "007",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "exact": false,
+        "required_hit": false,
+        "single_hit": null,
+        "multi_appropriate": false,
+        "clarify_appropriate": true,
+        "unnecessary_question": null,
+        "forced_one": false,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "007",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [],
+        "ranks": {},
+        "scores": {
+          "solder_crack_propagation": 25.0,
+          "solder_life_prediction": 25.0,
+          "fatigue_life": 5.0
+        },
+        "needs_clarification": true,
+        "clarification_questions": [
+          "適合度がどれも低いです。解析の対象と、何を知りたいかを教えてください。"
+        ],
+        "abstained": true,
+        "reasons": [
+          "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve",
+          "below_minimum"
+        ]
+      }
+    },
+    {
+      "case_id": "008",
+      "tags": [
+        "候補漏れ"
+      ],
+      "score": {
+        "case_id": "008",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "exact": false,
+        "required_hit": false,
+        "single_hit": null,
+        "multi_appropriate": false,
+        "clarify_appropriate": true,
+        "unnecessary_question": null,
+        "forced_one": false,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "008",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [],
+        "ranks": {},
+        "scores": {
+          "solder_crack_propagation": 25.0,
+          "solder_life_prediction": 25.0,
+          "fatigue_life": 5.0
+        },
+        "needs_clarification": true,
+        "clarification_questions": [
+          "適合度がどれも低いです。解析の対象と、何を知りたいかを教えてください。"
+        ],
+        "abstained": true,
+        "reasons": [
+          "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve",
+          "below_minimum"
+        ]
+      }
+    },
+    {
+      "case_id": "009",
+      "tags": [],
+      "score": {
+        "case_id": "009",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "009",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "solder_life_prediction"
+        ],
+        "ranks": {
+          "solder_life_prediction": 1
+        },
+        "scores": {
+          "solder_life_prediction": 97.0,
+          "solder_crack_propagation": 15.0,
+          "fatigue_life": 5.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "010",
+      "tags": [],
+      "score": {
+        "case_id": "010",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "010",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "solder_life_prediction"
+        ],
+        "ranks": {
+          "solder_life_prediction": 1
+        },
+        "scores": {
+          "solder_life_prediction": 95.0,
+          "solder_crack_propagation": 10.0,
+          "fatigue_life": 5.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "011",
+      "tags": [],
+      "score": {
+        "case_id": "011",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "011",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "solder_crack_propagation"
+        ],
+        "ranks": {
+          "solder_crack_propagation": 1
+        },
+        "scores": {
+          "solder_crack_propagation": 98.0,
+          "solder_life_prediction": 20.0,
+          "fatigue_life": 5.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "012",
+      "tags": [],
+      "score": {
+        "case_id": "012",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "012",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "solder_crack_propagation"
+        ],
+        "ranks": {
+          "solder_crack_propagation": 1
+        },
+        "scores": {
+          "solder_crack_propagation": 98.0,
+          "solder_life_prediction": 20.0,
+          "fatigue_life": 5.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "013",
+      "tags": [
+        "候補漏れ"
+      ],
+      "score": {
+        "case_id": "013",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "exact": false,
+        "required_hit": false,
+        "single_hit": null,
+        "multi_appropriate": false,
+        "clarify_appropriate": true,
+        "unnecessary_question": null,
+        "forced_one": false,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "013",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [],
+        "ranks": {},
+        "scores": {
+          "solder_crack_propagation": 25.0,
+          "solder_life_prediction": 25.0,
+          "fatigue_life": 5.0
+        },
+        "needs_clarification": true,
+        "clarification_questions": [
+          "適合度がどれも低いです。解析の対象と、何を知りたいかを教えてください。"
+        ],
+        "abstained": true,
+        "reasons": [
+          "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve",
+          "below_minimum"
+        ]
+      }
+    },
+    {
+      "case_id": "014",
+      "tags": [],
+      "score": {
+        "case_id": "014",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "014",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "solder_crack_propagation"
+        ],
+        "ranks": {
+          "solder_crack_propagation": 1
+        },
+        "scores": {
+          "solder_crack_propagation": 95.0,
+          "solder_life_prediction": 20.0,
+          "fatigue_life": 5.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "015",
+      "tags": [],
+      "score": {
+        "case_id": "015",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "015",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "solder_crack_propagation"
+        ],
+        "ranks": {
+          "solder_crack_propagation": 1
+        },
+        "scores": {
+          "solder_crack_propagation": 98.0,
+          "solder_life_prediction": 15.0,
+          "fatigue_life": 5.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "016",
+      "tags": [],
+      "score": {
+        "case_id": "016",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "016",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "fatigue_life"
+        ],
+        "ranks": {
+          "fatigue_life": 1
+        },
+        "scores": {
+          "fatigue_life": 98.0,
+          "solder_crack_propagation": 5.0,
+          "solder_life_prediction": 5.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "017",
+      "tags": [
+        "候補漏れ"
+      ],
+      "score": {
+        "case_id": "017",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "exact": false,
+        "required_hit": false,
+        "single_hit": null,
+        "multi_appropriate": false,
+        "clarify_appropriate": true,
+        "unnecessary_question": null,
+        "forced_one": false,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "017",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [],
+        "ranks": {},
+        "scores": {
+          "solder_crack_propagation": 25.0,
+          "solder_life_prediction": 25.0,
+          "fatigue_life": 5.0
+        },
+        "needs_clarification": true,
+        "clarification_questions": [
+          "適合度がどれも低いです。解析の対象と、何を知りたいかを教えてください。"
+        ],
+        "abstained": true,
+        "reasons": [
+          "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve",
+          "below_minimum"
+        ]
+      }
+    },
+    {
+      "case_id": "018",
+      "tags": [
+        "候補漏れ"
+      ],
+      "score": {
+        "case_id": "018",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "exact": false,
+        "required_hit": false,
+        "single_hit": null,
+        "multi_appropriate": false,
+        "clarify_appropriate": true,
+        "unnecessary_question": null,
+        "forced_one": false,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "018",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [],
+        "ranks": {},
+        "scores": {
+          "solder_crack_propagation": 20.0,
+          "solder_life_prediction": 20.0,
+          "fatigue_life": 5.0
+        },
+        "needs_clarification": true,
+        "clarification_questions": [
+          "適合度がどれも低いです。解析の対象と、何を知りたいかを教えてください。"
+        ],
+        "abstained": true,
+        "reasons": [
+          "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve",
+          "below_minimum"
+        ]
+      }
+    },
+    {
+      "case_id": "019",
+      "tags": [
+        "候補漏れ"
+      ],
+      "score": {
+        "case_id": "019",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "exact": false,
+        "required_hit": false,
+        "single_hit": null,
+        "multi_appropriate": false,
+        "clarify_appropriate": true,
+        "unnecessary_question": null,
+        "forced_one": false,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "019",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [],
+        "ranks": {},
+        "scores": {
+          "fatigue_life": 25.0,
+          "solder_life_prediction": 25.0,
+          "solder_crack_propagation": 20.0
+        },
+        "needs_clarification": true,
+        "clarification_questions": [
+          "適合度がどれも低いです。解析の対象と、何を知りたいかを教えてください。"
+        ],
+        "abstained": true,
+        "reasons": [
+          "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve",
+          "below_minimum"
+        ]
+      }
+    },
+    {
+      "case_id": "020",
+      "tags": [
+        "候補漏れ"
+      ],
+      "score": {
+        "case_id": "020",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "exact": false,
+        "required_hit": false,
+        "single_hit": null,
+        "multi_appropriate": false,
+        "clarify_appropriate": true,
+        "unnecessary_question": null,
+        "forced_one": false,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "020",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [],
+        "ranks": {},
+        "scores": {
+          "fatigue_life": 30.0,
+          "solder_crack_propagation": 20.0,
+          "solder_life_prediction": 20.0
+        },
+        "needs_clarification": true,
+        "clarification_questions": [
+          "適合度がどれも低いです。解析の対象と、何を知りたいかを教えてください。"
+        ],
+        "abstained": true,
+        "reasons": [
+          "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve",
+          "below_minimum"
+        ]
+      }
+    },
+    {
+      "case_id": "021",
+      "tags": [
+        "不適切な追加質問"
+      ],
+      "score": {
+        "case_id": "021",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": null,
+        "multi_appropriate": true,
+        "clarify_appropriate": null,
+        "unnecessary_question": true,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "021",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "solder_crack_propagation",
+          "solder_life_prediction"
+        ],
+        "ranks": {
+          "solder_crack_propagation": 1,
+          "solder_life_prediction": 2
+        },
+        "scores": {
+          "solder_crack_propagation": 90.0,
+          "solder_life_prediction": 90.0,
+          "fatigue_life": 5.0
+        },
+        "needs_clarification": true,
+        "clarification_questions": [
+          "次を教えてください。単一目的への絞り込み"
+        ],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。",
+          "採点側が情報不足を示した。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "022",
+      "tags": [
+        "不適切な追加質問"
+      ],
+      "score": {
+        "case_id": "022",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": null,
+        "multi_appropriate": true,
+        "clarify_appropriate": null,
+        "unnecessary_question": true,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "022",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "solder_crack_propagation",
+          "solder_life_prediction"
+        ],
+        "ranks": {
+          "solder_crack_propagation": 1,
+          "solder_life_prediction": 2
+        },
+        "scores": {
+          "solder_crack_propagation": 90.0,
+          "solder_life_prediction": 90.0,
+          "fatigue_life": 5.0
+        },
+        "needs_clarification": true,
+        "clarification_questions": [
+          "次を教えてください。単一目的への絞り込み"
+        ],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。",
+          "採点側が情報不足を示した。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "023",
+      "tags": [
+        "不適切な追加質問"
+      ],
+      "score": {
+        "case_id": "023",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": null,
+        "multi_appropriate": true,
+        "clarify_appropriate": null,
+        "unnecessary_question": true,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "023",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "fatigue_life",
+          "solder_life_prediction"
+        ],
+        "ranks": {
+          "fatigue_life": 1,
+          "solder_life_prediction": 2
+        },
+        "scores": {
+          "fatigue_life": 90.0,
+          "solder_life_prediction": 90.0,
+          "solder_crack_propagation": 5.0
+        },
+        "needs_clarification": true,
+        "clarification_questions": [
+          "次を教えてください。単一目的への絞り込み"
+        ],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。",
+          "採点側が情報不足を示した。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "024",
+      "tags": [],
+      "score": {
+        "case_id": "024",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": null,
+        "multi_appropriate": true,
+        "clarify_appropriate": true,
+        "unnecessary_question": null,
+        "forced_one": false,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "024",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "solder_crack_propagation",
+          "solder_life_prediction"
+        ],
+        "ranks": {
+          "solder_crack_propagation": 1,
+          "solder_life_prediction": 2
+        },
+        "scores": {
+          "solder_crack_propagation": 50.0,
+          "solder_life_prediction": 50.0,
+          "fatigue_life": 5.0
+        },
+        "needs_clarification": true,
+        "clarification_questions": [
+          "次を教えてください。評価目的"
+        ],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。",
+          "採点側が情報不足を示した。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "025",
+      "tags": [],
+      "score": {
+        "case_id": "025",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": null,
+        "multi_appropriate": true,
+        "clarify_appropriate": true,
+        "unnecessary_question": null,
+        "forced_one": false,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "025",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "solder_crack_propagation",
+          "solder_life_prediction"
+        ],
+        "ranks": {
+          "solder_crack_propagation": 1,
+          "solder_life_prediction": 2
+        },
+        "scores": {
+          "solder_crack_propagation": 50.0,
+          "solder_life_prediction": 50.0,
+          "fatigue_life": 5.0
+        },
+        "needs_clarification": true,
+        "clarification_questions": [
+          "次を教えてください。評価目的"
+        ],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。",
+          "採点側が情報不足を示した。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "026",
+      "tags": [],
+      "score": {
+        "case_id": "026",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "026",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "fatigue_life"
+        ],
+        "ranks": {
+          "fatigue_life": 1
+        },
+        "scores": {
+          "fatigue_life": 90.0,
+          "solder_crack_propagation": 5.0,
+          "solder_life_prediction": 5.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    },
+    {
+      "case_id": "027",
+      "tags": [],
+      "score": {
+        "case_id": "027",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": null,
+        "single_hit": null,
+        "multi_appropriate": null,
+        "clarify_appropriate": true,
+        "unnecessary_question": null,
+        "forced_one": null,
+        "abstain_appropriate": true,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "027",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [],
+        "ranks": {},
+        "scores": {
+          "fatigue_life": 5.0,
+          "solder_crack_propagation": 5.0,
+          "solder_life_prediction": 5.0
+        },
+        "needs_clarification": true,
+        "clarification_questions": [
+          "適合度がどれも低いです。解析の対象と、何を知りたいかを教えてください。"
+        ],
+        "abstained": true,
+        "reasons": [
+          "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve",
+          "below_minimum"
+        ]
+      }
+    },
+    {
+      "case_id": "028",
+      "tags": [],
+      "score": {
+        "case_id": "028",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": null,
+        "single_hit": null,
+        "multi_appropriate": null,
+        "clarify_appropriate": true,
+        "unnecessary_question": null,
+        "forced_one": null,
+        "abstain_appropriate": true,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "028",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [],
+        "ranks": {},
+        "scores": {
+          "fatigue_life": 5.0,
+          "solder_crack_propagation": 5.0,
+          "solder_life_prediction": 5.0
+        },
+        "needs_clarification": true,
+        "clarification_questions": [
+          "適合度がどれも低いです。解析の対象と、何を知りたいかを教えてください。"
+        ],
+        "abstained": true,
+        "reasons": [
+          "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve",
+          "below_minimum"
+        ]
+      }
+    },
+    {
+      "case_id": "029",
+      "tags": [],
+      "score": {
+        "case_id": "029",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": null,
+        "single_hit": null,
+        "multi_appropriate": null,
+        "clarify_appropriate": true,
+        "unnecessary_question": null,
+        "forced_one": null,
+        "abstain_appropriate": true,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "029",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [],
+        "ranks": {},
+        "scores": {
+          "fatigue_life": 5.0,
+          "solder_crack_propagation": 5.0,
+          "solder_life_prediction": 5.0
+        },
+        "needs_clarification": true,
+        "clarification_questions": [
+          "適合度がどれも低いです。解析の対象と、何を知りたいかを教えてください。"
+        ],
+        "abstained": true,
+        "reasons": [
+          "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve",
+          "below_minimum"
+        ]
+      }
+    },
+    {
+      "case_id": "030",
+      "tags": [],
+      "score": {
+        "case_id": "030",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": null,
+        "single_hit": null,
+        "multi_appropriate": null,
+        "clarify_appropriate": true,
+        "unnecessary_question": null,
+        "forced_one": null,
+        "abstain_appropriate": true,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "030",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [],
+        "ranks": {},
+        "scores": {
+          "fatigue_life": 2.0,
+          "solder_crack_propagation": 2.0,
+          "solder_life_prediction": 2.0
+        },
+        "needs_clarification": true,
+        "clarification_questions": [
+          "適合度がどれも低いです。解析の対象と、何を知りたいかを教えてください。"
+        ],
+        "abstained": true,
+        "reasons": [
+          "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve",
+          "below_minimum"
+        ]
+      }
+    },
+    {
+      "case_id": "031",
+      "tags": [],
+      "score": {
+        "case_id": "031",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": null,
+        "single_hit": null,
+        "multi_appropriate": null,
+        "clarify_appropriate": true,
+        "unnecessary_question": null,
+        "forced_one": null,
+        "abstain_appropriate": true,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "031",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [],
+        "ranks": {},
+        "scores": {
+          "fatigue_life": 2.0,
+          "solder_crack_propagation": 2.0,
+          "solder_life_prediction": 2.0
+        },
+        "needs_clarification": true,
+        "clarification_questions": [
+          "適合度がどれも低いです。解析の対象と、何を知りたいかを教えてください。"
+        ],
+        "abstained": true,
+        "reasons": [
+          "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve",
+          "below_minimum"
+        ]
+      }
+    },
+    {
+      "case_id": "032",
+      "tags": [],
+      "score": {
+        "case_id": "032",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": null,
+        "single_hit": null,
+        "multi_appropriate": null,
+        "clarify_appropriate": true,
+        "unnecessary_question": null,
+        "forced_one": null,
+        "abstain_appropriate": true,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "032",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [],
+        "ranks": {},
+        "scores": {
+          "fatigue_life": 2.0,
+          "solder_crack_propagation": 2.0,
+          "solder_life_prediction": 2.0
+        },
+        "needs_clarification": true,
+        "clarification_questions": [
+          "適合度がどれも低いです。解析の対象と、何を知りたいかを教えてください。"
+        ],
+        "abstained": true,
+        "reasons": [
+          "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve",
+          "below_minimum"
+        ]
+      }
+    },
+    {
+      "case_id": "033",
+      "tags": [],
+      "score": {
+        "case_id": "033",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": null,
+        "single_hit": null,
+        "multi_appropriate": null,
+        "clarify_appropriate": true,
+        "unnecessary_question": null,
+        "forced_one": null,
+        "abstain_appropriate": true,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "033",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [],
+        "ranks": {},
+        "scores": {
+          "fatigue_life": 5.0,
+          "solder_crack_propagation": 2.0,
+          "solder_life_prediction": 2.0
+        },
+        "needs_clarification": true,
+        "clarification_questions": [
+          "適合度がどれも低いです。解析の対象と、何を知りたいかを教えてください。"
+        ],
+        "abstained": true,
+        "reasons": [
+          "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve",
+          "below_minimum"
+        ]
+      }
+    },
+    {
+      "case_id": "034",
+      "tags": [],
+      "score": {
+        "case_id": "034",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": null,
+        "single_hit": null,
+        "multi_appropriate": null,
+        "clarify_appropriate": true,
+        "unnecessary_question": null,
+        "forced_one": null,
+        "abstain_appropriate": true,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "034",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [],
+        "ranks": {},
+        "scores": {
+          "fatigue_life": 2.0,
+          "solder_crack_propagation": 2.0,
+          "solder_life_prediction": 2.0
+        },
+        "needs_clarification": true,
+        "clarification_questions": [
+          "適合度がどれも低いです。解析の対象と、何を知りたいかを教えてください。"
+        ],
+        "abstained": true,
+        "reasons": [
+          "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve",
+          "below_minimum"
+        ]
+      }
+    },
+    {
+      "case_id": "035",
+      "tags": [],
+      "score": {
+        "case_id": "035",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": null,
+        "single_hit": null,
+        "multi_appropriate": null,
+        "clarify_appropriate": true,
+        "unnecessary_question": null,
+        "forced_one": null,
+        "abstain_appropriate": true,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "035",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [],
+        "ranks": {},
+        "scores": {
+          "fatigue_life": 2.0,
+          "solder_crack_propagation": 2.0,
+          "solder_life_prediction": 2.0
+        },
+        "needs_clarification": true,
+        "clarification_questions": [
+          "適合度がどれも低いです。解析の対象と、何を知りたいかを教えてください。"
+        ],
+        "abstained": true,
+        "reasons": [
+          "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve",
+          "below_minimum"
+        ]
+      }
+    },
+    {
+      "case_id": "036",
+      "tags": [],
+      "score": {
+        "case_id": "036",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "required_hit": true,
+        "single_hit": true,
+        "multi_appropriate": null,
+        "clarify_appropriate": null,
+        "unnecessary_question": false,
+        "forced_one": null,
+        "abstain_appropriate": null,
+        "error": null
+      },
+      "prediction": {
+        "case_id": "036",
+        "condition_id": "C3",
+        "method": "C",
+        "model_id": "gpt-5.6-luna-medium",
+        "candidate_ids": [
+          "fatigue_life"
+        ],
+        "ranks": {
+          "fatigue_life": 1
+        },
+        "scores": {
+          "fatigue_life": 99.0,
+          "solder_crack_propagation": 5.0,
+          "solder_life_prediction": 5.0
+        },
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+        ],
+        "unstated_assumptions": [],
+        "invalid_ids": [],
+        "unresolved_mentions": [],
+        "latency_s": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost_usd": null,
+        "error": null,
+        "rule_trace": [
+          "score_sort",
+          "dictionary_resolve"
+        ]
+      }
+    }
+  ]
+}

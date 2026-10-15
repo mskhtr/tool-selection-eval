@@ -1,6 +1,6 @@
 # B方式のルール。テスト文の全文一致は使わない。
 # 適合度スコアは出さない。内部の一致フラグは rule_trace に残す。
-version: b-rules-1
+version: b-rules-2
 request_substrings:
   - 解析
   - シミュレーション
@@ -61,11 +61,5 @@ hard_meta_substrings:
   - 更新日
 families:
   solder:
-    triggers: [はんだ, ソルダ, bga]
+    triggers: [はんだ, 半田, ハンダ, ソルダ, bga]
     tools: [solder_crack_propagation, solder_life_prediction]
-  vibration:
-    triggers: [振動, 揺れ]
-    tools: [eigenvalue, frequency_response, random_vibration]
-  structural_failure:
-    triggers: [壊れ, 破損]
-    tools: [static_strength, fatigue_life, fracture_mechanics]

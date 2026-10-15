@@ -1,0 +1,470 @@
+{
+  "responses": [
+    {
+      "case_id": "001",
+      "body": {
+        "concepts": [
+          "solder",
+          "crack",
+          "propagation"
+        ],
+        "suggestions": [],
+        "reasons": [
+          "はんだの亀裂進展が書かれています"
+        ]
+      }
+    },
+    {
+      "case_id": "002",
+      "body": {
+        "concepts": [
+          "solder",
+          "crack",
+          "propagation"
+        ],
+        "suggestions": [],
+        "reasons": [
+          "はんだクラックの進展が書かれています"
+        ]
+      }
+    },
+    {
+      "case_id": "003",
+      "body": {
+        "concepts": [
+          "solder",
+          "thermal",
+          "life"
+        ],
+        "suggestions": [],
+        "reasons": [
+          "はんだの熱疲労寿命が書かれています"
+        ]
+      }
+    },
+    {
+      "case_id": "004",
+      "body": {
+        "concepts": [
+          "solder",
+          "life"
+        ],
+        "suggestions": [],
+        "reasons": [
+          "BGAはんだの寿命が書かれています"
+        ]
+      }
+    },
+    {
+      "case_id": "005",
+      "body": {
+        "concepts": [
+          "metal",
+          "sn",
+          "fatigue",
+          "life"
+        ],
+        "suggestions": [],
+        "reasons": [
+          "鋼の疲労寿命とS-Nが書かれています"
+        ]
+      }
+    },
+    {
+      "case_id": "006",
+      "body": {
+        "concepts": [
+          "metal",
+          "fatigue",
+          "life",
+          "sn"
+        ],
+        "suggestions": [],
+        "reasons": [
+          "金属の高サイクル疲労寿命とS-Nが書かれています"
+        ]
+      }
+    },
+    {
+      "case_id": "007",
+      "body": {
+        "concepts": [
+          "solder"
+        ],
+        "suggestions": [],
+        "reasons": [
+          "半田が書かれています"
+        ]
+      }
+    },
+    {
+      "case_id": "008",
+      "body": {
+        "concepts": [
+          "solder"
+        ],
+        "suggestions": [],
+        "reasons": [
+          "ハンダが書かれています"
+        ]
+      }
+    },
+    {
+      "case_id": "009",
+      "body": {
+        "concepts": [
+          "solder",
+          "thermal",
+          "life"
+        ],
+        "suggestions": [],
+        "reasons": [
+          "半田接合の熱疲労寿命が書かれています"
+        ]
+      }
+    },
+    {
+      "case_id": "010",
+      "body": {
+        "concepts": [
+          "solder",
+          "life"
+        ],
+        "suggestions": [],
+        "reasons": [
+          "ハンダの寿命が書かれています"
+        ]
+      }
+    },
+    {
+      "case_id": "011",
+      "body": {
+        "concepts": [
+          "solder",
+          "crack",
+          "propagation"
+        ],
+        "suggestions": [],
+        "reasons": [
+          "半田のき裂進展が書かれています"
+        ]
+      }
+    },
+    {
+      "case_id": "012",
+      "body": {
+        "concepts": [
+          "solder",
+          "crack",
+          "propagation"
+        ],
+        "suggestions": [],
+        "reasons": [
+          "ハンダの亀裂進展が書かれています"
+        ]
+      }
+    },
+    {
+      "case_id": "013",
+      "body": {
+        "concepts": [
+          "solder"
+        ],
+        "suggestions": [],
+        "reasons": [
+          "ソルダが書かれています"
+        ]
+      }
+    },
+    {
+      "case_id": "014",
+      "body": {
+        "concepts": [
+          "solder",
+          "crack",
+          "propagation"
+        ],
+        "suggestions": [],
+        "reasons": [
+          "はんだのクラック進展が書かれています"
+        ]
+      }
+    },
+    {
+      "case_id": "015",
+      "body": {
+        "concepts": [
+          "solder",
+          "crack",
+          "propagation"
+        ],
+        "suggestions": [],
+        "reasons": [
+          "ソルダのクラックグロースが書かれています"
+        ]
+      }
+    },
+    {
+      "case_id": "016",
+      "body": {
+        "concepts": [
+          "fatigue",
+          "sn"
+        ],
+        "suggestions": [],
+        "reasons": [
+          "疲労とS-Nが書かれています"
+        ]
+      }
+    },
+    {
+      "case_id": "017",
+      "body": {
+        "concepts": [
+          "solder"
+        ],
+        "suggestions": [],
+        "reasons": [
+          "はんだが書かれています"
+        ]
+      }
+    },
+    {
+      "case_id": "018",
+      "body": {
+        "concepts": [
+          "solder"
+        ],
+        "suggestions": [],
+        "reasons": [
+          "はんだが書かれています"
+        ]
+      }
+    },
+    {
+      "case_id": "019",
+      "body": {
+        "concepts": [
+          "life"
+        ],
+        "suggestions": [],
+        "reasons": [
+          "寿命が書かれています"
+        ]
+      }
+    },
+    {
+      "case_id": "020",
+      "body": {
+        "concepts": [
+          "life"
+        ],
+        "suggestions": [],
+        "reasons": [
+          "寿命が書かれています"
+        ]
+      }
+    },
+    {
+      "case_id": "021",
+      "body": {
+        "concepts": [
+          "solder",
+          "life",
+          "crack",
+          "propagation"
+        ],
+        "suggestions": [],
+        "reasons": [
+          "はんだの寿命と亀裂進展が書かれています"
+        ]
+      }
+    },
+    {
+      "case_id": "022",
+      "body": {
+        "concepts": [
+          "life",
+          "crack",
+          "solder"
+        ],
+        "suggestions": [],
+        "reasons": [
+          "寿命、亀裂、はんだが書かれています"
+        ]
+      }
+    },
+    {
+      "case_id": "023",
+      "body": {
+        "concepts": [
+          "metal",
+          "fatigue",
+          "life",
+          "solder",
+          "thermal"
+        ],
+        "suggestions": [],
+        "reasons": [
+          "金属の疲労寿命とはんだの熱疲労寿命が書かれています"
+        ]
+      }
+    },
+    {
+      "case_id": "024",
+      "body": {
+        "concepts": [
+          "solder"
+        ],
+        "suggestions": [
+          "crack"
+        ],
+        "reasons": [
+          "はんだと割れそうという表現が書かれています"
+        ]
+      }
+    },
+    {
+      "case_id": "025",
+      "body": {
+        "concepts": [
+          "solder"
+        ],
+        "suggestions": [
+          "life"
+        ],
+        "reasons": [
+          "はんだと持たないという表現が書かれています"
+        ]
+      }
+    },
+    {
+      "case_id": "026",
+      "body": {
+        "concepts": [
+          "metal"
+        ],
+        "suggestions": [
+          "life"
+        ],
+        "reasons": [
+          "鋼と折れそうという表現が書かれています"
+        ]
+      }
+    },
+    {
+      "case_id": "027",
+      "body": {
+        "concepts": [],
+        "suggestions": [],
+        "reasons": [
+          "概念ラベルが書かれていません"
+        ]
+      }
+    },
+    {
+      "case_id": "028",
+      "body": {
+        "concepts": [],
+        "suggestions": [],
+        "reasons": [
+          "概念ラベルが書かれていません"
+        ]
+      }
+    },
+    {
+      "case_id": "029",
+      "body": {
+        "concepts": [],
+        "suggestions": [],
+        "reasons": [
+          "概念ラベルが書かれていません"
+        ]
+      }
+    },
+    {
+      "case_id": "030",
+      "body": {
+        "concepts": [
+          "solder"
+        ],
+        "suggestions": [],
+        "reasons": [
+          "はんだが書かれています"
+        ]
+      }
+    },
+    {
+      "case_id": "031",
+      "body": {
+        "concepts": [
+          "solder",
+          "crack"
+        ],
+        "suggestions": [],
+        "reasons": [
+          "はんだと亀裂が書かれています"
+        ]
+      }
+    },
+    {
+      "case_id": "032",
+      "body": {
+        "concepts": [
+          "life"
+        ],
+        "suggestions": [],
+        "reasons": [
+          "寿命が書かれています"
+        ]
+      }
+    },
+    {
+      "case_id": "033",
+      "body": {
+        "concepts": [],
+        "suggestions": [],
+        "reasons": [
+          "概念ラベルが書かれていません"
+        ]
+      }
+    },
+    {
+      "case_id": "034",
+      "body": {
+        "concepts": [],
+        "suggestions": [],
+        "reasons": [
+          "概念ラベルが書かれていません"
+        ]
+      }
+    },
+    {
+      "case_id": "035",
+      "body": {
+        "concepts": [
+          "solder"
+        ],
+        "suggestions": [],
+        "reasons": [
+          "はんだが書かれています"
+        ]
+      }
+    },
+    {
+      "case_id": "036",
+      "body": {
+        "concepts": [
+          "metal",
+          "fatigue",
+          "life",
+          "sn"
+        ],
+        "suggestions": [],
+        "reasons": [
+          "金属の疲労寿命とS-Nが書かれています"
+        ]
+      }
+    }
+  ]
+}

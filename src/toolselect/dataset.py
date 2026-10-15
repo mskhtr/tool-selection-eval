@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 
 from toolselect.gold import CASES, LABELING
-from toolselect.paths import CASES_PATH, CATALOG_PATH, METHOD_B_PATH, METHOD_C_PATH, PROMPT_A_PATH, PROMPT_C_PATH
+from toolselect.paths import CASES_PATH, CATALOG_PATH, METHOD_B_PATH, METHOD_C_PATH, ONTOLOGY_PATH, PROMPT_A_PATH, PROMPT_C_PATH, PROMPT_D_PATH
 
 
 def load_cases() -> list[dict]:
@@ -39,7 +39,9 @@ def artifact_hashes() -> dict[str, str]:
         "cases": sha256_file(CASES_PATH),
         "method_b": sha256_file(METHOD_B_PATH),
         "method_c": sha256_file(METHOD_C_PATH),
+        "ontology": sha256_file(ONTOLOGY_PATH),
         "prompt_a": sha256_file(PROMPT_A_PATH),
         "prompt_c": sha256_file(PROMPT_C_PATH),
+        "prompt_d": sha256_file(PROMPT_D_PATH),
         "gold_module": sha256_text(Path(__file__).with_name("gold.py").read_text(encoding="utf-8")),
     }

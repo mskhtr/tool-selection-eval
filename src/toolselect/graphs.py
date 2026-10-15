@@ -10,6 +10,7 @@ from toolselect.catalog import Catalog
 from toolselect.llm import LLMClient
 from toolselect.method_b import select_with_rules
 from toolselect.method_c import parse_score_response
+from toolselect.method_d import load_ontology, parse_concept_response, select_with_ontology
 from toolselect.schema import empty_output, with_ranks
 from toolselect.textutil import parse_json_payload
 
@@ -140,6 +141,80 @@ def build_method_b_graph(catalog: Catalog, rules: dict):
     graph.add_node("match", match)
     graph.add_edge(START, "match")
     graph.add_edge("match", END)
+    return graph.compile()
+
+
+def build_method_d_graph(catalog: Catalog, ontology: dict | None = None):
+    ontology = ontology or load_ontology()
+
+    def match(state: SelectState) -> dict:
+        output = select_with_ontology(state["user_text"], catalog, ontology)
+        output["case_id"] = state["case_id"]
+        output["condition_id"] = state["condition_id"]
+        return {"output": output}
+
+    graph = StateGraph(SelectState)
+    graph.add_node("match", match)
+    graph.add_edge(START, "match")
+    graph.add_edge("match", END)
+    return graph.compile()
+
+
+def build_method_d_llm_graph(catalog: Catalog, llm: LLMClient, system_prompt: str, ontology: dict | None = None):
+    ontology = ontology or load_ontology()
+
+    def prepare(state: SelectState) -> dict:
+        return {
+            "system_prompt": system_prompt,
+            "user_prompt": f"ユーザー入力:\n{state['user_text']}\n",
+        }
+
+    def call_llm(state: SelectState) -> dict:
+        result = llm.complete(
+            system=state["system_prompt"],
+            user=state["user_prompt"],
+            case_id=state["case_id"],
+        )
+        return {
+            "raw_response": result.text,
+            "llm_error": result.error,
+            "prompt_tokens": result.prompt_tokens,
+            "completion_tokens": result.completion_tokens,
+            "cost_usd": result.cost_usd,
+            "latency_s": result.latency_s,
+        }
+
+    def resolve(state: SelectState) -> dict:
+        if state.get("llm_error"):
+            output = empty_output(
+                case_id=state["case_id"],
+                condition_id=state["condition_id"],
+                method="D",
+                model_id=llm.model_id,
+            )
+            output["error"] = state["llm_error"]
+            output["abstained"] = True
+            output["needs_clarification"] = True
+            output["rule_trace"] = ["llm_error"]
+            return {"output": output}
+        decided = parse_concept_response(state.get("raw_response") or "", state["user_text"], catalog, ontology)
+        decided["case_id"] = state["case_id"]
+        decided["condition_id"] = state["condition_id"]
+        decided["model_id"] = llm.model_id
+        decided["latency_s"] = state.get("latency_s")
+        decided["prompt_tokens"] = state.get("prompt_tokens")
+        decided["completion_tokens"] = state.get("completion_tokens")
+        decided["cost_usd"] = state.get("cost_usd")
+        return {"output": decided}
+
+    graph = StateGraph(SelectState)
+    graph.add_node("prepare", prepare)
+    graph.add_node("call_llm", call_llm)
+    graph.add_node("resolve", resolve)
+    graph.add_edge(START, "prepare")
+    graph.add_edge("prepare", "call_llm")
+    graph.add_edge("call_llm", "resolve")
+    graph.add_edge("resolve", END)
     return graph.compile()
 
 

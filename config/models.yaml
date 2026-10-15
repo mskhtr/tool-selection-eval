@@ -1,5 +1,5 @@
 # 料金は公開価格表をこの実行では取得していない。推測値は入れない。
-# 条件番号は Terra、Sol、Luna の順。得点では並べ替えない。
+# 条件番号は Sol、Terra、Luna の順。得点では並べ替えない。
 version: models-1
 models:
   terra:
@@ -11,7 +11,7 @@ models:
     price_note: 未取得
   sol:
     display_name: Sol
-    intelligence_rank: 2
+    intelligence_rank: 1
     api_model_id: gpt-5.6-sol-medium
     inference_setting: medium
     temperature: null
@@ -26,10 +26,10 @@ models:
 conditions:
   - id: A1
     method: A
-    model: terra
+    model: sol
   - id: A2
     method: A
-    model: sol
+    model: terra
   - id: A3
     method: A
     model: luna
@@ -38,10 +38,22 @@ conditions:
     model: null
   - id: C1
     method: C
-    model: terra
+    model: sol
   - id: C2
     method: C
-    model: sol
+    model: terra
   - id: C3
     method: C
+    model: luna
+  - id: D1
+    method: D
+    model: null
+  - id: D2
+    method: D
+    model: sol
+  - id: D3
+    method: D
+    model: terra
+  - id: D4
+    method: D
     model: luna

@@ -1,26 +1,27 @@
 # ツール選択方式の比較
 
-自然言語の依頼から解析ツールを選ぶ三方式を、同じカタログと同じ正解ラベルで比べる。採用方式は決めていない。
+自然言語の依頼から解析ツールを選ぶ三方式を、同じカタログと同じ正解ラベルで比べる。どれがよかったかは `docs/レポート.md` の結論にある。
 
 ## 方式
 
-- A: LangGraph でカタログと入力を LLM に渡し、ツールを直接選ばせる
+- A（LLM選択）: LangGraph でカタログと入力を LLM に渡し、候補、追加質問、保留を一度に返させる
 - B: LLM を使わない。カタログの名称、目的の手がかり、系統、事務・説明表現の除外で候補を出す
-- C: LangGraph で LLM が適合度を採点し、別モジュールがツール ID を辞書引きし、その後に順位と差で候補か追加質問かを決める
+- C（LLM採点＋しきい値（擬似jev））: LangGraph で LLM が適合度を採点し、別モジュールがツール ID を辞書引きし、その後に順位と差で候補か追加質問かを決める
+- D（オントロジー）: 語を概念と関係にまとめて候補を決める。D1 は LLM を使わない。D2 から D4 は LLM が概念へ当てはめ、候補は関係が決める
 
 解析そのものは実行しない。確認グラフは、承認前の候補と承認後の選択を分けて持つ。
 
 ## モデル
 
-実行に使うのは次の三つ。並びは Terra、Sol、Luna。
+実行に使うのは次の三つ。並びは Sol、Terra、Luna。
 
 | 呼び名 | モデルID | 推論設定 |
 |---|---|---|
-| Terra | gpt-5.6-terra-medium | medium |
 | Sol | gpt-5.6-sol-medium | medium |
+| Terra | gpt-5.6-terra-medium | medium |
 | Luna | gpt-5.6-luna-medium | medium |
 
-温度は指定できない。料金とトークン数はこの実行経路では取れないので、空のまま記録する。API キーは使っていない。
+温度は指定できない。
 
 ## 実行
 
@@ -32,7 +33,7 @@ $env:PYTHONPATH = "src"
 .\.venv\Scripts\python.exe -m toolselect
 ```
 
-`python -m toolselect` は B 方式だけを 150 件実行する。A と C は `runs/llm_responses/<sol|terra|luna>/<A|C>/chunk_*.json` にモデル応答を置いてから、次で集計する。
+`python -m toolselect` は B 方式だけを全件実行する。A と C は `runs/llm_responses/<sol|terra|luna>/<A|C>/chunk_*.json` にモデル応答を置いてから、次で集計する。
 
 ```powershell
 $env:PYTHONPATH = "src"

@@ -10,12 +10,13 @@ import yaml
 from toolselect.catalog import load_catalog
 from toolselect.dataset import artifact_hashes, load_cases
 from toolselect.errors import classify_errors, count_tags
-from toolselect.graphs import build_method_a_graph, build_method_b_graph, build_method_c_graph
+from toolselect.graphs import build_method_a_graph, build_method_b_graph, build_method_c_graph, build_method_d_graph, build_method_d_llm_graph
 from toolselect.llm import ReplayLLM
 from toolselect.method_b import load_b_rules
 from toolselect.method_c import load_c_rules
+from toolselect.method_d import load_ontology
 from toolselect.metrics import score_case, summarize
-from toolselect.paths import MODELS_PATH, PROMPT_A_PATH, PROMPT_C_PATH, ROOT
+from toolselect.paths import MODELS_PATH, PROMPT_A_PATH, PROMPT_C_PATH, PROMPT_D_PATH, ROOT
 from toolselect.report import render_report
 
 
@@ -30,17 +31,22 @@ def prompt_user(catalog_text: str, user_text: str) -> str:
 def export_requests(out_dir: Path, chunk_size: int = 25) -> list[Path]:
     catalog = load_catalog()
     cases = load_cases()
-    prompts = {"A": PROMPT_A_PATH.read_text(encoding="utf-8"), "C": PROMPT_C_PATH.read_text(encoding="utf-8")}
+    prompts = {
+        "A": PROMPT_A_PATH.read_text(encoding="utf-8"),
+        "C": PROMPT_C_PATH.read_text(encoding="utf-8"),
+        "D": PROMPT_D_PATH.read_text(encoding="utf-8"),
+    }
     written: list[Path] = []
-    for method in ("A", "C"):
+    for method in ("A", "C", "D"):
         for start in range(0, len(cases), chunk_size):
             chunk = cases[start : start + chunk_size]
             payload = {
                 "method": method,
                 "system": prompts[method],
-                "catalog": catalog.llm_text(),
                 "cases": [{"id": case["id"], "text": case["text"]} for case in chunk],
             }
+            if method != "D":
+                payload["catalog"] = catalog.llm_text()
             path = out_dir / method / f"chunk_{start:03d}.json"
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -92,6 +98,16 @@ def _invoke(graph, case: dict, condition_id: str) -> tuple[dict, str | None]:
     return state.get("output") or {}, state.get("raw_response")
 
 
+def run_d(cases: list[dict] | None = None) -> list[dict]:
+    catalog = load_catalog()
+    graph = build_method_d_graph(catalog, load_ontology())
+    rows = []
+    for case in cases or load_cases():
+        output, _raw = _invoke(graph, case, "D1")
+        rows.append(output)
+    return rows
+
+
 def run_b(cases: list[dict] | None = None) -> list[dict]:
     catalog = load_catalog()
     graph = build_method_b_graph(catalog, load_b_rules())
@@ -114,6 +130,8 @@ def run_replay(condition: dict, response_path: Path, cases: list[dict] | None = 
         graph = build_method_a_graph(catalog, llm, PROMPT_A_PATH.read_text(encoding="utf-8"))
     elif condition["method"] == "C":
         graph = build_method_c_graph(catalog, llm, PROMPT_C_PATH.read_text(encoding="utf-8"), load_c_rules())
+    elif condition["method"] == "D":
+        graph = build_method_d_llm_graph(catalog, llm, PROMPT_D_PATH.read_text(encoding="utf-8"), load_ontology())
     else:
         raise ValueError(condition["method"])
     outputs = []

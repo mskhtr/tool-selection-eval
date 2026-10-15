@@ -18,14 +18,14 @@ def main() -> None:
         {
             "id": "A1",
             "method": "A",
-            "model": "terra",
+            "model": "sol",
             "status": "未実行",
             "summary": None,
         },
         {
             "id": "A2",
             "method": "A",
-            "model": "sol",
+            "model": "terra",
             "status": "未実行",
             "summary": None,
         },
@@ -46,14 +46,14 @@ def main() -> None:
         {
             "id": "C1",
             "method": "C",
-            "model": "terra",
+            "model": "sol",
             "status": "未実行",
             "summary": None,
         },
         {
             "id": "C2",
             "method": "C",
-            "model": "sol",
+            "model": "terra",
             "status": "未実行",
             "summary": None,
         },

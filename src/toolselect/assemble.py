@@ -13,13 +13,14 @@ from toolselect.experiment import (
     new_run_dir,
     primary_counts,
     run_b,
+    run_d,
     run_replay,
     stability,
     write_condition,
 )
 from toolselect.paths import ROOT
 from toolselect.readable import render_case_comparison
-from toolselect.report import render_report
+from toolselect.report import condition_label, render_report
 
 
 RESPONSE_ROOT = ROOT / "runs" / "llm_responses"
@@ -106,6 +107,28 @@ def assemble(stability_runs: dict | None = None) -> Path:
                 "候補漏れ": _examples(cases, b_eval["details"], "候補漏れ"),
             }
             continue
+        if condition["method"] == "D" and not condition.get("model"):
+            outputs = run_d(cases)
+            predictions["D1"] = {row["case_id"]: row for row in outputs}
+            evaluation = evaluate(cases, outputs)
+            write_condition(run_dir, "D1", outputs, None, evaluation)
+            rows.append(
+                {
+                    "id": "D1",
+                    "method": "D",
+                    "model": None,
+                    "status": "実行済み",
+                    "summary": evaluation["summary"],
+                    "n_responses": len(cases),
+                }
+            )
+            example_block["D1"] = {
+                "過剰な意図補完": _examples(cases, evaluation["details"], "過剰な意図補完"),
+                "表層キーワード誤選択": _examples(cases, evaluation["details"], "表層キーワード誤選択"),
+                "候補漏れ": _examples(cases, evaluation["details"], "候補漏れ"),
+            }
+            saved["D1"] = evaluation
+            continue
         responses = merge_model_method(condition["model"], condition["method"])
         present = [case for case in cases if case["id"] in responses]
         merged_path = write_merged(condition["model"], condition["method"], responses)
@@ -153,11 +176,9 @@ def assemble(stability_runs: dict | None = None) -> Path:
                 "温度は指定できない。推論設定はモデルIDに含まれる medium のみ。",
                 "料金とトークン数は未取得。",
                 "正解ラベルは実装者1名で、複数人の独立ラベルではない。",
+                "オントロジーの関係は、正解ラベルを書いた実装者1名が、辞書の外れ方を見てから書いた。モデル出力を見て関係を直してはいない。",
                 "誤り分類は規則による自動分類で、人手の再判定ではない。",
                 "ユーザー確認後の選択は方式の精度に含めていない。",
-                "一度中断したチャンクは、不足分の再実行指示のあとで実行した。",
-                "Luna の C方式 chunk_075 は、ツールIDをケースIDにしていた初回出力を捨て、再実行の結果を使った。",
-                "Terra の A方式 chunk_125 はオブジェクト区切りの余分な閉じ括弧を除いて読んだ。本文の選択内容は変えていない。",
                 "同一入力の繰り返し実行は未実施。",
             ],
             "stability": stability_runs,
@@ -169,9 +190,10 @@ def assemble(stability_runs: dict | None = None) -> Path:
     names = {tool.id: tool.name for tool in load_catalog().tools}
     report = render_report(run_dir)
     report += "\n## 事例\n\n"
-    report += "番号は比較条件と同じである。許容は正解として認めたツール、予測はその条件が出した候補である。\n\n"
+    report += "見出しは条件番号、方式、モデルである。選ぶべきツールは、その依頼で出すのが正解のツールである。予測はその条件が出した候補である。\n\n"
+    labels = {row["id"]: condition_label(row) for row in rows}
     for condition_id, groups in example_block.items():
-        report += f"### {condition_id}\n\n"
+        report += f"### {labels.get(condition_id, condition_id)}\n\n"
         for tag, items in groups.items():
             report += f"#### {tag}\n\n"
             if not items:
@@ -181,7 +203,7 @@ def assemble(stability_runs: dict | None = None) -> Path:
                 asked = "質問あり" if item["clarification"] else "質問なし"
                 report += (
                     f"- {item['case_id']}「{item['text']}」 "
-                    f"許容: {_tool_names(item['acceptable'], names)}。"
+                    f"選ぶべきツール: {_tool_names(item['acceptable'], names)}。"
                     f"予測: {_tool_names(item['predicted'], names)}。"
                     f"{asked}\n"
                 )

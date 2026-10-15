@@ -13,20 +13,22 @@ from toolselect.graphs import build_confirm_graph, build_method_a_graph, build_m
 from toolselect.llm import FakeLLM, LLMResult
 from toolselect.method_b import load_b_rules, select_with_rules
 from toolselect.method_c import decide_from_scores, resolve_score_rows
+from toolselect.method_d import load_ontology, parse_concept_response, select_with_ontology
 from toolselect.metrics import score_case
 from toolselect.paths import ROOT
 
 
 REQUIRED_TEXTS = [
     "はんだのシミュレーションをしたい",
-    "振動を解析したい",
-    "この部品が壊れないか見たい",
-    "いつものやつを実行して",
+    "半田のシミュレーションをしたい",
+    "寿命を見たい",
+    "いつものをお願い",
     "鋼製アームに繰り返し曲げがかかるので、S-N曲線で疲労寿命を計算したい",
 ]
 
 CATEGORIES = {
     "clear",
+    "orthography",
     "ambiguous",
     "colloquial",
     "multi",
@@ -38,8 +40,9 @@ CATEGORIES = {
 
 
 def test_cases_cover_categories_and_spec_examples():
-    assert len(CASES) == 150
-    assert len({case["id"] for case in CASES}) == 150
+    assert len(CASES) == 36
+    assert len({case["id"] for case in CASES}) == 36
+    assert len(load_catalog().tools) == 3
     texts = {case["text"] for case in CASES}
     for text in REQUIRED_TEXTS:
         assert text in texts
@@ -48,7 +51,7 @@ def test_cases_cover_categories_and_spec_examples():
     groups = {}
     for case in CASES:
         groups.setdefault(case["group"], []).append(case["id"])
-    for group in ("solder_sim", "vibration", "break", "vague", "fatigue_clear"):
+    for group in ("solder_sim", "solder_script", "vague", "fatigue_clear"):
         assert len(groups[group]) >= 2
     catalog_ids = load_catalog().ids()
     for case in CASES:
@@ -78,23 +81,19 @@ def test_method_b_on_instruction_examples():
     assert solder["needs_clarification"] is True
     assert solder["abstained"] is False
 
-    vibration = select_with_rules("振動を解析したい", catalog, rules)
-    assert set(vibration["candidate_ids"]) == {
-        "eigenvalue",
-        "frequency_response",
-        "random_vibration",
-    }
-    assert vibration["needs_clarification"] is True
+    life = select_with_rules("寿命を見たい", catalog, rules)
+    assert set(life["candidate_ids"]) == {"solder_life_prediction", "fatigue_life"}
+    assert life["needs_clarification"] is True
 
-    broken = select_with_rules("この部品が壊れないか見たい", catalog, rules)
-    assert set(broken["candidate_ids"]) == {
-        "static_strength",
-        "fatigue_life",
-        "fracture_mechanics",
-    }
-    assert broken["needs_clarification"] is True
+    script = select_with_rules("半田のシミュレーションをしたい", catalog, rules)
+    assert set(script["candidate_ids"]) == set(solder["candidate_ids"])
+    assert script["needs_clarification"] is True
 
-    vague = select_with_rules("いつものやつを実行して", catalog, rules)
+    katakana = select_with_rules("ハンダの亀裂進展を計算したい", catalog, rules)
+    assert katakana["candidate_ids"] == ["solder_crack_propagation"]
+    assert katakana["needs_clarification"] is False
+
+    vague = select_with_rules("いつものをお願い", catalog, rules)
     assert vague["candidate_ids"] == []
     assert vague["abstained"] is True
     assert vague["needs_clarification"] is True
@@ -103,8 +102,8 @@ def test_method_b_on_instruction_examples():
     assert clear["candidate_ids"] == ["fatigue_life"]
     assert clear["needs_clarification"] is False
 
-    both = select_with_rules("固有値解析と周波数応答解析の両方をやりたい", catalog, rules)
-    assert set(both["candidate_ids"]) == {"eigenvalue", "frequency_response"}
+    both = select_with_rules("はんだの寿命予測と亀裂進展シミュレーションを両方やって", catalog, rules)
+    assert set(both["candidate_ids"]) == {"solder_crack_propagation", "solder_life_prediction"}
     assert both["needs_clarification"] is False
 
     definition = select_with_rules("固有値という言葉の意味を教えて", catalog, rules)
@@ -119,8 +118,8 @@ def test_method_b_on_instruction_examples():
 def test_method_b_graph_runs():
     catalog = load_catalog()
     graph = build_method_b_graph(catalog, load_b_rules())
-    state = graph.invoke({"case_id": "005", "condition_id": "B1", "user_text": "振動を解析したい"})
-    assert state["output"]["case_id"] == "005"
+    state = graph.invoke({"case_id": "017", "condition_id": "B1", "user_text": "はんだのシミュレーションをしたい"})
+    assert state["output"]["case_id"] == "017"
     assert state["output"]["scores"] is None
 
 
@@ -131,17 +130,17 @@ def test_method_c_splits_scoring_and_dictionary():
             "missing_information": True,
             "missing_items": ["目的"],
             "scores": [
-                {"tool_id": "固有値解析", "score": 80, "reason": "名称"},
+                {"tool_id": "疲労寿命予測", "score": 80, "reason": "名称"},
                 {"tool_id": "not_a_tool", "score": 90, "reason": "幻覚"},
-                {"tool_id": "frequency_response", "score": 70, "reason": "id"},
+                {"tool_id": "solder_life_prediction", "score": 70, "reason": "id"},
             ],
         },
         catalog,
     )
     assert resolved["invalid_ids"] == ["not_a_tool"]
-    assert {row["tool_id"] for row in resolved["rows"]} == {"eigenvalue", "frequency_response"}
+    assert {row["tool_id"] for row in resolved["rows"]} == {"fatigue_life", "solder_life_prediction"}
     decided = decide_from_scores(resolved)
-    assert decided["scores"]["eigenvalue"] == 80
+    assert decided["scores"]["fatigue_life"] == 80
     assert "not_a_tool" not in decided["candidate_ids"]
     assert decided["invalid_ids"] == ["not_a_tool"]
     assert decided["needs_clarification"] is True
@@ -153,7 +152,7 @@ def test_method_c_graph_with_fake_llm():
         "missing_information": False,
         "missing_items": [],
         "scores": [
-            {"tool_id": tool_id, "score": 90 if tool_id == "eigenvalue" else 10, "reason": "test"}
+            {"tool_id": tool_id, "score": 90 if tool_id == "fatigue_life" else 10, "reason": "test"}
             for tool_id in catalog.ids()
         ],
     }
@@ -163,7 +162,7 @@ def test_method_c_graph_with_fake_llm():
 
     graph = build_method_c_graph(catalog, FakeLLM("fake", handler), "system", {"min_include_score": 50, "high_confidence": 75, "near_tie_window": 15, "max_candidates": 5})
     state = graph.invoke({"case_id": "021", "condition_id": "C1", "user_text": "固有値"})
-    assert state["output"]["candidate_ids"] == ["eigenvalue"]
+    assert state["output"]["candidate_ids"] == ["fatigue_life"]
     assert state["output"]["needs_clarification"] is False
     assert state["raw_response"]
 
@@ -171,7 +170,7 @@ def test_method_c_graph_with_fake_llm():
 def test_method_a_graph_normalizes_output():
     def handler(**_kwargs):
         return LLMResult(
-            text='```json\n{"candidate_ids":["eigenvalue"],"needs_clarification":false,"clarification_questions":[],"abstained":false,"reasons":["明示"],"unstated_assumptions":[]}\n```',
+            text='```json\n{"candidate_ids":["fatigue_life"],"needs_clarification":false,"clarification_questions":[],"abstained":false,"reasons":["明示"],"unstated_assumptions":[]}\n```',
             model_id="fake",
             prompt_tokens=None,
             completion_tokens=None,
@@ -179,10 +178,10 @@ def test_method_a_graph_normalizes_output():
         )
 
     graph = build_method_a_graph(load_catalog(), FakeLLM("fake", handler), "system")
-    state = graph.invoke({"case_id": "021", "condition_id": "A1", "user_text": "固有値解析"})
+    state = graph.invoke({"case_id": "005", "condition_id": "A1", "user_text": "疲労寿命"})
     output = state["output"]
-    assert output["candidate_ids"] == ["eigenvalue"]
-    assert output["ranks"] == {"eigenvalue": 1}
+    assert output["candidate_ids"] == ["fatigue_life"]
+    assert output["ranks"] == {"fatigue_life": 1}
     assert output["scores"] is None
     assert output["cost_usd"] is None
 
@@ -190,15 +189,15 @@ def test_method_a_graph_normalizes_output():
 def test_metrics_and_error_tags_do_not_use_confirmation():
     case = {
         "id": "009",
-        "acceptable": ["static_strength", "fatigue_life", "fracture_mechanics"],
-        "required": ["static_strength", "fatigue_life", "fracture_mechanics"],
+        "acceptable": ["solder_crack_propagation", "solder_life_prediction", "fatigue_life"],
+        "required": ["solder_crack_propagation", "solder_life_prediction", "fatigue_life"],
         "multiple": True,
         "clarify": True,
         "applicable": "yes",
         "categories": ["ambiguous"],
     }
     prediction = {
-        "candidate_ids": ["static_strength"],
+        "candidate_ids": ["fatigue_life"],
         "needs_clarification": False,
         "clarification_questions": [],
         "abstained": False,
@@ -237,3 +236,28 @@ def test_confirmation_does_not_execute_analysis():
     assert planned["executed"] is False
     source = (ROOT / "src" / "toolselect" / "graphs.py").read_text(encoding="utf-8")
     assert "execute_analysis" not in source
+
+
+def test_ontology_uses_relations_and_does_not_commit_suggestions():
+    catalog = load_catalog()
+    ontology = load_ontology()
+    crack = select_with_ontology("半田のき裂がどこまで進むかシミュレーションしたい", catalog, ontology)
+    assert crack["candidate_ids"] == ["solder_crack_propagation"]
+    assert crack["needs_clarification"] is False
+    life = select_with_ontology("はんだ接合の熱疲労寿命を計算したい", catalog, ontology)
+    assert life["candidate_ids"] == ["solder_life_prediction"]
+    assert life["needs_clarification"] is False
+    vague = select_with_ontology("はんだのシミュレーションをしたい", catalog, ontology)
+    assert set(vague["candidate_ids"]) == {"solder_crack_propagation", "solder_life_prediction"}
+    assert vague["needs_clarification"] is True
+    hint = select_with_ontology("はんだが割れそうなので見たい", catalog, ontology)
+    assert set(hint["candidate_ids"]) == {"solder_crack_propagation", "solder_life_prediction"}
+    assert hint["needs_clarification"] is True
+    both = parse_concept_response(
+        '{"concepts":["solder","life"],"suggestions":[]}',
+        "はんだの寿命を計算して",
+        catalog,
+        ontology,
+    )
+    assert both["candidate_ids"] == ["solder_life_prediction"]
+    assert "llm_concepts" in both["rule_trace"]

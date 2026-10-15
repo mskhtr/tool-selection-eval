@@ -1,9 +1,11 @@
-# 全方式で共通のツールカタログ。version: catalog-1
+# 全方式で共通のツールカタログ。version: catalog-2
+# ツールは3個。はんだの亀裂進展、はんだの寿命、金属の疲労寿命。
 # LLMに渡す項目: id, name, domain, target, purpose, method, aliases,
 #   inputs, input_conditions, constraints, outputs, differences, purpose_signals
 # B方式だけが追加で使う項目: rule_keywords
+# 表記ゆれ（はんだ・半田・ハンダ、亀裂・き裂）は別名と目的の手がかりに書く。
 # ファミリー定義は config/method_b.yaml にあり、LLMプロンプトには入れない。
-version: catalog-1
+version: catalog-2
 tools:
   - id: solder_crack_propagation
     name: はんだ亀裂進展シミュレーション
@@ -13,15 +15,19 @@ tools:
     method: はんだ接合を対象にした亀裂進展シミュレーション
     aliases:
       - はんだクラック進展
-      - クラックグロース
       - はんだ亀裂進展
+      - 半田亀裂進展
+      - ハンダ亀裂進展
+      - 半田き裂進展
+      - ハンダき裂進展
+      - クラックグロース
     inputs: [はんだ形状, 温度サイクルまたは負荷履歴]
     input_conditions: [対象がはんだ接合であること, 亀裂の進み方を見ること]
-    constraints: [金属母材一般の破壊力学評価ではない, 寿命サイクル数だけが欲しい場合の専用手続きではない]
+    constraints: [金属母材の疲労寿命ではない, 寿命サイクル数だけが欲しい場合の専用手続きではない]
     outputs: [亀裂長さの推移, 進展経路]
-    differences: はんだ寿命予測は破断までの回数を出す。こちらは亀裂の進み方を出す。金属母材の破壊力学評価とは対象が違う。
-    purpose_signals: [亀裂進展, クラック進展, クラックグロース, き裂進展, 進展量]
-    rule_keywords: [亀裂, クラック, き裂]
+    differences: はんだ寿命予測は破断までの回数を出す。こちらは亀裂の進み方を出す。金属の疲労寿命予測とは対象が違う。
+    purpose_signals: [亀裂進展, き裂進展, クラック進展, クラックグロース, 進展量]
+    rule_keywords: [亀裂, き裂, クラック]
 
   - id: solder_life_prediction
     name: はんだ寿命予測シミュレーション
@@ -31,90 +37,20 @@ tools:
     method: はんだの寿命則による寿命予測
     aliases:
       - はんだ寿命予測
-      - はんだの寿命
       - はんだ寿命
+      - はんだの寿命
+      - 半田寿命
+      - 半田の寿命
+      - ハンダ寿命
+      - ハンダの寿命
       - bga寿命
     inputs: [温度サイクル条件, はんだ仕様]
     input_conditions: [対象がはんだ接合であること, 寿命回数を求めること]
-    constraints: [亀裂形状の進展そのものを追わない, 鋼材の高サイクル疲労寿命ではない]
+    constraints: [亀裂形状の進展そのものを追わない, 金属部材の高サイクル疲労寿命ではない]
     outputs: [寿命サイクル数]
-    differences: はんだ亀裂進展は亀裂の伸びを見る。こちらは寿命回数を見る。鋼のS-N疲労寿命とは材料と寿命則が違う。
-    purpose_signals: [はんだ寿命, 熱疲労寿命, 寿命に達する, 寿命予測, コフィン, 何回で寿命]
+    differences: はんだ亀裂進展は亀裂の伸びを見る。こちらは寿命回数を見る。疲労寿命予測は金属部材のS-N疲労を見る。
+    purpose_signals: [はんだ寿命, 半田寿命, ハンダ寿命, 熱疲労寿命, 寿命に達する, コフィン, 何回で寿命]
     rule_keywords: [寿命]
-
-  - id: eigenvalue
-    name: 固有値解析
-    domain: 構造振動
-    target: 構造物
-    purpose: 固有振動数とモード形状を求める
-    method: 実固有値解析
-    aliases:
-      - 固有値解析
-      - モーダル解析
-      - モード解析
-      - 固有振動解析
-    inputs: [形状, 材料, 拘束]
-    input_conditions: [知りたいのが固有振動数またはモード形状であること]
-    constraints: [加振に対する応答振幅は出さない, ランダム振動の応答統計量は出さない]
-    outputs: [固有振動数, モード形状]
-    differences: 周波数応答解析は加振したときの振幅を見る。ランダム振動解析はPSD入力の応答を見る。固有値解析は振動数と形を見る。
-    purpose_signals: [固有値, 固有振動, モード形状, 共振周波数, モーダル, モード解析]
-    rule_keywords: [周波数, 共振]
-
-  - id: frequency_response
-    name: 周波数応答解析
-    domain: 構造振動
-    target: 構造物
-    purpose: 正弦波などの確定的な加振に対する周波数ごとの応答を求める
-    method: 周波数応答解析
-    aliases:
-      - 周波数応答解析
-      - 周波数応答
-      - frf
-      - ハーモニック応答
-    inputs: [加振点, 周波数範囲, 減衰]
-    input_conditions: [正弦波掃引やハーモニック加振のように、周波数ごとの応答振幅が目的であること]
-    constraints: [固有振動数だけの計算ではない, PSDを入力とする不規則振動ではない]
-    outputs: [周波数応答, 応答振幅]
-    differences: 固有値解析はモードを求める。ランダム振動解析は不規則入力の統計応答を求める。
-    purpose_signals: [周波数応答, frf, 正弦波, 掃引, スイープ, ハーモニック]
-    rule_keywords: [周波数, 共振]
-
-  - id: random_vibration
-    name: ランダム振動解析
-    domain: 構造振動
-    target: 構造物
-    purpose: PSDなどの不規則入力に対する振動応答を求める
-    method: ランダム振動解析
-    aliases:
-      - ランダム振動解析
-      - ランダム振動
-      - 不規則振動解析
-    inputs: [PSD, 減衰, 拘束]
-    input_conditions: [入力がPSDや不規則振動であること]
-    constraints: [正弦波掃引の周波数応答ではない, 固有振動数だけを求める手続きではない]
-    outputs: [応答の統計量, PSD応答]
-    differences: 周波数応答解析は確定的な正弦波加振を扱う。固有値解析はモードを扱う。
-    purpose_signals: [ランダム振動, psd, 不規則振動]
-    rule_keywords: []
-
-  - id: static_strength
-    name: 静強度解析
-    domain: 構造強度
-    target: 構造部材
-    purpose: 静的荷重での応力と変形が許容を超えるかを評価する
-    method: 静解析
-    aliases:
-      - 静強度解析
-      - 静解析
-      - 静荷重解析
-    inputs: [静的荷重, 拘束, 材料許容]
-    input_conditions: [荷重が静的であること, 応力または変形の許容判定が目的であること]
-    constraints: [繰り返し寿命は出さない, 衝撃の時刻歴は扱わない, 座屈固有値そのものは主目的にしない]
-    outputs: [応力, 変形]
-    differences: 疲労寿命予測は繰り返しの寿命を見る。熱応力解析は温度変化が主因の変形を見る。座屈解析は圧縮での座屈荷重を見る。
-    purpose_signals: [静強度, 静荷重, 静解析, 静的, 引張荷重, ミーゼス]
-    rule_keywords: [応力, 変形, 強度]
 
   - id: fatigue_life
     name: 疲労寿命予測
@@ -128,99 +64,8 @@ tools:
       - 高サイクル疲労
     inputs: [繰り返し荷重, S-N特性]
     input_conditions: [対象が金属部材の疲労であること, はんだ専用の寿命則ではないこと]
-    constraints: [はんだ接合の熱疲労寿命専用ではない, 静的な一回荷重の強度判定ではない, 既存き裂の応力拡大係数を主目的にしない]
+    constraints: [はんだ接合の熱疲労寿命専用ではない, はんだの亀裂進展を追う手続きではない]
     outputs: [疲労寿命]
-    differences: はんだ寿命予測ははんだ接合の温度サイクル寿命を見る。静強度解析は一回の静荷重を見る。破壊・亀裂解析は既存き裂の力学量を見る。
+    differences: はんだ寿命予測ははんだ接合の温度サイクル寿命を見る。はんだ亀裂進展は接合部の亀裂の伸びを見る。
     purpose_signals: [疲労寿命, 高サイクル疲労, sn, 疲労]
-    rule_keywords: [寿命, 応力]
-
-  - id: fracture_mechanics
-    name: 破壊・亀裂解析
-    domain: 構造強度
-    target: 金属母材のき裂
-    purpose: 既存き裂の応力拡大係数や破壊リスクを評価する
-    method: 破壊力学評価
-    aliases:
-      - 破壊力学
-      - 破壊じん性評価
-      - き裂解析
-    inputs: [き裂形状, 荷重]
-    input_conditions: [金属母材のき裂を評価すること]
-    constraints: [はんだ接合の亀裂進展シミュレーションではない, き裂が無い部材の疲労寿命曲線そのものではない]
-    outputs: [応力拡大係数, 破壊指標]
-    differences: はんだ亀裂進展ははんだ接合の亀裂の伸びを追う。疲労寿命予測はS-Nなどで寿命回数を出す。
-    purpose_signals: [応力拡大係数, 破壊力学, 破壊じん性, k値]
-    rule_keywords: [亀裂, き裂, クラック]
-
-  - id: thermal_stress
-    name: 熱応力解析
-    domain: 熱構造
-    target: 温度が変わる構造
-    purpose: 温度変化による熱応力と熱変形を求める
-    method: 熱応力解析
-    aliases:
-      - 熱応力解析
-      - 熱応力
-      - 熱変形解析
-    inputs: [温度分布または一様温度, 線膨張, 拘束]
-    input_conditions: [見たいのが温度による応力または変形であること]
-    constraints: [はんだの寿命回数は出さない, 流体の流れ場は解かない]
-    outputs: [熱応力, 熱変形]
-    differences: はんだ寿命予測は接合部の寿命回数を出す。流体解析は流れを解く。静強度解析は機械的な静荷重が主因である。
-    purpose_signals: [熱応力, 熱変形, 線膨張]
-    rule_keywords: [熱, 温度, 応力, 変形]
-
-  - id: buckling
-    name: 座屈解析
-    domain: 構造安定
-    target: 圧縮を受ける薄肉構造
-    purpose: 座屈荷重と座屈モードを求める
-    method: 線形座屈解析
-    aliases:
-      - 座屈解析
-      - 座屈
-      - バックリング
-    inputs: [圧縮荷重, 板厚, 拘束]
-    input_conditions: [圧縮による座屈が関心事であること]
-    constraints: [静的な引張強度の判定ではない, 衝撃応答ではない]
-    outputs: [座屈荷重, 座屈モード]
-    differences: 静強度解析は応力の許容判定が中心で、座屈固有値を主目的にしない。
-    purpose_signals: [座屈, バックリング]
-    rule_keywords: []
-
-  - id: explicit_impact
-    name: 衝突・落下衝撃解析
-    domain: 衝撃
-    target: 短時間の衝撃を受ける構造
-    purpose: 落下や衝突の短時間応答を求める
-    method: 陽解法による衝撃解析
-    aliases:
-      - 衝突解析
-      - 落下解析
-      - 陽解法
-      - クラッシュ解析
-    inputs: [衝突速度または落下高さ, 接触条件]
-    input_conditions: [現象が短時間の衝撃であること]
-    constraints: [静的荷重の強度判定ではない, 疲労の繰り返し寿命ではない]
-    outputs: [衝撃時の変形, 接触力の時刻歴]
-    differences: 静強度解析は時間を追わない。疲労寿命予測は繰り返し数を見る。
-    purpose_signals: [落下, 衝撃, 衝突解析, 陽解法, クラッシュ]
-    rule_keywords: [衝突]
-
-  - id: cfd_flow
-    name: 流体解析
-    domain: 流体
-    target: 空気や液体の流れ
-    purpose: 流れ場、流量、圧力損失を求める
-    method: CFD
-    aliases:
-      - 流体解析
-      - cfd
-      - 流れ場解析
-    inputs: [流路形状, 入口条件, 流体物性]
-    input_conditions: [知りたいのが流れ、流量、圧力損失であること]
-    constraints: [構造の応力は解かない, 熱応力解析の代わりにはしない]
-    outputs: [流速分布, 圧力損失, 流量]
-    differences: 熱応力解析は固体の変形を見る。流体解析は流れを見る。
-    purpose_signals: [流体解析, 流体, cfd, 圧力損失, 圧損, 冷却風, 流れ場]
-    rule_keywords: [流れ, 風]
+    rule_keywords: [寿命]

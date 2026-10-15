@@ -1,4 +1,4 @@
-"""150件の正解と、事例の横断比較を、人が読むMarkdownにする。"""
+"""正解と、事例の横断比較を、人が読むMarkdownにする。"""
 
 from __future__ import annotations
 
@@ -13,6 +13,7 @@ DOCS = ROOT / "docs"
 
 PRIMARY_ORDER = (
     "clear",
+    "orthography",
     "colloquial",
     "multi",
     "ambiguous",
@@ -23,6 +24,7 @@ PRIMARY_ORDER = (
 )
 PRIMARY_LABEL = {
     "clear": "明確（目的が書いてある）",
+    "orthography": "表記ゆれ",
     "colloquial": "口語・俗称・略語",
     "multi": "複数ツールを明示",
     "ambiguous": "曖昧（対象だけで目的が未定）",
@@ -51,9 +53,9 @@ def render_testset() -> str:
     lines = [
         "# テストセット",
         "",
-        "比較に使った150件である。学習用との分割はしていない。原本は `src/toolselect/gold.py` で、機械可読の写しは `data/cases.json` である。",
+        f"比較に使う{len(cases)}件である。学習用との分割はしていない。原本は `src/toolselect/gold.py` で、機械可読の写しは `data/cases.json` である。",
         "",
-        "ラベルは実装者1名が、モデルの出力を見る前に付けた。許容は出してよいツール、必須は必ず含めるツールである。質問は、その依頼で確認が必要かどうかである。",
+        "ラベルは実装者1名が、モデルの出力を見る前に付けた。選ぶべきツールは、その依頼で出すのが正解のツールである。必須は、その中で必ず含めるツールである。質問は、その依頼で確認が必要かどうかである。",
         "",
     ]
     by_primary: dict[str, list[dict]] = {}
@@ -70,9 +72,9 @@ def render_testset() -> str:
             required = case["required"]
             lines.append(f"### {case['id']}　{case['text']}")
             lines.append("")
-            lines.append(f"- 許容: {_names(acceptable, catalog_names)}")
+            lines.append(f"- 選ぶべきツール: {_names(acceptable, catalog_names)}")
             if required == acceptable:
-                lines.append("- 必須: 許容と同じ")
+                lines.append("- 必須: 選ぶべきツールと同じ")
             else:
                 lines.append(f"- 必須: {_names(required, catalog_names)}")
             lines.append(f"- 複数候補: {_yes_no(case['multiple'])}")
@@ -89,15 +91,19 @@ def render_testset() -> str:
     return "\n".join(lines).rstrip() + "\n"
 
 
-CONDITION_ORDER = ("A1", "A2", "A3", "B1", "C1", "C2", "C3")
+CONDITION_ORDER = ("A1", "A2", "A3", "B1", "C1", "C2", "C3", "D1", "D2", "D3", "D4")
 CONDITION_LABEL = {
-    "A1": "A1 直接選択 Terra",
-    "A2": "A2 直接選択 Sol",
-    "A3": "A3 直接選択 Luna",
-    "B1": "B1 辞書・規則",
-    "C1": "C1 擬似jev Terra",
-    "C2": "C2 擬似jev Sol",
-    "C3": "C3 擬似jev Luna",
+    "A1": "A1（LLM選択・Sol）",
+    "A2": "A2（LLM選択・Terra）",
+    "A3": "A3（LLM選択・Luna）",
+    "B1": "B1（辞書・規則）",
+    "C1": "C1（LLM採点＋しきい値（擬似jev）・Sol）",
+    "C2": "C2（LLM採点＋しきい値（擬似jev）・Terra）",
+    "C3": "C3（LLM採点＋しきい値（擬似jev）・Luna）",
+    "D1": "D1（オントロジー）",
+    "D2": "D2（オントロジー＋LLM・Sol）",
+    "D3": "D3（オントロジー＋LLM・Terra）",
+    "D4": "D4（オントロジー＋LLM・Luna）",
 }
 
 
@@ -112,7 +118,7 @@ def _format_score(value: float) -> str:
 
 
 def _score_cell(prediction: dict, names: dict[str, str]) -> str:
-    """擬似jevが付けた適合度。20未満は最高点だけ残し、0は省く。"""
+    """LLM採点＋しきい値（擬似jev）が付けた適合度。20未満は最高点だけ残し、0は省く。"""
     scores = prediction.get("scores")
     if not isinstance(scores, dict) or not scores:
         return "—"
@@ -135,7 +141,7 @@ def _score_cell(prediction: dict, names: dict[str, str]) -> str:
 def _judgment(case: dict, prediction: dict) -> str:
     tags = classify_errors(case, prediction)
     if not tags:
-        return "許容と一致"
+        return "選ぶべきツールと一致"
     return "、".join(tags)
 
 
@@ -143,7 +149,7 @@ def _comparison_block(case: dict, by_condition: dict[str, dict[str, dict]], name
     lines = [
         f"### {case['id']}　{case['text']}",
         "",
-        f"許容: {_names(case['acceptable'], names)}。質問の正解: {_yes_no(case['clarify'])}。",
+        f"選ぶべきツール: {_names(case['acceptable'], names)}。質問の正解: {_yes_no(case['clarify'])}。",
         "",
         "| 条件 | 出した候補 | 適合度 | 質問 | 判断 |",
         "|---|---|---|---|---|",
@@ -180,9 +186,9 @@ def render_case_comparison(
     lines = [
         "## 同じ依頼での比較",
         "",
-        "上の事例に出た依頼について、7条件が何を候補にし、質問したかを並べた。判断は、許容するツールと質問の有無を正解と比べた自動分類である。",
+        f"上の事例に出た依頼について、{len(CONDITION_ORDER)}条件が何を候補にし、質問したかを並べた。判断は、選ぶべきツールと質問の有無を正解と比べた自動分類である。",
         "",
-        "適合度は擬似jevが各ツールに付けた得点である。直接選択と辞書・規則は得点を付けない。20以上を高い順に書き、どれも20未満のときは最高点だけを書いた。同点が4件以上なら最高点の数値だけにした。0は省いた。候補に入れる下限は50、一位との差が15以内を接近とみなす。情報不足でも、一位が75以上ならその理由だけでは質問しない。",
+        "適合度はLLM採点＋しきい値（擬似jev）が各ツールに付けた得点である。LLM選択と辞書・規則は得点を付けない。20以上を高い順に書き、どれも20未満のときは最高点だけを書いた。同点が4件以上なら最高点の数値だけにした。0は省いた。候補に入れる下限は50、一位との差が15以内を接近とみなす。情報不足でも、一位が75以上ならその理由だけでは質問しない。",
         "",
     ]
     for case_id in case_ids:
@@ -214,11 +220,11 @@ def render_results(run_dir: Path) -> str:
     lines = [
         "# テスト結果",
         "",
-        f"150件それぞれについて、7条件が出した候補と質問を並べた。元データは `{run_dir.relative_to(ROOT).as_posix()}` の `predictions.jsonl` である。",
+        f"{len(cases)}件それぞれについて、{len(CONDITION_ORDER)}条件が出した候補と質問を並べた。元データは `{run_dir.relative_to(ROOT).as_posix()}` の `predictions.jsonl` である。",
         "",
-        "判断は、許容するツールと質問の有無を正解と比べた自動分類である。人が読み直した分類ではない。",
+        "判断は、選ぶべきツールと質問の有無を正解と比べた自動分類である。人が読み直した分類ではない。",
         "",
-        "適合度は擬似jev（C1〜C3）が各ツールに付けた得点である。直接選択と辞書・規則は得点を付けない。20以上を高い順に書き、どれも20未満のときは最高点だけを書いた。同点が4件以上なら最高点の数値だけにした。0は省いた。候補に入れる下限は50、一位との差が15以内を接近とみなす。情報不足でも、一位が75以上ならその理由だけでは質問しない。",
+        "適合度はLLM採点＋しきい値（擬似jev、C1〜C3）が各ツールに付けた得点である。LLM選択と辞書・規則は得点を付けない。20以上を高い順に書き、どれも20未満のときは最高点だけを書いた。同点が4件以上なら最高点の数値だけにした。0は省いた。候補に入れる下限は50、一位との差が15以内を接近とみなす。情報不足でも、一位が75以上ならその理由だけでは質問しない。",
         "",
     ]
     by_primary: dict[str, list[dict]] = {}
@@ -244,7 +250,7 @@ def write_results(run_dir: Path | None = None, path: Path | None = None) -> Path
             if item.is_dir() and (item / "A1" / "predictions.jsonl").exists() and (item / "C3" / "predictions.jsonl").exists()
         ]
         if not candidates:
-            raise FileNotFoundError("7条件そろった実行結果が runs に無い")
+            raise FileNotFoundError("A1 と C3 のそろった実行結果が runs に無い")
         run_dir = max(candidates, key=lambda item: item.name)
     target = path or (DOCS / "テスト結果.md")
     target.parent.mkdir(parents=True, exist_ok=True)
