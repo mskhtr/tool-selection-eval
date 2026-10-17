@@ -98,27 +98,27 @@ def _invoke(graph, case: dict, condition_id: str) -> tuple[dict, str | None]:
     return state.get("output") or {}, state.get("raw_response")
 
 
-def run_d(cases: list[dict] | None = None) -> list[dict]:
+def run_d(cases: list[dict] | None = None, ontology_path: str | None = None, condition_id: str = "D1") -> list[dict]:
     catalog = load_catalog()
-    graph = build_method_d_graph(catalog, load_ontology())
+    graph = build_method_d_graph(catalog, load_ontology(ontology_path))
     rows = []
     for case in cases or load_cases():
-        output, _raw = _invoke(graph, case, "D1")
+        output, _raw = _invoke(graph, case, condition_id)
         rows.append(output)
     return rows
 
 
-def run_b(cases: list[dict] | None = None) -> list[dict]:
+def run_b(cases: list[dict] | None = None, rules_path: str | None = None, condition_id: str = "B1") -> list[dict]:
     catalog = load_catalog()
-    graph = build_method_b_graph(catalog, load_b_rules())
+    graph = build_method_b_graph(catalog, load_b_rules(rules_path))
     rows = []
     for case in cases or load_cases():
-        output, _raw = _invoke(graph, case, "B1")
+        output, _raw = _invoke(graph, case, condition_id)
         rows.append(output)
     return rows
 
 
-def run_replay(condition: dict, response_path: Path, cases: list[dict] | None = None) -> tuple[list[dict], list[dict]]:
+def run_replay(condition: dict, response_path: Path, cases: list[dict] | None = None, ontology_path: str | None = None) -> tuple[list[dict], list[dict]]:
     catalog = load_catalog()
     cases = cases or load_cases()
     model_key = condition.get("model")
@@ -131,7 +131,7 @@ def run_replay(condition: dict, response_path: Path, cases: list[dict] | None = 
     elif condition["method"] == "C":
         graph = build_method_c_graph(catalog, llm, PROMPT_C_PATH.read_text(encoding="utf-8"), load_c_rules())
     elif condition["method"] == "D":
-        graph = build_method_d_llm_graph(catalog, llm, PROMPT_D_PATH.read_text(encoding="utf-8"), load_ontology())
+        graph = build_method_d_llm_graph(catalog, llm, PROMPT_D_PATH.read_text(encoding="utf-8"), load_ontology(ontology_path))
     else:
         raise ValueError(condition["method"])
     outputs = []

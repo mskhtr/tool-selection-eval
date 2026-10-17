@@ -1,0 +1,35 @@
+# 呼び方を教えたオントロジーに、設計者独自の言い方を足す。
+# 割れは亀裂、持たないは寿命。一つに決めない、とは書いていない。
+# 折れは入れない。
+version: ontology-slang-1
+concepts:
+  solder:
+    labels: [はんだ, 半田, ハンダ, ソルダ]
+  crack:
+    labels: [亀裂, き裂, クラックグロース, クラック, 割れ]
+  propagation:
+    labels: [進展, 進む]
+  life:
+    labels: [寿命, 持たない]
+  thermal:
+    labels: [熱疲労]
+  fatigue:
+    labels: [疲労, 高サイクル疲労]
+  metal:
+    labels: [金属]
+  sn:
+    labels: [sn]
+tool_requirements:
+  solder_crack_propagation:
+    - [solder, crack]
+    - [crack, propagation]
+  solder_life_prediction:
+    - [solder, life]
+    - [thermal, life]
+  fatigue_life:
+    - [fatigue, life]
+    - [sn]
+    - [fatigue]
+subject_only:
+  solder: [solder_crack_propagation, solder_life_prediction]
+  life: [solder_life_prediction, fatigue_life]

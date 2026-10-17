@@ -61,5 +61,5 @@ hard_meta_substrings:
   - 更新日
 families:
   solder:
-    triggers: [はんだ, 半田, ハンダ, ソルダ, bga]
+    triggers: [はんだ, 半田, ハンダ]
     tools: [solder_crack_propagation, solder_life_prediction]

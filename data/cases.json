@@ -2,8 +2,8 @@
   "labeling": {
     "labeler_count": 1,
     "independent_adjudication": false,
-    "note": "実装者1名が、モデル出力を見る前に付与した。複数人の独立ラベルと不一致解消は行っていない。",
-    "frozen_before_model_runs": true
+    "note": "実装者1名が付与した。024と025は、割れを亀裂、持たないを寿命とし、質問なしで1件にする判断に合わせ、実装者が後から直した。複数人の独立ラベルと不一致解消は行っていない。",
+    "frozen_before_model_runs": false
   },
   "cases": [
     {
@@ -564,26 +564,22 @@
       "primary": "implicit",
       "categories": [
         "implicit",
-        "ambiguous"
+        "clear"
       ],
       "group": "solder_worry",
       "text": "はんだが割れそうなので見たい",
       "acceptable": [
-        "solder_crack_propagation",
-        "solder_life_prediction"
+        "solder_crack_propagation"
       ],
       "required": [
-        "solder_crack_propagation",
-        "solder_life_prediction"
+        "solder_crack_propagation"
       ],
-      "multiple": true,
-      "clarify": true,
+      "multiple": false,
+      "clarify": false,
       "applicable": "yes",
-      "needed": [
-        "進展経路か、寿命回数か"
-      ],
+      "needed": [],
       "severity": "medium",
-      "reason": "割れそうからはんだの不具合は読み取れるが、進展と寿命のどちらを出すかは書かれていない。",
+      "reason": "割れは亀裂を指す。はんだの亀裂進展を質問なしで出す。",
       "stability": false
     },
     {
@@ -591,26 +587,22 @@
       "primary": "implicit",
       "categories": [
         "implicit",
-        "ambiguous"
+        "clear"
       ],
       "group": "solder_worry",
       "text": "冷熱を繰り返すとはんだが持たない気がするので見たい",
       "acceptable": [
-        "solder_crack_propagation",
         "solder_life_prediction"
       ],
       "required": [
-        "solder_crack_propagation",
         "solder_life_prediction"
       ],
-      "multiple": true,
-      "clarify": true,
+      "multiple": false,
+      "clarify": false,
       "applicable": "yes",
-      "needed": [
-        "寿命回数か、亀裂進展か"
-      ],
+      "needed": [],
       "severity": "medium",
-      "reason": "持たないから寿命と決めやすいが、亀裂の進み方も候補に残る。",
+      "reason": "持たないは寿命を指す。はんだ寿命予測を質問なしで出す。",
       "stability": false
     },
     {

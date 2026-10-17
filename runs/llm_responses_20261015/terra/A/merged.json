@@ -1,0 +1,562 @@
+{
+  "responses": [
+    {
+      "case_id": "001",
+      "body": {
+        "candidate_ids": [
+          "solder_crack_propagation"
+        ],
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "はんだ接合の温度サイクル下での亀裂進展を求めている。"
+        ],
+        "unstated_assumptions": []
+      }
+    },
+    {
+      "case_id": "002",
+      "body": {
+        "candidate_ids": [
+          "solder_crack_propagation"
+        ],
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "はんだクラックのサイクルごとの進展量を求めている。"
+        ],
+        "unstated_assumptions": []
+      }
+    },
+    {
+      "case_id": "003",
+      "body": {
+        "candidate_ids": [
+          "solder_life_prediction"
+        ],
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "はんだ接合の熱疲労寿命を求めている。"
+        ],
+        "unstated_assumptions": []
+      }
+    },
+    {
+      "case_id": "004",
+      "body": {
+        "candidate_ids": [
+          "solder_life_prediction"
+        ],
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "BGAはんだの温度サイクル寿命回数を求めている。"
+        ],
+        "unstated_assumptions": []
+      }
+    },
+    {
+      "case_id": "005",
+      "body": {
+        "candidate_ids": [
+          "fatigue_life"
+        ],
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "鋼製部材の繰り返し曲げをS-N曲線で評価する。"
+        ],
+        "unstated_assumptions": []
+      }
+    },
+    {
+      "case_id": "006",
+      "body": {
+        "candidate_ids": [
+          "fatigue_life"
+        ],
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "金属部品の高サイクル疲労をS-Nで評価する。"
+        ],
+        "unstated_assumptions": []
+      }
+    },
+    {
+      "case_id": "007",
+      "body": {
+        "candidate_ids": [
+          "solder_crack_propagation",
+          "solder_life_prediction"
+        ],
+        "needs_clarification": true,
+        "clarification_questions": [
+          "はんだ接合の亀裂進展と寿命回数のどちらを見たいですか？"
+        ],
+        "abstained": false,
+        "reasons": [
+          "はんだが対象だが、解析目的が示されていない。"
+        ],
+        "unstated_assumptions": []
+      }
+    },
+    {
+      "case_id": "008",
+      "body": {
+        "candidate_ids": [
+          "solder_crack_propagation",
+          "solder_life_prediction"
+        ],
+        "needs_clarification": true,
+        "clarification_questions": [
+          "ハンダ接合の亀裂進展と寿命回数のどちらを見たいですか？"
+        ],
+        "abstained": false,
+        "reasons": [
+          "ハンダが対象だが、解析目的が示されていない。"
+        ],
+        "unstated_assumptions": []
+      }
+    },
+    {
+      "case_id": "009",
+      "body": {
+        "candidate_ids": [
+          "solder_life_prediction"
+        ],
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "半田接合の熱疲労寿命を求めている。"
+        ],
+        "unstated_assumptions": []
+      }
+    },
+    {
+      "case_id": "010",
+      "body": {
+        "candidate_ids": [
+          "solder_life_prediction"
+        ],
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "ハンダの寿命を求めている。"
+        ],
+        "unstated_assumptions": []
+      }
+    },
+    {
+      "case_id": "011",
+      "body": {
+        "candidate_ids": [
+          "solder_crack_propagation"
+        ],
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "半田のき裂がどこまで進むかを求めている。"
+        ],
+        "unstated_assumptions": []
+      }
+    },
+    {
+      "case_id": "012",
+      "body": {
+        "candidate_ids": [
+          "solder_crack_propagation"
+        ],
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "ハンダの亀裂進展を求めている。"
+        ],
+        "unstated_assumptions": []
+      }
+    },
+    {
+      "case_id": "013",
+      "body": {
+        "candidate_ids": [
+          "solder_crack_propagation",
+          "solder_life_prediction"
+        ],
+        "needs_clarification": true,
+        "clarification_questions": [
+          "ソルダ接合の亀裂進展と寿命回数のどちらを解析したいですか？"
+        ],
+        "abstained": false,
+        "reasons": [
+          "ソルダが対象だが、解析目的が示されていない。"
+        ],
+        "unstated_assumptions": []
+      }
+    },
+    {
+      "case_id": "014",
+      "body": {
+        "candidate_ids": [
+          "solder_crack_propagation"
+        ],
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "はんだクラックの進展を求めている。"
+        ],
+        "unstated_assumptions": []
+      }
+    },
+    {
+      "case_id": "015",
+      "body": {
+        "candidate_ids": [
+          "solder_crack_propagation"
+        ],
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "ソルダのクラックグロースを求めている。"
+        ],
+        "unstated_assumptions": []
+      }
+    },
+    {
+      "case_id": "016",
+      "body": {
+        "candidate_ids": [
+          "fatigue_life"
+        ],
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "S-Nによる疲労評価を求めている。"
+        ],
+        "unstated_assumptions": []
+      }
+    },
+    {
+      "case_id": "017",
+      "body": {
+        "candidate_ids": [
+          "solder_crack_propagation",
+          "solder_life_prediction"
+        ],
+        "needs_clarification": true,
+        "clarification_questions": [
+          "はんだ接合の亀裂進展と寿命回数のどちらを見たいですか？"
+        ],
+        "abstained": false,
+        "reasons": [
+          "はんだが対象だが、解析目的が示されていない。"
+        ],
+        "unstated_assumptions": []
+      }
+    },
+    {
+      "case_id": "018",
+      "body": {
+        "candidate_ids": [
+          "solder_crack_propagation",
+          "solder_life_prediction"
+        ],
+        "needs_clarification": true,
+        "clarification_questions": [
+          "はんだ接合を対象にしますか？ 対象にする場合、亀裂進展と寿命回数のどちらを見たいですか？"
+        ],
+        "abstained": false,
+        "reasons": [
+          "はんだ周辺とあるが、対象と解析目的が特定されていない。"
+        ],
+        "unstated_assumptions": []
+      }
+    },
+    {
+      "case_id": "019",
+      "body": {
+        "candidate_ids": [
+          "solder_life_prediction",
+          "fatigue_life"
+        ],
+        "needs_clarification": true,
+        "clarification_questions": [
+          "寿命を知りたい対象は、はんだ接合ですか、それとも金属部材ですか？"
+        ],
+        "abstained": false,
+        "reasons": [
+          "寿命の対象と負荷条件が示されていない。"
+        ],
+        "unstated_assumptions": []
+      }
+    },
+    {
+      "case_id": "020",
+      "body": {
+        "candidate_ids": [
+          "solder_life_prediction",
+          "fatigue_life"
+        ],
+        "needs_clarification": true,
+        "clarification_questions": [
+          "対象部品ははんだ接合ですか、それとも金属部材ですか？ また、温度サイクルか繰り返し荷重かを教えてください。"
+        ],
+        "abstained": false,
+        "reasons": [
+          "部品の種類と寿命評価条件が示されていない。"
+        ],
+        "unstated_assumptions": []
+      }
+    },
+    {
+      "case_id": "021",
+      "body": {
+        "candidate_ids": [
+          "solder_life_prediction",
+          "solder_crack_propagation"
+        ],
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "はんだの寿命予測と亀裂進展の両方を求めている。"
+        ],
+        "unstated_assumptions": []
+      }
+    },
+    {
+      "case_id": "022",
+      "body": {
+        "candidate_ids": [
+          "solder_life_prediction",
+          "solder_crack_propagation"
+        ],
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "はんだの温度サイクル寿命と亀裂進展の両方を求めている。"
+        ],
+        "unstated_assumptions": []
+      }
+    },
+    {
+      "case_id": "023",
+      "body": {
+        "candidate_ids": [
+          "fatigue_life",
+          "solder_life_prediction"
+        ],
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "金属の疲労寿命とはんだの熱疲労寿命をそれぞれ求めている。"
+        ],
+        "unstated_assumptions": []
+      }
+    },
+    {
+      "case_id": "024",
+      "body": {
+        "candidate_ids": [
+          "solder_crack_propagation",
+          "solder_life_prediction"
+        ],
+        "needs_clarification": true,
+        "clarification_questions": [
+          "はんだの亀裂の進み方と、寿命回数のどちらを見たいですか？"
+        ],
+        "abstained": false,
+        "reasons": [
+          "はんだの割れが懸念されるが、求める出力が示されていない。"
+        ],
+        "unstated_assumptions": []
+      }
+    },
+    {
+      "case_id": "025",
+      "body": {
+        "candidate_ids": [
+          "solder_life_prediction",
+          "solder_crack_propagation"
+        ],
+        "needs_clarification": true,
+        "clarification_questions": [
+          "冷熱の繰り返しに対して、はんだの寿命回数と亀裂進展のどちらを見たいですか？"
+        ],
+        "abstained": false,
+        "reasons": [
+          "はんだの冷熱繰り返しへの懸念はあるが、求める出力が示されていない。"
+        ],
+        "unstated_assumptions": []
+      }
+    },
+    {
+      "case_id": "026",
+      "body": {
+        "candidate_ids": [
+          "fatigue_life"
+        ],
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "鋼の繰り返し負荷に対する寿命を求めている。"
+        ],
+        "unstated_assumptions": []
+      }
+    },
+    {
+      "case_id": "027",
+      "body": {
+        "candidate_ids": [],
+        "needs_clarification": true,
+        "clarification_questions": [
+          "解析対象と、求めたい結果を教えてください。"
+        ],
+        "abstained": true,
+        "reasons": [
+          "解析対象と目的が示されていない。"
+        ],
+        "unstated_assumptions": []
+      }
+    },
+    {
+      "case_id": "028",
+      "body": {
+        "candidate_ids": [],
+        "needs_clarification": true,
+        "clarification_questions": [
+          "解析対象と、求めたい結果を教えてください。"
+        ],
+        "abstained": true,
+        "reasons": [
+          "解析対象と目的が示されていない。"
+        ],
+        "unstated_assumptions": []
+      }
+    },
+    {
+      "case_id": "029",
+      "body": {
+        "candidate_ids": [],
+        "needs_clarification": true,
+        "clarification_questions": [
+          "解析対象と、求めたい結果を教えてください。"
+        ],
+        "abstained": true,
+        "reasons": [
+          "解析対象と目的が示されていない。"
+        ],
+        "unstated_assumptions": []
+      }
+    },
+    {
+      "case_id": "030",
+      "body": {
+        "candidate_ids": [],
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": true,
+        "reasons": [
+          "はんだの化学分析はカタログの解析対象外である。"
+        ],
+        "unstated_assumptions": []
+      }
+    },
+    {
+      "case_id": "031",
+      "body": {
+        "candidate_ids": [],
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": true,
+        "reasons": [
+          "写真の整理はカタログの解析対象外である。"
+        ],
+        "unstated_assumptions": []
+      }
+    },
+    {
+      "case_id": "032",
+      "body": {
+        "candidate_ids": [],
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": true,
+        "reasons": [
+          "開発日程の引き直しはカタログの解析対象外である。"
+        ],
+        "unstated_assumptions": []
+      }
+    },
+    {
+      "case_id": "033",
+      "body": {
+        "candidate_ids": [],
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": true,
+        "reasons": [
+          "固有振動数の計算はカタログの解析対象外である。"
+        ],
+        "unstated_assumptions": []
+      }
+    },
+    {
+      "case_id": "034",
+      "body": {
+        "candidate_ids": [],
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": true,
+        "reasons": [
+          "配管の圧力損失計算はカタログの解析対象外である。"
+        ],
+        "unstated_assumptions": []
+      }
+    },
+    {
+      "case_id": "035",
+      "body": {
+        "candidate_ids": [],
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": true,
+        "reasons": [
+          "はんだ付けの手順書作成はカタログの解析対象外である。"
+        ],
+        "unstated_assumptions": []
+      }
+    },
+    {
+      "case_id": "036",
+      "body": {
+        "candidate_ids": [
+          "fatigue_life"
+        ],
+        "needs_clarification": false,
+        "clarification_questions": [],
+        "abstained": false,
+        "reasons": [
+          "金属の疲労寿命をS-Nで求めている。"
+        ],
+        "unstated_assumptions": []
+      }
+    }
+  ]
+}

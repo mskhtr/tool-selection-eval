@@ -1,0 +1,911 @@
+{
+  "responses": [
+    {
+      "case_id": "001",
+      "body": {
+        "missing_information": false,
+        "missing_items": [],
+        "scores": [
+          {
+            "tool_id": "solder_crack_propagation",
+            "score": 100,
+            "reason": "はんだ接合の亀裂進展量が目的"
+          },
+          {
+            "tool_id": "solder_life_prediction",
+            "score": 5,
+            "reason": "寿命回数は求めていない"
+          },
+          {
+            "tool_id": "fatigue_life",
+            "score": 0,
+            "reason": "金属部材のS-N疲労ではない"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "002",
+      "body": {
+        "missing_information": false,
+        "missing_items": [],
+        "scores": [
+          {
+            "tool_id": "solder_crack_propagation",
+            "score": 100,
+            "reason": "はんだクラックの進展量が目的"
+          },
+          {
+            "tool_id": "solder_life_prediction",
+            "score": 5,
+            "reason": "寿命サイクル数が目的ではない"
+          },
+          {
+            "tool_id": "fatigue_life",
+            "score": 0,
+            "reason": "金属部材の疲労寿命ではない"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "003",
+      "body": {
+        "missing_information": false,
+        "missing_items": [],
+        "scores": [
+          {
+            "tool_id": "solder_crack_propagation",
+            "score": 5,
+            "reason": "亀裂の進み方は求めていない"
+          },
+          {
+            "tool_id": "solder_life_prediction",
+            "score": 100,
+            "reason": "はんだ接合の熱疲労寿命が目的"
+          },
+          {
+            "tool_id": "fatigue_life",
+            "score": 5,
+            "reason": "はんだ専用の熱疲労寿命である"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "004",
+      "body": {
+        "missing_information": false,
+        "missing_items": [],
+        "scores": [
+          {
+            "tool_id": "solder_crack_propagation",
+            "score": 5,
+            "reason": "亀裂経路や進展量は求めていない"
+          },
+          {
+            "tool_id": "solder_life_prediction",
+            "score": 100,
+            "reason": "BGAはんだの寿命回数が目的"
+          },
+          {
+            "tool_id": "fatigue_life",
+            "score": 0,
+            "reason": "金属部材のS-N疲労ではない"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "005",
+      "body": {
+        "missing_information": false,
+        "missing_items": [],
+        "scores": [
+          {
+            "tool_id": "solder_crack_propagation",
+            "score": 0,
+            "reason": "対象がはんだ接合ではない"
+          },
+          {
+            "tool_id": "solder_life_prediction",
+            "score": 0,
+            "reason": "対象がはんだ接合ではない"
+          },
+          {
+            "tool_id": "fatigue_life",
+            "score": 100,
+            "reason": "鋼製部材のS-N疲労寿命が目的"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "006",
+      "body": {
+        "missing_information": false,
+        "missing_items": [],
+        "scores": [
+          {
+            "tool_id": "solder_crack_propagation",
+            "score": 0,
+            "reason": "はんだ亀裂の解析ではない"
+          },
+          {
+            "tool_id": "solder_life_prediction",
+            "score": 0,
+            "reason": "はんだ寿命の解析ではない"
+          },
+          {
+            "tool_id": "fatigue_life",
+            "score": 100,
+            "reason": "金属部品の高サイクルS-N疲労が目的"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "007",
+      "body": {
+        "missing_information": true,
+        "missing_items": [
+          "解析目的"
+        ],
+        "scores": [
+          {
+            "tool_id": "solder_crack_propagation",
+            "score": 35,
+            "reason": "はんだ対象だが亀裂進展か不明"
+          },
+          {
+            "tool_id": "solder_life_prediction",
+            "score": 35,
+            "reason": "はんだ対象だが寿命予測か不明"
+          },
+          {
+            "tool_id": "fatigue_life",
+            "score": 0,
+            "reason": "金属部材の疲労とは書かれていない"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "008",
+      "body": {
+        "missing_information": true,
+        "missing_items": [
+          "解析目的"
+        ],
+        "scores": [
+          {
+            "tool_id": "solder_crack_propagation",
+            "score": 35,
+            "reason": "ハンダ対象だが亀裂進展か不明"
+          },
+          {
+            "tool_id": "solder_life_prediction",
+            "score": 35,
+            "reason": "ハンダ対象だが寿命予測か不明"
+          },
+          {
+            "tool_id": "fatigue_life",
+            "score": 0,
+            "reason": "金属部材の疲労とは書かれていない"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "009",
+      "body": {
+        "missing_information": false,
+        "missing_items": [],
+        "scores": [
+          {
+            "tool_id": "solder_crack_propagation",
+            "score": 5,
+            "reason": "き裂進展自体は求めていない"
+          },
+          {
+            "tool_id": "solder_life_prediction",
+            "score": 100,
+            "reason": "半田接合の熱疲労寿命が目的"
+          },
+          {
+            "tool_id": "fatigue_life",
+            "score": 5,
+            "reason": "半田専用の熱疲労寿命である"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "010",
+      "body": {
+        "missing_information": false,
+        "missing_items": [],
+        "scores": [
+          {
+            "tool_id": "solder_crack_propagation",
+            "score": 5,
+            "reason": "亀裂の進み方は求めていない"
+          },
+          {
+            "tool_id": "solder_life_prediction",
+            "score": 100,
+            "reason": "ハンダの寿命計算が明示されている"
+          },
+          {
+            "tool_id": "fatigue_life",
+            "score": 5,
+            "reason": "金属部材のS-N疲労ではない"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "011",
+      "body": {
+        "missing_information": false,
+        "missing_items": [],
+        "scores": [
+          {
+            "tool_id": "solder_crack_propagation",
+            "score": 100,
+            "reason": "半田き裂がどこまで進むかが目的"
+          },
+          {
+            "tool_id": "solder_life_prediction",
+            "score": 5,
+            "reason": "寿命回数は求めていない"
+          },
+          {
+            "tool_id": "fatigue_life",
+            "score": 0,
+            "reason": "金属部材の疲労寿命ではない"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "012",
+      "body": {
+        "missing_information": false,
+        "missing_items": [],
+        "scores": [
+          {
+            "tool_id": "solder_crack_propagation",
+            "score": 100,
+            "reason": "ハンダの亀裂進展が目的"
+          },
+          {
+            "tool_id": "solder_life_prediction",
+            "score": 5,
+            "reason": "寿命サイクル数は求めていない"
+          },
+          {
+            "tool_id": "fatigue_life",
+            "score": 0,
+            "reason": "金属部材の疲労寿命ではない"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "013",
+      "body": {
+        "missing_information": true,
+        "missing_items": [
+          "解析目的"
+        ],
+        "scores": [
+          {
+            "tool_id": "solder_crack_propagation",
+            "score": 30,
+            "reason": "ソルダ対象だが亀裂進展か不明"
+          },
+          {
+            "tool_id": "solder_life_prediction",
+            "score": 30,
+            "reason": "ソルダ対象だが寿命予測か不明"
+          },
+          {
+            "tool_id": "fatigue_life",
+            "score": 0,
+            "reason": "金属疲労の目的は示されていない"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "014",
+      "body": {
+        "missing_information": false,
+        "missing_items": [],
+        "scores": [
+          {
+            "tool_id": "solder_crack_propagation",
+            "score": 95,
+            "reason": "はんだクラックの進展が目的"
+          },
+          {
+            "tool_id": "solder_life_prediction",
+            "score": 5,
+            "reason": "寿命回数は求めていない"
+          },
+          {
+            "tool_id": "fatigue_life",
+            "score": 0,
+            "reason": "金属部材の疲労寿命ではない"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "015",
+      "body": {
+        "missing_information": false,
+        "missing_items": [],
+        "scores": [
+          {
+            "tool_id": "solder_crack_propagation",
+            "score": 100,
+            "reason": "ソルダのクラックグロースが目的"
+          },
+          {
+            "tool_id": "solder_life_prediction",
+            "score": 5,
+            "reason": "寿命回数は求めていない"
+          },
+          {
+            "tool_id": "fatigue_life",
+            "score": 0,
+            "reason": "金属部材の疲労寿命ではない"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "016",
+      "body": {
+        "missing_information": false,
+        "missing_items": [],
+        "scores": [
+          {
+            "tool_id": "solder_crack_propagation",
+            "score": 0,
+            "reason": "はんだ亀裂の指定がない"
+          },
+          {
+            "tool_id": "solder_life_prediction",
+            "score": 0,
+            "reason": "はんだ寿命の指定がない"
+          },
+          {
+            "tool_id": "fatigue_life",
+            "score": 95,
+            "reason": "S-Nによる疲労解析が明示されている"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "017",
+      "body": {
+        "missing_information": true,
+        "missing_items": [
+          "解析目的"
+        ],
+        "scores": [
+          {
+            "tool_id": "solder_crack_propagation",
+            "score": 35,
+            "reason": "はんだ対象だが亀裂進展か不明"
+          },
+          {
+            "tool_id": "solder_life_prediction",
+            "score": 35,
+            "reason": "はんだ対象だが寿命予測か不明"
+          },
+          {
+            "tool_id": "fatigue_life",
+            "score": 0,
+            "reason": "金属部材の疲労とは書かれていない"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "018",
+      "body": {
+        "missing_information": true,
+        "missing_items": [
+          "解析目的"
+        ],
+        "scores": [
+          {
+            "tool_id": "solder_crack_propagation",
+            "score": 25,
+            "reason": "はんだ周辺を見るだけで進展目的は不明"
+          },
+          {
+            "tool_id": "solder_life_prediction",
+            "score": 25,
+            "reason": "はんだ周辺を見るだけで寿命目的は不明"
+          },
+          {
+            "tool_id": "fatigue_life",
+            "score": 0,
+            "reason": "金属疲労の目的は示されていない"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "019",
+      "body": {
+        "missing_information": true,
+        "missing_items": [
+          "解析対象",
+          "寿命の種類"
+        ],
+        "scores": [
+          {
+            "tool_id": "solder_crack_propagation",
+            "score": 0,
+            "reason": "亀裂進展の目的は示されていない"
+          },
+          {
+            "tool_id": "solder_life_prediction",
+            "score": 20,
+            "reason": "寿命目的だがはんだ対象か不明"
+          },
+          {
+            "tool_id": "fatigue_life",
+            "score": 20,
+            "reason": "寿命目的だが金属疲労か不明"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "020",
+      "body": {
+        "missing_information": true,
+        "missing_items": [
+          "部品の材質",
+          "負荷条件",
+          "寿命の種類"
+        ],
+        "scores": [
+          {
+            "tool_id": "solder_crack_propagation",
+            "score": 0,
+            "reason": "はんだ亀裂進展の指定がない"
+          },
+          {
+            "tool_id": "solder_life_prediction",
+            "score": 20,
+            "reason": "部品寿命だがはんだ接合か不明"
+          },
+          {
+            "tool_id": "fatigue_life",
+            "score": 20,
+            "reason": "部品寿命だが金属疲労か不明"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "021",
+      "body": {
+        "missing_information": false,
+        "missing_items": [],
+        "scores": [
+          {
+            "tool_id": "solder_crack_propagation",
+            "score": 100,
+            "reason": "はんだ亀裂進展が明示されている"
+          },
+          {
+            "tool_id": "solder_life_prediction",
+            "score": 100,
+            "reason": "はんだ寿命予測が明示されている"
+          },
+          {
+            "tool_id": "fatigue_life",
+            "score": 0,
+            "reason": "金属部材のS-N疲労は求めていない"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "022",
+      "body": {
+        "missing_information": false,
+        "missing_items": [],
+        "scores": [
+          {
+            "tool_id": "solder_crack_propagation",
+            "score": 100,
+            "reason": "はんだ亀裂の伸びが明示されている"
+          },
+          {
+            "tool_id": "solder_life_prediction",
+            "score": 100,
+            "reason": "はんだの温度サイクル寿命が明示されている"
+          },
+          {
+            "tool_id": "fatigue_life",
+            "score": 0,
+            "reason": "金属部材のS-N疲労は求めていない"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "023",
+      "body": {
+        "missing_information": false,
+        "missing_items": [],
+        "scores": [
+          {
+            "tool_id": "solder_crack_propagation",
+            "score": 5,
+            "reason": "はんだ亀裂の進展は求めていない"
+          },
+          {
+            "tool_id": "solder_life_prediction",
+            "score": 100,
+            "reason": "はんだの熱疲労寿命が目的"
+          },
+          {
+            "tool_id": "fatigue_life",
+            "score": 100,
+            "reason": "金属の疲労寿命が目的"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "024",
+      "body": {
+        "missing_information": true,
+        "missing_items": [
+          "求める出力"
+        ],
+        "scores": [
+          {
+            "tool_id": "solder_crack_propagation",
+            "score": 45,
+            "reason": "割れへの懸念はあるが進展を見るか不明"
+          },
+          {
+            "tool_id": "solder_life_prediction",
+            "score": 45,
+            "reason": "割れへの懸念はあるが寿命を求めるか不明"
+          },
+          {
+            "tool_id": "fatigue_life",
+            "score": 0,
+            "reason": "対象ははんだで金属母材ではない"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "025",
+      "body": {
+        "missing_information": false,
+        "missing_items": [],
+        "scores": [
+          {
+            "tool_id": "solder_crack_propagation",
+            "score": 15,
+            "reason": "亀裂の進み方は明示されていない"
+          },
+          {
+            "tool_id": "solder_life_prediction",
+            "score": 90,
+            "reason": "冷熱繰り返しに対するはんだ寿命の確認"
+          },
+          {
+            "tool_id": "fatigue_life",
+            "score": 5,
+            "reason": "金属母材のS-N疲労ではない"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "026",
+      "body": {
+        "missing_information": false,
+        "missing_items": [],
+        "scores": [
+          {
+            "tool_id": "solder_crack_propagation",
+            "score": 0,
+            "reason": "対象がはんだ接合ではない"
+          },
+          {
+            "tool_id": "solder_life_prediction",
+            "score": 0,
+            "reason": "対象がはんだ接合ではない"
+          },
+          {
+            "tool_id": "fatigue_life",
+            "score": 95,
+            "reason": "鋼の繰り返し負荷による寿命が目的"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "027",
+      "body": {
+        "missing_information": true,
+        "missing_items": [
+          "解析対象",
+          "解析目的",
+          "解析条件"
+        ],
+        "scores": [
+          {
+            "tool_id": "solder_crack_propagation",
+            "score": 0,
+            "reason": "対象も目的も示されていない"
+          },
+          {
+            "tool_id": "solder_life_prediction",
+            "score": 0,
+            "reason": "対象も目的も示されていない"
+          },
+          {
+            "tool_id": "fatigue_life",
+            "score": 0,
+            "reason": "対象も目的も示されていない"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "028",
+      "body": {
+        "missing_information": true,
+        "missing_items": [
+          "解析対象",
+          "解析目的",
+          "解析条件"
+        ],
+        "scores": [
+          {
+            "tool_id": "solder_crack_propagation",
+            "score": 0,
+            "reason": "対象も目的も示されていない"
+          },
+          {
+            "tool_id": "solder_life_prediction",
+            "score": 0,
+            "reason": "対象も目的も示されていない"
+          },
+          {
+            "tool_id": "fatigue_life",
+            "score": 0,
+            "reason": "対象も目的も示されていない"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "029",
+      "body": {
+        "missing_information": true,
+        "missing_items": [
+          "解析対象",
+          "解析目的",
+          "解析条件"
+        ],
+        "scores": [
+          {
+            "tool_id": "solder_crack_propagation",
+            "score": 0,
+            "reason": "解析内容が示されていない"
+          },
+          {
+            "tool_id": "solder_life_prediction",
+            "score": 0,
+            "reason": "解析内容が示されていない"
+          },
+          {
+            "tool_id": "fatigue_life",
+            "score": 0,
+            "reason": "解析内容が示されていない"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "030",
+      "body": {
+        "missing_information": true,
+        "missing_items": [
+          "対応する化学分析ツール"
+        ],
+        "scores": [
+          {
+            "tool_id": "solder_crack_propagation",
+            "score": 0,
+            "reason": "目的は化学分析で亀裂進展ではない"
+          },
+          {
+            "tool_id": "solder_life_prediction",
+            "score": 0,
+            "reason": "目的は化学分析で寿命予測ではない"
+          },
+          {
+            "tool_id": "fatigue_life",
+            "score": 0,
+            "reason": "目的は化学分析で疲労寿命ではない"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "031",
+      "body": {
+        "missing_information": true,
+        "missing_items": [
+          "対応する画像整理ツール"
+        ],
+        "scores": [
+          {
+            "tool_id": "solder_crack_propagation",
+            "score": 0,
+            "reason": "写真整理で亀裂進展解析ではない"
+          },
+          {
+            "tool_id": "solder_life_prediction",
+            "score": 0,
+            "reason": "写真整理で寿命予測ではない"
+          },
+          {
+            "tool_id": "fatigue_life",
+            "score": 0,
+            "reason": "写真整理で疲労寿命解析ではない"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "032",
+      "body": {
+        "missing_information": true,
+        "missing_items": [
+          "対応する日程管理ツール"
+        ],
+        "scores": [
+          {
+            "tool_id": "solder_crack_propagation",
+            "score": 0,
+            "reason": "開発日程の調整で解析対象外"
+          },
+          {
+            "tool_id": "solder_life_prediction",
+            "score": 0,
+            "reason": "開発日程の調整で解析対象外"
+          },
+          {
+            "tool_id": "fatigue_life",
+            "score": 0,
+            "reason": "開発日程の調整で解析対象外"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "033",
+      "body": {
+        "missing_information": true,
+        "missing_items": [
+          "対応する固有値解析ツール"
+        ],
+        "scores": [
+          {
+            "tool_id": "solder_crack_propagation",
+            "score": 0,
+            "reason": "目的は固有振動数で亀裂進展ではない"
+          },
+          {
+            "tool_id": "solder_life_prediction",
+            "score": 0,
+            "reason": "目的は固有振動数で寿命予測ではない"
+          },
+          {
+            "tool_id": "fatigue_life",
+            "score": 0,
+            "reason": "目的は固有振動数で疲労寿命ではない"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "034",
+      "body": {
+        "missing_information": true,
+        "missing_items": [
+          "対応する流体解析ツール"
+        ],
+        "scores": [
+          {
+            "tool_id": "solder_crack_propagation",
+            "score": 0,
+            "reason": "目的は流体の圧力損失で対象外"
+          },
+          {
+            "tool_id": "solder_life_prediction",
+            "score": 0,
+            "reason": "目的は流体の圧力損失で対象外"
+          },
+          {
+            "tool_id": "fatigue_life",
+            "score": 0,
+            "reason": "目的は流体の圧力損失で対象外"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "035",
+      "body": {
+        "missing_information": true,
+        "missing_items": [
+          "対応する文書作成ツール"
+        ],
+        "scores": [
+          {
+            "tool_id": "solder_crack_propagation",
+            "score": 0,
+            "reason": "作業手順書作成で解析ではない"
+          },
+          {
+            "tool_id": "solder_life_prediction",
+            "score": 0,
+            "reason": "作業手順書作成で解析ではない"
+          },
+          {
+            "tool_id": "fatigue_life",
+            "score": 0,
+            "reason": "作業手順書作成で解析ではない"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "036",
+      "body": {
+        "missing_information": false,
+        "missing_items": [],
+        "scores": [
+          {
+            "tool_id": "solder_crack_propagation",
+            "score": 0,
+            "reason": "はんだ亀裂の解析ではない"
+          },
+          {
+            "tool_id": "solder_life_prediction",
+            "score": 0,
+            "reason": "はんだ寿命の解析ではない"
+          },
+          {
+            "tool_id": "fatigue_life",
+            "score": 100,
+            "reason": "金属のS-N疲労寿命が明示されている"
+          }
+        ]
+      }
+    }
+  ]
+}

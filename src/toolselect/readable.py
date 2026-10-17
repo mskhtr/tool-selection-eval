@@ -91,19 +91,51 @@ def render_testset() -> str:
     return "\n".join(lines).rstrip() + "\n"
 
 
-CONDITION_ORDER = ("A1", "A2", "A3", "B1", "C1", "C2", "C3", "D1", "D2", "D3", "D4")
+CONDITION_ORDER = (
+    "A1",
+    "A2",
+    "A3",
+    "B1",
+    "B2",
+    "B3",
+    "C1",
+    "C2",
+    "C3",
+    "D1",
+    "D2",
+    "D3",
+    "D4",
+    "D5",
+    "D6",
+    "D7",
+    "D8",
+    "D9",
+    "D10",
+    "D11",
+    "D12",
+)
 CONDITION_LABEL = {
     "A1": "A1（LLM選択・Sol）",
     "A2": "A2（LLM選択・Terra）",
     "A3": "A3（LLM選択・Luna）",
-    "B1": "B1（辞書・規則）",
+    "B1": "B1（辞書・規則・①同義語未登録）",
+    "B2": "B2（辞書・規則・②同義語登録）",
+    "B3": "B3（辞書・規則・③同義語＋スラング登録）",
     "C1": "C1（LLM採点＋しきい値（擬似jev）・Sol）",
     "C2": "C2（LLM採点＋しきい値（擬似jev）・Terra）",
     "C3": "C3（LLM採点＋しきい値（擬似jev）・Luna）",
-    "D1": "D1（オントロジー）",
-    "D2": "D2（オントロジー＋LLM・Sol）",
-    "D3": "D3（オントロジー＋LLM・Terra）",
-    "D4": "D4（オントロジー＋LLM・Luna）",
+    "D1": "D1（オントロジー・①同義語未登録）",
+    "D2": "D2（オントロジー＋LLM・Sol・①同義語未登録）",
+    "D3": "D3（オントロジー＋LLM・Terra・①同義語未登録）",
+    "D4": "D4（オントロジー＋LLM・Luna・①同義語未登録）",
+    "D5": "D5（オントロジー・②同義語登録）",
+    "D6": "D6（オントロジー＋LLM・Sol・②同義語登録）",
+    "D7": "D7（オントロジー＋LLM・Terra・②同義語登録）",
+    "D8": "D8（オントロジー＋LLM・Luna・②同義語登録）",
+    "D9": "D9（オントロジー・③同義語＋スラング登録）",
+    "D10": "D10（オントロジー＋LLM・Sol・③同義語＋スラング登録）",
+    "D11": "D11（オントロジー＋LLM・Terra・③同義語＋スラング登録）",
+    "D12": "D12（オントロジー＋LLM・Luna・③同義語＋スラング登録）",
 }
 
 
@@ -145,11 +177,27 @@ def _judgment(case: dict, prediction: dict) -> str:
     return "、".join(tags)
 
 
-def _comparison_block(case: dict, by_condition: dict[str, dict[str, dict]], names: dict[str, str]) -> list[str]:
+def _genre(case: dict) -> tuple[str, str]:
+    primary = PRIMARY_LABEL.get(case["primary"], case["primary"])
+    extras = [PRIMARY_LABEL.get(tag, tag) for tag in case.get("categories") or [] if tag != case["primary"]]
+    detail = f"種類: {primary}。"
+    if extras:
+        detail += f"重なる種類: {'、'.join(extras)}。"
+    return primary, detail
+
+
+def _comparison_block(
+    case: dict,
+    by_condition: dict[str, dict[str, dict]],
+    names: dict[str, str],
+    *,
+    heading: str = "###",
+) -> list[str]:
+    primary, genre = _genre(case)
     lines = [
-        f"### {case['id']}　{case['text']}",
+        f"{heading} {case['id']}　{primary}　{case['text']}",
         "",
-        f"選ぶべきツール: {_names(case['acceptable'], names)}。質問の正解: {_yes_no(case['clarify'])}。",
+        f"{genre}選ぶべきツール: {_names(case['acceptable'], names)}。質問の正解: {_yes_no(case['clarify'])}。",
         "",
         "| 条件 | 出した候補 | 適合度 | 質問 | 判断 |",
         "|---|---|---|---|---|",
@@ -184,15 +232,15 @@ def render_case_comparison(
 ) -> str:
     by_id = {case["id"]: case for case in cases}
     lines = [
-        "## 同じ依頼での比較",
+        "### 4.4 同じ依頼での比較",
         "",
-        f"上の事例に出た依頼について、{len(CONDITION_ORDER)}条件が何を候補にし、質問したかを並べた。判断は、選ぶべきツールと質問の有無を正解と比べた自動分類である。",
+        f"候補漏れ、過剰な意図補完、表層キーワード誤選択が付いた依頼を、1条件・1種類あたり3件まで取り、{len(CONDITION_ORDER)}条件が何を候補にし、質問したかを並べた。判断は、選ぶべきツールと質問の有無を正解と比べた自動分類である。見出しの種類は、その依頼の主たる種類である。",
         "",
         "適合度はLLM採点＋しきい値（擬似jev）が各ツールに付けた得点である。LLM選択と辞書・規則は得点を付けない。20以上を高い順に書き、どれも20未満のときは最高点だけを書いた。同点が4件以上なら最高点の数値だけにした。0は省いた。候補に入れる下限は50、一位との差が15以内を接近とみなす。情報不足でも、一位が75以上ならその理由だけでは質問しない。",
         "",
     ]
     for case_id in case_ids:
-        lines.extend(_comparison_block(by_id[case_id], by_condition, names))
+        lines.extend(_comparison_block(by_id[case_id], by_condition, names, heading="####"))
     return "\n".join(lines)
 
 

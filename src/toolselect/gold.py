@@ -71,8 +71,8 @@ CASES: list[dict] = [
     _case("021", "multi", ["multi", "clear"], "pair_solder", "はんだの寿命予測と亀裂進展シミュレーションを両方やって", SOLDER, SOLDER, True, False, "yes", [], "medium", "寿命予測と亀裂進展の両方を指定している。"),
     _case("022", "multi", ["multi", "clear"], "pair_solder", "温度サイクルの寿命と、亀裂がどう伸びるかの両方をはんだで見たい", SOLDER, SOLDER, True, False, "yes", [], "medium", "はんだについて寿命と亀裂の伸びの両方を見たいと書かれている。"),
     _case("023", "multi", ["multi", "clear"], "pair_lives", "金属の疲労寿命と、はんだの熱疲労寿命をそれぞれ計算したい", LIFE, LIFE, True, False, "yes", [], "medium", "二つの寿命予測をそれぞれ計算すると書かれている。"),
-    _case("024", "implicit", ["implicit", "ambiguous"], "solder_worry", "はんだが割れそうなので見たい", SOLDER, SOLDER, True, True, "yes", ["進展経路か、寿命回数か"], "medium", "割れそうからはんだの不具合は読み取れるが、進展と寿命のどちらを出すかは書かれていない。"),
-    _case("025", "implicit", ["implicit", "ambiguous"], "solder_worry", "冷熱を繰り返すとはんだが持たない気がするので見たい", SOLDER, SOLDER, True, True, "yes", ["寿命回数か、亀裂進展か"], "medium", "持たないから寿命と決めやすいが、亀裂の進み方も候補に残る。"),
+    _case("024", "implicit", ["implicit", "clear"], "solder_worry", "はんだが割れそうなので見たい", CRACK, CRACK, False, False, "yes", [], "medium", "割れは亀裂を指す。はんだの亀裂進展を質問なしで出す。"),
+    _case("025", "implicit", ["implicit", "clear"], "solder_worry", "冷熱を繰り返すとはんだが持たない気がするので見たい", SOLDER_LIFE, SOLDER_LIFE, False, False, "yes", [], "medium", "持たないは寿命を指す。はんだ寿命予測を質問なしで出す。"),
     _case("026", "implicit", ["implicit", "clear"], "fatigue_worry", "鋼が繰り返しで折れそうなので寿命を見たい", FATIGUE, FATIGUE, False, False, "yes", [], "medium", "鋼の繰り返しと寿命が見えており、金属の疲労寿命を指す。"),
     _case("027", "insufficient", ["insufficient"], "vague", "いつものをお願い", [], [], False, True, "unknown", ["どの解析か"], "medium", "いつもの対象が書かれていない。"),
     _case("028", "insufficient", ["insufficient"], "vague", "例のやつやっといて", [], [], False, True, "unknown", ["どの解析か"], "medium", "例のやつが指示の中に無い。"),
@@ -90,6 +90,6 @@ CASES: list[dict] = [
 LABELING = {
     "labeler_count": 1,
     "independent_adjudication": False,
-    "note": "実装者1名が、モデル出力を見る前に付与した。複数人の独立ラベルと不一致解消は行っていない。",
-    "frozen_before_model_runs": True,
+    "note": "実装者1名が付与した。024と025は、割れを亀裂、持たないを寿命とし、質問なしで1件にする判断に合わせ、実装者が後から直した。複数人の独立ラベルと不一致解消は行っていない。",
+    "frozen_before_model_runs": False,
 }

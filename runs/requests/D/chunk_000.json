@@ -1,6 +1,6 @@
 {
   "method": "D",
-  "system": "あなたは依頼文をオントロジーの概念へ当てはめる係です。ツールは選ばないでください。質問も書かないでください。\n\n概念は次だけです。ラベルが依頼文にあるとき、その概念を concepts に入れてください。活用や表記のゆれ（はんだ、半田、ハンダ、ソルダ）も同じ概念です。\n- solder: はんだ、半田、ハンダ、ソルダ、bga\n- crack: 亀裂、き裂、クラック\n- propagation: 進展、進む、進み、グロース\n- life: 寿命\n- thermal: 熱疲労\n- fatigue: 疲労、高サイクル疲労\n- metal: 金属、鋼\n- sn: S-N、Ｓ－Ｎ\n\n示唆は concepts に入れず suggestions に入れてください。分析の目的そのものではない言い方です。\n- 割れ → crack\n- 持たない、折れ → life\n\n規則:\n- 書いていない目的は concepts に足さない。割れを亀裂の確定にしない。持たないを寿命の確定にしない。\n- 熱疲労は thermal であり、fatigue ではない。\n- 一覧に無い概念IDは作らない。\n\nJSONだけを返す。形式:\n{\"concepts\":[\"solder\"],\"suggestions\":[],\"reasons\":[\"短い理由\"]}\n",
+  "system": "あなたは依頼文をオントロジーの概念へ当てはめる係です。ツールは選ばないでください。質問も書かないでください。\n\n概念は次だけです。ラベルが依頼文にあるとき、その概念を concepts に入れてください。はんだ、半田、ハンダは同じ概念です。亀裂、き裂も同じ概念です。\n- solder: はんだ、半田、ハンダ\n- crack: 亀裂、き裂\n- propagation: 進展、進む\n- life: 寿命\n- thermal: 熱疲労\n- fatigue: 疲労、高サイクル疲労\n- metal: 金属\n- sn: S-N、Ｓ－Ｎ\n\n規則:\n- 一覧に無い語は概念にしない。書いていない目的は足さない。\n- 熱疲労は thermal であり、fatigue ではない。\n- 一覧に無い概念IDは作らない。\n\nJSONだけを返す。形式:\n{\"concepts\":[\"solder\"],\"suggestions\":[],\"reasons\":[\"短い理由\"]}\n",
   "cases": [
     {
       "id": "001",

@@ -9,7 +9,7 @@
         "needs_clarification": false,
         "clarification_questions": [],
         "abstained": false,
-        "reasons": ["はんだ接合の亀裂進展量を温度サイクルで見る目的に合う"],
+        "reasons": ["はんだ接合の温度サイクルによる亀裂進展を求めている"],
         "unstated_assumptions": []
       }
     },
@@ -20,7 +20,7 @@
         "needs_clarification": false,
         "clarification_questions": [],
         "abstained": false,
-        "reasons": ["はんだクラックのサイクルごとの進展量を求める目的に合う"],
+        "reasons": ["はんだクラックのサイクルごとの進展量を求めている"],
         "unstated_assumptions": []
       }
     },
@@ -31,7 +31,7 @@
         "needs_clarification": false,
         "clarification_questions": [],
         "abstained": false,
-        "reasons": ["はんだ接合の熱疲労寿命を求める目的に合う"],
+        "reasons": ["はんだ接合の熱疲労寿命を求めている"],
         "unstated_assumptions": []
       }
     },
@@ -42,7 +42,7 @@
         "needs_clarification": false,
         "clarification_questions": [],
         "abstained": false,
-        "reasons": ["BGAはんだが寿命に達する温度サイクル回数を求める目的に合う"],
+        "reasons": ["BGAはんだの温度サイクル寿命回数を求めている"],
         "unstated_assumptions": []
       }
     },
@@ -53,7 +53,7 @@
         "needs_clarification": false,
         "clarification_questions": [],
         "abstained": false,
-        "reasons": ["鋼製部材の繰り返し曲げに対するS-N疲労寿命評価に合う"],
+        "reasons": ["鋼製部材の繰り返し曲げに対するS-N疲労寿命を求めている"],
         "unstated_assumptions": []
       }
     },
@@ -64,7 +64,7 @@
         "needs_clarification": false,
         "clarification_questions": [],
         "abstained": false,
-        "reasons": ["金属部品の高サイクル疲労寿命をS-Nで求める目的に合う"],
+        "reasons": ["金属部品の高サイクル疲労寿命をS-Nで求めている"],
         "unstated_assumptions": []
       }
     },
@@ -75,7 +75,7 @@
         "needs_clarification": true,
         "clarification_questions": ["半田の亀裂の進み方と寿命サイクル数のどちらを求めますか？"],
         "abstained": false,
-        "reasons": ["半田が対象だが解析目的が特定されていない"],
+        "reasons": ["半田が対象だが解析目的が明示されていない"],
         "unstated_assumptions": []
       }
     },
@@ -86,7 +86,7 @@
         "needs_clarification": true,
         "clarification_questions": ["ハンダの亀裂の進み方と寿命サイクル数のどちらを求めますか？"],
         "abstained": false,
-        "reasons": ["ハンダが対象だが解析目的が特定されていない"],
+        "reasons": ["ハンダが対象だが解析目的が明示されていない"],
         "unstated_assumptions": []
       }
     },
@@ -97,7 +97,7 @@
         "needs_clarification": false,
         "clarification_questions": [],
         "abstained": false,
-        "reasons": ["半田接合の熱疲労寿命を求める目的に合う"],
+        "reasons": ["半田接合の熱疲労寿命を求めている"],
         "unstated_assumptions": []
       }
     },
@@ -108,7 +108,7 @@
         "needs_clarification": false,
         "clarification_questions": [],
         "abstained": false,
-        "reasons": ["ハンダの寿命を求める目的に合う"],
+        "reasons": ["ハンダの寿命を求めている"],
         "unstated_assumptions": []
       }
     },
@@ -119,7 +119,7 @@
         "needs_clarification": false,
         "clarification_questions": [],
         "abstained": false,
-        "reasons": ["半田のき裂がどこまで進むかを見る目的に合う"],
+        "reasons": ["半田のき裂がどこまで進むかを求めている"],
         "unstated_assumptions": []
       }
     },
@@ -130,7 +130,7 @@
         "needs_clarification": false,
         "clarification_questions": [],
         "abstained": false,
-        "reasons": ["ハンダの亀裂進展を計算する目的に合う"],
+        "reasons": ["ハンダの亀裂進展を求めている"],
         "unstated_assumptions": []
       }
     },
@@ -141,7 +141,7 @@
         "needs_clarification": true,
         "clarification_questions": ["ソルダの亀裂の進み方と寿命サイクル数のどちらを求めますか？"],
         "abstained": false,
-        "reasons": ["ソルダが対象だが解析目的が特定されていない"],
+        "reasons": ["ソルダが対象だが解析目的が明示されていない"],
         "unstated_assumptions": []
       }
     },
@@ -152,7 +152,7 @@
         "needs_clarification": false,
         "clarification_questions": [],
         "abstained": false,
-        "reasons": ["はんだクラックの進展を見る目的に合う"],
+        "reasons": ["はんだクラックの進展を求めている"],
         "unstated_assumptions": []
       }
     },
@@ -163,18 +163,18 @@
         "needs_clarification": false,
         "clarification_questions": [],
         "abstained": false,
-        "reasons": ["ソルダのクラックグロースを見る目的に合う"],
+        "reasons": ["ソルダのクラック成長を求めている"],
         "unstated_assumptions": []
       }
     },
     {
       "case_id": "016",
       "body": {
-        "candidate_ids": ["fatigue_life"],
-        "needs_clarification": false,
-        "clarification_questions": [],
-        "abstained": false,
-        "reasons": ["S-Nによる疲労評価の指定に合う"],
+        "candidate_ids": [],
+        "needs_clarification": true,
+        "clarification_questions": ["対象は金属部材ですか？"],
+        "abstained": true,
+        "reasons": ["S-N疲労評価の対象材料が明示されていない"],
         "unstated_assumptions": []
       }
     },
@@ -185,7 +185,7 @@
         "needs_clarification": true,
         "clarification_questions": ["はんだの亀裂の進み方と寿命サイクル数のどちらを求めますか？"],
         "abstained": false,
-        "reasons": ["はんだが対象だが解析目的が特定されていない"],
+        "reasons": ["はんだが対象だが解析目的が明示されていない"],
         "unstated_assumptions": []
       }
     },
@@ -194,9 +194,9 @@
       "body": {
         "candidate_ids": ["solder_crack_propagation", "solder_life_prediction"],
         "needs_clarification": true,
-        "clarification_questions": ["はんだ接合の亀裂進展と寿命サイクル数のどちらを見たいですか？"],
+        "clarification_questions": ["はんだ周りについて、亀裂の進み方と寿命サイクル数のどちらを求めますか？"],
         "abstained": false,
-        "reasons": ["はんだ周りが対象だが解析目的が特定されていない"],
+        "reasons": ["はんだ周りが対象だが解析目的が明示されていない"],
         "unstated_assumptions": []
       }
     },
@@ -205,20 +205,20 @@
       "body": {
         "candidate_ids": ["solder_life_prediction", "fatigue_life"],
         "needs_clarification": true,
-        "clarification_questions": ["寿命を見たい対象は、はんだ接合ですか、金属部材ですか？"],
+        "clarification_questions": ["寿命を求める対象は、はんだ接合と金属部材のどちらですか？"],
         "abstained": false,
-        "reasons": ["寿命の対象が特定されていない"],
+        "reasons": ["寿命の対象が明示されていない"],
         "unstated_assumptions": []
       }
     },
     {
       "case_id": "020",
       "body": {
-        "candidate_ids": ["fatigue_life", "solder_life_prediction"],
+        "candidate_ids": ["solder_life_prediction", "fatigue_life"],
         "needs_clarification": true,
-        "clarification_questions": ["部品は金属部材ですか、はんだ接合ですか？また、繰り返し荷重または温度サイクルに対する寿命ですか？"],
+        "clarification_questions": ["この部品は、はんだ接合ですか、それとも金属部材ですか？"],
         "abstained": false,
-        "reasons": ["部品の種類と寿命評価の条件が特定されていない"],
+        "reasons": ["部品の材料と寿命評価の種類が明示されていない"],
         "unstated_assumptions": []
       }
     },
@@ -229,7 +229,7 @@
         "needs_clarification": false,
         "clarification_questions": [],
         "abstained": false,
-        "reasons": ["はんだの寿命予測と亀裂進展の両方が明示されている"],
+        "reasons": ["はんだの寿命予測と亀裂進展の両方を明示している"],
         "unstated_assumptions": []
       }
     },
@@ -240,7 +240,7 @@
         "needs_clarification": false,
         "clarification_questions": [],
         "abstained": false,
-        "reasons": ["はんだの温度サイクル寿命と亀裂の伸びの両方が明示されている"],
+        "reasons": ["はんだの温度サイクル寿命と亀裂の伸びの両方を求めている"],
         "unstated_assumptions": []
       }
     },
@@ -251,7 +251,7 @@
         "needs_clarification": false,
         "clarification_questions": [],
         "abstained": false,
-        "reasons": ["金属の疲労寿命とはんだの熱疲労寿命の両方が明示されている"],
+        "reasons": ["金属の疲労寿命とはんだの熱疲労寿命をそれぞれ求めている"],
         "unstated_assumptions": []
       }
     },
@@ -260,9 +260,9 @@
       "body": {
         "candidate_ids": ["solder_crack_propagation", "solder_life_prediction"],
         "needs_clarification": true,
-        "clarification_questions": ["はんだの亀裂の進み方と、割れるまでの寿命サイクル数のどちらを求めますか？"],
+        "clarification_questions": ["はんだの亀裂の進み方と寿命サイクル数のどちらを求めますか？"],
         "abstained": false,
-        "reasons": ["はんだの破損懸念は明示されているが求める出力が特定されていない"],
+        "reasons": ["はんだの割れへの懸念はあるが必要な出力が明示されていない"],
         "unstated_assumptions": []
       }
     },
@@ -273,7 +273,7 @@
         "needs_clarification": false,
         "clarification_questions": [],
         "abstained": false,
-        "reasons": ["冷熱の繰り返しに対するはんだの寿命を見る目的に合う"],
+        "reasons": ["冷熱の繰り返しに対するはんだの耐久寿命を見たい依頼である"],
         "unstated_assumptions": []
       }
     },
@@ -284,7 +284,7 @@
         "needs_clarification": false,
         "clarification_questions": [],
         "abstained": false,
-        "reasons": ["鋼の繰り返し負荷に対する寿命を見る目的に合う"],
+        "reasons": ["鋼の繰り返し負荷に対する寿命を求めている"],
         "unstated_assumptions": []
       }
     },
@@ -293,9 +293,9 @@
       "body": {
         "candidate_ids": [],
         "needs_clarification": true,
-        "clarification_questions": ["解析対象と、求めたい結果を具体的に教えてください。"],
+        "clarification_questions": ["解析対象と求めたい結果を具体的に教えてください。"],
         "abstained": true,
-        "reasons": ["対象と解析目的が示されておらずツールを特定できない"],
+        "reasons": ["対象も解析目的も明示されていない"],
         "unstated_assumptions": []
       }
     },
@@ -304,9 +304,9 @@
       "body": {
         "candidate_ids": [],
         "needs_clarification": true,
-        "clarification_questions": ["解析対象と、求めたい結果を具体的に教えてください。"],
+        "clarification_questions": ["解析対象と求めたい結果を具体的に教えてください。"],
         "abstained": true,
-        "reasons": ["対象と解析目的が示されておらずツールを特定できない"],
+        "reasons": ["対象も解析目的も明示されていない"],
         "unstated_assumptions": []
       }
     },
@@ -315,9 +315,9 @@
       "body": {
         "candidate_ids": [],
         "needs_clarification": true,
-        "clarification_questions": ["解析対象と、求めたい結果を具体的に教えてください。"],
+        "clarification_questions": ["解析対象と求めたい結果を具体的に教えてください。"],
         "abstained": true,
-        "reasons": ["対象と解析目的が示されておらずツールを特定できない"],
+        "reasons": ["対象も解析目的も明示されていない"],
         "unstated_assumptions": []
       }
     },
@@ -328,7 +328,7 @@
         "needs_clarification": false,
         "clarification_questions": [],
         "abstained": true,
-        "reasons": ["はんだの化学分析に対応するツールがカタログにない"],
+        "reasons": ["はんだの化学分析に該当するツールがカタログにない"],
         "unstated_assumptions": []
       }
     },
@@ -339,7 +339,7 @@
         "needs_clarification": false,
         "clarification_questions": [],
         "abstained": true,
-        "reasons": ["写真整理に対応するツールがカタログにない"],
+        "reasons": ["写真整理に該当するツールがカタログにない"],
         "unstated_assumptions": []
       }
     },
@@ -350,7 +350,7 @@
         "needs_clarification": false,
         "clarification_questions": [],
         "abstained": true,
-        "reasons": ["開発日程の見直しに対応するツールがカタログにない"],
+        "reasons": ["開発日程の再計画に該当するツールがカタログにない"],
         "unstated_assumptions": []
       }
     },
@@ -361,7 +361,7 @@
         "needs_clarification": false,
         "clarification_questions": [],
         "abstained": true,
-        "reasons": ["固有振動数計算に対応するツールがカタログにない"],
+        "reasons": ["固有振動数の計算に該当するツールがカタログにない"],
         "unstated_assumptions": []
       }
     },
@@ -372,7 +372,7 @@
         "needs_clarification": false,
         "clarification_questions": [],
         "abstained": true,
-        "reasons": ["流体の圧力損失計算に対応するツールがカタログにない"],
+        "reasons": ["流体による圧力損失計算に該当するツールがカタログにない"],
         "unstated_assumptions": []
       }
     },
@@ -383,7 +383,7 @@
         "needs_clarification": false,
         "clarification_questions": [],
         "abstained": true,
-        "reasons": ["作業手順書作成に対応するツールがカタログにない"],
+        "reasons": ["作業手順書の作成に該当するツールがカタログにない"],
         "unstated_assumptions": []
       }
     },
@@ -394,7 +394,7 @@
         "needs_clarification": false,
         "clarification_questions": [],
         "abstained": false,
-        "reasons": ["金属の疲労寿命をS-Nで求める目的に合う"],
+        "reasons": ["金属の疲労寿命をS-Nで求めている"],
         "unstated_assumptions": []
       }
     }

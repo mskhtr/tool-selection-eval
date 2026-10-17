@@ -1,0 +1,1229 @@
+{
+  "created_at": "2026-10-17T14:15:01.897323+00:00",
+  "hashes": {
+    "catalog": "1b89ff8fd9a7be5d5f90f6dc9ad5c1bc79bc4d0d8be8f2b2091a7648d68e5113",
+    "cases": "c4babab2f682db2f5700b88222c3c3d4e027ff2435335dd4220f6051134e9614",
+    "method_b": "ce69a88e67b828829dea3ade954ded02d3c2b385ccf351ab934aebd9c6ce64de",
+    "method_c": "1ff1d6ce830d56ee123413af8cffe1075a6ef794dee6ee79db141e42ba2d8eae",
+    "ontology": "4729b0fd6ae22a59b0fbe10e49c9f0bc39d00de1e86a6f69829e8d0d8f0be99c",
+    "prompt_a": "547d10e85cb7f3d2b4cfd6aa50822565c2758ff1bb518446eed6b9f66f7c543f",
+    "prompt_c": "5723396ec78f959038fed8d28552ada1d53a365d81d74f2b503b8ea4052f040c",
+    "prompt_d": "1de72a63d280275e284f8291984a3774f60e9ec2c70de261eec25e7d7a9cd048",
+    "gold_module": "5d937597df3cce159aeec776da0c351c544fcdb895593ae3546bbcbad5b73ac1"
+  },
+  "models": {
+    "version": "models-1",
+    "models": {
+      "terra": {
+        "display_name": "Terra",
+        "intelligence_rank": 1,
+        "api_model_id": "gpt-5.6-terra-medium",
+        "inference_setting": "medium",
+        "temperature": null,
+        "price_note": "未取得"
+      },
+      "sol": {
+        "display_name": "Sol",
+        "intelligence_rank": 1,
+        "api_model_id": "gpt-5.6-sol-medium",
+        "inference_setting": "medium",
+        "temperature": null,
+        "price_note": "未取得"
+      },
+      "luna": {
+        "display_name": "Luna",
+        "intelligence_rank": 3,
+        "api_model_id": "gpt-5.6-luna-medium",
+        "inference_setting": "medium",
+        "temperature": null,
+        "price_note": "未取得"
+      }
+    },
+    "conditions": [
+      {
+        "id": "A1",
+        "method": "A",
+        "model": "sol",
+        "lexicon": "none"
+      },
+      {
+        "id": "A2",
+        "method": "A",
+        "model": "terra",
+        "lexicon": "none"
+      },
+      {
+        "id": "A3",
+        "method": "A",
+        "model": "luna",
+        "lexicon": "none"
+      },
+      {
+        "id": "B1",
+        "method": "B",
+        "model": null,
+        "lexicon": "none"
+      },
+      {
+        "id": "B2",
+        "method": "B",
+        "model": null,
+        "lexicon": "names"
+      },
+      {
+        "id": "B3",
+        "method": "B",
+        "model": null,
+        "lexicon": "slang"
+      },
+      {
+        "id": "C1",
+        "method": "C",
+        "model": "sol",
+        "lexicon": "none"
+      },
+      {
+        "id": "C2",
+        "method": "C",
+        "model": "terra",
+        "lexicon": "none"
+      },
+      {
+        "id": "C3",
+        "method": "C",
+        "model": "luna",
+        "lexicon": "none"
+      },
+      {
+        "id": "D1",
+        "method": "D",
+        "model": null,
+        "lexicon": "none"
+      },
+      {
+        "id": "D2",
+        "method": "D",
+        "model": "sol",
+        "lexicon": "none"
+      },
+      {
+        "id": "D3",
+        "method": "D",
+        "model": "terra",
+        "lexicon": "none"
+      },
+      {
+        "id": "D4",
+        "method": "D",
+        "model": "luna",
+        "lexicon": "none"
+      },
+      {
+        "id": "D5",
+        "method": "D",
+        "model": null,
+        "lexicon": "names"
+      },
+      {
+        "id": "D6",
+        "method": "D",
+        "model": "sol",
+        "lexicon": "names"
+      },
+      {
+        "id": "D7",
+        "method": "D",
+        "model": "terra",
+        "lexicon": "names"
+      },
+      {
+        "id": "D8",
+        "method": "D",
+        "model": "luna",
+        "lexicon": "names"
+      },
+      {
+        "id": "D9",
+        "method": "D",
+        "model": null,
+        "lexicon": "slang"
+      },
+      {
+        "id": "D10",
+        "method": "D",
+        "model": "sol",
+        "lexicon": "slang"
+      },
+      {
+        "id": "D11",
+        "method": "D",
+        "model": "terra",
+        "lexicon": "slang"
+      },
+      {
+        "id": "D12",
+        "method": "D",
+        "model": "luna",
+        "lexicon": "slang"
+      }
+    ]
+  },
+  "catalog_views": {
+    "llm_fields": [
+      "id",
+      "name",
+      "domain",
+      "target",
+      "purpose",
+      "method",
+      "aliases",
+      "inputs",
+      "input_conditions",
+      "constraints",
+      "outputs",
+      "differences",
+      "purpose_signals"
+    ],
+    "rule_only_fields": [
+      "rule_keywords"
+    ],
+    "rule_only_config": [
+      "config/method_b.yaml の family triggers, request_substrings, hard_meta_substrings, combination_substrings"
+    ]
+  },
+  "note": "B方式はLLMを使わない。AとCの実測は、応答ファイルがある条件だけ実行済みとする。",
+  "n_cases": 36,
+  "primary_counts": {
+    "clear": 6,
+    "orthography": 7,
+    "colloquial": 4,
+    "ambiguous": 4,
+    "multi": 3,
+    "implicit": 3,
+    "insufficient": 3,
+    "keyword_trap": 3,
+    "out_of_scope": 3
+  },
+  "labeling": {
+    "labeler_count": 1,
+    "independent_adjudication": false,
+    "note": "実装者1名が、モデル出力を見る前に付与した。複数人の独立ラベルと不一致解消は行っていない。",
+    "frozen_before_model_runs": true
+  },
+  "timing": {
+    "per_case_latency_s": null,
+    "token_usage": null,
+    "api_cost": null,
+    "note": "トークン数・料金・モデル単体の遅延は未取得。"
+  },
+  "limitations": [
+    "温度は指定できない。推論設定はモデルIDに含まれる medium のみ。",
+    "料金とトークン数は未取得。",
+    "正解ラベルは実装者1名で、複数人の独立ラベルではない。",
+    "未登録の辞書とオントロジーの語は、カタログの名称と目的に書いてあるものだけである。ソルダ、クラック、クラックグロース、割れ、持たない、折れは入れていない。",
+    "呼び方だけを教えた比較では、ソルダをはんだ、クラックとクラックグロースを亀裂として足した。割れ、持たない、折れは足していない。",
+    "持たない、割れを教えた比較では、割れを亀裂、持たないを寿命として足した。一つに決めない、とは書いていない。折れは足していない。",
+    "誤り分類は規則による自動分類で、人手の再判定ではない。",
+    "ユーザー確認後の選択は方式の精度に含めていない。",
+    "同一入力の繰り返し実行は未実施。"
+  ],
+  "stability": null,
+  "examples": {
+    "A1": {
+      "過剰な意図補完": [
+        {
+          "case_id": "025",
+          "text": "冷熱を繰り返すとはんだが持たない気がするので見たい",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [
+            "solder_life_prediction"
+          ],
+          "clarification": false,
+          "assumptions": [],
+          "reasons": [
+            "冷熱の繰り返しに対するはんだの耐久寿命を見たい依頼である"
+          ]
+        }
+      ],
+      "表層キーワード誤選択": [],
+      "候補漏れ": [
+        {
+          "case_id": "016",
+          "text": "疲労回して。S-Nで",
+          "acceptable": [
+            "fatigue_life"
+          ],
+          "predicted": [],
+          "clarification": true,
+          "assumptions": [],
+          "reasons": [
+            "S-N疲労評価の対象材料が明示されていない"
+          ]
+        },
+        {
+          "case_id": "025",
+          "text": "冷熱を繰り返すとはんだが持たない気がするので見たい",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [
+            "solder_life_prediction"
+          ],
+          "clarification": false,
+          "assumptions": [],
+          "reasons": [
+            "冷熱の繰り返しに対するはんだの耐久寿命を見たい依頼である"
+          ]
+        }
+      ]
+    },
+    "A2": {
+      "過剰な意図補完": [
+        {
+          "case_id": "025",
+          "text": "冷熱を繰り返すとはんだが持たない気がするので見たい",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [
+            "solder_life_prediction"
+          ],
+          "clarification": false,
+          "assumptions": [],
+          "reasons": [
+            "冷熱の繰り返しに対するはんだの寿命を見たい目的に合う"
+          ]
+        }
+      ],
+      "表層キーワード誤選択": [],
+      "候補漏れ": [
+        {
+          "case_id": "019",
+          "text": "寿命を見たい",
+          "acceptable": [
+            "solder_life_prediction",
+            "fatigue_life"
+          ],
+          "predicted": [],
+          "clarification": true,
+          "assumptions": [],
+          "reasons": [
+            "対象と寿命評価の目的が示されていない"
+          ]
+        },
+        {
+          "case_id": "020",
+          "text": "この部品の寿命が知りたい",
+          "acceptable": [
+            "solder_life_prediction",
+            "fatigue_life"
+          ],
+          "predicted": [],
+          "clarification": true,
+          "assumptions": [],
+          "reasons": [
+            "部品の対象と寿命評価の条件が示されていない"
+          ]
+        },
+        {
+          "case_id": "025",
+          "text": "冷熱を繰り返すとはんだが持たない気がするので見たい",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [
+            "solder_life_prediction"
+          ],
+          "clarification": false,
+          "assumptions": [],
+          "reasons": [
+            "冷熱の繰り返しに対するはんだの寿命を見たい目的に合う"
+          ]
+        }
+      ]
+    },
+    "A3": {
+      "過剰な意図補完": [
+        {
+          "case_id": "025",
+          "text": "冷熱を繰り返すとはんだが持たない気がするので見たい",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [
+            "solder_life_prediction"
+          ],
+          "clarification": false,
+          "assumptions": [],
+          "reasons": [
+            "冷熱サイクルでのはんだの寿命を見たい目的に一致する"
+          ]
+        }
+      ],
+      "表層キーワード誤選択": [],
+      "候補漏れ": [
+        {
+          "case_id": "019",
+          "text": "寿命を見たい",
+          "acceptable": [
+            "solder_life_prediction",
+            "fatigue_life"
+          ],
+          "predicted": [],
+          "clarification": true,
+          "assumptions": [],
+          "reasons": [
+            "対象と目的が不明でツールを特定できない"
+          ]
+        },
+        {
+          "case_id": "020",
+          "text": "この部品の寿命が知りたい",
+          "acceptable": [
+            "solder_life_prediction",
+            "fatigue_life"
+          ],
+          "predicted": [],
+          "clarification": true,
+          "assumptions": [],
+          "reasons": [
+            "対象と寿命評価の条件が不明"
+          ]
+        },
+        {
+          "case_id": "025",
+          "text": "冷熱を繰り返すとはんだが持たない気がするので見たい",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [
+            "solder_life_prediction"
+          ],
+          "clarification": false,
+          "assumptions": [],
+          "reasons": [
+            "冷熱サイクルでのはんだの寿命を見たい目的に一致する"
+          ]
+        }
+      ]
+    },
+    "B1": {
+      "過剰な意図補完": [],
+      "表層キーワード誤選択": [],
+      "候補漏れ": [
+        {
+          "case_id": "013",
+          "text": "ソルダの解析をお願いします",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [],
+          "clarification": true,
+          "assumptions": [],
+          "reasons": [
+            "カタログの名称、目的の手がかり、系統のいずれにも一致しなかった。"
+          ]
+        },
+        {
+          "case_id": "015",
+          "text": "ソルダのクラックグロース見たい",
+          "acceptable": [
+            "solder_crack_propagation"
+          ],
+          "predicted": [],
+          "clarification": true,
+          "assumptions": [],
+          "reasons": [
+            "カタログの名称、目的の手がかり、系統のいずれにも一致しなかった。"
+          ]
+        }
+      ]
+    },
+    "B2": {
+      "過剰な意図補完": [],
+      "表層キーワード誤選択": [],
+      "候補漏れ": []
+    },
+    "B3": {
+      "過剰な意図補完": [
+        {
+          "case_id": "024",
+          "text": "はんだが割れそうなので見たい",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [
+            "solder_crack_propagation"
+          ],
+          "clarification": false,
+          "assumptions": [],
+          "reasons": [
+            "名称・別名または目的の手がかりが一致したツールを候補にした。"
+          ]
+        },
+        {
+          "case_id": "025",
+          "text": "冷熱を繰り返すとはんだが持たない気がするので見たい",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [
+            "solder_life_prediction"
+          ],
+          "clarification": false,
+          "assumptions": [],
+          "reasons": [
+            "名称・別名または目的の手がかりが一致したツールを候補にした。"
+          ]
+        }
+      ],
+      "表層キーワード誤選択": [],
+      "候補漏れ": [
+        {
+          "case_id": "024",
+          "text": "はんだが割れそうなので見たい",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [
+            "solder_crack_propagation"
+          ],
+          "clarification": false,
+          "assumptions": [],
+          "reasons": [
+            "名称・別名または目的の手がかりが一致したツールを候補にした。"
+          ]
+        },
+        {
+          "case_id": "025",
+          "text": "冷熱を繰り返すとはんだが持たない気がするので見たい",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [
+            "solder_life_prediction"
+          ],
+          "clarification": false,
+          "assumptions": [],
+          "reasons": [
+            "名称・別名または目的の手がかりが一致したツールを候補にした。"
+          ]
+        }
+      ]
+    },
+    "C1": {
+      "過剰な意図補完": [
+        {
+          "case_id": "025",
+          "text": "冷熱を繰り返すとはんだが持たない気がするので見たい",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [
+            "solder_life_prediction"
+          ],
+          "clarification": false,
+          "assumptions": [],
+          "reasons": [
+            "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。",
+            "採点側が情報不足を示した。"
+          ]
+        }
+      ],
+      "表層キーワード誤選択": [],
+      "候補漏れ": [
+        {
+          "case_id": "018",
+          "text": "はんだ周りをシミュレーションで見たい",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [],
+          "clarification": true,
+          "assumptions": [],
+          "reasons": [
+            "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+          ]
+        },
+        {
+          "case_id": "019",
+          "text": "寿命を見たい",
+          "acceptable": [
+            "solder_life_prediction",
+            "fatigue_life"
+          ],
+          "predicted": [],
+          "clarification": true,
+          "assumptions": [],
+          "reasons": [
+            "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+          ]
+        },
+        {
+          "case_id": "020",
+          "text": "この部品の寿命が知りたい",
+          "acceptable": [
+            "solder_life_prediction",
+            "fatigue_life"
+          ],
+          "predicted": [],
+          "clarification": true,
+          "assumptions": [],
+          "reasons": [
+            "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+          ]
+        }
+      ]
+    },
+    "C2": {
+      "過剰な意図補完": [
+        {
+          "case_id": "025",
+          "text": "冷熱を繰り返すとはんだが持たない気がするので見たい",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [
+            "solder_life_prediction"
+          ],
+          "clarification": false,
+          "assumptions": [],
+          "reasons": [
+            "適合度スコアの順位と候補間の差で候補を決めた。スコアは校正済み確率ではない。"
+          ]
+        }
+      ],
+      "表層キーワード誤選択": [],
+      "候補漏れ": [
+        {
+          "case_id": "007",
+          "text": "半田のシミュレーションをしたい",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [],
+          "clarification": true,
+          "assumptions": [],
+          "reasons": [
+            "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+          ]
+        },
+        {
+          "case_id": "008",
+          "text": "ハンダのシミュレーションをしたい",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [],
+          "clarification": true,
+          "assumptions": [],
+          "reasons": [
+            "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+          ]
+        },
+        {
+          "case_id": "013",
+          "text": "ソルダの解析をお願いします",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [],
+          "clarification": true,
+          "assumptions": [],
+          "reasons": [
+            "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+          ]
+        }
+      ]
+    },
+    "C3": {
+      "過剰な意図補完": [],
+      "表層キーワード誤選択": [],
+      "候補漏れ": [
+        {
+          "case_id": "007",
+          "text": "半田のシミュレーションをしたい",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [],
+          "clarification": true,
+          "assumptions": [],
+          "reasons": [
+            "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+          ]
+        },
+        {
+          "case_id": "008",
+          "text": "ハンダのシミュレーションをしたい",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [],
+          "clarification": true,
+          "assumptions": [],
+          "reasons": [
+            "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+          ]
+        },
+        {
+          "case_id": "013",
+          "text": "ソルダの解析をお願いします",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [],
+          "clarification": true,
+          "assumptions": [],
+          "reasons": [
+            "どのツールも採用しきい値に届かなかった。スコアは確率として解釈していない。"
+          ]
+        }
+      ]
+    },
+    "D1": {
+      "過剰な意図補完": [],
+      "表層キーワード誤選択": [],
+      "候補漏れ": [
+        {
+          "case_id": "002",
+          "text": "はんだクラックの進展量をサイクルごとに計算したい",
+          "acceptable": [
+            "solder_crack_propagation"
+          ],
+          "predicted": [],
+          "clarification": true,
+          "assumptions": [],
+          "reasons": [
+            "オントロジーの概念がツールの関係まで届かなかった。"
+          ]
+        },
+        {
+          "case_id": "013",
+          "text": "ソルダの解析をお願いします",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [],
+          "clarification": true,
+          "assumptions": [],
+          "reasons": [
+            "オントロジーの概念がツールの関係まで届かなかった。"
+          ]
+        },
+        {
+          "case_id": "014",
+          "text": "はんだのクラックが進むやつ回して",
+          "acceptable": [
+            "solder_crack_propagation"
+          ],
+          "predicted": [],
+          "clarification": true,
+          "assumptions": [],
+          "reasons": [
+            "オントロジーの概念がツールの関係まで届かなかった。"
+          ]
+        }
+      ]
+    },
+    "D2": {
+      "過剰な意図補完": [],
+      "表層キーワード誤選択": [],
+      "候補漏れ": [
+        {
+          "case_id": "002",
+          "text": "はんだクラックの進展量をサイクルごとに計算したい",
+          "acceptable": [
+            "solder_crack_propagation"
+          ],
+          "predicted": [],
+          "clarification": true,
+          "assumptions": [],
+          "reasons": [
+            "オントロジーの概念がツールの関係まで届かなかった。"
+          ]
+        },
+        {
+          "case_id": "013",
+          "text": "ソルダの解析をお願いします",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [],
+          "clarification": true,
+          "assumptions": [],
+          "reasons": [
+            "オントロジーの概念がツールの関係まで届かなかった。"
+          ]
+        },
+        {
+          "case_id": "014",
+          "text": "はんだのクラックが進むやつ回して",
+          "acceptable": [
+            "solder_crack_propagation"
+          ],
+          "predicted": [],
+          "clarification": true,
+          "assumptions": [],
+          "reasons": [
+            "オントロジーの概念がツールの関係まで届かなかった。"
+          ]
+        }
+      ]
+    },
+    "D3": {
+      "過剰な意図補完": [],
+      "表層キーワード誤選択": [],
+      "候補漏れ": [
+        {
+          "case_id": "002",
+          "text": "はんだクラックの進展量をサイクルごとに計算したい",
+          "acceptable": [
+            "solder_crack_propagation"
+          ],
+          "predicted": [],
+          "clarification": true,
+          "assumptions": [],
+          "reasons": [
+            "オントロジーの概念がツールの関係まで届かなかった。"
+          ]
+        },
+        {
+          "case_id": "013",
+          "text": "ソルダの解析をお願いします",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [],
+          "clarification": true,
+          "assumptions": [],
+          "reasons": [
+            "オントロジーの概念がツールの関係まで届かなかった。"
+          ]
+        },
+        {
+          "case_id": "014",
+          "text": "はんだのクラックが進むやつ回して",
+          "acceptable": [
+            "solder_crack_propagation"
+          ],
+          "predicted": [],
+          "clarification": true,
+          "assumptions": [],
+          "reasons": [
+            "オントロジーの概念がツールの関係まで届かなかった。"
+          ]
+        }
+      ]
+    },
+    "D4": {
+      "過剰な意図補完": [],
+      "表層キーワード誤選択": [],
+      "候補漏れ": [
+        {
+          "case_id": "002",
+          "text": "はんだクラックの進展量をサイクルごとに計算したい",
+          "acceptable": [
+            "solder_crack_propagation"
+          ],
+          "predicted": [],
+          "clarification": true,
+          "assumptions": [],
+          "reasons": [
+            "オントロジーの概念がツールの関係まで届かなかった。"
+          ]
+        },
+        {
+          "case_id": "013",
+          "text": "ソルダの解析をお願いします",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [],
+          "clarification": true,
+          "assumptions": [],
+          "reasons": [
+            "オントロジーの概念がツールの関係まで届かなかった。"
+          ]
+        },
+        {
+          "case_id": "014",
+          "text": "はんだのクラックが進むやつ回して",
+          "acceptable": [
+            "solder_crack_propagation"
+          ],
+          "predicted": [],
+          "clarification": true,
+          "assumptions": [],
+          "reasons": [
+            "オントロジーの概念がツールの関係まで届かなかった。"
+          ]
+        }
+      ]
+    },
+    "D5": {
+      "過剰な意図補完": [],
+      "表層キーワード誤選択": [],
+      "候補漏れ": []
+    },
+    "D6": {
+      "過剰な意図補完": [],
+      "表層キーワード誤選択": [],
+      "候補漏れ": []
+    },
+    "D7": {
+      "過剰な意図補完": [],
+      "表層キーワード誤選択": [],
+      "候補漏れ": []
+    },
+    "D8": {
+      "過剰な意図補完": [
+        {
+          "case_id": "024",
+          "text": "はんだが割れそうなので見たい",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [
+            "solder_crack_propagation"
+          ],
+          "clarification": false,
+          "assumptions": [],
+          "reasons": [
+            "概念の関係に合うツールを候補にした。"
+          ]
+        }
+      ],
+      "表層キーワード誤選択": [],
+      "候補漏れ": [
+        {
+          "case_id": "024",
+          "text": "はんだが割れそうなので見たい",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [
+            "solder_crack_propagation"
+          ],
+          "clarification": false,
+          "assumptions": [],
+          "reasons": [
+            "概念の関係に合うツールを候補にした。"
+          ]
+        }
+      ]
+    },
+    "D9": {
+      "過剰な意図補完": [
+        {
+          "case_id": "024",
+          "text": "はんだが割れそうなので見たい",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [
+            "solder_crack_propagation"
+          ],
+          "clarification": false,
+          "assumptions": [],
+          "reasons": [
+            "概念の関係に合うツールを候補にした。"
+          ]
+        },
+        {
+          "case_id": "025",
+          "text": "冷熱を繰り返すとはんだが持たない気がするので見たい",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [
+            "solder_life_prediction"
+          ],
+          "clarification": false,
+          "assumptions": [],
+          "reasons": [
+            "概念の関係に合うツールを候補にした。"
+          ]
+        }
+      ],
+      "表層キーワード誤選択": [],
+      "候補漏れ": [
+        {
+          "case_id": "024",
+          "text": "はんだが割れそうなので見たい",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [
+            "solder_crack_propagation"
+          ],
+          "clarification": false,
+          "assumptions": [],
+          "reasons": [
+            "概念の関係に合うツールを候補にした。"
+          ]
+        },
+        {
+          "case_id": "025",
+          "text": "冷熱を繰り返すとはんだが持たない気がするので見たい",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [
+            "solder_life_prediction"
+          ],
+          "clarification": false,
+          "assumptions": [],
+          "reasons": [
+            "概念の関係に合うツールを候補にした。"
+          ]
+        }
+      ]
+    },
+    "D10": {
+      "過剰な意図補完": [
+        {
+          "case_id": "024",
+          "text": "はんだが割れそうなので見たい",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [
+            "solder_crack_propagation"
+          ],
+          "clarification": false,
+          "assumptions": [],
+          "reasons": [
+            "概念の関係に合うツールを候補にした。"
+          ]
+        },
+        {
+          "case_id": "025",
+          "text": "冷熱を繰り返すとはんだが持たない気がするので見たい",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [
+            "solder_life_prediction"
+          ],
+          "clarification": false,
+          "assumptions": [],
+          "reasons": [
+            "概念の関係に合うツールを候補にした。"
+          ]
+        }
+      ],
+      "表層キーワード誤選択": [],
+      "候補漏れ": [
+        {
+          "case_id": "024",
+          "text": "はんだが割れそうなので見たい",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [
+            "solder_crack_propagation"
+          ],
+          "clarification": false,
+          "assumptions": [],
+          "reasons": [
+            "概念の関係に合うツールを候補にした。"
+          ]
+        },
+        {
+          "case_id": "025",
+          "text": "冷熱を繰り返すとはんだが持たない気がするので見たい",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [
+            "solder_life_prediction"
+          ],
+          "clarification": false,
+          "assumptions": [],
+          "reasons": [
+            "概念の関係に合うツールを候補にした。"
+          ]
+        }
+      ]
+    },
+    "D11": {
+      "過剰な意図補完": [
+        {
+          "case_id": "024",
+          "text": "はんだが割れそうなので見たい",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [
+            "solder_crack_propagation"
+          ],
+          "clarification": false,
+          "assumptions": [],
+          "reasons": [
+            "概念の関係に合うツールを候補にした。"
+          ]
+        },
+        {
+          "case_id": "025",
+          "text": "冷熱を繰り返すとはんだが持たない気がするので見たい",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [
+            "solder_life_prediction"
+          ],
+          "clarification": false,
+          "assumptions": [],
+          "reasons": [
+            "概念の関係に合うツールを候補にした。"
+          ]
+        }
+      ],
+      "表層キーワード誤選択": [],
+      "候補漏れ": [
+        {
+          "case_id": "024",
+          "text": "はんだが割れそうなので見たい",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [
+            "solder_crack_propagation"
+          ],
+          "clarification": false,
+          "assumptions": [],
+          "reasons": [
+            "概念の関係に合うツールを候補にした。"
+          ]
+        },
+        {
+          "case_id": "025",
+          "text": "冷熱を繰り返すとはんだが持たない気がするので見たい",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [
+            "solder_life_prediction"
+          ],
+          "clarification": false,
+          "assumptions": [],
+          "reasons": [
+            "概念の関係に合うツールを候補にした。"
+          ]
+        }
+      ]
+    },
+    "D12": {
+      "過剰な意図補完": [
+        {
+          "case_id": "024",
+          "text": "はんだが割れそうなので見たい",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [
+            "solder_crack_propagation"
+          ],
+          "clarification": false,
+          "assumptions": [],
+          "reasons": [
+            "概念の関係に合うツールを候補にした。"
+          ]
+        },
+        {
+          "case_id": "025",
+          "text": "冷熱を繰り返すとはんだが持たない気がするので見たい",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [
+            "solder_life_prediction"
+          ],
+          "clarification": false,
+          "assumptions": [],
+          "reasons": [
+            "概念の関係に合うツールを候補にした。"
+          ]
+        }
+      ],
+      "表層キーワード誤選択": [],
+      "候補漏れ": [
+        {
+          "case_id": "024",
+          "text": "はんだが割れそうなので見たい",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [
+            "solder_crack_propagation"
+          ],
+          "clarification": false,
+          "assumptions": [],
+          "reasons": [
+            "概念の関係に合うツールを候補にした。"
+          ]
+        },
+        {
+          "case_id": "025",
+          "text": "冷熱を繰り返すとはんだが持たない気がするので見たい",
+          "acceptable": [
+            "solder_crack_propagation",
+            "solder_life_prediction"
+          ],
+          "predicted": [
+            "solder_life_prediction"
+          ],
+          "clarification": false,
+          "assumptions": [],
+          "reasons": [
+            "概念の関係に合うツールを候補にした。"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -10,7 +10,7 @@
         ],
         "suggestions": [],
         "reasons": [
-          "はんだ、亀裂、進むがあるため"
+          "はんだ・亀裂・進むがある"
         ]
       }
     },
@@ -19,12 +19,11 @@
       "body": {
         "concepts": [
           "solder",
-          "crack",
           "propagation"
         ],
         "suggestions": [],
         "reasons": [
-          "はんだ、クラック、進展量があるため"
+          "はんだ・進展がある"
         ]
       }
     },
@@ -38,7 +37,7 @@
         ],
         "suggestions": [],
         "reasons": [
-          "はんだ、熱疲労、寿命があるため"
+          "はんだ・熱疲労・寿命がある"
         ]
       }
     },
@@ -51,7 +50,7 @@
         ],
         "suggestions": [],
         "reasons": [
-          "BGAとはんだ、寿命があるため"
+          "はんだ・寿命がある"
         ]
       }
     },
@@ -59,14 +58,13 @@
       "case_id": "005",
       "body": {
         "concepts": [
-          "metal",
-          "sn",
           "fatigue",
+          "sn",
           "life"
         ],
         "suggestions": [],
         "reasons": [
-          "鋼、S-N、疲労、寿命があるため"
+          "疲労・S-N・寿命がある"
         ]
       }
     },
@@ -81,7 +79,7 @@
         ],
         "suggestions": [],
         "reasons": [
-          "金属、高サイクル疲労、寿命、S-Nがあるため"
+          "金属・高サイクル疲労・寿命・S-Nがある"
         ]
       }
     },
@@ -93,7 +91,7 @@
         ],
         "suggestions": [],
         "reasons": [
-          "半田があるため"
+          "半田がある"
         ]
       }
     },
@@ -105,7 +103,7 @@
         ],
         "suggestions": [],
         "reasons": [
-          "ハンダがあるため"
+          "ハンダがある"
         ]
       }
     },
@@ -119,7 +117,7 @@
         ],
         "suggestions": [],
         "reasons": [
-          "半田、熱疲労、寿命があるため"
+          "半田・熱疲労・寿命がある"
         ]
       }
     },
@@ -132,7 +130,7 @@
         ],
         "suggestions": [],
         "reasons": [
-          "ハンダと寿命があるため"
+          "ハンダ・寿命がある"
         ]
       }
     },
@@ -146,7 +144,7 @@
         ],
         "suggestions": [],
         "reasons": [
-          "ハンダ、き裂、進むがあるため"
+          "ハンダ・き裂・進むがある"
         ]
       }
     },
@@ -160,19 +158,17 @@
         ],
         "suggestions": [],
         "reasons": [
-          "ハンダ、亀裂進展があるため"
+          "ハンダ・亀裂・進展がある"
         ]
       }
     },
     {
       "case_id": "013",
       "body": {
-        "concepts": [
-          "solder"
-        ],
+        "concepts": [],
         "suggestions": [],
         "reasons": [
-          "ソルダがあるため"
+          "該当するラベルがない"
         ]
       }
     },
@@ -181,26 +177,21 @@
       "body": {
         "concepts": [
           "solder",
-          "crack",
           "propagation"
         ],
         "suggestions": [],
         "reasons": [
-          "はんだ、クラック、進むがあるため"
+          "はんだ・進むがある"
         ]
       }
     },
     {
       "case_id": "015",
       "body": {
-        "concepts": [
-          "solder",
-          "crack",
-          "propagation"
-        ],
+        "concepts": [],
         "suggestions": [],
         "reasons": [
-          "ソルダ、クラック、グロースがあるため"
+          "該当するラベルがない"
         ]
       }
     },
@@ -213,7 +204,7 @@
         ],
         "suggestions": [],
         "reasons": [
-          "疲労とS-Nがあるため"
+          "疲労・S-Nがある"
         ]
       }
     },
@@ -225,7 +216,7 @@
         ],
         "suggestions": [],
         "reasons": [
-          "はんだがあるため"
+          "はんだがある"
         ]
       }
     },
@@ -237,7 +228,7 @@
         ],
         "suggestions": [],
         "reasons": [
-          "はんだがあるため"
+          "はんだがある"
         ]
       }
     },
@@ -249,7 +240,7 @@
         ],
         "suggestions": [],
         "reasons": [
-          "寿命があるため"
+          "寿命がある"
         ]
       }
     },
@@ -261,7 +252,7 @@
         ],
         "suggestions": [],
         "reasons": [
-          "寿命があるため"
+          "寿命がある"
         ]
       }
     },
@@ -276,7 +267,7 @@
         ],
         "suggestions": [],
         "reasons": [
-          "はんだ、寿命、亀裂進展があるため"
+          "はんだ・寿命・亀裂・進展がある"
         ]
       }
     },
@@ -285,13 +276,11 @@
       "body": {
         "concepts": [
           "solder",
-          "life",
-          "crack",
-          "propagation"
+          "life"
         ],
         "suggestions": [],
         "reasons": [
-          "はんだ、寿命、亀裂、伸びるがあるため"
+          "はんだ・寿命がある"
         ]
       }
     },
@@ -307,7 +296,7 @@
         ],
         "suggestions": [],
         "reasons": [
-          "金属の疲労寿命とはんだの熱疲労寿命があるため"
+          "金属・疲労・寿命・はんだ・熱疲労がある"
         ]
       }
     },
@@ -317,11 +306,9 @@
         "concepts": [
           "solder"
         ],
-        "suggestions": [
-          "crack"
-        ],
+        "suggestions": [],
         "reasons": [
-          "はんだがあり、割れは亀裂の示唆のため"
+          "はんだがある"
         ]
       }
     },
@@ -331,11 +318,9 @@
         "concepts": [
           "solder"
         ],
-        "suggestions": [
-          "life"
-        ],
+        "suggestions": [],
         "reasons": [
-          "はんだがあり、持たないは寿命の示唆のため"
+          "はんだがある"
         ]
       }
     },
@@ -343,14 +328,11 @@
       "case_id": "026",
       "body": {
         "concepts": [
-          "metal",
           "life"
         ],
-        "suggestions": [
-          "life"
-        ],
+        "suggestions": [],
         "reasons": [
-          "鋼と寿命があり、折れは寿命の示唆のため"
+          "寿命がある"
         ]
       }
     },
@@ -360,7 +342,7 @@
         "concepts": [],
         "suggestions": [],
         "reasons": [
-          "該当する概念語がないため"
+          "該当するラベルがない"
         ]
       }
     },
@@ -370,7 +352,7 @@
         "concepts": [],
         "suggestions": [],
         "reasons": [
-          "該当する概念語がないため"
+          "該当するラベルがない"
         ]
       }
     },
@@ -380,7 +362,7 @@
         "concepts": [],
         "suggestions": [],
         "reasons": [
-          "該当する概念語がないため"
+          "該当するラベルがない"
         ]
       }
     },
@@ -392,7 +374,7 @@
         ],
         "suggestions": [],
         "reasons": [
-          "はんだがあるため"
+          "はんだがある"
         ]
       }
     },
@@ -405,7 +387,7 @@
         ],
         "suggestions": [],
         "reasons": [
-          "はんだと亀裂があるため"
+          "はんだ・亀裂がある"
         ]
       }
     },
@@ -417,7 +399,7 @@
         ],
         "suggestions": [],
         "reasons": [
-          "寿命があるため"
+          "寿命がある"
         ]
       }
     },
@@ -427,7 +409,7 @@
         "concepts": [],
         "suggestions": [],
         "reasons": [
-          "該当する概念語がないため"
+          "該当するラベルがない"
         ]
       }
     },
@@ -437,7 +419,7 @@
         "concepts": [],
         "suggestions": [],
         "reasons": [
-          "該当する概念語がないため"
+          "該当するラベルがない"
         ]
       }
     },
@@ -449,7 +431,7 @@
         ],
         "suggestions": [],
         "reasons": [
-          "はんだがあるため"
+          "はんだがある"
         ]
       }
     },
@@ -464,7 +446,7 @@
         ],
         "suggestions": [],
         "reasons": [
-          "金属、疲労、寿命、S-Nがあるため"
+          "金属・疲労・寿命・Ｓ－Ｎがある"
         ]
       }
     }

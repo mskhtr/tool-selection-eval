@@ -1,14 +1,13 @@
-# オントロジー。辞書の語を概念にまとめ、関係でツールへ結ぶ。
-# 割れ・持たない・折れは示唆であり、それだけでは目的を一つに決めない。
-# 事務語と依頼の語は B と同じ門を使う。候補の決め方だけが関係である。
-version: ontology-1
+# 語はカタログの名称と目的に書いてあるものだけ。
+# テスト文の俗語（ソルダ、クラック、クラックグロース、割れ、持たない、折れ）は入れない。
+version: ontology-2
 concepts:
   solder:
-    labels: [はんだ, 半田, ハンダ, ソルダ, bga]
+    labels: [はんだ, 半田, ハンダ]
   crack:
-    labels: [亀裂, き裂, クラック]
+    labels: [亀裂, き裂]
   propagation:
-    labels: [進展, 進む, 進み, グロース]
+    labels: [進展, 進む]
   life:
     labels: [寿命]
   thermal:
@@ -16,12 +15,9 @@ concepts:
   fatigue:
     labels: [疲労, 高サイクル疲労]
   metal:
-    labels: [金属, 鋼]
+    labels: [金属]
   sn:
     labels: [sn]
-suggestions:
-  crack: [割れ]
-  life: [持たない, 折れ]
 tool_requirements:
   solder_crack_propagation:
     - [solder, crack]
@@ -31,7 +27,6 @@ tool_requirements:
     - [thermal, life]
   fatigue_life:
     - [fatigue, life]
-    - [metal, life]
     - [sn]
     - [fatigue]
 subject_only:

@@ -1,0 +1,36 @@
+{"case_id": "001", "raw_response": "{\"concepts\": [\"solder\", \"crack\", \"propagation\"], \"suggestions\": [], \"reasons\": [\"はんだ、亀裂、進むがある\"]}", "error": null}
+{"case_id": "002", "raw_response": "{\"concepts\": [\"solder\", \"crack\", \"propagation\"], \"suggestions\": [], \"reasons\": [\"はんだ、クラック、進展がある\"]}", "error": null}
+{"case_id": "003", "raw_response": "{\"concepts\": [\"solder\", \"thermal\", \"life\"], \"suggestions\": [], \"reasons\": [\"はんだ、熱疲労、寿命がある\"]}", "error": null}
+{"case_id": "004", "raw_response": "{\"concepts\": [\"solder\", \"life\"], \"suggestions\": [], \"reasons\": [\"はんだ、寿命がある\"]}", "error": null}
+{"case_id": "005", "raw_response": "{\"concepts\": [\"metal\", \"fatigue\", \"sn\", \"life\"], \"suggestions\": [], \"reasons\": [\"金属、疲労、S-N、寿命がある\"]}", "error": null}
+{"case_id": "006", "raw_response": "{\"concepts\": [\"metal\", \"fatigue\", \"life\", \"sn\"], \"suggestions\": [], \"reasons\": [\"金属、高サイクル疲労、寿命、S-Nがある\"]}", "error": null}
+{"case_id": "007", "raw_response": "{\"concepts\": [\"solder\"], \"suggestions\": [], \"reasons\": [\"半田がある\"]}", "error": null}
+{"case_id": "008", "raw_response": "{\"concepts\": [\"solder\"], \"suggestions\": [], \"reasons\": [\"ハンダがある\"]}", "error": null}
+{"case_id": "009", "raw_response": "{\"concepts\": [\"solder\", \"thermal\", \"life\"], \"suggestions\": [], \"reasons\": [\"半田、熱疲労、寿命がある\"]}", "error": null}
+{"case_id": "010", "raw_response": "{\"concepts\": [\"solder\", \"life\"], \"suggestions\": [], \"reasons\": [\"ハンダ、寿命がある\"]}", "error": null}
+{"case_id": "011", "raw_response": "{\"concepts\": [\"solder\", \"crack\", \"propagation\"], \"suggestions\": [], \"reasons\": [\"半田、き裂、進むがある\"]}", "error": null}
+{"case_id": "012", "raw_response": "{\"concepts\": [\"solder\", \"crack\", \"propagation\"], \"suggestions\": [], \"reasons\": [\"ハンダ、亀裂、進展がある\"]}", "error": null}
+{"case_id": "013", "raw_response": "{\"concepts\": [\"solder\"], \"suggestions\": [], \"reasons\": [\"ソルダがある\"]}", "error": null}
+{"case_id": "014", "raw_response": "{\"concepts\": [\"solder\", \"crack\", \"propagation\"], \"suggestions\": [], \"reasons\": [\"ハンダ、クラック、進むがある\"]}", "error": null}
+{"case_id": "015", "raw_response": "{\"concepts\": [\"solder\", \"crack\"], \"suggestions\": [], \"reasons\": [\"ソルダ、クラックグロースがある\"]}", "error": null}
+{"case_id": "016", "raw_response": "{\"concepts\": [\"fatigue\", \"sn\"], \"suggestions\": [], \"reasons\": [\"疲労、S-Nがある\"]}", "error": null}
+{"case_id": "017", "raw_response": "{\"concepts\": [\"solder\"], \"suggestions\": [], \"reasons\": [\"はんだがある\"]}", "error": null}
+{"case_id": "018", "raw_response": "{\"concepts\": [\"solder\"], \"suggestions\": [], \"reasons\": [\"はんだがある\"]}", "error": null}
+{"case_id": "019", "raw_response": "{\"concepts\": [\"life\"], \"suggestions\": [], \"reasons\": [\"寿命がある\"]}", "error": null}
+{"case_id": "020", "raw_response": "{\"concepts\": [\"life\"], \"suggestions\": [], \"reasons\": [\"寿命がある\"]}", "error": null}
+{"case_id": "021", "raw_response": "{\"concepts\": [\"solder\", \"life\", \"crack\", \"propagation\"], \"suggestions\": [], \"reasons\": [\"はんだ、寿命、亀裂、進展がある\"]}", "error": null}
+{"case_id": "022", "raw_response": "{\"concepts\": [\"solder\", \"life\", \"crack\"], \"suggestions\": [], \"reasons\": [\"はんだ、寿命、亀裂がある\"]}", "error": null}
+{"case_id": "023", "raw_response": "{\"concepts\": [\"metal\", \"fatigue\", \"life\", \"solder\", \"thermal\"], \"suggestions\": [], \"reasons\": [\"金属、疲労、寿命、はんだ、熱疲労がある\"]}", "error": null}
+{"case_id": "024", "raw_response": "{\"concepts\": [\"solder\", \"crack\"], \"suggestions\": [], \"reasons\": [\"はんだ、割れに相当する亀裂がある\"]}", "error": null}
+{"case_id": "025", "raw_response": "{\"concepts\": [\"solder\"], \"suggestions\": [], \"reasons\": [\"はんだがある\"]}", "error": null}
+{"case_id": "026", "raw_response": "{\"concepts\": [\"life\"], \"suggestions\": [], \"reasons\": [\"寿命がある\"]}", "error": null}
+{"case_id": "027", "raw_response": "{\"concepts\": [], \"suggestions\": [], \"reasons\": [\"一覧の概念語がない\"]}", "error": null}
+{"case_id": "028", "raw_response": "{\"concepts\": [], \"suggestions\": [], \"reasons\": [\"一覧の概念語がない\"]}", "error": null}
+{"case_id": "029", "raw_response": "{\"concepts\": [], \"suggestions\": [], \"reasons\": [\"一覧の概念語がない\"]}", "error": null}
+{"case_id": "030", "raw_response": "{\"concepts\": [\"solder\"], \"suggestions\": [], \"reasons\": [\"はんだがある\"]}", "error": null}
+{"case_id": "031", "raw_response": "{\"concepts\": [\"solder\", \"crack\"], \"suggestions\": [], \"reasons\": [\"はんだ、亀裂がある\"]}", "error": null}
+{"case_id": "032", "raw_response": "{\"concepts\": [\"life\"], \"suggestions\": [], \"reasons\": [\"寿命がある\"]}", "error": null}
+{"case_id": "033", "raw_response": "{\"concepts\": [], \"suggestions\": [], \"reasons\": [\"一覧の概念語がない\"]}", "error": null}
+{"case_id": "034", "raw_response": "{\"concepts\": [], \"suggestions\": [], \"reasons\": [\"一覧の概念語がない\"]}", "error": null}
+{"case_id": "035", "raw_response": "{\"concepts\": [\"solder\"], \"suggestions\": [], \"reasons\": [\"はんだがある\"]}", "error": null}
+{"case_id": "036", "raw_response": "{\"concepts\": [\"metal\", \"fatigue\", \"life\", \"sn\"], \"suggestions\": [], \"reasons\": [\"金属、疲労、寿命、Ｓ－Ｎがある\"]}", "error": null}

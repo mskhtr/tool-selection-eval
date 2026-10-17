@@ -1,0 +1,35 @@
+# 教えていないオントロジーに、呼び方の対応だけを足す。
+# ソルダははんだ、クラックとクラックグロースは亀裂。
+# 割れ、持たない、折れは入れない。点数を見てから足した語ではない。
+version: ontology-taught-1
+concepts:
+  solder:
+    labels: [はんだ, 半田, ハンダ, ソルダ]
+  crack:
+    labels: [亀裂, き裂, クラックグロース, クラック]
+  propagation:
+    labels: [進展, 進む]
+  life:
+    labels: [寿命]
+  thermal:
+    labels: [熱疲労]
+  fatigue:
+    labels: [疲労, 高サイクル疲労]
+  metal:
+    labels: [金属]
+  sn:
+    labels: [sn]
+tool_requirements:
+  solder_crack_propagation:
+    - [solder, crack]
+    - [crack, propagation]
+  solder_life_prediction:
+    - [solder, life]
+    - [thermal, life]
+  fatigue_life:
+    - [fatigue, life]
+    - [sn]
+    - [fatigue]
+subject_only:
+  solder: [solder_crack_propagation, solder_life_prediction]
+  life: [solder_life_prediction, fatigue_life]

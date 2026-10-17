@@ -238,9 +238,12 @@ def test_confirmation_does_not_execute_analysis():
     assert "execute_analysis" not in source
 
 
-def test_ontology_uses_relations_and_does_not_commit_suggestions():
+def test_ontology_uses_catalog_words_and_ignores_unregistered_slang():
     catalog = load_catalog()
     ontology = load_ontology()
+    labels = [label for spec in ontology["concepts"].values() for label in spec["labels"]]
+    for banned in ("ソルダ", "クラック", "割れ", "持たない", "折れ", "グロース"):
+        assert banned not in labels
     crack = select_with_ontology("半田のき裂がどこまで進むかシミュレーションしたい", catalog, ontology)
     assert crack["candidate_ids"] == ["solder_crack_propagation"]
     assert crack["needs_clarification"] is False
@@ -253,6 +256,9 @@ def test_ontology_uses_relations_and_does_not_commit_suggestions():
     hint = select_with_ontology("はんだが割れそうなので見たい", catalog, ontology)
     assert set(hint["candidate_ids"]) == {"solder_crack_propagation", "solder_life_prediction"}
     assert hint["needs_clarification"] is True
+    slang = select_with_ontology("ソルダのクラックグロース見たい", catalog, ontology)
+    assert slang["candidate_ids"] == []
+    assert slang["abstained"] is True
     both = parse_concept_response(
         '{"concepts":["solder","life"],"suggestions":[]}',
         "はんだの寿命を計算して",

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from dataclasses import replace
 from functools import cache
 
 import yaml
@@ -8,6 +9,17 @@ from toolselect.catalog import Catalog, Tool
 from toolselect.paths import METHOD_B_PATH
 from toolselect.schema import empty_output, with_ranks
 from toolselect.textutil import normalize_text
+
+
+def catalog_with_extra_aliases(catalog: Catalog, rules: dict) -> Catalog:
+    extras = rules.get("extra_aliases") or {}
+    if not extras:
+        return catalog
+    tools = []
+    for tool in catalog.tools:
+        added = tuple(str(item) for item in extras.get(tool.id) or [])
+        tools.append(replace(tool, aliases=tool.aliases + added) if added else tool)
+    return replace(catalog, tools=tuple(tools))
 
 
 @cache
@@ -60,6 +72,7 @@ def _suppress_shorter_purpose(purpose_hits: dict[str, list[str]]) -> set[str]:
 
 def select_with_rules(user_text: str, catalog: Catalog, rules: dict | None = None) -> dict:
     rules = rules or load_b_rules()
+    catalog = catalog_with_extra_aliases(catalog, rules)
     text = normalize_text(user_text)
     trace: list[str] = ["normalize_nfkc"]
     meta_hits = _contains_any(text, rules["hard_meta_substrings"])

@@ -23,37 +23,89 @@ models:
     inference_setting: medium
     temperature: null
     price_note: 未取得
+# lexicon: none は割れ・持たない未登録。names は呼び方のみ。slang は割れを亀裂、持たないを寿命として登録。
 conditions:
   - id: A1
     method: A
     model: sol
+    lexicon: none
   - id: A2
     method: A
     model: terra
+    lexicon: none
   - id: A3
     method: A
     model: luna
+    lexicon: none
   - id: B1
     method: B
     model: null
+    lexicon: none
+  - id: B2
+    method: B
+    model: null
+    lexicon: names
+  - id: B3
+    method: B
+    model: null
+    lexicon: slang
   - id: C1
     method: C
     model: sol
+    lexicon: none
   - id: C2
     method: C
     model: terra
+    lexicon: none
   - id: C3
     method: C
     model: luna
+    lexicon: none
   - id: D1
     method: D
     model: null
+    lexicon: none
   - id: D2
     method: D
     model: sol
+    lexicon: none
   - id: D3
     method: D
     model: terra
+    lexicon: none
   - id: D4
     method: D
     model: luna
+    lexicon: none
+  - id: D5
+    method: D
+    model: null
+    lexicon: names
+  - id: D6
+    method: D
+    model: sol
+    lexicon: names
+  - id: D7
+    method: D
+    model: terra
+    lexicon: names
+  - id: D8
+    method: D
+    model: luna
+    lexicon: names
+  - id: D9
+    method: D
+    model: null
+    lexicon: slang
+  - id: D10
+    method: D
+    model: sol
+    lexicon: slang
+  - id: D11
+    method: D
+    model: terra
+    lexicon: slang
+  - id: D12
+    method: D
+    model: luna
+    lexicon: slang
